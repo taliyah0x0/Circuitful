@@ -11,13 +11,21 @@ class Menu extends SimpleScene {
     }
 
     create() {
-
-        document.getElementById('downloadObjectInfo').innerHTML = "";
-        document.getElementById('downloadObjectInfo').href = "#";
-        document.getElementById('downloadXLink').innerHTML = "";
-        document.getElementById('downloadXLink').href = "#";
-        document.getElementById('downloadYLink').innerHTML = "";
-        document.getElementById('downloadYLink').href = "#";
+        document.getElementById('flex-box').flexDirection = "row";
+        document.getElementById('downloads').innerHTML = "";
+        document.getElementById('download0').innerHTML = "";
+        document.getElementById('download0').href = "#";
+        document.getElementById('download1').innerHTML = "";
+        document.getElementById('download1').href = "#";
+        document.getElementById('download2').innerHTML = "";
+        document.getElementById('download2').href = "#";
+        document.getElementById('label').innerHTML = "";
+        document.getElementById('input').value = "";
+        document.getElementById('input').style.display = 'none';
+        document.getElementById('label2').innerHTML = "";
+        document.getElementById('label3').innerHTML = "";
+        document.getElementById('dropdown').value = "Choose Type";
+        document.getElementById('dropdown').style.display = 'none';
 
         this.title = this.add.text(deviceWidth / 2, deviceHeight * 0.045, "CIRCUITFUL", 0x999999);
         this.title.setOrigin(0.5, 0);
@@ -28,27 +36,36 @@ class Menu extends SimpleScene {
 
         this.prepareObject = this.add.rectangle(deviceWidth * 0.18, deviceHeight * 0.6, deviceWidth * 0.25, deviceHeight * 0.75, 0xbbbbbb);
         this.prepareObjectLabel = this.add.text(deviceWidth * 0.07, deviceHeight * 0.25, "PREPARE", 0xffffff);
-        this.prepareObjectLabel.setFontSize(50);
-        this.prepareObjectLabel2 = this.add.text(deviceWidth * 0.07, deviceHeight * 0.37, "A NEW OBJECT", 0xffffff);
-        this.prepareObjectLabel2.setFontSize(30);
+        this.prepareObjectLabel.setFontSize(deviceHeight*0.08);
+        this.prepareObjectLabel2 = this.add.text(deviceWidth * 0.07, deviceHeight * 0.35, "A NEW OBJECT", 0xffffff);
+        this.prepareObjectLabel2.setFontSize(deviceHeight*0.05);
         this.prepareObject.enableClick();
         this.prepareObjectLabel.enableClick();
         this.prepareObjectLabel2.enableClick();
 
         this.goWorkspace = this.add.rectangle(deviceWidth / 2, deviceHeight * 0.6, deviceWidth * 0.35, deviceHeight * 0.75, 0xbbbbbb);
         this.goWorkspaceLabel = this.add.text(deviceWidth * 0.34, deviceHeight * 0.25, "GO TO", 0xffffff);
-        this.goWorkspaceLabel.setFontSize(70);
+        this.goWorkspaceLabel.setFontSize(deviceHeight*0.1);
         this.goWorkspaceLabel2 = this.add.text(deviceWidth * 0.34, deviceHeight * 0.37, "WORKSPACE", 0xffffff);
-        this.goWorkspaceLabel2.setFontSize(50);
+        this.goWorkspaceLabel2.setFontSize(deviceHeight*0.08);
         this.goWorkspace.enableClick();
         this.goWorkspaceLabel.enableClick();
         this.goWorkspaceLabel2.enableClick();
 
-        this.import = this.add.rectangle(deviceWidth * 0.82, deviceHeight * 0.6, deviceWidth * 0.25, deviceHeight * 0.75, 0xbbbbbb);
-        this.importLabel = this.add.text(deviceWidth * 0.71, deviceHeight * 0.25, "IMPORT", 0xffffff);
-        this.importLabel.setFontSize(50);
-        this.importLabel2 = this.add.text(deviceWidth * 0.71, deviceHeight * 0.37, "SAVED WORKSPACE", 0xffffff);
-        this.importLabel2.setFontSize(30);
+        this.importPart = this.add.rectangle(deviceWidth*0.82,deviceHeight*0.4,deviceWidth*0.25,deviceHeight*0.35,0xbbbbbb);
+        this.importPartLabel = this.add.text(deviceWidth*0.71,deviceHeight*0.25,"IMPORT",0xffffff);
+        this.importPartLabel.setFontSize(deviceHeight*0.08);
+        this.importPartLabel2 = this.add.text(deviceWidth*0.71,deviceHeight*0.35,"SAVED PART",0xffffff);
+        this.importPartLabel2.setFontSize(deviceHeight * 0.05);
+        this.importPart.enableClick();
+        this.importPartLabel.enableClick();
+        this.importPartLabel2.enableClick();
+
+        this.import = this.add.rectangle(deviceWidth * 0.82, deviceHeight * 0.8, deviceWidth * 0.25, deviceHeight * 0.35, 0xbbbbbb);
+        this.importLabel = this.add.text(deviceWidth * 0.71, deviceHeight * 0.65, "IMPORT", 0xffffff);
+        this.importLabel.setFontSize(deviceHeight*0.08);
+        this.importLabel2 = this.add.text(deviceWidth * 0.71, deviceHeight * 0.75, "SAVED WORKSPACE", 0xffffff);
+        this.importLabel2.setFontSize(deviceHeight * 0.05);
         this.import.enableClick();
         this.importLabel.enableClick();
         this.importLabel2.enableClick();
@@ -57,18 +74,23 @@ class Menu extends SimpleScene {
 
     update() {
         const pElement = document.getElementsByTagName("body")[0];
+
         if (this.prepareObject.wasClicked() || this.prepareObjectLabel.wasClicked() || this.prepareObjectLabel2.wasClicked()) {
-            this.scene.start("Step1");
+            this.scene.start("PartEditor");
         }
         if (this.goWorkspace.wasClicked() || this.goWorkspaceLabel.wasClicked() || this.goWorkspaceLabel2.wasClicked()) {
-            this.scene.start("Step4");
+            this.scene.start("Workspace");
+        }
+        if(this.importPart.wasClicked() || this.importPartLabel.wasClicked() || this.importPartLabel2.wasClicked()){
+            window.open('/Tutorial.html', '_blank');
         }
         if (this.import.wasClicked() || this.importLabel.wasClicked() || this.importLabel2.wasClicked()) {
-            this.scene.start("Import");
+            window.open('/Tutorial.html', '_blank');
         }
 
         this.prepareObject.fillColor = 0xbbbbbb;
         this.goWorkspace.fillColor = 0xbbbbbb;
+        this.importPart.fillColor = 0xbbbbbb;
         this.import.fillColor = 0xbbbbbb;
 
         if (this.prepareObject.isOver() || this.prepareObjectLabel.isOver() || this.prepareObjectLabel2.isOver()) {
@@ -83,11 +105,15 @@ class Menu extends SimpleScene {
             pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
         }
 
-        if (this.import.isOver() || this.importLabel.isOver() || this.importLabel2.isOver()) {
-            this.import.fillColor = 0x45B5C4;
+        if(this.importPart.isOver() || this.importPartLabel.isOver() || this.importPartLabel2.isOver()){
+            this.importPart.fillColor = 0x4FBA52;
             pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
         }
 
+        if (this.import.isOver() || this.importLabel.isOver() || this.importLabel2.isOver()) {
+            this.import.fillColor = 0x406EED;
+            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+        }
 
     }
 }

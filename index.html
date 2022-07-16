@@ -1,8 +1,17 @@
+<!DOCTYPE html>
 <html>
-  <head>
-      <style>
-  @font-face { font-family: RoundPop; src: url("assets/roundpop.ttf"); } 
-</style>
+
+<head>
+    <style>
+        @font-face {
+            font-family: Sans;
+            src: url("assets/sans.ttf");
+        }
+
+    </style>
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+
     <title>Circuitful</title>
     <script src="lib/3rdParty/phaser.js"></script>
     <script src="lib/helper.js"></script>
@@ -10,20 +19,32 @@
     <script src="lib/GridLayout.js"></script>
     <script src="lib/SimpleScene.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
-    <script src="Loading.js"></script>
+    <script src="PartEditor.js"></script>
+    <script src="Workspace.js"></script>
     <script src="Menu.js"></script>
-    <script src="Import.js"></script>
-    <script src="Step1.js"></script>
-    <script src="Step2.js"></script>
-    <script src="Step3.js"></script>
-    <script src="Step4.js"></script>
     <script src="main.js"></script>
-   
-  </head>
-  <body style="font-family: RoundPop">
-    <a id="downloadXLink" style="margin-left: 20px" href="#" download="XLocations.txt"></a>
-    <a id="downloadYLink" style="margin-left: 20px" href="#" download="YLocations.txt"></a>
-    <a id="downloadObjectInfo" style="margin-left: 20px" href="#" download="ObjectInfo.txt"></a>
-    <BR>
+</head>
+
+<body style="font-family: Sans">
+    <div id="flex-box" style="display: flex; flex-direction: row;">
+        <a style="color: white">-</a>
+        <a id="label" style="margin-right: 10px;"></a>
+        <input id="input" type="text" style="margin-right: 20px; height: 12px; width: 100px; display: none;">
+        <input id="inputnum" type="number" style="margin-right: 20px; height: 12px; width: 100px; display: none;">
+        <a id="label2" style="margin-right: 10px;"></a>
+        <select id="dropdown" type="select" style="margin-right: 20px; height: 18px; width: 100px; display: none;">
+            <option id="option1" value="Choose">Choose</option>
+            <option id="option2" value="Microcontrollers" style="display: block">Microcontrollers</option>
+            <option id="option3" value="Electrical" style="display: block">Electrical</option>
+            <option id="option4" value="Modules" style="display: block">Modules</option>
+            <option id="option5" value="Other" style="display: block">Other</option>
+        </select>
+        <a id="label3" style="margin-right: 10px;"></a>
+        <a id="downloads" style="margin-left: 20px;"></a>
+        <a id="download0" style="margin-left: 20px" href="#" download="blank.txt"></a>
+        <a id="download1" style="margin-left: 20px" href="#" download="blank.txt"></a>
+        <a id="download2" style="margin-left: 20px" href="#" download="blank.txt"></a>
+    </div>
 </body>
+
 </html>
