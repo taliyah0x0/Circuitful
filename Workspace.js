@@ -38,10 +38,8 @@ let objectsData = [
     "Capacitor", "Electrical", 0.6959117149009196, 2, 1414.46,
     "Servo Motor", "Modules", 1.8310259597511946, 2, 1414.46,
 
-    //"4pin LED","Modules",0.9326324346993778,4,
 ];
 
-//"Default Label", Default Font Size, Font Size Length, Lock Rotate, Shift X0, Shift Y0, Shift X1, Shift Y1, Shift X2, Shift Y2, ShiftX3, ShiftY3 (12)
 var defaultLabel = [
     "", -1, 0, true, 0, 0, 0, 0, 0, 0, 0, 0,
     "", -1, 0, true, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -54,6 +52,7 @@ var defaultLabel = [
     "1uF", 0.04, 4, false, 0.06, 0, 0, 0.09, -0.06, 0, 0, -0.09,
     "", -1, 0, true, 0, 0, 0, 0, 0, 0, 0, 0,
 ];
+
 var nodesDataImport = [];
 var nodesImport = [];
 var objectsImport = [];
@@ -98,8 +97,7 @@ var paletteColors = [0xED4040, 0xED9B40, 0xEDDD2D, 0x4FBA52, 0x45B5C4, 0x406EED,
 var lastClicked = -1;
 var lastWire = -1;
 var customColors = [];
-var objectColors = [0xff0000, 0xffff00, 0x00ff00, 0x0000ff, 0xffffff];
-var customObjectColors = [];
+var customObjectColors = [0xff0000, 0xffff00, 0x00ff00, 0x0000ff, 0xffffff];
 
 class Workspace extends SimpleScene {
 
@@ -410,10 +408,8 @@ class Workspace extends SimpleScene {
                 nodes[i].y -= deltaY * 0.2;
             }
 
-            if (lastPosition[1] != deviceWidth * 0.05 && lastPosition[2] != deviceHeight * 0.22) {
-                lastPosition[1] -= deltaX * 0.2;
-                lastPosition[2] -= deltaY * 0.2;
-            }
+            lastPosition[1] -= deltaX * 0.2;
+            lastPosition[2] -= deltaY * 0.2;
 
         });
 
@@ -421,9 +417,11 @@ class Workspace extends SimpleScene {
         this.popupover.setAlpha(0.5);
         this.popupover.setDepth(8);
         this.popupover.setVisible(0);
+
         this.popup = this.add.rectangle(deviceWidth / 2, deviceHeight / 2, deviceWidth * 0.6, deviceHeight * 0.3, 0xcccccc);
         this.popup.setDepth(9);
         this.popup.setVisible(0);
+
         this.popuptext = this.add.text(deviceWidth / 2, deviceHeight * 0.45, "Are you sure you want to leave? You will lose your work.", 0x000000);
         this.popuptext.setOrigin(0.5, 0.5);
         this.popuptext.setFontSize(deviceHeight * 0.04);
@@ -436,18 +434,21 @@ class Workspace extends SimpleScene {
         this.popupcancel.enableClick();
         this.popupcancel.setDepth(9);
         this.popupcancel.setVisible(0);
+
         this.popupyes = this.add.rectangle(deviceWidth * 0.56, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xed4040);
         this.popupyes.width = deviceWidth * 0.1;
         this.popupyes.height = deviceHeight * 0.05;
         this.popupyes.setDepth(9);
         this.popupyes.enableClick();
         this.popupyes.setVisible(0);
+
         this.popupcanceltext = this.add.text(deviceWidth * 0.44, deviceHeight * 0.55, "Cancel", 0x000000);
         this.popupcanceltext.setOrigin(0.5, 0.5);
         this.popupcanceltext.setFontSize(deviceHeight * 0.03);
         this.popupcanceltext.enableClick();
         this.popupcanceltext.setDepth(10);
         this.popupcanceltext.setVisible(0);
+
         this.popupyestext = this.add.text(deviceWidth * 0.56, deviceHeight * 0.55, "Yes", 0x000000);
         this.popupyestext.setOrigin(0.5, 0.5);
         this.popupyestext.setFontSize(deviceHeight * 0.03);
@@ -461,18 +462,21 @@ class Workspace extends SimpleScene {
         this.popupdone.enableClick();
         this.popupdone.setDepth(9);
         this.popupdone.setVisible(0);
+
         this.popupcreate = this.add.rectangle(deviceWidth * 0.56, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0x4FBA52);
         this.popupcreate.width = deviceWidth * 0.1;
         this.popupcreate.height = deviceHeight * 0.05;
         this.popupcreate.enableClick();
         this.popupcreate.setDepth(9);
         this.popupcreate.setVisible(0);
+
         this.popupdonetext = this.add.text(deviceWidth * 0.44, deviceHeight * 0.55, "Done", 0x000000);
         this.popupdonetext.setOrigin(0.5, 0.5);
         this.popupdonetext.setFontSize(deviceHeight * 0.03);
         this.popupdonetext.enableClick();
         this.popupdonetext.setDepth(10);
         this.popupdonetext.setVisible(0);
+
         this.popupcreatetext = this.add.text(deviceWidth * 0.56, deviceHeight * 0.55, "Create Image", 0x000000);
         this.popupcreatetext.setOrigin(0.5, 0.5);
         this.popupcreatetext.setFontSize(deviceHeight * 0.03);
@@ -486,18 +490,21 @@ class Workspace extends SimpleScene {
         this.popupcandel.enableClick();
         this.popupcandel.setDepth(9);
         this.popupcandel.setVisible(0);
+
         this.popupdel = this.add.rectangle(deviceWidth * 0.56, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xed4040);
         this.popupdel.widht = deviceWidth * 0.1;
         this.popupdel.height = deviceHeight * 0.05;
         this.popupdel.enableClick();
         this.popupdel.setDepth(9);
         this.popupdel.setVisible(0);
+
         this.popupcandeltext = this.add.text(deviceWidth * 0.44, deviceHeight * 0.55, "Cancel", 0x000000);
         this.popupcandeltext.setOrigin(0.5, 0.5);
         this.popupcandeltext.setFontSize(deviceHeight * 0.03);
         this.popupcandeltext.enableClick();
         this.popupcandeltext.setDepth(10);
         this.popupcandeltext.setVisible(0);
+
         this.popupdeltext = this.add.text(deviceWidth * 0.56, deviceHeight * 0.55, "Delete", 0x000000);
         this.popupdeltext.setOrigin(0.5, 0.5);
         this.popupdeltext.setFontSize(deviceHeight * 0.03);
@@ -606,52 +613,52 @@ class Workspace extends SimpleScene {
 
         this.panelUpArrow = this.add.sprite(deviceWidth * 0.925, deviceHeight * 0.20, "arrow");
         this.panelUpArrow.setAngle(180);
-        this.panelUpArrow.setScale(deviceWidth * 0.00035);
+        this.panelUpArrow.setScale(deviceWidth * 0.0003);
         this.panelUpArrow.enableClick();
         this.panelUpArrow.setDepth(5);
         this.panelUpArrow.setVisible(0);
 
         this.panelLeftArrow = this.add.sprite(deviceWidth * 0.87, deviceHeight * 0.27, "arrow");
         this.panelLeftArrow.setAngle(90);
-        this.panelLeftArrow.setScale(deviceWidth * 0.00035);
+        this.panelLeftArrow.setScale(deviceWidth * 0.0003);
         this.panelLeftArrow.enableClick();
         this.panelLeftArrow.setDepth(5);
         this.panelLeftArrow.setVisible(0);
 
         this.panelRightArrow = this.add.sprite(deviceWidth * 0.98, deviceHeight * 0.27, "arrow");
         this.panelRightArrow.setAngle(-90);
-        this.panelRightArrow.setScale(deviceWidth * 0.00035);
+        this.panelRightArrow.setScale(deviceWidth * 0.0003);
         this.panelRightArrow.enableClick();
         this.panelRightArrow.setDepth(5);
         this.panelRightArrow.setVisible(0);
 
         this.panelDownArrow = this.add.sprite(deviceWidth * 0.925, deviceHeight * 0.34, "arrow");
-        this.panelDownArrow.setScale(deviceWidth * 0.00035);
+        this.panelDownArrow.setScale(deviceWidth * 0.0003);
         this.panelDownArrow.enableClick();
         this.panelDownArrow.setDepth(5);
         this.panelDownArrow.setVisible(0);
 
         this.panelRotateLeft = this.add.sprite(deviceWidth * 0.906, deviceHeight * 0.27, "rotate");
-        this.panelRotateLeft.setScale(deviceWidth * 0.0006);
+        this.panelRotateLeft.setScale(deviceWidth * 0.00055);
         this.panelRotateLeft.enableClick();
         this.panelRotateLeft.setDepth(5);
         this.panelRotateLeft.setVisible(0);
 
         this.panelRotateRight = this.add.sprite(deviceWidth * 0.944, deviceHeight * 0.27, "rotate");
         this.panelRotateRight.flipX = true;
-        this.panelRotateRight.setScale(deviceWidth * 0.0006);
+        this.panelRotateRight.setScale(deviceWidth * 0.00055);
         this.panelRotateRight.enableClick();
         this.panelRotateRight.setDepth(5);
         this.panelRotateRight.setVisible(0);
 
         this.panelBackward = this.add.sprite(deviceWidth * 0.88, deviceHeight * 0.35, "backward");
-        this.panelBackward.setScale(deviceWidth * 0.0005);
+        this.panelBackward.setScale(deviceWidth * 0.0004);
         this.panelBackward.enableClick();
         this.panelBackward.setDepth(5);
         this.panelBackward.setVisible(0);
 
         this.panelForward = this.add.sprite(deviceWidth * 0.97, deviceHeight * 0.35, "forward");
-        this.panelForward.setScale(deviceWidth * 0.0005);
+        this.panelForward.setScale(deviceWidth * 0.0004);
         this.panelForward.enableClick();
         this.panelForward.setDepth(5);
         this.panelForward.setVisible(0);
@@ -667,7 +674,6 @@ class Workspace extends SimpleScene {
         this.selected = [];
         this.shiftSelect = [];
 
-        this.objectColors = [];
         this.customObjectColors = [];
     }
 
@@ -900,6 +906,7 @@ class Workspace extends SimpleScene {
                     redo.splice(0, redo.length);
                     this.clearPanel();
                 }
+                this.wireShortcutKeys(i);
             } else {
                 this.wires[i].alpha = 1;
             }
@@ -964,7 +971,6 @@ class Workspace extends SimpleScene {
                     redo.splice(0, redo.length);
                 }
             }
-            this.wireColorShortKeys(i);
         }
 
         for (var i = 0; i < this.nodes.length; i++) {
@@ -975,6 +981,11 @@ class Workspace extends SimpleScene {
                     pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
                 } else {
                     this.nodes[i].alpha = 1;
+                }
+                if (this.nodes[i].wasClicked()) {
+                    lastPosition[0] = i;
+                    lastPosition[1] = this.nodes[i].x;
+                    lastPosition[2] = this.nodes[i].y;
                 }
                 if (this.nodes[i].isClicked()) {
                     if (this.slash.visible == 0) {
@@ -1000,11 +1011,6 @@ class Workspace extends SimpleScene {
                         }
                     }
                 }
-                if (this.nodes[i].wasClicked()) {
-                    lastPosition[0] = i;
-                    lastPosition[1] = this.nodes[i].x;
-                    lastPosition[2] = this.nodes[i].y;
-                }
                 if (i == lastPosition[0] && !(this.nodes[i].isClicked()) && (lastPosition[1] != this.nodes[i].x || lastPosition[2] != this.nodes[i].y)) {
                     undo.push("movedNode");
                     undo.push(i);
@@ -1029,8 +1035,17 @@ class Workspace extends SimpleScene {
 
                     }
                     if (this.palette[i].wasClicked()) {
-                        for (var v = 0; v < this.selected.length; v++) {
-                            this.selected[v].fillColor = paletteColors[i];
+                        if (this.selected[0].fillColor != paletteColors[i]) {
+                            undo.push("wireColor");
+                            undo.push(this.selected[0].fillColor);
+                            var selected = [];
+                            for (var v = 0; v < this.selected.length; v++) {
+                                this.selected[v].fillColor = paletteColors[i];
+                                selected.push(this.selected[v]);
+                            }
+                            undo.push(selected);
+                            undo.push(-1);
+                            redo.splice(0, redo.length);
                             wireColor = paletteColors[i];
                         }
                     }
@@ -1040,8 +1055,17 @@ class Workspace extends SimpleScene {
                 for (var i = 0; i < this.customColors.length; i++) {
                     this.customColors[i].setDepth(6);
                     if (this.customColors[i].wasClicked()) {
-                        for (var v = 0; v < this.selected.length; v++) {
-                            this.selected[v].fillColor = customColors[i];
+                        if (this.selected[0].fillColor != customColors[i]) {
+                            undo.push("wireColor");
+                            undo.push(this.selected[0].fillColor);
+                            var selected = [];
+                            for (var v = 0; v < this.selected.length; v++) {
+                                this.selected[v].fillColor = customColors[i];
+                                selected.push(this.selected[v]);
+                            }
+                            undo.push(selected);
+                            undo.push(-1);
+                            redo.splice(0, redo.length);
                             wireColor = customColors[i];
                         }
                     }
@@ -1174,12 +1198,14 @@ class Workspace extends SimpleScene {
                         }
                     }
                     if (nodeLinks[v * 4] < -1 && nodeLinks[(v * 4) + 3] == selectWireGroup) {
-                        if (this.wires[nodeLinks[(v * 4) + 1]].visible == 1 && this.wires[nodeLinks[(v * 4) + 2].visible == 1]) {
+                        if (this.wires[nodeLinks[(v * 4) + 1]].visible == 1) {
                             this.wires[nodeLinks[(v * 4) + 1]].setVisible(0);
-                            this.wires[nodeLinks[(v * 4) + 2]].setVisible(0);
                             this.wireLines[nodeLinks[(v * 4) + 1]].setVisible(0);
-                            this.wireLines[nodeLinks[(v * 4) + 2]].setVisible(0);
                             wires.push(nodeLinks[(v * 4) + 1]);
+                        }
+                        if (this.wires[nodeLinks[(v * 4) + 2]].visible == 1) {
+                            this.wires[nodeLinks[(v * 4) + 2]].setVisible(0);
+                            this.wireLines[nodeLinks[(v * 4) + 2]].setVisible(0);
                             wires.push(nodeLinks[(v * 4) + 2]);
                         }
                     }
@@ -1191,9 +1217,9 @@ class Workspace extends SimpleScene {
                     }
                 }
                 undo.push("deletedWire");
-                undo.push(lastWire);
                 undo.push(wires);
                 undo.push(nodes);
+                undo.push(-1);
                 redo.splice(0, redo.length);
                 this.clearPanel();
             }
@@ -1243,9 +1269,27 @@ class Workspace extends SimpleScene {
                 redo.splice(0, redo.length);
                 this.clearPanel();
             }
-            this.wireColorShortKeys(lastWire);
+            this.wireShortcutKeys(lastWire);
         }
         if (panelType >= 2) {
+            var noOther = true;
+            for (var v = 0; v < this.objects.length; v++) {
+                if (this.objects[v].isOver() && v != lastClicked) {
+                    noOther = false;
+                }
+            }
+            for (var v = 0; v < this.wires.length; v++) {
+                if (this.wires[v].isOver()) {
+                    noOther = false;
+                }
+            }
+            if (panelType == 5 || panelType == 8) {
+                for (var v = 0; v < customObjectColors.length; v++) {
+                    if (this.customObjectColors[v].isOver()) {
+                        noOther = false;
+                    }
+                }
+            }
             if (this.panelDuplicateButton.isOver() || this.panelDuplicate.isOver()) {
                 this.panelDuplicateButton.setAlpha(0.8);
                 this.panelDuplicate.setAlpha(0.8);
@@ -1323,10 +1367,10 @@ class Workspace extends SimpleScene {
                 this.panelForward.setAlpha(1);
             }
 
-            if (this.panelDuplicateButton.wasClicked() || this.panelDuplicate.wasClicked()) {
+            if (this.panelDuplicateButton.wasClicked() || this.panelDuplicate.wasClicked() || (noOther == true && element == null && this.d.wasPressed())) {
                 var obj = this.add.sprite(this.objects[lastClicked].x, this.objects[lastClicked].y, `${this.objectIDs[lastClicked]}`);
                 for (var v = 0; v < this.objects.length; v++) {
-                    if (this.objectIDs[v] == this.objectIDs[lastClicked] && this.objects[v].x == obj.x && this.objects[v].y == obj.y) {
+                    if (this.objectIDs[v] == this.objectIDs[lastClicked] && this.objects[v].x == obj.x && this.objects[v].y == obj.y && this.objects[v].visible == 1) {
                         obj.x += deviceWidth * 0.01;
                         obj.y += deviceHeight * 0.02;
                     }
@@ -1371,25 +1415,43 @@ class Workspace extends SimpleScene {
                 lastClicked = this.objects.length - 1
                 this.clearPanel();
                 this.openPanel(this.objects.length - 1);
+
+                undo.push("createdObject");
+                undo.push(this.objects.length - 1);
+                undo.push(-1);
+                undo.push(-1);
+                redo.splice(0, redo.length);
             }
-            if (this.panelDeleteButton.wasClicked() || this.panelDelete.wasClicked()) {
-                this.initiateDelete(lastClicked)
+            if (this.panelDeleteButton.wasClicked() || this.panelDelete.wasClicked() || (noOther == true && element == null && this.del.wasPressed())) {
+                this.initiateDelete(lastClicked);
             }
 
-            if (this.panelUpArrow.isClicked()) {
+            if (this.panelUpArrow.isClicked() || (noOther == true && this.uparrow.isPressed() && !(this.shift.isPressed()))) {
+                lastPosition[0] = -lastClicked - 1;
+                lastPosition[1] = this.objects[lastClicked].x;
+                lastPosition[2] = this.objects[lastClicked].y;
                 this.objects[lastClicked].y -= 0.5;
             }
-            if (this.panelLeftArrow.isClicked()) {
+            if (this.panelLeftArrow.isClicked() || (noOther == true && this.leftarrow.isPressed() && !(this.shift.isPressed()))) {
+                lastPosition[0] = -lastClicked - 1;
+                lastPosition[1] = this.objects[lastClicked].x;
+                lastPosition[2] = this.objects[lastClicked].y;
                 this.objects[lastClicked].x -= 0.5;
             }
-            if (this.panelRightArrow.isClicked()) {
+            if (this.panelRightArrow.isClicked() || (noOther == true && this.rightarrow.isPressed() && !(this.shift.isPressed()))) {
+                lastPosition[0] = -lastClicked - 1;
+                lastPosition[1] = this.objects[lastClicked].x;
+                lastPosition[2] = this.objects[lastClicked].y;
                 this.objects[lastClicked].x += 0.5;
             }
-            if (this.panelDownArrow.isClicked()) {
+            if (this.panelDownArrow.isClicked() || (noOther == true && this.downarrow.isPressed() && !(this.shift.isPressed()))) {
+                lastPosition[0] = -lastClicked - 1;
+                lastPosition[1] = this.objects[lastClicked].x;
+                lastPosition[2] = this.objects[lastClicked].y;
                 this.objects[lastClicked].y += 0.5;
             }
 
-            if (this.panelRotateRight.wasClicked()) {
+            if (this.panelRotateRight.wasClicked() || (noOther == true && this.shift.isPressed() && this.rightarrow.wasPressed())) {
                 this.objects[lastClicked].angle += 90;
                 rotateAngle[lastClicked]++;
                 if (rotateAngle[lastClicked] == 4) {
@@ -1398,8 +1460,13 @@ class Workspace extends SimpleScene {
                 var widthHolder = this.objects[i].width;
                 this.objects[lastClicked].width = this.objects[lastClicked].height;
                 this.objects[lastClicked].height = widthHolder;
+                undo.push("rotatedObject");
+                undo.push(lastClicked);
+                undo.push(-90);
+                undo.push(widthHolder);
+                redo.splice(0, redo.length);
             }
-            if (this.panelRotateLeft.wasClicked()) {
+            if (this.panelRotateLeft.wasClicked() || (noOther == true && this.shift.isPressed() && this.leftarrow.wasPressed())) {
                 this.objects[lastClicked].angle -= 90;
                 rotateAngle[lastClicked]--;
                 if (rotateAngle[lastClicked] == -1) {
@@ -1408,23 +1475,38 @@ class Workspace extends SimpleScene {
                 var widthHolder = this.objects[lastClicked].width;
                 this.objects[lastClicked].width = this.objects[lastClicked].height;
                 this.objects[lastClicked].height = widthHolder;
+                undo.push("rotatedObject");
+                undo.push(lastClicked);
+                undo.push(90);
+                undo.push(widthHolder);
+                redo.splice(0, redo.length);
             }
 
-            if (this.panelBackward.wasClicked()) {
+            if (this.panelBackward.wasClicked() || (noOther == true && this.shift.isPressed() && this.downarrow.wasPressed())) {
+                undo.push("arrangedObject");
+                undo.push(lastClicked);
+                undo.push(this.objects[lastClicked].depth);
+                undo.push(-0.01);
+                redo.splice(0, redo.length);
                 for (var v = 0; v < this.objects.length; v++) {
                     if (this.objects[lastClicked].intersects(this.objects[v]) && v != lastClicked) {
-                        this.objects[lastClicked].setDepth(2);
                         this.objects[v].depth += 0.01;
                     }
                 }
+                this.objects[lastClicked].setDepth(2);
             }
-            if (this.panelForward.wasClicked()) {
+            if (this.panelForward.wasClicked() || (noOther == true && this.shift.isPressed() && this.uparrow.wasPressed())) {
+                undo.push("arrangedObject");
+                undo.push(lastClicked);
+                undo.push(this.objects[lastClicked].depth);
+                undo.push(0.01);
+                redo.splice(0, redo.length);
                 for (var v = 0; v < this.objects.length; v++) {
                     if (this.objects[lastClicked].intersects(this.objects[v]) && v != lastClicked) {
-                        this.objects[lastClicked].setDepth(3);
                         this.objects[v].depth -= 0.01;
                     }
                 }
+                this.objects[lastClicked].setDepth(3);
             }
         }
         if (panelType == 4) {
@@ -1492,19 +1574,6 @@ class Workspace extends SimpleScene {
             }
         }
         if (panelType == 5 || panelType == 8) {
-            for (var i = 0; i < this.objectColors.length; i++) {
-                this.objectColors[i].setDepth(6);
-                if (this.objectColors[i].isOver()) {
-                    pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-                    this.objectColors[i].setAlpha(0.8);
-                } else {
-                    this.objectColors[i].setAlpha(1);
-                }
-                if (this.objectColors[i].wasClicked()) {
-                    this.objects[lastClicked].setTint(objectColors[i]);
-                    settings[lastClicked * 2] = objectColors[i];
-                }
-            }
             if (this.customObjectColors.length > 0) {
                 for (var i = 0; i < this.customObjectColors.length; i++) {
                     this.customObjectColors[i].setDepth(6);
@@ -1585,7 +1654,7 @@ class Workspace extends SimpleScene {
                         return true;
                     }
                     if (isHexValid(inputValue) == true) {
-                        if (customObjectColors.length > 3) {
+                        if (customObjectColors.length > 8) {
                             customObjectColors.splice(0, 1);
                         }
                         customObjectColors.push(parseInt(inputValue, 16));
@@ -1881,7 +1950,7 @@ class Workspace extends SimpleScene {
                     }
                 }
             }
-            if (lastPosition[0] == -i - 1 && !(this.objects[i].isClicked()) && (lastPosition[1] != this.objects[i].x || lastPosition[2] != this.objects[i].y)) {
+            if (lastPosition[0] == -i - 1 && !(this.objects[i].isClicked()) && (lastPosition[1] != this.objects[i].x || lastPosition[2] != this.objects[i].y) && !(this.panelUpArrow.isClicked()) && !(this.panelLeftArrow.isClicked()) && !(this.panelRightArrow.isClicked()) && !(this.panelDownArrow.isClicked()) && !(this.uparrow.isPressed()) && !(this.leftarrow.isPressed()) && !(this.rightarrow.isPressed()) && !(this.downarrow.isPressed())) {
                 undo.push("movedObject");
                 undo.push(-i - 1);
                 undo.push(lastPosition[1] - this.objects[i].x);
@@ -1939,7 +2008,7 @@ class Workspace extends SimpleScene {
                     if (this.d.wasPressed()) {
                         var obj = this.add.sprite(this.objects[i].x, this.objects[i].y, `${this.objectIDs[i]}`);
                         for (var v = 0; v < this.objects.length; v++) {
-                            if (this.objectIDs[v] == this.objectIDs[i] && this.objects[v].x == obj.x && this.objects[v].y == obj.y) {
+                            if (this.objectIDs[v] == this.objectIDs[i] && this.objects[v].x == obj.x && this.objects[v].y == obj.y && this.objects[v].visible == 1) {
                                 obj.x += deviceWidth * 0.01;
                                 obj.y += deviceHeight * 0.02;
                             }
@@ -1983,18 +2052,36 @@ class Workspace extends SimpleScene {
                         lastClicked = this.objects.length - 1
                         this.clearPanel();
                         this.openPanel(this.objects.length - 1);
+
+                        undo.push("createdObject");
+                        undo.push(this.objects.length - 1);
+                        undo.push(-1);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                     }
                     if (!(this.shift.isPressed())) {
                         if (this.rightarrow.isPressed()) {
+                            lastPosition[0] = -i - 1;
+                            lastPosition[1] = this.objects[i].x;
+                            lastPosition[2] = this.objects[i].y;
                             this.objects[i].x += 0.5;
                         }
                         if (this.leftarrow.isPressed()) {
+                            lastPosition[0] = -i - 1;
+                            lastPosition[1] = this.objects[i].x;
+                            lastPosition[2] = this.objects[i].y;
                             this.objects[i].x -= 0.5;
                         }
                         if (this.uparrow.isPressed()) {
+                            lastPosition[0] = -i - 1;
+                            lastPosition[1] = this.objects[i].x;
+                            lastPosition[2] = this.objects[i].y;
                             this.objects[i].y -= 0.5;
                         }
                         if (this.downarrow.isPressed()) {
+                            lastPosition[0] = -i - 1;
+                            lastPosition[1] = this.objects[i].x;
+                            lastPosition[2] = this.objects[i].y;
                             this.objects[i].y += 0.5;
                         }
                     } else {
@@ -2007,6 +2094,11 @@ class Workspace extends SimpleScene {
                             var widthHolder = this.objects[i].width;
                             this.objects[i].width = this.objects[i].height;
                             this.objects[i].height = widthHolder;
+                            undo.push("rotatedObject");
+                            undo.push(i);
+                            undo.push(-90);
+                            undo.push(widthHolder);
+                            redo.splice(0, redo.length);
                         }
                         if (this.leftarrow.wasPressed()) {
                             this.objects[i].angle -= 90;
@@ -2017,23 +2109,37 @@ class Workspace extends SimpleScene {
                             var widthHolder = this.objects[i].width;
                             this.objects[i].width = this.objects[i].height;
                             this.objects[i].height = widthHolder;
-
+                            undo.push("rotatedObject");
+                            undo.push(i);
+                            undo.push(90);
+                            undo.push(widthHolder);
+                            redo.splice(0, redo.length);
                         }
                         if (this.downarrow.wasPressed() && this.objects[i].depth != 2) {
+                            undo.push(i);
+                            undo.push(lastClicked);
+                            undo.push(this.objects[i].depth);
+                            undo.push(-0.01);
+                            redo.splice(0, redo.length);
                             for (var v = 0; v < this.objects.length; v++) {
                                 if (this.objects[i].intersects(this.objects[v]) && v != i) {
-                                    this.objects[i].setDepth(2);
                                     this.objects[v].depth += 0.01;
                                 }
                             }
+                            this.objects[i].setDepth(2);
                         }
                         if (this.uparrow.wasPressed() && this.objects[i].depth != 3) {
+                            undo.push("arrangedObject");
+                            undo.push(i);
+                            undo.push(this.objects[i].depth);
+                            undo.push(0.01);
+                            redo.splice(0, redo.length);
                             for (var v = 0; v < this.objects.length; v++) {
                                 if (this.objects[i].intersects(this.objects[v]) && v != i) {
-                                    this.objects[i].setDepth(3);
                                     this.objects[v].depth -= 0.01;
                                 }
                             }
+                            this.objects[i].setDepth(3);
                         }
                     }
                 }
@@ -2151,6 +2257,12 @@ class Workspace extends SimpleScene {
 
                             this.createPalette();
                             lastWire = this.wires.length - 1;
+
+                            undo.push("createdWire");
+                            undo.push(this.wires.length - 1);
+                            undo.push(this.nodes.length - 2);
+                            undo.push(this.nodes.length - 1);
+                            redo.splice(0,redo.length);
                         }
                     }
                 }
@@ -2239,7 +2351,7 @@ class Workspace extends SimpleScene {
             this.wiringPointer.setVisible(0);
         }
 
-        console.log(redo)
+        console.log(rotateAngle[0]);
 
         if (this.undo.wasClicked() || this.z.wasPressed()) {
             if (undo.length >= 4) {
@@ -2248,7 +2360,8 @@ class Workspace extends SimpleScene {
                 redo.push(undo[undo.length - 2]);
                 redo.push(undo[undo.length - 1]);
                 if (undo[undo.length - 4] == "deletedObject") {
-                    this.objects[-undo[undo.length - 3]].setVisible(1);
+                    this.objects[undo[undo.length - 3]].setVisible(1);
+                    this.objectLabels[undo[undo.length - 3]].setVisible(1);
                     for (var v = 0; v < undo[undo.length - 2].length; v++) {
                         this.wires[undo[undo.length - 2][v]].setVisible(1);
                         this.wireLines[undo[undo.length - 2][v]].setVisible(1);
@@ -2256,6 +2369,11 @@ class Workspace extends SimpleScene {
                     for (var v = 0; v < undo[undo.length - 1].length; v++) {
                         this.nodes[undo[undo.length - 1][v]].setVisible(1);
                     }
+                }
+                if (undo[undo.length - 4] == "createdObject") {
+                    this.objects[undo[undo.length - 3]].setVisible(0);
+                    this.objectLabels[undo[undo.length - 3]].setVisible(0);
+                    this.clearPanel();
                 }
                 if (undo[undo.length - 4] == "movedObject") {
                     redo[redo.length - 2] = -undo[undo.length - 2];
@@ -2265,6 +2383,12 @@ class Workspace extends SimpleScene {
                     lastPosition[0] = undo[undo.length - 3]
                     lastPosition[1] = this.objects[-undo[undo.length - 3] - 1].x;
                     lastPosition[2] = this.objects[-undo[undo.length - 3] - 1].y;
+                }
+                if (undo[undo.length - 4] == "createdWire") {
+                    this.wires[undo[undo.length - 3]].setVisible(0);
+                    this.wireLines[undo[undo.length - 3]].setVisible(0);
+                    this.nodes[undo[undo.length - 2]].setVisible(0);
+                    this.nodes[undo[undo.length - 1]].setVisible(0);
                 }
                 if (undo[undo.length - 4] == "subdividedWire") {
                     this.nodes[undo[undo.length - 3]].setVisible(0);
@@ -2276,6 +2400,15 @@ class Workspace extends SimpleScene {
                     this.wireLines[nodeLinks[undo[undo.length - 2] + 2]].setVisible(0);
                     this.wireLines[nodeLinks[undo[undo.length - 1] + 2]].setVisible(0);
                 }
+                if (undo[undo.length - 4] == "deletedWire") {
+                    for (var v = 0; v < undo[undo.length - 3].length; v++) {
+                        this.wires[undo[undo.length - 3][v]].setVisible(1);
+                        this.wireLines[undo[undo.length - 3][v]].setVisible(1);
+                    }
+                    for (var v = 0; v < undo[undo.length - 2].length; v++) {
+                        this.nodes[undo[undo.length - 2][v]].setVisible(1);
+                    }
+                }
                 if (undo[undo.length - 4] == "movedNode") {
                     redo[redo.length - 2] = -undo[undo.length - 2];
                     redo[redo.length - 1] = -undo[undo.length - 1];
@@ -2285,6 +2418,38 @@ class Workspace extends SimpleScene {
                     lastPosition[0] = undo[undo.length - 3];
                     lastPosition[1] = this.nodes[undo[undo.length - 3]].x;
                     lastPosition[2] = this.nodes[undo[undo.length - 3]].y;
+                }
+                if (undo[undo.length - 4] == "rotatedObject") {
+                    redo[redo.length - 2] = -undo[undo.length - 2];
+                    redo[redo.length - 1] = this.objects[undo[undo.length - 3]].width;
+                    this.objects[undo[undo.length - 3]].angle += undo[undo.length - 2];
+                    this.objects[undo[undo.length - 3]].height = this.objects[undo[undo.length - 3]].width;
+                    this.objects[undo[undo.length - 3]].width = undo[undo.length - 1];
+                    if (undo[undo.length - 2] > 0) {
+                        rotateAngle[undo[undo.length - 3]]++;
+                    } else {
+                        rotateAngle[undo[undo.length - 3]]--;
+                    }
+                    if (rotateAngle[undo[undo.length - 3]] == -1) {
+                        rotateAngle[undo[undo.length - 3]] = 3;
+                    }
+                    if (rotateAngle[undo[undo.length - 3]] == 4) {
+                        rotateAngle[undo[undo.length - 3]] = 0;
+                    }
+                }
+                if (undo[undo.length - 4] == "arrangedObject") {
+                    redo[redo.length - 1] = -undo[undo.length - 1];
+                    for (var v = 0; v < this.objects.length; v++) {
+                        this.objects[v].depth += undo[undo.length - 1];
+                    }
+                    redo[redo.length - 2] = this.objects[undo[undo.length - 3]].depth;
+                    this.objects[undo[undo.length - 3]].setDepth(undo[undo.length - 2]);
+                }
+                if (undo[undo.length - 4] == "wireColor") {
+                    redo[redo.length - 3] = undo[undo.length - 2][0].fillColor;
+                    for (var v = 0; v < undo[undo.length - 2].length; v++) {
+                        undo[undo.length - 2][v].fillColor = undo[undo.length - 3];
+                    }
                 }
                 undo.splice(undo.length - 4, 4);
             }
@@ -2297,7 +2462,8 @@ class Workspace extends SimpleScene {
                 undo.push(redo[redo.length - 2]);
                 undo.push(redo[redo.length - 1]);
                 if (redo[redo.length - 4] == "deletedObject") {
-                    this.objects[-redo[redo.length - 3]].setVisible(0);
+                    this.objects[redo[redo.length - 3]].setVisible(0);
+                    this.objectLabels[redo[redo.length - 3]].setVisible(1);
                     for (var v = 0; v < redo[redo.length - 2].length; v++) {
                         this.wires[redo[redo.length - 2][v]].setVisible(0);
                         this.wireLines[redo[redo.length - 2][v]].setVisible(0);
@@ -2305,6 +2471,11 @@ class Workspace extends SimpleScene {
                     for (var v = 0; v < redo[redo.length - 1].length; v++) {
                         this.nodes[redo[redo.length - 1][v]].setVisible(0);
                     }
+                    this.clearPanel();
+                }
+                if (redo[redo.length - 4] == "createdObject") {
+                    this.objects[redo[redo.length - 3]].setVisible(1);
+                    this.objectLabels[undo[undo.length - 3]].setVisible(1);
                 }
                 if (redo[redo.length - 4] == "movedObject") {
                     undo[undo.length - 2] = -redo[redo.length - 2];
@@ -2314,6 +2485,12 @@ class Workspace extends SimpleScene {
                     lastPosition[0] = redo[redo.length - 3];
                     lastPosition[1] = this.objects[-redo[redo.length - 3] - 1].x;
                     lastPosition[2] = this.objects[-redo[redo.length - 3] - 1].y;
+                }
+                if (redo[redo.length - 4] == "createdWire") {
+                    this.wires[redo[redo.length - 3]].setVisible(1);
+                    this.wireLines[redo[redo.length - 3]].setVisible(1);
+                    this.nodes[redo[redo.length - 2]].setVisible(1);
+                    this.nodes[redo[redo.length - 1]].setVisible(1);
                 }
                 if (redo[redo.length - 4] == "subdividedWire") {
                     this.nodes[redo[redo.length - 3]].setVisible(1);
@@ -2325,6 +2502,15 @@ class Workspace extends SimpleScene {
                     this.wireLines[nodeLinks[redo[redo.length - 2] + 2]].setVisible(1);
                     this.wireLines[nodeLinks[redo[redo.length - 1] + 2]].setVisible(1);
                 }
+                if (redo[redo.length - 4] == "deletedWire") {
+                    for (var v = 0; v < redo[redo.length - 3].length; v++) {
+                        this.wires[redo[redo.length - 3][v]].setVisible(0);
+                        this.wireLines[redo[redo.length - 3][v]].setVisible(0);
+                    }
+                    for (var v = 0; v < redo[redo.length - 2].length; v++) {
+                        this.nodes[redo[redo.length - 2][v]].setVisible(0);
+                    }
+                }
                 if (redo[redo.length - 4] == "movedNode") {
                     undo[undo.length - 2] = -redo[redo.length - 2];
                     undo[undo.length - 1] = -redo[redo.length - 1];
@@ -2335,12 +2521,43 @@ class Workspace extends SimpleScene {
                     lastPosition[1] = this.nodes[redo[redo.length - 3]].x;
                     lastPosition[2] = this.nodes[redo[redo.length - 3]].y;
                 }
+                if (redo[redo.length - 4] == "rotatedObject") {
+                    undo[undo.length - 2] = -redo[redo.length - 2];
+                    undo[undo.length - 1] = this.objects[redo[redo.length - 3]].width;
+                    this.objects[redo[redo.length - 3]].angle += redo[redo.length - 2];
+                    this.objects[redo[redo.length - 3]].height = this.objects[redo[redo.length - 3]].width;
+                    this.objects[redo[redo.length - 3]].width = redo[redo.length - 1];
+                    if (redo[redo.length - 2] > 0) {
+                        rotateAngle[redo[redo.length - 3]]++;
+                    } else {
+                        rotateAngle[redo[redo.length - 3]]--;
+                    }
+                    if (rotateAngle[redo[redo.length - 3]] == -1) {
+                        rotateAngle[redo[redo.length - 3]] = 3;
+                    }
+                    if (rotateAngle[redo[redo.length - 3]] == 4) {
+                        rotateAngle[redo[redo.length - 3]] = 0;
+                    }
+                }
+                if (undo[undo.length - 4] == "arrangedObject") {
+                    undo[undo.length - 1] = -redo[redo.length - 1];
+                    for (var v = 0; v < this.objects.length; v++) {
+                        this.objects[v].depth += redo[redo.length - 1];
+                    }
+                    undo[undo.length - 2] = this.objects[redo[redo.length - 3]].depth;
+                    this.objects[redo[redo.length - 3]].setDepth(redo[redo.length - 2]);
+                }
+                if (redo[redo.length - 4] == "wireColor") {
+                    undo[undo.length - 3] = redo[redo.length - 2][0].fillColor;
+                    for (var v = 0; v < redo[redo.length - 2].length; v++) {
+                        redo[redo.length - 2][v].fillColor = redo[redo.length - 3];
+                    }
+                }
                 redo.splice(redo.length - 4, 4);
             }
         }
 
         if (this.popupcandel.visible == true) {
-
             if (this.popupcandel.wasClicked() || this.popupcandeltext.wasClicked() || this.esc.wasPressed()) {
                 this.popupcandel.setVisible(0);
                 this.popupdel.setVisible(0);
@@ -2415,7 +2632,7 @@ class Workspace extends SimpleScene {
                 }
 
                 undo.push("deletedObject");
-                undo.push(-del);
+                undo.push(del);
                 undo.push(wires);
                 undo.push(nodes);
                 redo.splice(0, redo.length);
@@ -2426,7 +2643,6 @@ class Workspace extends SimpleScene {
         }
 
         for (var i = 0; i < this.items.length; i++) {
-
             if (this.items[i].isOver()) {
                 pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
                 this.items[i].setTint(0xffbfbf)
@@ -2438,7 +2654,7 @@ class Workspace extends SimpleScene {
                 this.clearPanel();
                 var obj = this.add.sprite(deviceWidth / 2 + deviceWidth * 0.002, deviceHeight / 2, `${itemObjectID[i]}`);
                 for (var v = 0; v < this.objects.length; v++) {
-                    if (this.objectIDs[v] == itemObjectID[i] && this.objects[v].x == obj.x && this.objects[v].y == obj.y) {
+                    if (this.objectIDs[v] == itemObjectID[i] && this.objects[v].x == obj.x && this.objects[v].y == obj.y && this.objects[v].visible == 1) {
                         obj.x += deviceWidth * 0.01;
                         obj.y += deviceHeight * 0.02;
                     }
@@ -2469,6 +2685,12 @@ class Workspace extends SimpleScene {
 
                 this.openPanel(this.objects.length - 1);
                 lastClicked = this.objects.length - 1;
+
+                undo.push("createdObject");
+                undo.push(this.objects.length - 1);
+                undo.push(-1);
+                undo.push(-1);
+                redo.splice(0, redo.length);
             }
         }
 
@@ -2655,19 +2877,21 @@ class Workspace extends SimpleScene {
             }
             this.activeWire.setLineWidth(this.activeWire.lineWidth * 1.005);
 
-            if (lastPosition[1] != deviceWidth * 0.05 && lastPosition[2] != deviceHeight * 0.22) {
-                lastPosition[1] = ((lastPosition[1] - (deviceWidth / 2)) * 1.005) + (deviceWidth / 2);
-                lastPosition[2] = ((lastPosition[2] - (deviceHeight / 2)) * 1.005) + (deviceHeight / 2);
-            }
+            lastPosition[1] = ((lastPosition[1] - (deviceWidth / 2)) * 1.005) + (deviceWidth / 2);
+            lastPosition[2] = ((lastPosition[2] - (deviceHeight / 2)) * 1.005) + (deviceHeight / 2);
 
             for (var v = 0; v < undo.length / 4; v++) {
-                undo[(v * 4) + 2] *= 1.005;
-                undo[(v * 4) + 3] *= 1.005;
+                if (undo[v * 4] == "movedObject" || undo[v * 4] == "movedNode") {
+                    undo[(v * 4) + 2] *= 1.005;
+                    undo[(v * 4) + 3] *= 1.005;
+                }
             }
 
             for (var v = 0; v < redo.length / 4; v++) {
-                redo[(v * 4) + 2] *= 1.005;
-                redo[(v * 4) + 3] *= 1.005;
+                if (redo[v * 4] == "movedObject" || redo[v * 4] == "movedNode") {
+                    redo[(v * 4) + 2] *= 1.005;
+                    redo[(v * 4) + 3] *= 1.005;
+                }
             }
         }
 
@@ -2706,19 +2930,21 @@ class Workspace extends SimpleScene {
             }
             this.activeWire.setLineWidth(this.activeWire.lineWidth * 0.995);
 
-            if (lastPosition[1] != deviceWidth * 0.05 && lastPosition[2] != deviceHeight * 0.22) {
-                lastPosition[1] = ((lastPosition[1] - (deviceWidth / 2)) * 0.995) + (deviceWidth / 2);
-                lastPosition[2] = ((lastPosition[2] - (deviceHeight / 2)) * 0.995) + (deviceHeight / 2);
-            }
+            lastPosition[1] = ((lastPosition[1] - (deviceWidth / 2)) * 0.995) + (deviceWidth / 2);
+            lastPosition[2] = ((lastPosition[2] - (deviceHeight / 2)) * 0.995) + (deviceHeight / 2);
 
             for (var v = 0; v < undo.length / 4; v++) {
-                undo[(v * 4) + 2] *= 0.995;
-                undo[(v * 4) + 3] *= 0.995;
+                if (undo[v * 4] == "movedObject" || undo[v * 4] == "movedNode") {
+                    undo[(v * 4) + 2] *= 0.995;
+                    undo[(v * 4) + 3] *= 0.995;
+                }
             }
 
             for (var v = 0; v < redo.length / 4; v++) {
-                redo[(v * 4) + 2] *= 0.995;
-                redo[(v * 4) + 3] *= 0.995;
+                if (redo[v * 4] == "movedObject" || redo[v * 4] == "movedNode") {
+                    redo[(v * 4) + 2] *= 0.995;
+                    redo[(v * 4) + 3] *= 0.995;
+                }
             }
         }
 
@@ -2797,12 +3023,6 @@ class Workspace extends SimpleScene {
             this.panelResistanceUnit.destroy();
         }
         if (panelType == 5 || panelType == 8) {
-            for (var v = 0; v < 5; v++) {
-                if (this.objectColors.length > 0) {
-                    this.objectColors[v].destroy();
-                    this.objectColors[v].destroy();
-                }
-            }
             for (var v = 0; v < this.customObjectColors.length; v++) {
                 this.customObjectColors[v].destroy();
             }
@@ -2815,7 +3035,6 @@ class Workspace extends SimpleScene {
         }
         clean(this.palette);
         clean(this.customColors);
-        clean(this.objectColors);
         clean(this.customObjectColors);
 
         for (var v = 0; v < this.selected.length; v++) {
@@ -2922,24 +3141,23 @@ class Workspace extends SimpleScene {
             this.panelSelectLabel.setY(deviceHeight * 0.4);
             this.panelSelectLabel.setText("Color");
             this.panelSelectLabel.setVisible(1);
-            if (this.objectColors.length == 0) {
-                for (var v = 0; v < 5; v++) {
-                    var obj = this.add.rectangle(deviceWidth * 0.872 + v * deviceWidth * 0.027, deviceHeight * 0.45, deviceWidth * 0.021, deviceWidth * 0.021, objectColors[v]);
-                    obj.enableClick();
-                    this.objectColors.push(obj);
-                }
-            }
-            var obj2;
             if (this.customObjectColors.length == 0) {
                 for (var v = 0; v < customObjectColors.length; v++) {
-                    if (v < 4) {
-                        obj2 = this.add.rectangle(deviceWidth * 0.872 + v * deviceWidth * 0.027, deviceHeight * 0.51, deviceWidth * 0.021, deviceWidth * 0.021, customObjectColors[v]);
-                        obj2.enableClick();
-                        this.customObjectColors.push(obj2);
+                    var obj;
+                    if (v < 5) {
+                        obj = this.add.rectangle(deviceWidth * 0.872 + v * deviceWidth * 0.027, deviceHeight * 0.45, deviceWidth * 0.021, deviceWidth * 0.021, customObjectColors[v]);
+                    } else {
+                        obj = this.add.rectangle(deviceWidth * 0.872 + (v - 5) * deviceWidth * 0.027, deviceHeight * 0.51, deviceWidth * 0.021, deviceWidth * 0.021, customObjectColors[v]);
                     }
+                    obj.enableClick();
+                    this.customObjectColors.push(obj);
                 }
             }
-            this.customObjectColorBox = this.add.rectangle(deviceWidth * 0.872 + customObjectColors.length * deviceWidth * 0.027, deviceHeight * 0.51, deviceWidth * 0.021, deviceWidth * 0.021, 0xbbbbbb);
+            if (this.customObjectColors.length < 5) {
+                this.customObjectColorBox = this.add.rectangle(deviceWidth * 0.872 + this.customObjectColors.length * deviceWidth * 0.027, deviceHeight * 0.45, deviceWidth * 0.021, deviceWidth * 0.021, 0xbbbbbb);
+            } else {
+                this.customObjectColorBox = this.add.rectangle(deviceWidth * 0.872 + (this.customObjectColors.length - 5) * deviceWidth * 0.027, deviceHeight * 0.51, deviceWidth * 0.021, deviceWidth * 0.021, 0xbbbbbb);
+            }
             this.customObjectColorBox.enableClick();
             this.customObjectColorAdd = this.add.text(this.customObjectColorBox.x, this.customObjectColorBox.y, "+", 0x000000);
             this.customObjectColorAdd.setOrigin(0.5, 0.5);
@@ -3244,11 +3462,11 @@ class Workspace extends SimpleScene {
         document.getElementById('download2').href = "#";
     }
 
-    wireColorShortKeys(wire) {
+    wireShortcutKeys(wire) {
         var selectWireGroup;
         for (var v = 0; v < this.nodes.length; v++) {
             if (nodeLinks[v * 4] == wire || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == wire)) {
-                selectWireGroup = nodeLinks[(v * 4) + 3]
+                selectWireGroup = nodeLinks[(v * 4) + 3];
             }
         }
         var selectSlot = 0;
@@ -3278,117 +3496,288 @@ class Workspace extends SimpleScene {
         if (element == null) {
             if (!(this.shift.isPressed())) {
                 if (this.key0.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = paletteColors[9];
+                    if (this.selected[0].fillColor != paletteColors[9]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = paletteColors[9];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = paletteColors[9];
                     }
                 }
                 if (this.key1.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = paletteColors[0];
+                    if (this.selected[0].fillColor != paletteColors[0]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = paletteColors[0];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = paletteColors[0];
                     }
                 }
                 if (this.key2.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = paletteColors[1];
+                    if (this.selected[0].fillColor != paletteColors[1]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = paletteColors[1];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = paletteColors[1];
                     }
                 }
                 if (this.key3.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = paletteColors[2];
+                    if (this.selected[0].fillColor != paletteColors[2]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = paletteColors[2];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = paletteColors[2];
                     }
                 }
                 if (this.key4.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = paletteColors[3];
+                    if (this.selected[0].fillColor != paletteColors[3]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = paletteColors[3];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = paletteColors[3];
                     }
                 }
                 if (this.key5.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = paletteColors[4];
+                    if (this.selected[0].fillColor != paletteColors[4]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = paletteColors[4];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = paletteColors[4];
                     }
                 }
                 if (this.key6.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = paletteColors[5];
+                    if (this.selected[0].fillColor != paletteColors[5]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = paletteColors[5];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = paletteColors[5];
                     }
                 }
                 if (this.key7.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = paletteColors[6];
+                    if (this.selected[0].fillColor != paletteColors[6]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = paletteColors[6];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = paletteColors[6];
                     }
                 }
                 if (this.key8.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = paletteColors[7];
+                    if (this.selected[0].fillColor != paletteColors[7]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = paletteColors[7];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = paletteColors[7];
                     }
                 }
                 if (this.key9.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = paletteColors[8];
+                    if (this.selected[0].fillColor != paletteColors[8]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = paletteColors[8];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = paletteColors[8];
                     }
                 }
             } else {
                 if (this.key1.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = customColors[0];
+                    if (this.selected[0].fillColor != customColors[0]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = customColors[0];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = customColors[0];
                     }
                 }
                 if (this.key2.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = customColors[1];
+                    if (this.selected[0].fillColor != customColors[1]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = customColors[1];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = customColors[1];
                     }
                 }
                 if (this.key3.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = customColors[2];
+                    if (this.selected[0].fillColor != customColors[2]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = customColors[2];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = customColors[2];
                     }
                 }
                 if (this.key4.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = customColors[3];
+                    if (this.selected[0].fillColor != customColors[3]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = customColors[3];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = customColors[3];
                     }
                 }
                 if (this.key5.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = customColors[4];
+                    if (this.selected[0].fillColor != customColors[4]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = customColors[4];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = customColors[4];
                     }
                 }
                 if (this.key6.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = customColors[5];
+                    if (this.selected[0].fillColor != customColors[5]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = customColors[5];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = customColors[5];
                     }
                 }
                 if (this.key7.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = customColors[6];
+                    if (this.selected[0].fillColor != customColors[6]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = customColors[6];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = customColors[6];
                     }
                 }
                 if (this.key8.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = customColors[7];
+                    if (this.selected[0].fillColor != customColors[7]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = customColors[7];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = customColors[7];
                     }
                 }
                 if (this.key9.wasPressed()) {
-                    for (var v = 0; v < this.selected.length; v++) {
-                        this.selected[v].fillColor = customColors[8];
+                    if (this.selected[0].fillColor != customColors[8]) {
+                        undo.push("wireColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
+                        for (var v = 0; v < this.selected.length; v++) {
+                            this.selected[v].fillColor = customColors[8];
+                            selected.push(this.selected[v]);
+                        }
+                        undo.push(selected);
+                        undo.push(-1);
+                        redo.splice(0, redo.length);
                         wireColor = customColors[8];
                     }
                 }
@@ -3402,7 +3791,6 @@ class Workspace extends SimpleScene {
             }
             if (noOther == true) {
                 if (this.del.wasPressed()) {
-
                     var wires = [];
                     var nodes = [];
                     for (var v = 0; v < this.nodes.length; v++) {
@@ -3414,12 +3802,14 @@ class Workspace extends SimpleScene {
                             }
                         }
                         if (nodeLinks[v * 4] < -1 && nodeLinks[(v * 4) + 3] == selectWireGroup) {
-                            if (this.wires[nodeLinks[(v * 4) + 1]].visible == 1 && this.wires[nodeLinks[(v * 4) + 2]].visible == 1) {
+                            if (this.wires[nodeLinks[(v * 4) + 1]].visible == 1) {
                                 this.wires[nodeLinks[(v * 4) + 1]].setVisible(0);
-                                this.wires[nodeLinks[(v * 4) + 2]].setVisible(0);
                                 this.wireLines[nodeLinks[(v * 4) + 1]].setVisible(0);
-                                this.wireLines[nodeLinks[(v * 4) + 2]].setVisible(0);
                                 wires.push(nodeLinks[(v * 4) + 1]);
+                            }
+                            if (this.wires[nodeLinks[(v * 4) + 2]].visible == 1) {
+                                this.wires[nodeLinks[(v * 4) + 2]].setVisible(0);
+                                this.wireLines[nodeLinks[(v * 4) + 2]].setVisible(0);
                                 wires.push(nodeLinks[(v * 4) + 2]);
                             }
                         }
@@ -3431,9 +3821,9 @@ class Workspace extends SimpleScene {
                         }
                     }
                     undo.push("deletedWire");
-                    undo.push(wire);
                     undo.push(wires);
                     undo.push(nodes);
+                    undo.push(-1);
                     redo.splice(0, redo.length);
                     this.clearPanel();
                 }

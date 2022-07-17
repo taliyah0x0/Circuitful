@@ -604,9 +604,9 @@ class PartEditor extends SimpleScene {
 
             if (this.wiringPoint[i].x != deviceWidth * 0.05 && this.wiringPoint[i].y != deviceHeight * 0.22 && this.wiringPoint[i].isClicked()) {
                 this.wiringPoint[i].setDepth(6);
-                this.wiringPoint[i].radius = deviceWidth * 0.005 * scaleCount;
-                this.wiringPoint[i].width = deviceWidth * 0.005 * scaleCount;
-                this.wiringPoint[i].height = deviceWidth * 0.005 * scaleCount;
+                this.wiringPoint[i].radius = 8 * scaleCount;
+                this.wiringPoint[i].width = 8 * scaleCount;
+                this.wiringPoint[i].height = 8 * scaleCount;
                 if (this.slash.visible == 0) {
                     for (var v = -10000; v < 10000; v++) {
                         if (Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.wiringPoint[i].x)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.wiringPoint[i].x)) > 0) {
@@ -842,7 +842,7 @@ class PartEditor extends SimpleScene {
                     redo[redo.length - 1] = -undo[undo.length - 1];
                     this.wiringPoint[undo[undo.length - 3]].x += undo[undo.length - 2];
                     this.wiringPoint[undo[undo.length - 3]].y += undo[undo.length - 1];
-                    this.wiringPoint[undo[undo.length - 3]].radius = deviceWidth * 0.005 * scaleCount;
+                    this.wiringPoint[undo[undo.length - 3]].radius = 8 * scaleCount;
                     lastPosition[0] = undo[undo.length - 3];
                     lastPosition[1] = this.wiringPoint[undo[undo.length - 3]].x;
                     lastPosition[2] = this.wiringPoint[undo[undo.length - 3]].y;
@@ -877,7 +877,7 @@ class PartEditor extends SimpleScene {
                     undo[undo.length - 1] = -redo[redo.length - 1];
                     this.wiringPoint[redo[redo.length - 3]].x += redo[redo.length - 2];
                     this.wiringPoint[redo[redo.length - 3]].y += redo[redo.length - 1];
-                    this.wiringPoint[redo[redo.length - 3]].radius = deviceWidth * 0.005 * scaleCount;
+                    this.wiringPoint[redo[redo.length - 3]].radius = 8 * scaleCount;
                     lastPosition[0] = redo[redo.length - 3];
                     lastPosition[1] = this.wiringPoint[redo[redo.length - 3]].x;
                     lastPosition[2] = this.wiringPoint[redo[redo.length - 3]].y;
@@ -934,13 +934,17 @@ class PartEditor extends SimpleScene {
             }
 
             for (var v = 0; v < undo.length / 4; v++) {
-                undo[(v * 4) + 2] *= 1.005;
-                undo[(v * 4) + 3] *= 1.005;
+                if (undo[v * 4] == "movedObject" || undo[v * 4] == "movedWiringPoint") {
+                    undo[(v * 4) + 2] *= 1.005;
+                    undo[(v * 4) + 3] *= 1.005;
+                }
             }
 
             for (var v = 0; v < redo.length / 4; v++) {
-                redo[(v * 4) + 2] *= 1.005;
-                redo[(v * 4) + 3] *= 1.005;
+                if (redo[v * 4] == "movedObject" || redo[v * 4] == "movedWiringPoint") {
+                    redo[(v * 4) + 2] *= 1.005;
+                    redo[(v * 4) + 3] *= 1.005;
+                }
             }
         }
 
@@ -980,13 +984,17 @@ class PartEditor extends SimpleScene {
             }
 
             for (var v = 0; v < undo.length / 4; v++) {
-                undo[(v * 4) + 2] *= 0.995;
-                undo[(v * 4) + 3] *= 0.995;
+                if (undo[v * 4] == "movedObject" || undo[v * 4] == "movedWiringPoint") {
+                    undo[(v * 4) + 2] *= 0.995;
+                    undo[(v * 4) + 3] *= 0.995;
+                }
             }
 
             for (var v = 0; v < redo.length / 4; v++) {
-                redo[(v * 4) + 2] *= 0.995;
-                redo[(v * 4) + 3] *= 0.995;
+                if (redo[v * 4] == "movedObject" || redo[v * 4] == "movedWiringPoint") {
+                    redo[(v * 4) + 2] *= 0.995;
+                    redo[(v * 4) + 3] *= 0.995;
+                }
             }
         }
 
