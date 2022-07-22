@@ -1,3 +1,22 @@
+//// Import Saved Part ////
+
+var xLocationsImport = [
+    -0.2260912022563598, 0.22785329178666386, 0.34774731695634875, 0.4291533285853066, 0.4528765644996553, 0.4301329531555218, 0.3497065660967791, 0.22785329178666386, -0.3482877410958964, -0.42735288035982555, -0.4564786601501534, -0.42833250493004077, -0.34247006972580774, -0.22643942787727464
+
+];
+var yLocationsImport = [
+    -0.3951466325379341, 0.3936245944772217, 0.2911646730599088, 0.15440097163588754, -0.002193757186519534, -0.15679349730162326, -0.2934144796766195, -0.3951466325379341, -0.2924328919309129, -0.15679349730162326, -0.002193757186519534, 0.1560471704551244, 0.29480586058644664, 0.3926430067315151
+];
+var objectInfoImport = [
+    "Circuit Playground", "Microcontrollers", 0.7401785998271294, 14, 1418.4
+
+];
+
+////    ////
+
+
+////  Warning: Crazy Code Below!!  ////
+
 var objectInfo;
 var wiringPoint;
 var object;
@@ -28,6 +47,10 @@ var undo = [];
 var redo = [];
 
 var lastPosition = [];
+var lastScale = 1;
+var pointDistances = [];
+
+var gridColor = 0xdddddd;
 
 class PartEditor extends SimpleScene {
 
@@ -39,7 +62,7 @@ class PartEditor extends SimpleScene {
 
     preload() {
         this.load.image("object", 'object/object.png');
-        this.load.image("binhandlearrow", "./assets/binhandlearrow.png");
+        this.load.imageset("binhandlearrow", "./assets/binhandlearrow.png", 560, 981);
         this.load.image("increasescale", "./assets/increasescale.png");
         this.load.image("decreasescale", "./assets/decreasescale.png");
         this.load.image("home", "assets/home.png");
@@ -49,6 +72,8 @@ class PartEditor extends SimpleScene {
         this.load.image("saved", "assets/saved.png");
         this.load.image("info", "assets/info.png");
         this.load.image("undo", "assets/undo.png");
+        this.load.image("glue", "assets/glue.png");
+        this.load.image("dark", "assets/dark.png");
     }
 
     create() {
@@ -63,7 +88,6 @@ class PartEditor extends SimpleScene {
         document.getElementById('label').innerHTML = "Object Name:";
         document.getElementById('label2').innerHTML = "Object Type:";
         document.getElementById('input').style.display = 'block';
-        document.getElementById('dropdown').value = "Choose Type";
         document.getElementById('dropdown').style.display = 'block';
         document.getElementById('option1').value = "Choose";
         document.getElementById('option1').style.display = "block";
@@ -76,11 +100,66 @@ class PartEditor extends SimpleScene {
         document.getElementById('option5').value = "Other";
         document.getElementById('option5').style.display = "block";
 
+        this.floor = this.add.rectangle(deviceWidth / 2, deviceHeight / 2, deviceWidth, deviceHeight, 0xffffff);
+        this.floor.setDepth(0);
+        this.floor.enableClick();
+        
         this.grid = this.add.gridLayout(snapStartX, snapStartY, 100000, 100000, 28 * scaleCount, 28 * scaleCount);
-        this.grid.setOutlineStyle(0xdddddd, 0.5)
+        this.grid.setOutlineStyle(gridColor, 1)
         this.grid.setDepth(0);
         this.grid.enableClick();
         grid = this.grid;
+
+        this.object = this.add.sprite(deviceWidth / 2, deviceHeight * 0.57, "object");
+        if (objectInfoImport.length > 0) {
+            document.getElementById('input').value = objectInfoImport[0];
+            document.getElementById('dropdown').value = objectInfoImport[1];
+            this.object.scale *= objectInfoImport[2];
+            this.object.width *= objectInfoImport[2];
+            this.object.height *= objectInfoImport[2];
+            while (this.object.width < deviceWidth * 0.3 && this.object.height < deviceHeight * 0.6) {
+                this.object.width *= 1.1;
+                this.object.scale *= 1.1;
+                this.object.height *= 1.1;
+                this.grid.scale *= 1.1;
+                scaleCount *= 1.1;
+                this.grid.destroy();
+                this.grid = this.add.gridLayout(snapStartX, snapStartY, 100000, 100000, 28 * scaleCount, 28 * scaleCount);
+                this.grid.setOutlineStyle(gridColor, 1)
+                this.grid.setDepth(0);
+                this.grid.enableClick();
+                grid = this.grid;
+            }
+            while (this.object.width > deviceWidth * 0.5 || this.object.height > deviceHeight) {
+                this.object.width *= 0.9;
+                this.object.scale *= 0.9;
+                this.object.height *= 0.9;
+                this.grid.scale *= 0.9;
+                scaleCount *= 0.9;
+                this.grid.destroy();
+                this.grid = this.add.gridLayout(snapStartX, snapStartY, 100000, 100000, 28 * scaleCount, 28 * scaleCount);
+                this.grid.setOutlineStyle(gridColor, 1)
+                this.grid.setDepth(0);
+                this.grid.enableClick();
+                grid = this.grid;
+            }
+        } else {
+            while (this.object.width < deviceWidth * 0.3 && this.object.height < deviceHeight * 0.6) {
+                this.object.width *= 1.1;
+                this.object.scale *= 1.1;
+                this.object.height *= 1.1;
+            }
+            while (this.object.width > deviceWidth * 0.5 || this.object.height > deviceHeight) {
+                this.object.width *= 0.9;
+                this.object.scale *= 0.9;
+                this.object.height *= 0.9;
+            }
+        }
+        this.object.enableClick();
+        this.object.enableDrag();
+        this.object.setDepth(2);
+        object = this.object;
+        lastScale = this.object.scale;
 
         this.title = this.add.text(deviceWidth / 2, deviceHeight * 0.045, "PART EDITOR", 0x999999);
         this.title.setOrigin(0.5, 0);
@@ -89,21 +168,6 @@ class PartEditor extends SimpleScene {
         this.instructions = this.add.text(deviceWidth / 2, deviceHeight * 0.15, "Set up the object scale and wiring points.", 0x000000)
         this.instructions.setOrigin(0.5, 0);
         this.instructions.setFontSize(deviceHeight * 0.03);
-
-        this.object = this.add.sprite(deviceWidth / 2, deviceHeight * 0.57, "object");
-        while (this.object.width < deviceWidth * 0.3 && this.object.height < deviceHeight * 0.6) {
-            this.object.width *= 1.1;
-            this.object.scale *= 1.1;
-            this.object.height *= 1.1;
-        }
-        while (this.object.width > deviceWidth * 0.5 || this.object.height > deviceHeight) {
-            this.object.width *= 0.9;
-            this.object.scale *= 0.9;
-            this.object.height *= 0.9;
-        }
-        this.object.enableClick();
-        this.object.enableDrag();
-        object = this.object;
 
         this.wiringPoint = [];
         let obj = this.add.circle(deviceWidth * 0.05, deviceHeight * 0.22, deviceWidth * 0.005, 0xff0000);
@@ -126,7 +190,7 @@ class PartEditor extends SimpleScene {
         this.binHandle.enableClick();
         this.binHandle.setDepth(5);
 
-        this.binHandleArrow = this.add.sprite(deviceWidth * 0.215, deviceHeight / 2, "binhandlearrow");
+        this.binHandleArrow = this.add.sprite(deviceWidth * 0.215, deviceHeight / 2, "binhandlearrow", 0);
         this.binHandleArrow.setScale(deviceWidth * 0.00002);
         this.binHandleArrow.setAngle(180);
         this.binHandleArrow.enableClick();
@@ -207,6 +271,11 @@ class PartEditor extends SimpleScene {
         this.info.enableClick();
         this.info.setDepth(5);
 
+        this.dark = this.add.sprite(deviceWidth * 0.92, deviceHeight * 0.06, "dark");
+        this.dark.setScale(deviceWidth * 0.00035);
+        this.dark.enableClick();
+        this.dark.setDepth(5);
+
         this.magnet = this.add.sprite(deviceWidth * 0.735, deviceHeight * 0.945, "magnet");
         this.magnet.setScale(deviceWidth * 0.0005);
         this.magnet.enableClick();
@@ -217,6 +286,17 @@ class PartEditor extends SimpleScene {
         this.slash.enableClick();
         this.slash.setVisible(0);
         this.slash.setDepth(5);
+
+        this.glue = this.add.sprite(deviceWidth * 0.875, deviceHeight * 0.06, "glue");
+        this.glue.setScale(deviceWidth * 0.0004);
+        this.glue.enableClick();
+        this.glue.flipY = true;
+        this.glue.setDepth(5);
+
+        this.glueSlash = this.add.sprite(deviceWidth * 0.875, deviceHeight * 0.06, "slash");
+        this.glueSlash.setScale(deviceWidth * 0.0003);
+        this.glueSlash.enableClick();
+        this.glueSlash.setDepth(5);
 
         this.redo = this.add.sprite(deviceWidth * 0.685, deviceHeight * 0.945, "undo");
         this.redo.setScale(deviceWidth * 0.0005);
@@ -271,12 +351,12 @@ class PartEditor extends SimpleScene {
         this.popuptext.setDepth(8);
         this.popuptext.setVisible(0);
 
-        this.popupcancel = this.add.rectangle(deviceWidth * 0.44, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xed4040);
+        this.popupcancel = this.add.rectangle(deviceWidth * 0.44, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xaaaaaa);
         this.popupcancel.enableClick();
         this.popupcancel.setDepth(8);
         this.popupcancel.setVisible(0);
 
-        this.popupyes = this.add.rectangle(deviceWidth * 0.56, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xaaaaaa);
+        this.popupyes = this.add.rectangle(deviceWidth * 0.56, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xed4040);
         this.popupyes.enableClick();
         this.popupyes.setDepth(8);
         this.popupyes.setVisible(0);
@@ -322,6 +402,37 @@ class PartEditor extends SimpleScene {
         this.popupaddtext.enableClick();
         this.popupaddtext.setDepth(9);
         this.popupaddtext.setVisible(0);
+
+        var shiftX = 0;
+        var shiftY = 0;
+        if (xLocationsImport.length > 0) {
+            for (var i = 0; i < xLocationsImport.length; i++) {
+                var point = this.add.circle((this.object.width * xLocationsImport[i]) + this.object.x, (this.object.height * yLocationsImport[i]) + this.object.y, deviceWidth * 0.005, 0xff0000);
+                point.width = deviceWidth * 0.02;
+                point.height = deviceWidth * 0.02;
+                point.enableClick();
+                point.enableDrag();
+
+                if (i == 0) {
+                    for (var v = -10000; v < 10000; v++) {
+                        if (Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - point.x)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - point.x)) > 0) {
+                            shiftX = (v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - point.x;
+                        }
+                    }
+                    for (var v = -10000; v < 10000; v++) {
+                        if (Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - point.y)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - point.y)) > 0) {
+                            shiftY = (v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - point.y;
+                        }
+                    }
+                }
+
+                point.x += shiftX;
+                point.y += shiftY;
+                this.wiringPoint.push(point);
+            }
+        }
+        this.object.x += shiftX;
+        this.object.y += shiftY;
 
     }
 
@@ -424,6 +535,15 @@ class PartEditor extends SimpleScene {
             this.slash.setAlpha(1);
         }
 
+        if (this.glue.isOver() || this.glueSlash.isOver()) {
+            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            this.glue.setAlpha(0.5);
+            this.glueSlash.setAlpha(0.5);
+        } else {
+            this.glue.setAlpha(1);
+            this.glueSlash.setAlpha(1);
+        }
+
         if (this.undo.isOver()) {
             pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
             this.undo.setAlpha(0.5);
@@ -468,22 +588,60 @@ class PartEditor extends SimpleScene {
             }
         }
 
+        if (this.object.wasClicked()) {
+            this.title.setVisible(0);
+            this.instructions.setVisible(0);
+            for (var v = 0; v < this.wiringPoint.length; v++) {
+                this.wiringPoint[v].disableDrag();
+                this.wiringPoint[v].disableClick();
+            }
+            lastPosition[0] = -1;
+            lastPosition[1] = this.object.x;
+            lastPosition[2] = this.object.y;
+
+            if (this.glueSlash.visible == 0) {
+                for (var v = 0; v < this.wiringPoint.length; v++) {
+                    if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                        pointDistances[(v * 2)] = this.wiringPoint[v].x - this.object.x;
+                        pointDistances[(v * 2) + 1] = this.wiringPoint[v].y - this.object.y;
+                    }
+                }
+            }
+        }
+
         if (this.object.isClicked()) {
             pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
             if (element != null) {
                 element.blur();
             }
+            if (this.glueSlash.visible == 0) {
+                for (var v = 0; v < this.wiringPoint.length; v++) {
+                    if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                        this.wiringPoint[v].x = this.object.x + pointDistances[(v * 2)];
+                        this.wiringPoint[v].y = this.object.y + pointDistances[(v * 2) + 1];
+                    }
+                }
+            }
         }
 
-        if (this.object.wasClicked()) {
-            lastPosition[0] = -1;
-            lastPosition[1] = this.object.x;
-            lastPosition[2] = this.object.y;
+        if (this.object.wasDropped()) {
+            for (var v = 0; v < this.wiringPoint.length; v++) {
+                this.wiringPoint[v].enableClick();
+                this.wiringPoint[v].enableDrag();
+            }
         }
 
-        if (lastPosition[0] == -1 && !(this.object.isClicked()) && (lastPosition[1] != this.object.x || lastPosition[2] != this.object.y)) {
-            undo.push("movedObject");
+        if (this.object.scale != lastScale && !(this.shift.isPressed()) && !(this.uparrow.isPressed()) && !(this.downarrow.isPressed())) {
+            undo.push("scaledObject");
+            undo.push(this.glueSlash.visible);
+            undo.push(lastScale / this.object.scale);
             undo.push(-1);
+            redo.splice(0, redo.length);
+        }
+
+        if (lastPosition[0] == -1 && !(this.object.isClicked()) && (lastPosition[1] != this.object.x || lastPosition[2] != this.object.y) && !(this.uparrow.isPressed()) && !(this.leftarrow.isPressed()) && !(this.rightarrow.isPressed()) && !(this.downarrow.isPressed())) {
+            undo.push("movedObject");
+            undo.push(this.glueSlash.visible);
             undo.push(lastPosition[1] - this.object.x);
             undo.push(lastPosition[2] - this.object.y);
             lastPosition[1] = this.object.x;
@@ -492,53 +650,139 @@ class PartEditor extends SimpleScene {
         }
 
         var scalingObject = false;
-        if (this.shift.isPressed()) {
-            if (this.uparrow.isPressed()) {
-                scalingObject = true;
-                this.object.scale *= 1.001;
-                this.object.width *= 1.001;
-                this.object.height *= 1.001;
-                counter++;
-
-                if (counter > 50) {
-                    this.object.scale *= 1.005;
-                    this.object.width *= 1.005;
-                    this.object.height *= 1.005;
+        if (element == null) {
+            if (this.uparrow.wasPressed() || this.leftarrow.wasPressed() || this.downarrow.wasPressed() || this.rightarrow.wasPressed()) {
+                var noOther = true;
+                for (var v = 0; v < this.wiringPoint.length; v++) {
+                    if (this.wiringPoint[v].isOver()) {
+                        noOther = v;
+                    }
                 }
-            }
 
-            if (this.downarrow.isPressed()) {
-                scalingObject = true;
-                this.object.scale *= 0.999;
-                this.object.width *= 0.999;
-                this.object.height *= 0.999;
-                counter++;
+                if (noOther == true) {
+                    lastPosition[0] = - 1;
+                    lastPosition[1] = this.object.x;
+                    lastPosition[2] = this.object.y;
+                } else {
+                    lastPosition[0] = noOther;
+                    lastPosition[1] = this.wiringPoint[noOther].x;
+                    lastPosition[2] = this.wiringPoint[noOther].y;
+                }
 
-                if (counter > 50) {
-                    this.object.scale *= 0.995;
-                    this.object.width *= 0.995;
-                    this.object.height *= 0.995;
-                }
+                lastScale = this.object.scale;
             }
-        } else {
-            var wiringPointHover = false;
-            for (var v = 0; v < this.wiringPoint.length; v++) {
-                if (this.wiringPoint[v].isOver()) {
-                    wiringPointHover = true;
-                }
-            }
-            if (wiringPointHover == false) {
+            if (this.shift.isPressed()) {
                 if (this.uparrow.isPressed()) {
-                    this.object.y -= 0.5;
+                    scalingObject = true;
+                    this.object.scale *= 1.001;
+                    this.object.width *= 1.001;
+                    this.object.height *= 1.001;
+                    counter++;
+
+                    if (this.glueSlash.visible == 0) {
+                        for (var v = 0; v < this.wiringPoint.length; v++) {
+                            if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 1.001) + this.object.x;
+                                this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 1.001) + this.object.y;
+                            }
+                        }
+                    }
+
+                    if (counter > 50) {
+                        this.object.scale *= 1.005;
+                        this.object.width *= 1.005;
+                        this.object.height *= 1.005;
+
+                        if (this.glueSlash.visible == 0) {
+                            for (var v = 0; v < this.wiringPoint.length; v++) {
+                                if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                    this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 1.005) + this.object.x;
+                                    this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 1.005) + this.object.y;
+                                }
+                            }
+                        }
+                    }
                 }
+
                 if (this.downarrow.isPressed()) {
-                    this.object.y += 0.5;
+                    scalingObject = true;
+                    this.object.scale *= 0.999;
+                    this.object.width *= 0.999;
+                    this.object.height *= 0.999;
+                    counter++;
+
+                    if (this.glueSlash.visible == 0) {
+                        for (var v = 0; v < this.wiringPoint.length; v++) {
+                            if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 0.999) + this.object.x;
+                                this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 0.999) + this.object.y;
+                            }
+                        }
+                    }
+
+                    if (counter > 50) {
+                        this.object.scale *= 0.995;
+                        this.object.width *= 0.995;
+                        this.object.height *= 0.995;
+
+                        if (this.glueSlash.visible == 0) {
+                            for (var v = 0; v < this.wiringPoint.length; v++) {
+                                if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                    this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 0.995) + this.object.x;
+                                    this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 0.995) + this.object.y;
+                                }
+                            }
+                        }
+                    }
                 }
-                if (this.rightarrow.isPressed()) {
-                    this.object.x += 0.5;
+            } else {
+                var wiringPointHover = false;
+                for (var v = 0; v < this.wiringPoint.length; v++) {
+                    if (this.wiringPoint[v].isOver()) {
+                        wiringPointHover = true;
+                    }
                 }
-                if (this.leftarrow.isPressed()) {
-                    this.object.x -= 0.5;
+                if (wiringPointHover == false) {
+                    if (this.uparrow.isPressed()) {
+                        this.object.y -= 0.25;
+                        if (this.glueSlash.visible == 0) {
+                            for (var v = 0; v < this.wiringPoint.length; v++) {
+                                if (this.wiringPoint[v].x != 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                    this.wiringPoint[v].y -= 0.25;
+                                }
+                            }
+                        }
+                    }
+                    if (this.downarrow.isPressed()) {
+                        this.object.y += 0.25;
+                        if (this.glueSlash.visible == 0) {
+                            for (var v = 0; v < this.wiringPoint.length; v++) {
+                                if (this.wiringPoint[v].x != 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                    this.wiringPoint[v].y += 0.25;
+                                }
+                            }
+                        }
+                    }
+                    if (this.rightarrow.isPressed()) {
+                        this.object.x += 0.25;
+                        if (this.glueSlash.visible == 0) {
+                            for (var v = 0; v < this.wiringPoint.length; v++) {
+                                if (this.wiringPoint[v].x != 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                    this.wiringPoint[v].x += 0.25;
+                                }
+                            }
+                        }
+                    }
+                    if (this.leftarrow.isPressed()) {
+                        this.object.x -= 0.25;
+                        if (this.glueSlash.visible == 0) {
+                            for (var v = 0; v < this.wiringPoint.length; v++) {
+                                if (this.wiringPoint[v].x != 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                    this.wiringPoint[v].x -= 0.25;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -548,6 +792,9 @@ class PartEditor extends SimpleScene {
         }
 
         for (let i = 0; i < this.wiringPoint.length; i++) {
+            this.wiringPoint[i].radius = deviceWidth * 0.005;
+            this.wiringPoint[i].width = deviceWidth * 0.02;
+            this.wiringPoint[i].height = deviceWidth * 0.02;
             if (this.wiringPoint[i].isOver()) {
                 pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
                 this.wiringPoint[i].fillColor = (0xf46464);
@@ -561,16 +808,16 @@ class PartEditor extends SimpleScene {
                 }
                 if (!(this.shift.isPressed())) {
                     if (this.uparrow.isPressed()) {
-                        this.wiringPoint[i].y -= 0.5;
+                        this.wiringPoint[i].y -= 0.25;
                     }
                     if (this.downarrow.isPressed()) {
-                        this.wiringPoint[i].y += 0.5;
+                        this.wiringPoint[i].y += 0.25;
                     }
                     if (this.rightarrow.isPressed()) {
-                        this.wiringPoint[i].x += 0.5;
+                        this.wiringPoint[i].x += 0.25;
                     }
                     if (this.leftarrow.isPressed()) {
-                        this.wiringPoint[i].x -= 0.5;
+                        this.wiringPoint[i].x -= 0.25;
                     }
                 }
             } else {
@@ -578,12 +825,14 @@ class PartEditor extends SimpleScene {
             }
 
             if (this.wiringPoint[i].wasClicked()) {
+                this.title.setVisible(0);
+                this.instructions.setVisible(0);
                 lastPosition[0] = i;
                 lastPosition[1] = this.wiringPoint[i].x;
                 lastPosition[2] = this.wiringPoint[i].y;
             }
 
-            if (i == lastPosition[0] && !(this.wiringPoint[i].isClicked()) && (lastPosition[1] != this.wiringPoint[i].x || lastPosition[2] != this.wiringPoint[i].y)) {
+            if (i == lastPosition[0] && !(this.wiringPoint[i].isClicked()) && (lastPosition[1] != this.wiringPoint[i].x || lastPosition[2] != this.wiringPoint[i].y) && !(this.uparrow.isPressed()) && !(this.leftarrow.isPressed()) && !(this.rightarrow.isPressed()) && !(this.downarrow.isPressed())) {
                 if (lastPosition[1] != deviceWidth * 0.05 && lastPosition[2] != deviceHeight * 0.22) {
                     undo.push("movedWiringPoint");
                     undo.push(i);
@@ -604,9 +853,6 @@ class PartEditor extends SimpleScene {
 
             if (this.wiringPoint[i].x != deviceWidth * 0.05 && this.wiringPoint[i].y != deviceHeight * 0.22 && this.wiringPoint[i].isClicked()) {
                 this.wiringPoint[i].setDepth(6);
-                this.wiringPoint[i].radius = 8 * scaleCount;
-                this.wiringPoint[i].width = 8 * scaleCount;
-                this.wiringPoint[i].height = 8 * scaleCount;
                 if (this.slash.visible == 0) {
                     for (var v = -10000; v < 10000; v++) {
                         if (Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.wiringPoint[i].x)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.wiringPoint[i].x)) > 0) {
@@ -614,7 +860,6 @@ class PartEditor extends SimpleScene {
                         }
                     }
                     for (var v = -10000; v < 10000; v++) {
-
                         if (Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - this.wiringPoint[i].y)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - this.wiringPoint[i].y)) > 0) {
                             this.wiringPoint[i].y = (v * 28 * scaleCount + (snapStartY % (28 * scaleCount)));
                         }
@@ -772,17 +1017,19 @@ class PartEditor extends SimpleScene {
             }
         }
 
-        if (this.magnet.isOver() || this.slash.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-        } else {
-            this.object.setTint(0xffffff);
-        }
-
         if (this.magnet.wasClicked() || this.slash.wasClicked()) {
             if (this.slash.visible == 0) {
                 this.slash.setVisible(1);
             } else {
                 this.slash.setVisible(0);
+            }
+        }
+
+        if (this.glue.wasClicked() || this.glueSlash.wasClicked()) {
+            if (this.glueSlash.visible == 0) {
+                this.glueSlash.setVisible(1);
+            } else {
+                this.glueSlash.setVisible(0);
             }
         }
 
@@ -820,13 +1067,13 @@ class PartEditor extends SimpleScene {
             this.binHandleArrow.x += 10;
         }
 
-        if (this.grid.wasClicked()) {
+        if (this.grid.wasClicked() || this.floor.wasClicked()) {
+            this.title.setVisible(0);
+            this.instructions.setVisible(0);
             if (element != null) {
                 element.blur();
             }
         }
-
-        console.log(undo)
 
         if (this.undo.wasClicked() || this.z.wasPressed()) {
             if (undo.length >= 4) {
@@ -855,9 +1102,30 @@ class PartEditor extends SimpleScene {
                     redo[redo.length - 1] = -undo[undo.length - 1];
                     this.object.x += undo[undo.length - 2];
                     this.object.y += undo[undo.length - 1];
+                    if (undo[undo.length - 3] == false) {
+                        for (var v = 0; v < this.wiringPoint.length; v++) {
+                            if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                this.wiringPoint[v].x += undo[undo.length - 2];
+                                this.wiringPoint[v].y += undo[undo.length - 1];
+                            }
+                        }
+                    }
                     lastPosition[0] = -1;
                     lastPosition[1] = this.object.x;
                     lastPosition[2] = this.object.y;
+                }
+                if (undo[undo.length - 4] == "scaledObject") {
+                    redo[redo.length - 2] = 1 / undo[undo.length - 2];
+                    this.object.scale *= undo[undo.length - 2];
+                    if (redo[redo.length - 3] == false) {
+                        for (var v = 0; v < this.wiringPoint.length; v++) {
+                            if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * undo[undo.length - 2]) + this.object.x;
+                                this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * undo[undo.length - 2]) + this.object.y;
+                            }
+                        }
+                    }
+                    lastScale = this.object.scale;
                 }
                 undo.splice(undo.length - 4, 4);
             }
@@ -890,9 +1158,30 @@ class PartEditor extends SimpleScene {
                     undo[undo.length - 1] = -redo[redo.length - 1];
                     this.object.x += redo[redo.length - 2];
                     this.object.y += redo[redo.length - 1];
+                    if (redo[redo.length - 3] == false) {
+                        for (var v = 0; v < this.wiringPoint.length; v++) {
+                            if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                this.wiringPoint[v].x += redo[redo.length - 2];
+                                this.wiringPoint[v].y += redo[redo.length - 1];
+                            }
+                        }
+                    }
                     lastPosition[0] = -1;
                     lastPosition[1] = this.object.x;
                     lastPosition[2] = this.object.y;
+                }
+                if (redo[redo.length - 4] == "scaledObject") {
+                    undo[undo.length - 2] = 1 / redo[redo.length - 2];
+                    this.object.scale *= redo[redo.length - 2];
+                    if (redo[redo.length - 3] == false) {
+                        for (var v = 0; v < this.wiringPoint.length; v++) {
+                            if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * redo[redo.length - 2]) + this.object.x;
+                                this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * redo[redo.length - 2]) + this.object.y;
+                            }
+                        }
+                    }
+                    lastScale = this.object.scale;
                 }
                 redo.splice(redo.length - 4, 4);
             }
@@ -914,7 +1203,7 @@ class PartEditor extends SimpleScene {
 
             this.grid.destroy();
             this.grid = this.add.gridLayout(snapStartX, snapStartY, 100000, 100000, 28 * scaleCount, 28 * scaleCount);
-            this.grid.setOutlineStyle(0xdddddd, 0.5)
+            this.grid.setOutlineStyle(gridColor, 1)
             this.grid.setDepth(0);
             this.grid.enableClick();
             grid = this.grid;
@@ -964,7 +1253,7 @@ class PartEditor extends SimpleScene {
 
             this.grid.destroy();
             this.grid = this.add.gridLayout(snapStartX, snapStartY, 100000, 100000, 28 * scaleCount, 28 * scaleCount);
-            this.grid.setOutlineStyle(0xdddddd, 0.5)
+            this.grid.setOutlineStyle(gridColor, 1)
             this.grid.setDepth(0);
             this.grid.enableClick();
             grid = this.grid;
@@ -1037,12 +1326,6 @@ class PartEditor extends SimpleScene {
         }
 
         if (this.w.wasPressed()) {
-            /*let obj = this.add.circle(this.input.mousePointer.x, this.input.mousePointer.y, deviceWidth * 0.005, 0xff0000);
-            obj.width = deviceWidth * 0.02;
-            obj.height = deviceWidth * 0.02;
-            obj.enableClick();
-            obj.enableDrag();
-            this.wiringPoint.push(obj);*/
             this.wiringPoint[this.wiringPoint.length - 1].x = this.input.mousePointer.x;
             this.wiringPoint[this.wiringPoint.length - 1].y = this.input.mousePointer.y;
             undo.push("createdWiringPoint");
@@ -1070,7 +1353,7 @@ class PartEditor extends SimpleScene {
             locY.splice(0, locY.length);
 
             for (var v = 0; v < this.wiringPoint.length; v++) {
-                if (this.wiringPoint[v].intersects(this.object) && this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22 && this.wiringPoint[v].visible == 1) {
+                if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22 && this.wiringPoint[v].visible == 1) {
                     locX[locX.length] = (this.wiringPoint[v].x - this.object.x) / (this.object.width);
                     locY[locY.length] = (this.wiringPoint[v].y - this.object.y) / (this.object.height);
                 }
@@ -1150,12 +1433,40 @@ class PartEditor extends SimpleScene {
             window.open('/Tutorial.html', '_blank');
         }
 
+        if (this.dark.isOver()) {
+            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            this.dark.setAlpha(0.5);
+        } else {
+            this.dark.setAlpha(1);
+        }
+
+        if (this.dark.wasClicked()) {
+            if (this.floor.fillColor == 0xffffff) {
+                this.floor.fillColor = 0x000000;
+                gridColor = 0x444444;
+                this.grid.setOutlineStyle(gridColor, 1);
+                this.instructions.setFontColor(0xffffff);
+                this.itemBin.fillColor = 0x333333;
+                this.binHandle.fillColor = 0x333333;
+                this.binHandleArrow.setFrame(1);
+                this.wiringPointLabel.setFontColor(0xffffff)
+            } else {
+                this.floor.fillColor = 0xffffff;
+                gridColor = 0xdddddd;
+                this.grid.setOutlineStyle(gridColor, 1);
+                this.instructions.setFontColor(0x000000);
+                this.itemBin.fillColor = 0xdddddd;
+                this.binHandle.fillColor = 0xdddddd;
+                this.binHandleArrow.setFrame(0);
+                this.wiringPointLabel.setFontColor(0x000000)
+            }
+        }
+
         if (this.popupcancel.wasClicked() || this.popupcanceltext.wasClicked() || this.popupdone.wasClicked() || this.popupdonetext.wasClicked() || (element == null && this.esc.wasPressed())) {
             this.clearHTML();
             document.getElementById('label').innerHTML = "Object Name:";
             document.getElementById('label2').innerHTML = "Object Type:";
             document.getElementById('input').style.display = 'block';
-            document.getElementById('dropdown').value = "Choose Type";
             document.getElementById('dropdown').style.display = 'block';
             document.getElementById('option1').value = "Choose";
             document.getElementById('option1').style.display = "block";
@@ -1235,14 +1546,12 @@ class PartEditor extends SimpleScene {
     clearHTML() {
         document.getElementById('flex-box').style.flexDirection = 'row';
         document.getElementById('label').innerHTML = "";
-        document.getElementById('input').value = "";
         document.getElementById('input').blur();
         document.getElementById('input').style.display = 'none';
         document.getElementById('inputnum').value = "";
         document.getElementById('inputnum').blur();
         document.getElementById('inputnum').style.display = 'none';
         document.getElementById('label2').innerHTML = "";
-        document.getElementById('dropdown').value = "";
         document.getElementById('dropdown').blur();
         document.getElementById('dropdown').style.display = 'none';
         document.getElementById('option1').value = "Choose";

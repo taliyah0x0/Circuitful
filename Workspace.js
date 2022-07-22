@@ -1,3 +1,23 @@
+////  Import Saved Workspace  ////
+
+var wiresDataImport = [
+
+
+];
+var nodesDataImport = [
+
+
+];
+var objectsDataImport = [
+
+
+];
+
+////    ////
+
+
+///  Import Parts  ///
+
 let wiringXPoints = {
     x0: [-0.16570967872053635, 0.3089304380604097, 0.13941611063864198, 0.24112470709171166, 0.27502757257606475, 0.3428333035447583, 0.3767361690291155, 0.41063903451346817, -0.13180681323618473, -0.09790394775183274, -0.06400108226747572, -0.030098216783124535, 0.003804648701228281, 0.03770751418558245, 0.07161037966993568, 0.10551324515428821, 0.225196858569643, 0.19014501872648074, 0.25859061621625495, 0.29150816982851513, 0.32597435713789336, 0.3592016374895765, 0.39366782479895324, 0.42689510515063533, -0.04702952433998594, -0.01333137458782741, 0.021297699251674566, 0.05468554097471924, 0.08844965874439717, 0.12283439257230254, 0.15628820231286744, 0.1910759428138234],
     x1: [-0.4355300576295487, -0.4054552594253796, -0.37538046122120705, -0.34530566301703786, 0.43663909029135745, -0.3152308648128713, -0.2851560666086997, -0.2550812684045329, -0.22500647020036454, -0.19493167199619196, -0.16485687379202554, -0.13478207558785624, -0.10470727738368726, -0.07463247917951807, -0.04455768097534887, -0.014482882771179914, 0.015591915432989163, 0.0456667136371586, 0.07574151184132756, 0.105816310045497, 0.13589110824966838, 0.16596590645383505, 0.1960407046580041, 0.2261155028621737, 0.256190301066343, 0.28626509927051186, 0.31633989747468116, 0.34641469567885025, 0.37648949388301933, 0.40656429208718836, -0.4355300576295454, -0.4054552594253796, -0.3753804612212103, -0.34530566301703786, -0.3152308648128713, -0.2851560666086997, -0.2550812684045329, -0.2250064702003613, -0.19493167199619196, -0.16485687379202554, -0.13478207558785696, -0.10470727738368726, -0.07463247917951542, -0.04455768097534887, -0.014482882771179914, 0.015591915432989163, 0.0456667136371586, 0.07574151184132684, 0.105816310045497, 0.13589110824966583, 0.16596590645383505, 0.1960407046580041, 0.2261155028621737, 0.256190301066343, 0.28626509927051186, 0.31633989747468116, 0.34641469567885025, 0.37648949388301933, 0.40656429208718836, 0.43663909029135745, -0.4355300576295454, -0.43553005762954755, -0.4355300576295454, -0.43553005762954344, -0.43553005762954344, -0.4054552594253796, -0.4054552594253762, -0.4054552594253739, -0.4054552594253743, -0.4054552594253762, -0.3753804612212103, -0.37538046122120705, -0.3753804612212092, -0.3753804612212051, -0.3753804612212051, -0.34530566301703786, -0.3453056630170401, -0.34530566301703786, -0.345305663017036, -0.345305663017036, -0.3152308648128719, -0.31523086481286877, -0.3152308648128719, -0.31523086481286877, -0.31523086481286683, -0.2851560666086997, -0.28515606660870163, -0.28515606660870163, -0.2851560666086973, -0.2851560666086997, -0.2550812684045304, -0.2550812684045336, -0.2550812684045304, -0.2550812684045336, -0.2550812684045304, -0.2250064702003613, -0.22500647020035924, -0.2250064702003613, -0.22500647020036346, -0.22500647020036346, -0.19493167199619196, -0.19493167199619196, -0.19493167199619196, -0.19493167199619196, -0.19493167199619196, -0.13478207558785696, -0.16485687379202615, -0.16485687379202615, -0.16485687379202302, -0.16485687379202615, -0.16485687379202615, -0.13478207558785382, -0.13478207558785696, -0.13478207558785588, -0.13478207558785382, -0.10470727738368474, -0.10470727738368787, -0.10470727738368474, -0.10470727738368679, -0.10470727738368474, -0.07463247917951879, -0.07463247917951879, -0.07463247917951879, -0.07463247917951879, -0.07463247917951542, -0.044557680975349595, -0.044557680975349595, -0.04455768097534634, -0.04455768097534634, -0.04455768097534634, -0.014482882771180396, -0.014482882771180396, -0.014482882771177263, -0.014482882771177263, -0.014482882771180396, 0.01559191543298844, 0.015591915432991935, 0.01559191543298844, 0.015591915432991935, 0.01559191543298844, 0.045666713637161016, 0.04566671363715776, 0.04566671363715776, 0.045666713637162945, 0.04566671363715776, 0.07574151184133021, 0.07574151184132684, 0.07574151184133021, 0.07574151184132684, 0.07574151184132805, 0.10581631004549616, 0.10581631004549616, 0.1058163100454994, 0.1058163100454994, 0.10581631004549616, 0.13589110824966838, 0.13589110824966535, 0.13589110824966535, 0.13589110824966535, 0.13589110824966838, 0.16596590645383433, 0.16596590645383433, 0.16596590645383769, 0.16596590645383433, 0.16596590645383433, 0.19604070465800666, 0.19604070465800666, 0.19604070465800363, 0.22611550286217222, 0.19604070465800666, 0.22611550286217222, 0.22611550286217222, 0.2261155028621756, 0.19604070465800666, 0.22611550286217222, 0.25619030106634155, 0.25619030106634155, 0.25619030106634155, 0.25619030106634155, 0.25619030106634494, 0.2862650992705104, 0.2862650992705104, 0.2862650992705104, 0.28626509927051375, 0.28626509927051375, 0.3163398974746797, 0.3163398974746797, 0.3163398974746831, 0.3163398974746831, 0.3163398974746831, 0.34641469567885214, 0.3464146956788485, 0.3464146956788485, 0.3464146956788485, 0.34641469567885214, 0.3764894938830179, 0.3764894938830179, 0.3764894938830179, 0.3764894938830212, 0.3764894938830212, 0.4065642920871869, 0.4065642920871869, 0.4065642920871869, 0.4366390902913596, 0.4065642920871903, 0.4366390902913563, 0.4366390902913563, 0.4366390902913563, 0.4065642920871869, 0.4366390902913563, -0.43553005762954344, -0.43553005762954344, -0.4355300576295487, -0.43553005762954344, -0.43553005762954344, -0.40545525942537836, -0.4054552594253743, -0.4054552594253743, -0.4054552594253743, -0.4054552594253796, -0.3753804612212092, -0.3753804612212051, -0.3753804612212051, -0.3753804612212051, -0.3753804612212092, -0.345305663017036, -0.345305663017036, -0.3453056630170401, -0.345305663017036, -0.345305663017036, -0.31523086481286683, -0.3152308648128708, -0.31523086481286683, -0.31523086481286683, -0.31523086481286683, -0.28515606660869774, -0.28515606660869774, -0.28515606660870163, -0.28515606660869774, -0.28515606660869774, -0.25508126840453255, -0.25508126840452866, -0.25508126840452866, -0.25508126840453255, -0.25508126840452866, -0.22500647020035924, -0.225006470200359, -0.22500647020035924, -0.22500647020035924, -0.22500647020036346, -0.1949316719961903, -0.1949316719961903, -0.1949316719961903, -0.1949316719961903, -0.1949316719961903, -0.1648568737920206, -0.16485687379202302, -0.16485687379202096, -0.16485687379202096, -0.16485687379202507, -0.13478207558785202, -0.13478207558785382, -0.13478207558785202, -0.13478207558785202, -0.13478207558785202, -0.10470727738368281, -0.10470727738368281, -0.10470727738368281, -0.10470727738368679, -0.10470727738368281, -0.07463247917951542, -0.07463247917951374, -0.07463247917951374, -0.07463247917951374, -0.07463247917951325, -0.04455768097534634, -0.04455768097534634, -0.04455768097534405, -0.04455768097534441, -0.04455768097534441, -0.014482882771177263, -0.014482882771174852, -0.014482882771175334, -0.014482882771175334, -0.014482882771174852, 0.015591915432993745, 0.015591915432991935, 0.015591915432991935, 0.015591915432993745, 0.015591915432989526, 0.045666713637162945, 0.045666713637161016, 0.045666713637162945, 0.045666713637162945, 0.045666713637163306, 0.07574151184133202, 0.07574151184133021, 0.07574151184133021, 0.07574151184133021, 0.07574151184133202, 0.1058163100454994, 0.1058163100454994, 0.10581631004550159, 0.10581631004550122, 0.10581631004550122, 0.1358911082496703, 0.13589110824966838, 0.13589110824966644, 0.1358911082496708, 0.13589110824966838, 0.16596590645383769, 0.16596590645383938, 0.16596590645383769, 0.16596590645383769, 0.16596590645383938, 0.19604070465800905, 0.19604070465800869, 0.19604070465800869, 0.19604070465800905, 0.19604070465800666, 0.2261155028621756, 0.2261155028621756, 0.22611550286217755, 0.22611550286217755, 0.22611550286217755, 0.25619030106634494, 0.2561903010663473, 0.2561903010663469, 0.25619030106634494, 0.2561903010663469, 0.28626509927051375, 0.2862650992705164, 0.28626509927051375, 0.28626509927051375, 0.28626509927051375, 0.3163398974746831, 0.3163398974746831, 0.316339897474685, 0.3163398974746855, 0.3163398974746831, 0.34641469567885214, 0.34641469567885214, 0.3464146956788546, 0.3464146956788546, 0.3464146956788541, 0.37648949388302316, 0.3764894938830212, 0.3764894938830212, 0.3764894938830239, 0.3764894938830239, 0.4065642920871903, 0.4065642920871903, 0.4065642920871903, 0.40656429208719225, 0.40656429208719297, 0.4366390902913596, 0.4366390902913596, 0.43663909029136183, 0.43663909029136183, 0.43663909029136183, -0.43553005762954344, -0.43553005762954344, -0.4054552594253743, -0.4054552594253743, -0.345305663017036, -0.3753804612212051, -0.3753804612212051, -0.345305663017036, -0.31523086481286683, -0.31523086481286683, -0.28515606660869774, -0.28515606660869774, -0.25508126840452866, -0.25508126840452866, -0.22500647020035924, -0.22500647020035924, -0.1949316719961903, -0.1949316719961903, -0.16485687379202096, -0.13478207558785202, -0.13478207558785202, -0.16485687379202096, -0.10470727738368281, -0.10470727738368281, -0.07463247917951374, -0.07463247917951374, -0.04455768097534441, -0.04455768097534441, -0.014482882771175334, -0.014482882771175334, 0.015591915432993745, 0.015591915432993745, 0.045666713637162945, 0.045666713637162945, 0.07574151184133202, 0.07574151184133202, 0.10581631004550122, 0.10581631004550122, 0.1358911082496703, 0.1358911082496703, 0.16596590645383985, 0.16596590645383938, 0.19604070465800905, 0.19604070465800869, 0.22611550286217802, 0.22611550286217755, 0.2561903010663473, 0.2561903010663469, 0.2862650992705164, 0.2862650992705164, 0.3163398974746855, 0.3464146956788546, 0.3464146956788541, 0.3163398974746855, 0.3764894938830239, 0.3764894938830239, 0.40656429208719297, 0.40656429208719297, 0.43663909029136205, 0.43663909029136205],
@@ -9,6 +29,10 @@ let wiringXPoints = {
     x7: [-0.006054565323046129, -0.006054565323046129],
     x8: [-0.33484580542016396, 0.33651173164350273],
     x9: [-0.10879654267293674, 0.04112476371797642],
+    x10: [-0.3812102027544783, -0.33082420792379524, 0.2738077300444212, -0.381210202754469, -0.28043821309310124, -0.23005221826241715, -0.33082420792378514, -0.28043821309310124, -0.17966622343173333, -0.23005221826241715, -0.17966622343173333, -0.12928022860104948, -0.12928022860104948, -0.07889423377036565, -0.02850823893968182, 0.021877755891002017, 0.07226375072168585, 0.12264974555236968, 0.17303574038305353, 0.22342173521373734, -0.07889423377036565, -0.02850823893968182, 0.021877755891002017, 0.07226375072168585, 0.12264974555236968, 0.17303574038305353, 0.22342173521373734, 0.2738077300444212, 0.32419372487510545, 0.37457971970578885, 0.4249657145364728, 0.37457971970578885, 0.32419372487510545, 0.4249657145364728],
+    x11: [-0.3353424203600527, 0.3906588098742318, 0.4632589328976631, -0.2627422973366244, -0.19014217431319694, -0.1175420512897685, -0.3353424203600527, -0.2627422973366244, -0.19014217431319694, -0.04494192826634062, 0.027658194757087057, 0.10025831778051532, 0.1728584408039432, 0.24545856382737125, 0.3180586868507995, -0.1175420512897685, -0.04494192826634062, 0.027658194757087057, 0.10025831778051532, 0.1728584408039432, 0.24545856382737125, 0.3180586868507995, 0.3906588098742274, 0.46325893289765546],
+    //x12: [-0.22663602536670144, 0.22486695453911468, 0.349521758654434, 0.4279442534242563, 0.4559195188791594, 0.4279442534242563, 0.349521758654434, 0.22486695453911468, -0.35094603213593956, -0.4289822989311955, -0.4554851819937353, -0.4289822989311955, -0.3450581634603299, -0.22663602536670144]
+    x12: [-0.2260912022563598, 0.22785329178666386, 0.34774731695634875, 0.4291533285853066, 0.4528765644996553, 0.4301329531555218, 0.3497065660967791, 0.22785329178666386, -0.3482877410958964, -0.42735288035982555, -0.4564786601501534, -0.42833250493004077, -0.34247006972580774, -0.22643942787727464]
 
 };
 
@@ -23,7 +47,10 @@ let wiringYPoints = {
     y7: [-0.5012625505784923, 0.5035819806018437],
     y8: [0.25018101283374106, 0.49644316616713885],
     y9: [-0.3671230196989501, -0.3671230196989505],
-
+    y10: [-0.4288992177715712, -0.4288992177715712, -0.42889921777155554, 0.4315385401062758, -0.42889921777155554, -0.42889921777155554, 0.4315385401062758, 0.4315385401062758, -0.42889921777155554, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554],
+    y11: [-0.42830637797406274, -0.4283063779740646, -0.42830637797405235, -0.42830637797406274, -0.42830637797406274, -0.42830637797406274, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, -0.42830637797406274, -0.42830637797406274, -0.42830637797406274, -0.42830637797406274, -0.42830637797406274, -0.42830637797406274, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674],
+    //y12: [-0.3958511900478606, 0.3953966064207497, 0.2926938127995159, 0.15328645859840928, -0.00023061775103546623, -0.15669579241896067, -0.29397184189176306, -0.3958511900478606, -0.29397184189176306, -0.15669579241896067, -0.00023061775103546623, 0.15991967981499072, 0.2963789356976167, 0.3953966064207497],
+    y12: [-0.3951466325379341, 0.3936245944772217, 0.2911646730599088, 0.15440097163588754, -0.002193757186519534, -0.15679349730162326, -0.2934144796766195, -0.3951466325379341, -0.2924328919309129, -0.15679349730162326, -0.002193757186519534, 0.1560471704551244, 0.29480586058644664, 0.3926430067315151]
 };
 
 let objectsData = [
@@ -37,8 +64,16 @@ let objectsData = [
     "On/Off Switch", "Electrical", 0.5219815919731521, 2, 1418.4,
     "Capacitor", "Electrical", 0.6959117149009196, 2, 1414.46,
     "Servo Motor", "Modules", 1.8310259597511946, 2, 1414.46,
-
+    "Arduino Micro", "Microcontrollers", 1.155322196330012, 34, 1418.4,
+    "Arduino Pro Micro", "Microcontrollers", 0.9739249434088939, 24, 1418.4,
+    //"Adafruit Circuit Playground", "Microcontrollers", 0.35036776596353536, 14, 1418.4,
+    "Adafruit Circuit Playground", "Microcontrollers", 0.7401785998271294, 14, 1418.4
 ];
+
+////    ////
+
+
+////  Warning: Crazy Code Below!!  ////
 
 var defaultLabel = [
     "", -1, 0, true, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -46,16 +81,12 @@ var defaultLabel = [
     "", -1, 0, true, 0, 0, 0, 0, 0, 0, 0, 0,
     "", -1, 0, true, 0, 0, 0, 0, 0, 0, 0, 0,
     "", -1, 0, true, 0, 0, 0, 0, 0, 0, 0, 0,
-    "1N4148", 0.03, 5, false, 0.04, 0, 0, 0.04, -0.04, 0, 0, -0.04,
-    "AA", 0.08, 7, true, -0.065, 0, 0, -0.065, 0.065, 0, 0, 0.065,
+    "1N1418", 0.03, 6, false, 0.04, 0, 0, 0.04, -0.04, 0, 0, -0.04,
+    "AA", 0.08, 10, true, -0.065, 0, 0, -0.065, 0.065, 0, 0, 0.065,
     "", -1, 0, true, 0, 0, 0, 0, 0, 0, 0, 0,
     "1uF", 0.04, 4, false, 0.06, 0, 0, 0.09, -0.06, 0, 0, -0.09,
     "", -1, 0, true, 0, 0, 0, 0, 0, 0, 0, 0,
 ];
-
-var nodesDataImport = [];
-var nodesImport = [];
-var objectsImport = [];
 
 var itemTypes = ["All", "Microcontrollers", "Electrical", "Modules", "Other"];
 var objectID = 0;
@@ -66,6 +97,8 @@ var currentPage = 0;
 var snapStartX = -10010;
 var snapStartY = -10006;
 var grid;
+var gridColor = 0xdddddd;
+var labelColor = 0x000000;
 var scaleCount = 1;
 
 var activeWire = false;
@@ -91,6 +124,7 @@ var endingX = [];
 var endingY = [];
 var lastX = 0;
 var lastY = 0;
+var pass = false;
 
 var panelType = 0;
 var paletteColors = [0xED4040, 0xED9B40, 0xEDDD2D, 0x4FBA52, 0x45B5C4, 0x406EED, 0x9067B6, 0xE0607E, 0xAE7636, 0x3B3B3B];
@@ -98,6 +132,8 @@ var lastClicked = -1;
 var lastWire = -1;
 var customColors = [];
 var customObjectColors = [0xff0000, 0xffff00, 0x00ff00, 0x0000ff, 0xffffff];
+var resistorData = [];
+var resistorColors = [0xBF9A30, 0x3B3B3B, 0xAE7636, 0xED4040, 0xED9B40, 0xEDDD2D, 0x4FBA52, 0x406EED, 0x9067B6, 0x999999, 0xFFFFFF];
 
 class Workspace extends SimpleScene {
 
@@ -108,7 +144,7 @@ class Workspace extends SimpleScene {
     init() { }
 
     preload() {
-        this.load.image("binhandlearrow", "assets/binhandlearrow.png");
+        this.load.imageset("binhandlearrow", "assets/binhandlearrow.png",560,981);
         this.load.image("increasescale", "assets/increasescale.png");
         this.load.image("decreasescale", "assets/decreasescale.png");
         this.load.image("home", "assets/home.png");
@@ -130,12 +166,19 @@ class Workspace extends SimpleScene {
         this.load.image("saved", "assets/saved.png");
         this.load.image("editpop", "assets/editpop.png");
         this.load.image("undo", "assets/undo.png");
+        this.load.image("search", "assets/search.png");
+        this.load.image("exit", "assets/exit.png");
+        this.load.image("dark", "assets/dark.png");
 
         objectID = 0;
         for (var i = 0; i < objectsData.length / 5; i++) {
-            this.load.image(`${objectID}`, `workspace-objects/${objectID}.png`);
+            if (objectID != 2) {
+                this.load.image(`${objectID}`, `workspace-objects/${objectID}.png`);
+            }
             objectID++;
         }
+
+        this.load.imageset("2", "workspace-objects/2.png", 100, 212);
     }
 
     create() {
@@ -181,7 +224,7 @@ class Workspace extends SimpleScene {
         this.binHandle.enableClick();
         this.binHandle.setDepth(5);
 
-        this.binHandleArrow = this.add.sprite(deviceWidth * 0.215, deviceHeight / 2, "binhandlearrow");
+        this.binHandleArrow = this.add.sprite(deviceWidth * 0.215, deviceHeight / 2, "binhandlearrow",0);
         this.binHandleArrow.setScale(deviceWidth * 0.00002);
         this.binHandleArrow.setAngle(180);
         this.binHandleArrow.enableClick();
@@ -200,7 +243,7 @@ class Workspace extends SimpleScene {
         this.lastPageButton.setAlpha(0.3);
         this.lastPageButton.enableClick();
         this.lastPageButton.setDepth(5);
-        this.lastPageArrow = this.add.sprite(deviceWidth * 0.053, deviceHeight * 0.97, "binhandlearrow");
+        this.lastPageArrow = this.add.sprite(deviceWidth * 0.053, deviceHeight * 0.97, "binhandlearrow",0);
         this.lastPageArrow.setScale(deviceWidth * 0.00003);
         this.lastPageArrow.setAngle(-90);
         this.lastPageArrow.enableClick();
@@ -210,42 +253,49 @@ class Workspace extends SimpleScene {
         this.nextPageButton.setAlpha(0.3);
         this.nextPageButton.enableClick();
         this.nextPageButton.setDepth(5);
-        this.nextPageArrow = this.add.sprite(deviceWidth * 0.157, deviceHeight * 0.97, "binhandlearrow");
+        this.nextPageArrow = this.add.sprite(deviceWidth * 0.157, deviceHeight * 0.97, "binhandlearrow",0);
         this.nextPageArrow.setScale(deviceWidth * 0.00003);
         this.nextPageArrow.setAngle(90);
         this.nextPageArrow.enableClick();
         this.nextPageArrow.setDepth(5);
 
-        this.itemTypeButton = this.add.circle(deviceWidth * 0.18, deviceHeight * 0.05, deviceWidth * 0.05, 0xF4F5F6);
-        this.itemTypeButton.enableClick();
-        this.itemTypeButton.setAlpha(0);
-        this.itemTypeButton.setDepth(5);
-
-        this.itemTypeArrow = this.add.sprite(deviceWidth * 0.18, deviceHeight * 0.05, "swap");
+        this.itemTypeArrow = this.add.sprite(deviceWidth * 0.185, deviceHeight * 0.05, "swap");
         this.itemTypeArrow.setScale(deviceWidth * 0.0005);
         this.itemTypeArrow.enableClick();
         this.itemTypeArrow.setDepth(5);
 
-        this.addItem = this.add.sprite(deviceWidth * 0.14, deviceHeight * 0.05, "add");
+        this.addItem = this.add.sprite(deviceWidth * 0.15, deviceHeight * 0.05, "add");
         this.addItem.setScale(deviceWidth * 0.00035);
         this.addItem.enableClick();
         this.addItem.setDepth(5);
 
+        this.search = this.add.sprite(deviceWidth * 0.115, deviceHeight * 0.05, "search");
+        this.search.setScale(deviceWidth * 0.00028);
+        this.search.enableClick();
+        this.search.setDepth(5);
+
+        this.exit = this.add.sprite(deviceWidth * 0.18, deviceHeight * 0.05, "exit");
+        this.exit.setScale(deviceWidth * 0.00025);
+        this.exit.enableClick();
+        this.exit.setDepth(5);
+        this.exit.setVisible(0);
+
         objectID = 0;
         this.items = [];
         this.itemLabels = [];
+        this.itemResistorBars = [];
         var v = 0;
         for (var i = 0; i < objectsData.length / 5; i++) {
             if (v < 8) {
                 var obj;
                 var label;
                 if (i % 2 == 0) {
-                    obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`);
-                    label = this.add.text(deviceWidth * 0.05, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.25, objectsData[i * 5], 0x000000);
+                    obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                    label = this.add.text(deviceWidth * 0.05, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
                 }
                 if (i % 2 == 1) {
-                    obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`);
-                    label = this.add.text(deviceWidth * 0.15, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.25, objectsData[i * 5], 0x000000);
+                    obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                    label = this.add.text(deviceWidth * 0.15, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
                 }
                 obj.scale *= (objectsData[(i * 5) + 2]);
                 obj.width *= (objectsData[(i * 5) + 2]);
@@ -262,13 +312,26 @@ class Workspace extends SimpleScene {
                     obj.scale *= 0.9;
                     obj.height *= 0.9;
                 }
-                obj.width *= 0.75;
-                obj.height *= 0.75;
                 obj.enableClick();
+                obj.setDepth(6);
                 this.items.push(obj);
                 itemObjectID.push(objectID);
-                label.setOrigin(0.5, 0);
-                label.setFontSize(deviceHeight * 0.025)
+
+                if (objectID == 2) {
+                    this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
+                    this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                    this.itemResistorBars[0].setOrigin(0.5, 0.5);
+                    this.itemResistorBars[1].setOrigin(0.5, 0.5);
+                    this.itemResistorBars[0].setDepth(6);
+                    this.itemResistorBars[1].setDepth(6);
+                }
+                if (label.text.length > 15) {
+                    label.setFontSize(15 / label.text.length * deviceHeight * 0.025);
+                } else {
+                    label.setFontSize(deviceHeight * 0.025);
+                }
+                label.setOrigin(0.5, 0.5);
+                label.setDepth(6);
                 this.itemLabels.push(label);
                 objectID++;
                 v++;
@@ -279,6 +342,7 @@ class Workspace extends SimpleScene {
         var object = this.objects;
         this.objectIDs = [];
         this.objectLabels = [];
+        this.resistorBars = [];
 
         this.wires = [];
         this.wireLines = [];
@@ -360,6 +424,11 @@ class Workspace extends SimpleScene {
         this.info.enableClick();
         this.info.setDepth(5);
 
+        this.dark = this.add.sprite(deviceWidth * 0.92, deviceHeight * 0.06, "dark");
+        this.dark.setScale(deviceWidth * 0.00035);
+        this.dark.enableClick();
+        this.dark.setDepth(5);
+
         this.magnet = this.add.sprite(deviceWidth * 0.735, deviceHeight * 0.945, "magnet");
         this.magnet.setScale(deviceWidth * 0.0005);
         this.magnet.enableClick();
@@ -371,8 +440,12 @@ class Workspace extends SimpleScene {
         this.slash.setVisible(0);
         this.slash.setDepth(5);
 
+        this.floor = this.add.rectangle(deviceWidth / 2, deviceHeight / 2, deviceWidth, deviceHeight, 0xffffff);
+        this.floor.setDepth(0);
+        this.floor.enableClick();
+
         this.grid = this.add.gridLayout(snapStartX, snapStartY, 100000, 100000, 28 * scaleCount, 28 * scaleCount);
-        this.grid.setOutlineStyle(0xdddddd, 0.5)
+        this.grid.setOutlineStyle(gridColor, 1)
         this.grid.setDepth(0);
         this.grid.enableClick();
         grid = this.grid;
@@ -479,7 +552,7 @@ class Workspace extends SimpleScene {
 
         this.popupcreatetext = this.add.text(deviceWidth * 0.56, deviceHeight * 0.55, "Create Image", 0x000000);
         this.popupcreatetext.setOrigin(0.5, 0.5);
-        this.popupcreatetext.setFontSize(deviceHeight * 0.03);
+        this.popupcreatetext.setFontSize(deviceHeight * 0.025);
         this.popupcreatetext.enableClick();
         this.popupcreatetext.setDepth(10);
         this.popupcreatetext.setVisible(0);
@@ -675,6 +748,157 @@ class Workspace extends SimpleScene {
         this.shiftSelect = [];
 
         this.customObjectColors = [];
+
+        if (wiresDataImport.length > 0) {
+            customColors.splice(0, customColors.length);
+            for (var i = 0; i < wiresDataImport[0]; i++) {
+                customColors.push(wiresDataImport[i + 1]);
+            }
+            if (wiresDataImport[0] == 0) {
+                wiresDataImport[0] = 1;
+            }
+            for (var i = 0; i < wiresDataImport[2]; i++) {
+                nodeLinks.push(wiresDataImport[i + wiresDataImport[0] + 2]);
+            }
+            for (var i = 0; i < (wiresDataImport.length - (wiresDataImport[0] + wiresDataImport[2] + 2)) / 5; i++) {
+                var wireColor;
+
+                for (var v = 0; v < nodeLinks.length / 4; v++) {
+                    if (this.wires.length == nodeLinks[v * 4] || (nodeLinks[v * 4] == -2 && this.wires.length == nodeLinks[(v * 4) + 2])) {
+                        wireColor = nodesDataImport[(v * 4 + 3) + 2];
+                    }
+                }
+                var obj = this.add.line(wiresDataImport[(i * 5) + (wiresDataImport[0] + wiresDataImport[2] + 2) + 1], wiresDataImport[(i * 5) + (wiresDataImport[0] + wiresDataImport[2] + 2) + 2], wiresDataImport[(i * 5) + (wiresDataImport[0] + wiresDataImport[2] + 2) + 3], wiresDataImport[(i * 5) + (wiresDataImport[0] + wiresDataImport[2] + 2) + 4], 0xffffff);
+                obj.setLineWidth(3.8 * scaleCount);
+                obj.setDepth(3.5);
+                obj.setVisible(wiresDataImport[(i * 5) + (wiresDataImport[0] + wiresDataImport[2] + 2) + 0]);
+                this.wireLines.push(obj);
+                var obj2 = this.add.rectangle((obj.geom.x1 + obj.geom.x2) / 2, (obj.geom.y1 + obj.geom.y2) / 2, lineWidth, (Math.sqrt(Math.pow(Math.abs(obj.geom.x1 - obj.geom.x2), 2) + Math.pow(Math.abs(obj.geom.y1 - obj.geom.y2), 2))), wireColor);
+                obj2.setAngle(-(Math.atan(Math.abs(obj.geom.x1 - obj.geom.x2) / Math.abs(obj.geom.y1 - obj.geom.y2))) * (180 / Math.PI));
+                obj2.enableClick();
+                obj2.setDepth(3.5);
+                obj2.setVisible(wiresDataImport[(i * 5) + (wiresDataImport[0] + wiresDataImport[2] + 2) + 0]);
+                this.wires.push(obj2);
+            }
+        }
+
+        if (nodesDataImport.length > 0) {
+            this.grid.scale = objectsDataImport[0];
+            scaleCount = objectsDataImport[0];
+            this.grid.x = nodesDataImport[0];
+            snapStartX = nodesDataImport[0];
+            this.grid.y = nodesDataImport[1];
+            snapStartY = nodesDataImport[1];
+            for (var i = 0; i < (nodesDataImport.length - 2) / 4; i++) {
+                var node = this.add.circle(nodesDataImport[(i * 4 + 1) + 2], nodesDataImport[(i * 4 + 2) + 2], 8 * scaleCount, nodesDataImport[(i * 4 + 3) + 2]);
+                node.scale *= scaleCount;
+                node.setVisible(nodesDataImport[(i * 4 + 0) + 2]);
+                node.setDepth(4);
+                if (nodeLinks[this.nodes.length * 4] == -2) {
+                    node.enableClick();
+                    node.enableDrag();
+                }
+                this.nodes.push(node);
+            }
+        }
+
+        if (objectsDataImport.length > 0) {
+            customObjectColors.splice(0, customObjectColors.length);
+            for (var i = 0; i < objectsDataImport[2] - 3; i++) {
+                customObjectColors.push(objectsDataImport[i + 3]);
+            }
+
+            for (var i = 0; i < objectsDataImport[1]; i++) {
+                var obj = this.add.sprite(objectsDataImport[(i * 9 + 1) + objectsDataImport[2]], objectsDataImport[(i * 9 + 2) + objectsDataImport[2]], `${objectsDataImport[(i * 9 + 3) + objectsDataImport[2]]}`, 1);
+                obj.setVisible(objectsDataImport[(i * 9 + 0) + objectsDataImport[2]]);
+                obj.setAngle(objectsDataImport[(i * 9 + 4) + objectsDataImport[2]] * 90);
+                obj.scale *= (objectsData[(objectsDataImport[(i * 9 + 3) + objectsDataImport[2]] * 5) + 2]);
+                obj.width *= (objectsData[(objectsDataImport[(i * 9 + 3) + objectsDataImport[2]] * 5) + 2]);
+                obj.height *= (objectsData[(objectsDataImport[(i * 9 + 3) + objectsDataImport[2]] * 5) + 2]);
+                obj.scale *= scaleCount;
+                obj.width *= scaleCount;
+                obj.height *= scaleCount;
+                if (objectsDataImport[(i * 9 + 4) + objectsDataImport[2]] == 1 || objectsDataImport[(i * 9 + 4) + objectsDataImport[2]] == 3) {
+                    var widthHolder = obj.width;
+                    obj.width = obj.height;
+                    obj.height = widthHolder;
+                }
+                obj.depth = objectsDataImport[(i * 9 + 5) + objectsDataImport[2]];
+                obj.enableClick();
+                obj.enableDrag();
+
+                if (objectsDataImport[(i * 9 + 3) + objectsDataImport[2]] == 3 || objectsDataImport[(i * 9 + 3) + objectsDataImport[2]] == 6) {
+                    obj.setTint(objectsDataImport[(i * 9 + 6) + objectsDataImport[2]]);
+                }
+
+                this.objects.push(obj);
+                this.objectIDs.push(objectsDataImport[(i * 9 + 3) + objectsDataImport[2]]);
+
+                settings.push(objectsDataImport[(i * 9 + 6) + objectsDataImport[2]]);
+                settings.push(objectsDataImport[(i * 9 + 7) + objectsDataImport[2]]);
+
+                var label = this.add.text(this.objects[this.objects.length - 1].x + scaleCount * deviceWidth * defaultLabel[(this.objectIDs[this.objectIDs.length - 1] * 12) + 4], this.objects[this.objects.length - 1].y + scaleCount * deviceHeight * defaultLabel[(this.objectIDs[this.objectIDs.length - 1] * 12) + 5], objectsDataImport[(i * 9 + 8) + objectsDataImport[2]], labelColor);
+                label.setOrigin(0.5, 0.5);
+                label.setDepth(objectsDataImport[(i * 9 + 5) + objectsDataImport[2]])
+                label.setFontSize(scaleCount * deviceHeight * defaultLabel[(this.objectIDs[this.objectIDs.length - 1] * 12) + 1]);
+                label.setDepth(3.2);
+                this.objectLabels.push(label);
+                rotateAngle.push(objectsDataImport[(i * 9 + 4) + objectsDataImport[2]]);
+                shiftObjects.push(false);
+
+                if (this.objectIDs[this.objectIDs.length - 1] == 2) {
+                    var resistorValue = settings[settings.length - 2];
+
+                    if (settings[settings.length - 1] == "KΩ") {
+                        resistorValue *= 1000;
+                    }
+                    if (settings[settings.length - 1] == "MΩ") {
+                        resistorValue *= 1000000;
+                    }
+
+                    var bar1 = this.add.rectangle(this.objects[this.objects.length - 1].x, this.objects[this.objects.length - 1].y + this.objects[this.objects.length - 1].height * 0.052, this.objects[this.objects.length - 1].width * 0.3, this.objects[this.objects.length - 1].height * 0.055, resistorColors[0]);
+                    var bar2 = this.add.rectangle(this.objects[this.objects.length - 1].x, this.objects[this.objects.length - 1].y - this.objects[this.objects.length - 1].height * 0.057, this.objects[this.objects.length - 1].width * 0.3, this.objects[this.objects.length - 1].height * 0.055, resistorColors[0]);
+                    bar1.setOrigin(0.5, 0.5);
+                    bar2.setOrigin(0.5, 0.5);
+                    this.resistorBars.push(bar1);
+                    this.resistorBars.push(bar2);
+
+                    var resistorDataArray = [];
+                    for (var t = -1; t < 11; t++) {
+                        if (resistorValue / Math.pow(10, t) >= 1) {
+                            this.resistorBars[(resistorData.length / 5 * 2) + 1].fillColor = resistorColors[t];
+                            resistorDataArray[0] = resistorColors[t];
+                        }
+                    }
+
+                    var widthHolder = this.objects[this.objects.length - 1].width;
+                    var heightHolder = this.objects[this.objects.length - 1].height;
+                    for (var t = 10; t >= 0; t--) {
+                        if ((resistorValue / Math.pow(10, t)) - Math.trunc(resistorValue / Math.pow(10, t)) != 0 && (resistorValue / Math.pow(10, t)) < 10) {
+                            var truncatedResistance = Math.trunc((resistorValue / Math.pow(10, t)) * 10) / 10;
+                            this.objects[this.objects.length - 1].setFrame(Math.trunc(truncatedResistance));
+                            this.resistorBars[resistorData.length / 5 * 2].fillColor = resistorColors[Math.round(-10 * (Math.trunc(truncatedResistance) - truncatedResistance) + 1)];
+                            resistorDataArray[2] = Math.trunc(Math.trunc(truncatedResistance));
+                            resistorDataArray[1] = resistorColors[Math.round(-10 * (Math.trunc(truncatedResistance) - truncatedResistance) + 1)];
+                        }
+                        if ((resistorValue / Math.pow(10, t)) - Math.trunc(resistorValue / Math.pow(10, t)) == 0 && (resistorValue / Math.pow(10, t)) < 10) {
+                            this.objects[this.objects.length - 1].setFrame(Math.trunc(resistorValue / Math.pow(10, t)));
+                            this.resistorBars[resistorData.length / 5 * 2].fillColor = resistorColors[1];
+                            resistorDataArray[2] = Math.trunc(resistorValue / Math.pow(10, t));
+                            resistorDataArray[1] = resistorColors[1];
+                        }
+                    }
+                    this.objects[this.objects.length - 1].width = widthHolder;
+                    this.objects[this.objects.length - 1].height = heightHolder;
+
+                    resistorData.push(this.objects.length - 1);
+                    resistorData.push(resistorValue);
+                    resistorData.push(resistorDataArray[0]);
+                    resistorData.push(resistorDataArray[1]);
+                    resistorData.push(resistorDataArray[2]);
+                }
+            }
+        }
     }
 
     update() {
@@ -713,6 +937,45 @@ class Workspace extends SimpleScene {
             this.info.setAlpha(0.5);
         } else {
             this.info.setAlpha(1);
+        }
+
+        if (this.dark.isOver()) {
+            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            this.dark.setAlpha(0.5);
+        } else {
+            this.dark.setAlpha(1);
+        }
+
+        if (this.dark.wasClicked()) {
+            if (this.floor.fillColor == 0xffffff) {
+                this.floor.fillColor = 0x000000;
+                gridColor = 0x444444;
+                this.grid.setOutlineStyle(gridColor, 1);
+                this.instructions.setFontColor(0xffffff);
+                this.itemBin.fillColor = 0x333333;
+                this.binHandle.fillColor = 0x333333;
+                this.binHandleArrow.setFrame(1);
+                this.nextPageArrow.setFrame(1);
+                this.lastPageArrow.setFrame(1);
+                labelColor = 0xffffff;
+                for(var v = 0; v < this.itemLabels.length; v++){
+                    this.itemLabels[v].setFontColor(labelColor);
+                }
+            } else {
+                this.floor.fillColor = 0xffffff;
+                gridColor = 0xdddddd;
+                this.grid.setOutlineStyle(gridColor, 1);
+                this.instructions.setFontColor(0x000000);
+                this.itemBin.fillColor = 0xdddddd;
+                this.binHandle.fillColor = 0xdddddd;
+                this.binHandleArrow.setFrame(0);
+                this.nextPageArrow.setFrame(0);
+                this.lastPageArrow.setFrame(0);
+                labelColor = 0x000000;
+                for(var v = 0; v < this.itemLabels.length; v++){
+                    this.itemLabels[v].setFontColor(labelColor);
+                }
+            }
         }
 
         if (this.popupcancel.isOver() || this.popupcanceltext.isOver()) {
@@ -787,8 +1050,171 @@ class Workspace extends SimpleScene {
             this.slash.setAlpha(1);
         }
 
-        if (this.binHandle.isOver() || this.binHandleArrow.isOver() || this.itemTypeArrow.isOver() || this.itemTypeButton.isOver() || this.addItem.isOver()) {
+        if (this.binHandle.isOver() || this.binHandleArrow.isOver() || this.itemTypeArrow.isOver() || this.addItem.isOver() || this.search.isOver() || this.exit.isOver()) {
             pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+        }
+
+        if (this.search.wasClicked()) {
+            document.getElementById('label').innerHTML = "Enter search phrase:";
+            document.getElementById('input').style.display = 'block';
+            document.getElementById('input').focus();
+        }
+
+        if (this.exit.wasClicked()) {
+            this.exit.setVisible(0);
+            this.itemTypeArrow.setVisible(1);
+            this.addItem.setVisible(1);
+            this.search.setVisible(1);
+            this.binLabel.setText("All");
+            currentPage = 0;
+            currentItemType = 0;
+
+            itemObjectID.splice(0, itemObjectID.length);
+            for (var i = 0; i < this.items.length; i++) {
+                this.items[i].destroy();
+                this.itemLabels[i].destroy();
+            }
+            clean(this.items);
+            clean(this.itemLabels);
+
+            this.itemResistorBars[0].destroy();
+            this.itemResistorBars[1].destroy();
+
+            objectID = 0;
+            var v = 0;
+            for (var i = 0; i < objectsData.length / 5; i++) {
+                if (v < 8) {
+                    var obj;
+                    var label;
+                    if (v % 2 == 0) {
+                        obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                        label = this.add.text(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                    }
+                    if (v % 2 == 1) {
+                        obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                        label = this.add.text(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                    }
+                    obj.scale *= (objectsData[(i * 5) + 2]);
+                    obj.width *= (objectsData[(i * 5) + 2]);
+                    obj.height *= (objectsData[(i * 5) + 2]);
+                    obj.width *= 10;
+                    obj.height *= 10;
+                    while (obj.width < deviceWidth * 0.5 && obj.height < deviceHeight * 0.6) {
+                        obj.width *= 1.1;
+                        obj.scale *= 1.1;
+                        obj.height *= 1.1;
+                    }
+                    while (obj.width > deviceWidth * 0.6 || obj.height > deviceHeight) {
+                        obj.width *= 0.9;
+                        obj.scale *= 0.9;
+                        obj.height *= 0.9;
+                    }
+                    obj.enableClick();
+                    obj.setDepth(6);
+                    this.items[v] = obj;
+                    itemObjectID.push(objectID);
+                    if (objectID == 2) {
+                        this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
+                        this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                        this.itemResistorBars[0].setOrigin(0.5, 0.5);
+                        this.itemResistorBars[1].setOrigin(0.5, 0.5);
+                        this.itemResistorBars[0].setDepth(6);
+                        this.itemResistorBars[1].setDepth(6);
+                    }
+                    if (label.text.length > 15) {
+                        label.setFontSize(15 / label.text.length * deviceHeight * 0.025);
+                    } else {
+                        label.setFontSize(deviceHeight * 0.025);
+                    }
+                    label.setOrigin(0.5, 0.5);
+                    label.setDepth(6);
+                    this.itemLabels[v] = label;
+                    v++;
+                    objectID++;
+                }
+            }
+        }
+
+        if (document.getElementById('label').innerHTML == "Enter search phrase:") {
+            this.inputBox();
+            if (this.return.wasPressed()) {
+                this.search.setVisible(0);
+                this.addItem.setVisible(0);
+                this.itemTypeArrow.setVisible(0);
+                this.exit.setVisible(1);
+                currentPage = 0;
+                currentItemType = 5;
+                itemObjectID.splice(0, itemObjectID.length);
+                for (var i = 0; i < this.items.length; i++) {
+                    this.items[i].destroy();
+                    this.itemLabels[i].destroy();
+                }
+                clean(this.items);
+                clean(this.itemLabels);
+
+                this.itemResistorBars[0].destroy();
+                this.itemResistorBars[1].destroy();
+
+                this.binLabel.setText(document.getElementById('input').value);
+
+                objectID = 0;
+                var v = 0;
+                for (var i = 0; i < objectsData.length / 5; i++) {
+                    if (v < 8) {
+                        var obj;
+                        var label;
+                        if (objectsData[i * 5].includes(document.getElementById('input').value) == true || (objectsData[i * 5].toLowerCase()).includes(document.getElementById('input').value) == true || objectsData[(i * 5) + 1].includes(document.getElementById('input').value) == true || ((objectsData[(i * 5) + 1]).toLowerCase()).includes(document.getElementById('input').value) == true) {
+                            if (v % 2 == 0) {
+                                obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                                label = this.add.text(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                            }
+                            if (v % 2 == 1) {
+                                obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                                label = this.add.text(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                            }
+                            obj.scale *= (objectsData[(i * 5) + 2]);
+                            obj.width *= (objectsData[(i * 5) + 2]);
+                            obj.height *= (objectsData[(i * 5) + 2]);
+                            obj.width *= 10;
+                            obj.height *= 10;
+                            while (obj.width < deviceWidth * 0.5 && obj.height < deviceHeight * 0.6) {
+                                obj.width *= 1.1;
+                                obj.scale *= 1.1;
+                                obj.height *= 1.1;
+                            }
+                            while (obj.width > deviceWidth * 0.6 || obj.height > deviceHeight) {
+                                obj.width *= 0.9;
+                                obj.scale *= 0.9;
+                                obj.height *= 0.9;
+                            }
+                            obj.enableClick();
+                            obj.setDepth(6);
+                            this.items[v] = obj;
+                            itemObjectID.push(objectID);
+                            if (objectID == 2) {
+                                this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
+                                this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                                this.itemResistorBars[0].setOrigin(0.5, 0.5);
+                                this.itemResistorBars[1].setOrigin(0.5, 0.5);
+                                this.itemResistorBars[0].setDepth(6);
+                                this.itemResistorBars[1].setDepth(6);
+                            }
+                            if (label.text.length > 15) {
+                                label.setFontSize(15 / label.text.length * deviceHeight * 0.025);
+                            } else {
+                                label.setFontSize(deviceHeight * 0.025);
+                            }
+                            label.setOrigin(0.5, 0.5);
+                            label.setDepth(6);
+                            this.itemLabels[v] = label;
+                            v++;
+                        }
+                        objectID++;
+                    }
+                }
+
+                this.clearHTML();
+            }
         }
 
         if (this.undo.isOver()) {
@@ -839,186 +1265,195 @@ class Workspace extends SimpleScene {
             }
         }
 
-        for (var i = 0; i < this.wireLines.length; i++) {
-            this.wireLines[i].setDepth(3.5);
-        }
-
         for (var i = 0; i < this.wires.length; i++) {
-            this.wires[i].setDepth(3.5);
-            if (this.wires[i].isOver()) {
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-                this.wires[i].alpha = 0.5;
+            if (this.wires[i].visible == 1) {
+                if (this.wires[i].isOver()) {
+                    pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                    this.wires[i].alpha = 0.5;
 
-                for (var v = 0; v < this.selected.length; v++) {
-                    this.selected[v] = -1;
-                }
-
-                if (this.w.wasPressed()) {
-                    var node;
-                    var node2;
-                    if (this.wireLines[i].geom.y1 != this.wireLines[i].geom.y2 && this.wireLines[i].geom.x1 != this.wireLines[i].geom.x2) {
-                        node = this.add.circle((this.input.mousePointer.y - this.wireLines[i].geom.y1) / ((this.wireLines[i].geom.y1 - this.wireLines[i].geom.y2) / (this.wireLines[i].geom.x1 - this.wireLines[i].geom.x2)) + this.wireLines[i].geom.x1, this.input.mousePointer.y, 8 * scaleCount, 0xffffff);
-                        node2 = this.add.circle((this.input.mousePointer.y - this.wireLines[i].geom.y1) / ((this.wireLines[i].geom.y1 - this.wireLines[i].geom.y2) / (this.wireLines[i].geom.x1 - this.wireLines[i].geom.x2)) + this.wireLines[i].geom.x1, this.input.mousePointer.y, 8 * scaleCount, this.wires[i].fillColor);
-
-                    } else {
-                        node = this.add.circle(this.input.mousePointer.x, this.wireLines[i].geom.y1, 8 * scaleCount, 0xffffff);
-                        node2 = this.add.circle(this.input.mousePointer.x, this.wireLines[i].geom.y1, 8 * scaleCount, this.wires[i].fillColor);
+                    for (var v = 0; v < this.selected.length; v++) {
+                        this.selected[v] = -1;
                     }
-                    this.nodes.push(node);
-                    node2.enableClick();
-                    node2.enableDrag();
-                    this.nodes.push(node2);
-                    var selectWireGroup;
-                    for (var v = 0; v < this.nodes.length; v++) {
-                        if (nodeLinks[v * 4] == i || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == i)) {
-                            selectWireGroup = nodeLinks[(v * 4) + 3]
+
+                    if (this.w.wasPressed()) {
+                        var node;
+                        var node2;
+                        if (this.wireLines[i].geom.y1 != this.wireLines[i].geom.y2 && this.wireLines[i].geom.x1 != this.wireLines[i].geom.x2) {
+                            node = this.add.circle((this.input.mousePointer.y - this.wireLines[i].geom.y1) / ((this.wireLines[i].geom.y1 - this.wireLines[i].geom.y2) / (this.wireLines[i].geom.x1 - this.wireLines[i].geom.x2)) + this.wireLines[i].geom.x1, this.input.mousePointer.y, 8 * scaleCount, 0xffffff);
+                            node2 = this.add.circle((this.input.mousePointer.y - this.wireLines[i].geom.y1) / ((this.wireLines[i].geom.y1 - this.wireLines[i].geom.y2) / (this.wireLines[i].geom.x1 - this.wireLines[i].geom.x2)) + this.wireLines[i].geom.x1, this.input.mousePointer.y, 8 * scaleCount, this.wires[i].fillColor);
+                        } else {
+                            node = this.add.circle(this.input.mousePointer.x, (this.wireLines[i].geom.y1 + this.wireLines[i].geom.y2) / 2, 8 * scaleCount, 0xffffff);
+                            node2 = this.add.circle(this.input.mousePointer.x, (this.wireLines[i].geom.y1 + this.wireLines[i].geom.y2) / 2, 8 * scaleCount, this.wires[i].fillColor);
                         }
-                    }
-                    nodeLinks.push(-3);
-                    nodeLinks.push(i);
-                    nodeLinks.push(this.wireLines.length);
-                    nodeLinks.push(selectWireGroup)
-                    nodeLinks.push(-2);
-                    nodeLinks.push(i);
-                    nodeLinks.push(this.wireLines.length + 1);
-                    nodeLinks.push(selectWireGroup);
-                    var obj = this.add.line(this.wireLines[i].geom.x1, this.wireLines[i].geom.y1, node.x, node.y, 0xffffff);
-                    obj.setLineWidth(3.8 * scaleCount);
-                    var obj2 = this.add.line(this.wireLines[i].geom.x2, this.wireLines[i].geom.y2, node.x, node.y, 0xffffff);
-                    obj2.setLineWidth(3.8 * scaleCount);
-                    this.wireLines[i].setVisible(0);
-                    this.wires[i].setVisible(0);
-                    this.wireLines.push(obj);
-                    this.wireLines.push(obj2);
-                    var obj3 = this.add.rectangle((obj.geom.x1 + obj.geom.x2) / 2, (obj.geom.y1 + obj.geom.y2) / 2, lineWidth, (Math.sqrt(Math.pow(Math.abs(obj.geom.x1 - obj.geom.x2), 2) + Math.pow(Math.abs(obj.geom.y1 - obj.geom.y2), 2))), this.wires[i].fillColor);
-                    obj3.setAngle(-(Math.atan(Math.abs(obj.geom.x1 - obj.geom.x2) / Math.abs(obj.geom.y1 - obj.geom.y2))) * (180 / Math.PI));
-                    var obj4 = this.add.rectangle((obj2.geom.x1 + obj2.geom.x2) / 2, (obj2.geom.y1 + obj2.geom.y2) / 2, lineWidth, (Math.sqrt(Math.pow(Math.abs(obj2.geom.x1 - obj2.geom.x2), 2) + Math.pow(Math.abs(obj2.geom.y1 - obj2.geom.y2), 2))), this.wires[i].fillColor);
-                    obj4.setAngle(-(Math.atan(Math.abs(obj2.geom.x1 - obj2.geom.x2) / Math.abs(obj2.geom.y1 - obj2.geom.y2))) * (180 / Math.PI));
-                    obj3.enableClick();
-                    obj4.enableClick();
-                    this.wires.push(obj3);
-                    this.wires.push(obj4);
-
-                    undo.push("subdividedWire");
-                    undo.push(this.nodes.length - 2);
-                    undo.push(nodeLinks.length - 8);
-                    undo.push(nodeLinks.length - 4);
-                    redo.splice(0, redo.length);
-                    this.clearPanel();
-                }
-                this.wireShortcutKeys(i);
-            } else {
-                this.wires[i].alpha = 1;
-            }
-            if (this.wires[i].wasClicked()) {
-                lastWire = i;
-                wireClick++;
-                this.createPalette();
-
-                if (wireClick == 2) {
-                    wireClick = 0;
-                    clickTime = 0;
-                    this.clearPanel();
-                    var node;
-                    var node2;
-                    if (this.wireLines[i].geom.y1 != this.wireLines[i].geom.y2 && this.wireLines[i].geom.x1 != this.wireLines[i].geom.x2) {
-                        node = this.add.circle((this.input.mousePointer.y - this.wireLines[i].geom.y1) / ((this.wireLines[i].geom.y1 - this.wireLines[i].geom.y2) / (this.wireLines[i].geom.x1 - this.wireLines[i].geom.x2)) + this.wireLines[i].geom.x1, this.input.mousePointer.y, 8 * scaleCount, 0xffffff);
-                        node2 = this.add.circle((this.input.mousePointer.y - this.wireLines[i].geom.y1) / ((this.wireLines[i].geom.y1 - this.wireLines[i].geom.y2) / (this.wireLines[i].geom.x1 - this.wireLines[i].geom.x2)) + this.wireLines[i].geom.x1, this.input.mousePointer.y, 8 * scaleCount, this.wires[i].fillColor);
-
-                    } else {
-                        node = this.add.circle(this.input.mousePointer.x, this.wireLines[i].geom.y1, 8 * scaleCount, 0xffffff);
-                        node2 = this.add.circle(this.input.mousePointer.x, this.wireLines[i].geom.y1, 8 * scaleCount, this.wires[i].fillColor);
-                    }
-                    this.nodes.push(node);
-                    node2.enableClick();
-                    node2.enableDrag();
-                    this.nodes.push(node2);
-                    var selectWireGroup;
-                    for (var v = 0; v < this.nodes.length; v++) {
-                        if (nodeLinks[v * 4] == i || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == i)) {
-                            selectWireGroup = nodeLinks[(v * 4) + 3]
+                        node.setDepth(4);
+                        this.nodes.push(node);
+                        node2.enableClick();
+                        node2.enableDrag();
+                        node2.setDepth(4);
+                        this.nodes.push(node2);
+                        var selectWireGroup;
+                        for (var v = 0; v < this.nodes.length; v++) {
+                            if (nodeLinks[v * 4] == i || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == i)) {
+                                selectWireGroup = nodeLinks[(v * 4) + 3]
+                            }
                         }
-                    }
-                    nodeLinks.push(-3);
-                    nodeLinks.push(i);
-                    nodeLinks.push(this.wireLines.length);
-                    nodeLinks.push(selectWireGroup)
-                    nodeLinks.push(-2);
-                    nodeLinks.push(i);
-                    nodeLinks.push(this.wireLines.length + 1);
-                    nodeLinks.push(selectWireGroup);
-                    var obj = this.add.line(this.wireLines[i].geom.x1, this.wireLines[i].geom.y1, node.x, node.y, 0xffffff);
-                    obj.setLineWidth(3.8 * scaleCount);
-                    var obj2 = this.add.line(this.wireLines[i].geom.x2, this.wireLines[i].geom.y2, node.x, node.y, 0xffffff);
-                    obj2.setLineWidth(3.8 * scaleCount);
-                    this.wireLines[i].setVisible(0);
-                    this.wires[i].setVisible(0);
-                    this.wireLines.push(obj);
-                    this.wireLines.push(obj2);
-                    var obj3 = this.add.rectangle((obj.geom.x1 + obj.geom.x2) / 2, (obj.geom.y1 + obj.geom.y2) / 2, lineWidth, (Math.sqrt(Math.pow(Math.abs(obj.geom.x1 - obj.geom.x2), 2) + Math.pow(Math.abs(obj.geom.y1 - obj.geom.y2), 2))), this.wires[i].fillColor);
-                    obj3.setAngle(-(Math.atan(Math.abs(obj.geom.x1 - obj.geom.x2) / Math.abs(obj.geom.y1 - obj.geom.y2))) * (180 / Math.PI));
-                    var obj4 = this.add.rectangle((obj2.geom.x1 + obj2.geom.x2) / 2, (obj2.geom.y1 + obj2.geom.y2) / 2, lineWidth, (Math.sqrt(Math.pow(Math.abs(obj2.geom.x1 - obj2.geom.x2), 2) + Math.pow(Math.abs(obj2.geom.y1 - obj2.geom.y2), 2))), this.wires[i].fillColor);
-                    obj4.setAngle(-(Math.atan(Math.abs(obj2.geom.x1 - obj2.geom.x2) / Math.abs(obj2.geom.y1 - obj2.geom.y2))) * (180 / Math.PI));
-                    obj3.enableClick();
-                    obj4.enableClick();
-                    this.wires.push(obj3);
-                    this.wires.push(obj4);
+                        nodeLinks.push(-3);
+                        nodeLinks.push(i);
+                        nodeLinks.push(this.wireLines.length);
+                        nodeLinks.push(selectWireGroup)
+                        nodeLinks.push(-2);
+                        nodeLinks.push(i);
+                        nodeLinks.push(this.wireLines.length + 1);
+                        nodeLinks.push(selectWireGroup);
+                        var obj = this.add.line(this.wireLines[i].geom.x1, this.wireLines[i].geom.y1, node.x, node.y, 0xffffff);
+                        obj.setLineWidth(3.8 * scaleCount);
+                        obj.setDepth(3.5);
+                        var obj2 = this.add.line(this.wireLines[i].geom.x2, this.wireLines[i].geom.y2, node.x, node.y, 0xffffff);
+                        obj2.setLineWidth(3.8 * scaleCount);
+                        obj2.setDepth(3.5);
+                        this.wireLines[i].setVisible(0);
+                        this.wires[i].setVisible(0);
+                        this.wireLines.push(obj);
+                        this.wireLines.push(obj2);
+                        var obj3 = this.add.rectangle((obj.geom.x1 + obj.geom.x2) / 2, (obj.geom.y1 + obj.geom.y2) / 2, lineWidth, (Math.sqrt(Math.pow(Math.abs(obj.geom.x1 - obj.geom.x2), 2) + Math.pow(Math.abs(obj.geom.y1 - obj.geom.y2), 2))), this.wires[i].fillColor);
+                        obj3.setAngle(-(Math.atan(Math.abs(obj.geom.x1 - obj.geom.x2) / Math.abs(obj.geom.y1 - obj.geom.y2))) * (180 / Math.PI));
+                        var obj4 = this.add.rectangle((obj2.geom.x1 + obj2.geom.x2) / 2, (obj2.geom.y1 + obj2.geom.y2) / 2, lineWidth, (Math.sqrt(Math.pow(Math.abs(obj2.geom.x1 - obj2.geom.x2), 2) + Math.pow(Math.abs(obj2.geom.y1 - obj2.geom.y2), 2))), this.wires[i].fillColor);
+                        obj4.setAngle(-(Math.atan(Math.abs(obj2.geom.x1 - obj2.geom.x2) / Math.abs(obj2.geom.y1 - obj2.geom.y2))) * (180 / Math.PI));
+                        obj3.enableClick();
+                        obj3.setDepth(3.5);
+                        obj4.enableClick();
+                        obj4.setDepth(3.5);
+                        this.wires.push(obj3);
+                        this.wires.push(obj4);
 
-                    undo.push("subdividedWire");
-                    undo.push(this.nodes.length - 2);
-                    undo.push(nodeLinks.length - 8);
-                    undo.push(nodeLinks.length - 4);
-                    redo.splice(0, redo.length);
+                        undo.push("subdividedWire");
+                        undo.push(this.nodes.length - 2);
+                        undo.push(nodeLinks.length - 8);
+                        undo.push(nodeLinks.length - 4);
+                        redo.splice(0, redo.length);
+                        this.clearPanel();
+                    }
+                    this.wireShortcutKeys(i);
+                } else {
+                    this.wires[i].alpha = 1;
+                }
+                if (this.wires[i].wasClicked()) {
+                    lastWire = i;
+                    wireClick++;
+                    this.createPalette(i);
+
+                    if (wireClick == 2) {
+                        wireClick = 0;
+                        clickTime = 0;
+                        this.clearPanel();
+                        var node;
+                        var node2;
+                        if (this.wireLines[i].geom.y1 != this.wireLines[i].geom.y2 && this.wireLines[i].geom.x1 != this.wireLines[i].geom.x2) {
+                            node = this.add.circle((this.input.mousePointer.y - this.wireLines[i].geom.y1) / ((this.wireLines[i].geom.y1 - this.wireLines[i].geom.y2) / (this.wireLines[i].geom.x1 - this.wireLines[i].geom.x2)) + this.wireLines[i].geom.x1, this.input.mousePointer.y, 8 * scaleCount, 0xffffff);
+                            node2 = this.add.circle((this.input.mousePointer.y - this.wireLines[i].geom.y1) / ((this.wireLines[i].geom.y1 - this.wireLines[i].geom.y2) / (this.wireLines[i].geom.x1 - this.wireLines[i].geom.x2)) + this.wireLines[i].geom.x1, this.input.mousePointer.y, 8 * scaleCount, this.wires[i].fillColor);
+
+                        } else {
+                            node = this.add.circle(this.input.mousePointer.x, (this.wireLines[i].geom.y1 + this.wireLines[i].geom.y2) / 2, 8 * scaleCount, 0xffffff);
+                            node2 = this.add.circle(this.input.mousePointer.x, (this.wireLines[i].geom.y1 + this.wireLines[i].geom.y2) / 2, 8 * scaleCount, this.wires[i].fillColor);
+                        }
+                        node.setDepth(4);
+                        this.nodes.push(node);
+                        node2.enableClick();
+                        node2.enableDrag();
+                        node2.setDepth(4);
+                        this.nodes.push(node2);
+                        var selectWireGroup;
+                        for (var v = 0; v < this.nodes.length; v++) {
+                            if (nodeLinks[v * 4] == i || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == i)) {
+                                selectWireGroup = nodeLinks[(v * 4) + 3]
+                            }
+                        }
+                        nodeLinks.push(-3);
+                        nodeLinks.push(i);
+                        nodeLinks.push(this.wireLines.length);
+                        nodeLinks.push(selectWireGroup)
+                        nodeLinks.push(-2);
+                        nodeLinks.push(i);
+                        nodeLinks.push(this.wireLines.length + 1);
+                        nodeLinks.push(selectWireGroup);
+                        var obj = this.add.line(this.wireLines[i].geom.x1, this.wireLines[i].geom.y1, node.x, node.y, 0xffffff);
+                        obj.setLineWidth(3.8 * scaleCount);
+                        obj.setDepth(3.5);
+                        var obj2 = this.add.line(this.wireLines[i].geom.x2, this.wireLines[i].geom.y2, node.x, node.y, 0xffffff);
+                        obj2.setLineWidth(3.8 * scaleCount);
+                        obj2.setDepth(3.5);
+                        this.wireLines[i].setVisible(0);
+                        this.wires[i].setVisible(0);
+                        this.wireLines.push(obj);
+                        this.wireLines.push(obj2);
+                        var obj3 = this.add.rectangle((obj.geom.x1 + obj.geom.x2) / 2, (obj.geom.y1 + obj.geom.y2) / 2, lineWidth, (Math.sqrt(Math.pow(Math.abs(obj.geom.x1 - obj.geom.x2), 2) + Math.pow(Math.abs(obj.geom.y1 - obj.geom.y2), 2))), this.wires[i].fillColor);
+                        obj3.setAngle(-(Math.atan(Math.abs(obj.geom.x1 - obj.geom.x2) / Math.abs(obj.geom.y1 - obj.geom.y2))) * (180 / Math.PI));
+                        var obj4 = this.add.rectangle((obj2.geom.x1 + obj2.geom.x2) / 2, (obj2.geom.y1 + obj2.geom.y2) / 2, lineWidth, (Math.sqrt(Math.pow(Math.abs(obj2.geom.x1 - obj2.geom.x2), 2) + Math.pow(Math.abs(obj2.geom.y1 - obj2.geom.y2), 2))), this.wires[i].fillColor);
+                        obj4.setAngle(-(Math.atan(Math.abs(obj2.geom.x1 - obj2.geom.x2) / Math.abs(obj2.geom.y1 - obj2.geom.y2))) * (180 / Math.PI));
+                        obj3.enableClick();
+                        obj3.setDepth(3.5);
+                        obj4.enableClick();
+                        obj4.setDepth(3.5);
+                        this.wires.push(obj3);
+                        this.wires.push(obj4);
+
+                        undo.push("subdividedWire");
+                        undo.push(this.nodes.length - 2);
+                        undo.push(nodeLinks.length - 8);
+                        undo.push(nodeLinks.length - 4);
+                        redo.splice(0, redo.length);
+                    }
                 }
             }
         }
 
         for (var i = 0; i < this.nodes.length; i++) {
-            this.nodes[i].setDepth(4);
-            if (nodeLinks[i * 4] == -2) {
-                if (this.nodes[i].isOver()) {
-                    this.nodes[i].alpha = 0.5;
-                    pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-                } else {
-                    this.nodes[i].alpha = 1;
-                }
-                if (this.nodes[i].wasClicked()) {
-                    lastPosition[0] = i;
-                    lastPosition[1] = this.nodes[i].x;
-                    lastPosition[2] = this.nodes[i].y;
-                }
-                if (this.nodes[i].isClicked()) {
-                    if (this.slash.visible == 0) {
-                        for (var v = -10000; v < 10000; v++) {
-                            if (Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.nodes[i].x)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.nodes[i].x)) > 0) {
-                                this.nodes[i].x = (v * 28 * scaleCount + (snapStartX % (28 * scaleCount)));
-                            }
-                        }
-                        for (var v = -10000; v < 10000; v++) {
-
-                            if (Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - this.nodes[i].y)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - this.nodes[i].y)) > 0) {
-                                this.nodes[i].y = (v * 28 * scaleCount + (snapStartY % (28 * scaleCount)));
-                            }
-                        }
+            if (this.nodes[i].visible == 1) {
+                if (nodeLinks[i * 4] == -2) {
+                    if (this.nodes[i].isOver()) {
+                        this.nodes[i].alpha = 0.5;
+                        pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
                     } else {
-                        for (var v = 0; v < this.nodes.length; v++) {
-                            if (this.nodes[i].x > this.nodes[v].x - 10 && this.nodes[i].x < this.nodes[v].x + 10 && i != v && nodeLinks[(i * 4)] != -3) {
-                                this.nodes[i].x = this.nodes[v].x;
+                        this.nodes[i].alpha = 1;
+                    }
+                    if (this.nodes[i].wasClicked()) {
+                        lastPosition[0] = i;
+                        lastPosition[1] = this.nodes[i].x;
+                        lastPosition[2] = this.nodes[i].y;
+                    }
+                    if (this.nodes[i].isClicked()) {
+                        if (this.slash.visible == 0) {
+                            for (var v = -10000; v < 10000; v++) {
+                                if (Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.nodes[i].x)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.nodes[i].x)) > 0) {
+                                    this.nodes[i].x = (v * 28 * scaleCount + (snapStartX % (28 * scaleCount)));
+                                }
                             }
-                            if (this.nodes[i].y > this.nodes[v].y - 10 && this.nodes[i].y < this.nodes[v].y + 10 && i != v && nodeLinks[(i * 4)] != -3) {
-                                this.nodes[i].y = this.nodes[v].y;
+                            for (var v = -10000; v < 10000; v++) {
+
+                                if (Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - this.nodes[i].y)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - this.nodes[i].y)) > 0) {
+                                    this.nodes[i].y = (v * 28 * scaleCount + (snapStartY % (28 * scaleCount)));
+                                }
+                            }
+                        } else {
+                            for (var v = 0; v < this.nodes.length; v++) {
+                                if (this.nodes[i].x > this.nodes[v].x - 10 && this.nodes[i].x < this.nodes[v].x + 10 && i != v && nodeLinks[(i * 4)] != -3) {
+                                    this.nodes[i].x = this.nodes[v].x;
+                                }
+                                if (this.nodes[i].y > this.nodes[v].y - 10 && this.nodes[i].y < this.nodes[v].y + 10 && i != v && nodeLinks[(i * 4)] != -3) {
+                                    this.nodes[i].y = this.nodes[v].y;
+                                }
                             }
                         }
                     }
-                }
-                if (i == lastPosition[0] && !(this.nodes[i].isClicked()) && (lastPosition[1] != this.nodes[i].x || lastPosition[2] != this.nodes[i].y)) {
-                    undo.push("movedNode");
-                    undo.push(i);
-                    undo.push(lastPosition[1] - this.nodes[i].x);
-                    undo.push(lastPosition[2] - this.nodes[i].y);
-                    lastPosition[1] = this.nodes[i].x;
-                    lastPosition[2] = this.nodes[i].y;
-                    redo.splice(0, redo.length);
+                    if (i == lastPosition[0] && !(this.nodes[i].isClicked()) && (lastPosition[1] != this.nodes[i].x || lastPosition[2] != this.nodes[i].y)) {
+                        undo.push("movedNode");
+                        undo.push(i);
+                        undo.push(lastPosition[1] - this.nodes[i].x);
+                        undo.push(lastPosition[2] - this.nodes[i].y);
+                        lastPosition[1] = this.nodes[i].x;
+                        lastPosition[2] = this.nodes[i].y;
+                        redo.splice(0, redo.length);
+                    }
                 }
             }
         }
@@ -1073,9 +1508,16 @@ class Workspace extends SimpleScene {
                         pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
                         this.customColors[i].setAlpha(0.8);
                         if (this.del.wasPressed()) {
+                            undo.push("deletedCustomColor");
+                            undo.push(customColors[i]);
+                            undo.push(i);
                             customColors.splice(i, 1);
+
                             this.clearPanel();
-                            this.createPalette();
+                            this.createPalette(lastWire);
+
+                            undo.push(lastWire);
+                            redo.splice(0, redo.length);
                         }
                     } else {
                         this.customColors[i].setAlpha(1);
@@ -1141,19 +1583,27 @@ class Workspace extends SimpleScene {
                         }
                         return true;
                     }
+                    undo.push("customColor");
+                    undo.push(this.selected[0].fillColor);
+                    var selected = [];
                     if (isHexValid(inputValue) == true) {
                         if (customColors.length > 8) {
                             customColors.splice(0, 1);
                         }
                         customColors.push(parseInt(inputValue, 16));
                         this.clearPanel();
-                        this.createPalette();
+                        this.createPalette(lastWire);
                         for (var v = 0; v < this.selected.length; v++) {
                             this.selected[v].fillColor = customColors[customColors.length - 1];
+                            selected.push(this.selected[v]);
                             wireColor = customColors[customColors.length - 1];
                         }
                     }
                     document.getElementById('input').value = "";
+
+                    undo.push(selected);
+                    undo.push(lastWire);
+                    redo.splice(0, redo.length);
                 }
             }
 
@@ -1226,9 +1676,11 @@ class Workspace extends SimpleScene {
             if (this.panelWireAddNodeButton.wasClicked() || this.panelWireAddNodeIcon.wasClicked() || this.panelWireAddNodeText.wasClicked() || this.w.wasPressed()) {
                 var node = this.add.circle((this.wireLines[lastWire].geom.x1 + this.wireLines[lastWire].geom.x2) / 2, (this.wireLines[lastWire].geom.y1 + this.wireLines[lastWire].geom.y2) / 2, 8 * scaleCount, 0xffffff);
                 var node2 = this.add.circle((this.wireLines[lastWire].geom.x1 + this.wireLines[lastWire].geom.x2) / 2, (this.wireLines[lastWire].geom.y1 + this.wireLines[lastWire].geom.y2) / 2, 8 * scaleCount, this.wires[lastWire].fillColor);
+                node.setDepth(4);
                 this.nodes.push(node);
                 node2.enableClick();
                 node2.enableDrag();
+                node2.setDepth(4);
                 this.nodes.push(node2);
 
                 var selectWireGroup;
@@ -1247,8 +1699,10 @@ class Workspace extends SimpleScene {
                 nodeLinks.push(selectWireGroup);
                 var obj = this.add.line(this.wireLines[lastWire].geom.x1, this.wireLines[lastWire].geom.y1, node.x, node.y, 0xffffff);
                 obj.setLineWidth(3.8 * scaleCount);
+                obj.setDepth(3.5);
                 var obj2 = this.add.line(this.wireLines[lastWire].geom.x2, this.wireLines[lastWire].geom.y2, node.x, node.y, 0xffffff);
                 obj2.setLineWidth(3.8 * scaleCount);
+                obj2.setDepth(3.5);
                 this.wireLines[lastWire].setVisible(0);
                 this.wires[lastWire].setVisible(0);
                 this.wireLines.push(obj);
@@ -1258,7 +1712,9 @@ class Workspace extends SimpleScene {
                 var obj4 = this.add.rectangle((obj2.geom.x1 + obj2.geom.x2) / 2, (obj2.geom.y1 + obj2.geom.y2) / 2, lineWidth, (Math.sqrt(Math.pow(Math.abs(obj2.geom.x1 - obj2.geom.x2), 2) + Math.pow(Math.abs(obj2.geom.y1 - obj2.geom.y2), 2))), this.wires[lastWire].fillColor);
                 obj4.setAngle(-(Math.atan(Math.abs(obj2.geom.x1 - obj2.geom.x2) / Math.abs(obj2.geom.y1 - obj2.geom.y2))) * (180 / Math.PI));
                 obj3.enableClick();
+                obj3.setDepth(3.5);
                 obj4.enableClick();
+                obj4.setDepth(3.5);
                 this.wires.push(obj3);
                 this.wires.push(obj4);
 
@@ -1368,11 +1824,11 @@ class Workspace extends SimpleScene {
             }
 
             if (this.panelDuplicateButton.wasClicked() || this.panelDuplicate.wasClicked() || (noOther == true && element == null && this.d.wasPressed())) {
-                var obj = this.add.sprite(this.objects[lastClicked].x, this.objects[lastClicked].y, `${this.objectIDs[lastClicked]}`);
+                var obj = this.add.sprite(this.objects[lastClicked].x, this.objects[lastClicked].y, `${this.objectIDs[lastClicked]}`, 1);
                 for (var v = 0; v < this.objects.length; v++) {
                     if (this.objectIDs[v] == this.objectIDs[lastClicked] && this.objects[v].x == obj.x && this.objects[v].y == obj.y && this.objects[v].visible == 1) {
-                        obj.x += deviceWidth * 0.01;
-                        obj.y += deviceHeight * 0.02;
+                        obj.x += deviceWidth * 0.02;
+                        obj.y += deviceHeight * 0.04;
                     }
                 }
                 obj.scale *= (objectsData[this.objectIDs[lastClicked] * 5 + 2]);
@@ -1383,12 +1839,15 @@ class Workspace extends SimpleScene {
                 obj.width *= scaleCount;
                 obj.height *= scaleCount;
 
+                if (rotateAngle[lastClicked] == 1 || rotateAngle[lastClicked] == 3) {
+                    var widthHolder = obj.width;
+                    obj.width = obj.height;
+                    obj.height = widthHolder;
+                }
+
                 obj.setAngle(rotateAngle[lastClicked] * 90);
 
                 if (settings[(lastClicked * 2)] != -1 || settings[(lastClicked * 2) + 1] != -1) {
-                    if (this.objectIDs[lastClicked] == 2) {
-                        //SETUP RESISTOR
-                    }
                     if (this.objectIDs[lastClicked] == 3 || this.objectIDs[lastClicked] == 6) {
                         obj.setTint(settings[lastClicked * 2]);
                     }
@@ -1403,14 +1862,38 @@ class Workspace extends SimpleScene {
                 }
                 this.objects.push(obj);
                 this.objectIDs.push(this.objectIDs[lastClicked]);
-                var label = this.add.text(this.objects[this.objects.length - 1].x + scaleCount * deviceWidth * defaultLabel[(this.objectIDs[lastClicked] * 12) + 4], this.objects[this.objects.length - 1].y + scaleCount * deviceHeight * defaultLabel[(this.objectIDs[lastClicked] * 12) + 5], this.objectLabels[lastClicked].text, 0x000000);
+                var label = this.add.text(this.objects[this.objects.length - 1].x + scaleCount * deviceWidth * defaultLabel[(this.objectIDs[lastClicked] * 12) + 4], this.objects[this.objects.length - 1].y + scaleCount * deviceHeight * defaultLabel[(this.objectIDs[lastClicked] * 12) + 5], this.objectLabels[lastClicked].text, labelColor);
                 label.setOrigin(0.5, 0.5);
                 label.setFontSize(scaleCount * deviceHeight * defaultLabel[(this.objectIDs[lastClicked] * 12) + 1]);
+                label.setDepth(3.2);
                 this.objectLabels.push(label);
                 rotateAngle.push(rotateAngle[lastClicked]);
                 shiftObjects.push(false);
                 settings.push(settings[lastClicked * 2]);
                 settings.push(settings[(lastClicked * 2) + 1]);
+
+                if (this.objectIDs[lastClicked] == 2) {
+                    for (var v = 0; v < resistorData.length / 5; v++) {
+                        if (resistorData[v * 5] == lastClicked) {
+                            var widthHolder = obj.width;
+                            var heightHolder = obj.height;
+                            obj.setFrame(resistorData[(v * 5) + 4]);
+                            var bar1 = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, resistorData[(v * 5) + 3]);
+                            var bar2 = this.add.rectangle(obj.x, obj.y - obj.height * 0.057, obj.width * 0.3, obj.height * 0.055, resistorData[(v * 5) + 2]);
+                            bar1.setOrigin(0.5, 0.5);
+                            bar2.setOrigin(0.5, 0.5);
+                            this.resistorBars.push(bar1);
+                            this.resistorBars.push(bar2);
+                            resistorData.push(this.objects.length - 1);
+                            resistorData.push(resistorData[(v * 5) + 1]);
+                            resistorData.push(resistorData[(v * 5) + 2]);
+                            resistorData.push(resistorData[(v * 5) + 3]);
+                            resistorData.push(resistorData[(v * 5) + 4]);
+                            obj.width = widthHolder;
+                            obj.height = heightHolder;
+                        }
+                    }
+                }
 
                 lastClicked = this.objects.length - 1
                 this.clearPanel();
@@ -1426,29 +1909,23 @@ class Workspace extends SimpleScene {
                 this.initiateDelete(lastClicked);
             }
 
-            if (this.panelUpArrow.isClicked() || (noOther == true && this.uparrow.isPressed() && !(this.shift.isPressed()))) {
+            if (this.panelUpArrow.wasClicked() || this.panelLeftArrow.wasClicked() || this.panelRightArrow.wasClicked() || this.panelDownArrow.wasClicked() || (!(this.shift.isPressed()) && (this.uparrow.wasPressed() || this.leftarrow.wasPressed() || this.rightarrow.wasPressed() || this.downarrow.wasPressed()))) {
                 lastPosition[0] = -lastClicked - 1;
                 lastPosition[1] = this.objects[lastClicked].x;
                 lastPosition[2] = this.objects[lastClicked].y;
-                this.objects[lastClicked].y -= 0.5;
+            }
+
+            if (this.panelUpArrow.isClicked() || (noOther == true && this.uparrow.isPressed() && !(this.shift.isPressed()))) {
+                this.objects[lastClicked].y -= 0.25;
             }
             if (this.panelLeftArrow.isClicked() || (noOther == true && this.leftarrow.isPressed() && !(this.shift.isPressed()))) {
-                lastPosition[0] = -lastClicked - 1;
-                lastPosition[1] = this.objects[lastClicked].x;
-                lastPosition[2] = this.objects[lastClicked].y;
-                this.objects[lastClicked].x -= 0.5;
+                this.objects[lastClicked].x -= 0.25;
             }
             if (this.panelRightArrow.isClicked() || (noOther == true && this.rightarrow.isPressed() && !(this.shift.isPressed()))) {
-                lastPosition[0] = -lastClicked - 1;
-                lastPosition[1] = this.objects[lastClicked].x;
-                lastPosition[2] = this.objects[lastClicked].y;
-                this.objects[lastClicked].x += 0.5;
+                this.objects[lastClicked].x += 0.25;
             }
             if (this.panelDownArrow.isClicked() || (noOther == true && this.downarrow.isPressed() && !(this.shift.isPressed()))) {
-                lastPosition[0] = -lastClicked - 1;
-                lastPosition[1] = this.objects[lastClicked].x;
-                lastPosition[2] = this.objects[lastClicked].y;
-                this.objects[lastClicked].y += 0.5;
+                this.objects[lastClicked].y += 0.25;
             }
 
             if (this.panelRotateRight.wasClicked() || (noOther == true && this.shift.isPressed() && this.rightarrow.wasPressed())) {
@@ -1457,7 +1934,7 @@ class Workspace extends SimpleScene {
                 if (rotateAngle[lastClicked] == 4) {
                     rotateAngle[lastClicked] = 0;
                 }
-                var widthHolder = this.objects[i].width;
+                var widthHolder = this.objects[lastClicked].width;
                 this.objects[lastClicked].width = this.objects[lastClicked].height;
                 this.objects[lastClicked].height = widthHolder;
                 undo.push("rotatedObject");
@@ -1530,8 +2007,8 @@ class Workspace extends SimpleScene {
             if (this.panelResistanceValueBox.wasClicked() || this.panelResistanceValue.wasClicked()) {
                 this.clearHTML();
                 document.getElementById('flex-box').style.flexDirection = 'row-reverse';
-                document.getElementById('inputnum').style.display = 'block';
-                document.getElementById('inputnum').focus();
+                document.getElementById('input').style.display = 'block';
+                document.getElementById('input').focus();
                 document.getElementById('label2').innerHTML = "Enter Resistance Value: ";
             }
             if (this.panelResistanceUnitBox.wasClicked() || this.panelResistanceUnit.wasClicked()) {
@@ -1555,22 +2032,186 @@ class Workspace extends SimpleScene {
 
             this.inputBox();
 
-            if (document.getElementById('inputnum').style.display == 'block') {
+            if (document.getElementById('input').style.display == 'block') {
                 if (this.return.wasPressed()) {
-                    this.panelResistanceValue.setText(document.getElementById('inputnum').value);
-                    if (document.getElementById('inputnum').value.length > 5) {
-                        this.panelResistanceValue.setFontSize(5 / (document.getElementById('inputnum').value.length) * deviceHeight * 0.04);
-                    } else {
-                        this.panelResistanceValue.setFontSize(deviceHeight * 0.04);
+
+                    function isResistanceValid(input) {
+                        input = input.replace(/\s/g, '');
+                        let result = /^\d+$/.test(input);
+                        if (input == "" || input == 0) {
+                            document.getElementById('input').value = "";
+                            return false;
+                        }
+                        if (result == true) {
+                            return [input, "o"];
+                        } else {
+                            let inputValue = input.slice(0, -1);
+                            if (inputValue == "" || input == 0) {
+                                document.getElementById('input').value = "";
+                                return false;
+                            }
+                            result = /^\d+$/.test(inputValue);
+                            if (result == true) {
+                                var unit = input.charAt(input.length - 1);
+                                if (unit == "k" || unit == "m") {
+                                    return [inputValue, unit];
+                                } else {
+                                    return [inputValue, "o"];
+                                }
+                            } else {
+                                document.getElementById('input').value = "";
+                            }
+                        }
                     }
-                    settings[lastClicked * 2] = document.getElementById('inputnum').value;
-                    this.clearHTML();
+
+                    if (isResistanceValid(document.getElementById('input').value) != false) {
+                        var previousResistanceData = [];
+                        var previousSettings = [settings[lastClicked * 2], settings[(lastClicked * 2) + 1]];
+
+                        var resistorValue = isResistanceValid(document.getElementById('input').value)[0];
+                        if (isResistanceValid(document.getElementById('input').value)[1] == "o") {
+                            this.panelResistanceUnit.setText("Ω");
+                            settings[(lastClicked * 2) + 1] = "Ω";
+                        }
+                        if (isResistanceValid(document.getElementById('input').value)[1] == "k") {
+                            this.panelResistanceUnit.setText("KΩ");
+                            settings[(lastClicked * 2) + 1] = "KΩ";
+                        }
+                        if (isResistanceValid(document.getElementById('input').value)[1] == "m") {
+                            this.panelResistanceUnit.setText("MΩ");
+                            settings[(lastClicked * 2) + 1] = "MΩ";
+                        }
+
+                        if (settings[(lastClicked * 2) + 1] == "KΩ") {
+                            resistorValue *= 1000;
+                        }
+                        if (settings[(lastClicked * 2) + 1] == "MΩ") {
+                            resistorValue *= 1000000;
+                        }
+
+                        var stepBack = false;
+                        if (resistorValue <= 99000000000) {
+                            undo.push("resistanceValue");
+
+                            for (var v = 0; v < resistorData.length / 5; v++) {
+                                if (resistorData[v * 5] == lastClicked) {
+                                    if (resistorValue != resistorData[(v * 5) + 1]) {
+                                        undo.push(v);
+                                        previousResistanceData = [resistorData[v * 5], resistorData[(v * 5) + 1], resistorData[(v * 5) + 2], resistorData[(v * 5) + 3], resistorData[(v * 5) + 4]];
+
+                                        resistorData[(v * 5) + 1] = resistorValue;
+
+                                        for (var t = -1; t < 11; t++) {
+                                            if (resistorData[(v * 5) + 1] / Math.pow(10, t) >= 1) {
+                                                this.resistorBars[(v * 2) + 1].fillColor = resistorColors[t];
+                                                resistorData[(v * 5) + 2] = resistorColors[t];
+                                            }
+                                        }
+
+                                        var widthHolder = this.objects[resistorData[v * 5]].width;
+                                        var heightHolder = this.objects[resistorData[v * 5]].height;
+                                        for (var t = 10; t >= 0; t--) {
+                                            if ((resistorValue / Math.pow(10, t)) - Math.trunc(resistorValue / Math.pow(10, t)) != 0 && (resistorValue / Math.pow(10, t)) < 10) {
+                                                var truncatedResistance = Math.trunc((resistorValue / Math.pow(10, t)) * 10) / 10;
+                                                this.objects[resistorData[v * 5]].setFrame(Math.trunc(truncatedResistance));
+                                                this.resistorBars[v * 2].fillColor = resistorColors[Math.round(-10 * (Math.trunc(truncatedResistance) - truncatedResistance) + 1)];
+                                                resistorData[(v * 5) + 4] = Math.trunc(Math.trunc(truncatedResistance));
+                                                resistorData[(v * 5) + 3] = resistorColors[Math.round(-10 * (Math.trunc(truncatedResistance) - truncatedResistance) + 1)];
+                                            }
+                                            if ((resistorValue / Math.pow(10, t)) - Math.trunc(resistorValue / Math.pow(10, t)) == 0 && (resistorValue / Math.pow(10, t)) < 10) {
+                                                this.objects[resistorData[v * 5]].setFrame(Math.trunc(resistorValue / Math.pow(10, t)));
+                                                this.resistorBars[v * 2].fillColor = resistorColors[1];
+                                                resistorData[(v * 5) + 4] = Math.trunc(resistorValue / Math.pow(10, t));
+                                                resistorData[(v * 5) + 3] = resistorColors[1];
+                                            }
+                                        }
+                                        this.objects[resistorData[v * 5]].width = widthHolder;
+                                        this.objects[resistorData[v * 5]].height = heightHolder;
+                                    } else {
+                                        stepBack = true;
+                                    }
+                                }
+                            }
+
+                            if (settings[(lastClicked * 2) + 1] == "KΩ" || isResistanceValid(document.getElementById('input').value)[1] == "k") {
+                                resistorValue /= 1000;
+                            }
+                            if (settings[(lastClicked * 2) + 1] == "MΩ" || isResistanceValid(document.getElementById('input').value)[1] == "m") {
+                                resistorValue /= 1000000;
+                            }
+
+                            this.panelResistanceValue.setText(resistorValue);
+                            if (document.getElementById('input').value.length > 7) {
+                                this.panelResistanceValue.setFontSize(7 / (document.getElementById('input').value.length) * deviceHeight * 0.04);
+                            } else {
+                                this.panelResistanceValue.setFontSize(deviceHeight * 0.04);
+                            }
+                            settings[lastClicked * 2] = isResistanceValid(document.getElementById('input').value)[0];
+
+                            this.clearHTML();
+
+                            if (stepBack == false) {
+                                undo.push(previousResistanceData);
+                                undo.push(previousSettings);
+                                redo.splice(0, redo.length);
+                            } else {
+                                undo.splice(undo.length - 1, 1);
+                            }
+                        } else {
+                            document.getElementById('input').value = "";
+                        }
+                    }
                 }
             }
             if (document.getElementById('dropdown').value == "Ω" || document.getElementById('dropdown').value == "KΩ" || document.getElementById('dropdown').value == "MΩ") {
-                this.panelResistanceUnit.setText(document.getElementById('dropdown').value);
-                settings[(lastClicked * 2) + 1] = document.getElementById('dropdown').value;
-                this.clearHTML();
+                var previousResistanceData = [];
+                var previousSettings = [settings[lastClicked * 2], settings[(lastClicked * 2) + 1]];
+
+                var resistorValue = settings[(lastClicked * 2)];
+                if ((settings[(lastClicked * 2) + 1] == "KΩ" || document.getElementById('dropdown').value == "KΩ") && (document.getElementById('dropdown').value != "MΩ")) {
+                    resistorValue *= 1000;
+                }
+                if ((settings[(lastClicked * 2) + 1] == "MΩ" || document.getElementById('dropdown').value == "MΩ") && (document.getElementById('dropdown').value != "KΩ")) {
+                    resistorValue *= 1000000;
+                }
+
+                var stepBack = false;
+                if (resistorValue <= 99000000000) {
+                    undo.push("resistanceValue");
+
+                    for (var v = 0; v < resistorData.length / 5; v++) {
+                        if (resistorData[v * 5] == lastClicked) {
+                            if (resistorValue != resistorData[(v * 5) + 1]) {
+                                undo.push(v);
+                                previousResistanceData = [resistorData[v * 5], resistorData[(v * 5) + 1], resistorData[(v * 5) + 2], resistorData[(v * 5) + 3], resistorData[(v * 5) + 4]];
+
+                                resistorData[(v * 5) + 1] = resistorValue;
+                                for (var t = -1; t < 11; t++) {
+                                    if (resistorData[(v * 5) + 1] / Math.pow(10, t) >= 1) {
+                                        this.resistorBars[(v * 2) + 1].fillColor = resistorColors[t];
+                                        resistorData[(v * 5) + 2] = resistorColors[t];
+                                    }
+                                }
+                            } else {
+                                stepBack = true;
+                            }
+                        }
+                    }
+
+                    this.panelResistanceUnit.setText(document.getElementById('dropdown').value);
+                    settings[(lastClicked * 2) + 1] = document.getElementById('dropdown').value;
+                    this.clearHTML();
+
+                    if (stepBack == false) {
+                        undo.push(previousResistanceData);
+                        undo.push(previousSettings);
+                        redo.splice(0, redo.length);
+                    } else {
+                        undo.splice(undo.length - 1, 1);
+                    }
+                } else {
+                    document.getElementById('dropdown').value = "";
+                }
             }
         }
         if (panelType == 5 || panelType == 8) {
@@ -1578,16 +2219,28 @@ class Workspace extends SimpleScene {
                 for (var i = 0; i < this.customObjectColors.length; i++) {
                     this.customObjectColors[i].setDepth(6);
                     if (this.customObjectColors[i].wasClicked()) {
+                        undo.push("customObjectColor");
+                        undo.push(settings[lastClicked * 2]);
                         this.objects[lastClicked].setTint(customObjectColors[i]);
                         settings[lastClicked * 2] = customObjectColors[i];
+                        undo.push(lastClicked);
+                        undo.push(i);
+                        redo.splice(0, redo.length);
                     }
                     if (this.customObjectColors[i].isOver()) {
                         pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
                         this.customObjectColors[i].setAlpha(0.8);
                         if (this.del.wasPressed()) {
+                            undo.push("deletedCustomObjectColor");
+                            undo.push(customObjectColors[i]);
                             customObjectColors.splice(i, 1);
+                            redo.splice(0, redo.length);
+
                             this.clearPanel();
                             this.openPanel(lastClicked);
+
+                            undo.push(i);
+                            undo.push(lastClicked);
                         }
                     } else {
                         this.customObjectColors[i].setAlpha(1);
@@ -1653,6 +2306,8 @@ class Workspace extends SimpleScene {
                         }
                         return true;
                     }
+                    undo.push("customObjectColor");
+                    undo.push(settings[lastClicked * 2]);
                     if (isHexValid(inputValue) == true) {
                         if (customObjectColors.length > 8) {
                             customObjectColors.splice(0, 1);
@@ -1664,6 +2319,10 @@ class Workspace extends SimpleScene {
                         settings[lastClicked * 2] = customObjectColors[customObjectColors.length - 1];
                     }
                     this.clearHTML();
+
+                    undo.push(lastClicked);
+                    undo.push(customObjectColors.length - 1);
+                    redo.splice(0, redo.length);
                 }
             }
         }
@@ -1688,23 +2347,23 @@ class Workspace extends SimpleScene {
             }
             if (document.getElementById('input').style.display == 'block') {
                 if (this.return.wasPressed()) {
+                    undo.push("objectLabel");
+                    undo.push(this.panelObjectLabel.text);
+
                     this.panelObjectLabel.setText(document.getElementById('input').value);
                     this.objectLabels[lastClicked].setText(document.getElementById('input').value);
-                    if (document.getElementById('input').value.length > 9) {
-                        this.panelObjectLabel.setFontSize(9 / (document.getElementById('input').value.length) * deviceHeight * 0.04);
+                    if (document.getElementById('input').value.length > 10) {
+                        this.panelObjectLabel.setFontSize(10 / (document.getElementById('input').value.length) * deviceHeight * 0.04);
                     } else {
                         this.panelObjectLabel.setFontSize(deviceHeight * 0.04);
                     }
-                    settings[(lastClicked * 2) + 1] = document.getElementById('input').value;
+                    settings[(lastClicked * 2) + 1] = document.getElementById('input').value.replace('"', '\\"');
                     this.clearHTML();
-                }
-            }
-        }
 
-        for (var i = 0; i < this.itemLabels.length; i++) {
-            if (this.items[i].x < deviceWidth * 0.22) {
-                this.items[i].setDepth(6);
-                this.itemLabels[i].setDepth(6);
+                    undo.push(lastClicked);
+                    undo.push(-1);
+                    redo.splice(0, redo.length);
+                }
             }
         }
 
@@ -1716,7 +2375,7 @@ class Workspace extends SimpleScene {
             }
         }
 
-        if (this.itemTypeArrow.wasClicked() || this.itemTypeButton.wasClicked()) {
+        if (this.itemTypeArrow.wasClicked()) {
             currentPage = 0;
             currentItemType++;
             if (currentItemType == 5) {
@@ -1729,12 +2388,18 @@ class Workspace extends SimpleScene {
             }
             clean(this.items);
             clean(this.itemLabels);
+
+            this.itemResistorBars[0].destroy();
+            this.itemResistorBars[1].destroy();
+
             this.binLabel.setText(itemTypes[currentItemType]);
 
             if (currentItemType == 0) {
                 this.addItem.setVisible(1);
+                this.search.setVisible(1);
             } else {
                 this.addItem.setVisible(0);
+                this.search.setVisible(0);
             }
 
             if (currentItemType == 1) {
@@ -1753,12 +2418,12 @@ class Workspace extends SimpleScene {
                     var label;
                     if (currentItemType == 0 || objectsData[(i * 5) + 1] == itemTypes[currentItemType]) {
                         if (v % 2 == 0) {
-                            obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`);
-                            label = this.add.text(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.25, objectsData[i * 5], 0x000000);
+                            obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                            label = this.add.text(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
                         }
                         if (v % 2 == 1) {
-                            obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`);
-                            label = this.add.text(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.25, objectsData[i * 5], 0x000000);
+                            obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                            label = this.add.text(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
                         }
                         obj.scale *= (objectsData[(i * 5) + 2]);
                         obj.width *= (objectsData[(i * 5) + 2]);
@@ -1776,9 +2441,24 @@ class Workspace extends SimpleScene {
                             obj.height *= 0.9;
                         }
                         obj.enableClick();
+                        obj.setDepth(6);
                         this.items[v] = obj;
                         itemObjectID.push(objectID);
-                        label.setOrigin(0.5, 0);
+                        if (objectID == 2) {
+                            this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
+                            this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                            this.itemResistorBars[0].setOrigin(0.5, 0.5);
+                            this.itemResistorBars[1].setOrigin(0.5, 0.5);
+                            this.itemResistorBars[0].setDepth(6);
+                            this.itemResistorBars[1].setDepth(6);
+                        }
+                        if (label.text.length > 15) {
+                            label.setFontSize(15 / label.text.length * deviceHeight * 0.025);
+                        } else {
+                            label.setFontSize(deviceHeight * 0.025);
+                        }
+                        label.setOrigin(0.5, 0.5);
+                        label.setDepth(6);
                         this.itemLabels[v] = label;
                         v++;
                     }
@@ -1799,6 +2479,9 @@ class Workspace extends SimpleScene {
                 clean(this.items);
                 clean(this.itemLabels);
 
+                this.itemResistorBars[0].destroy();
+                this.itemResistorBars[1].destroy();
+
                 objectID = 0;
                 var v = 0;
                 var t = 0;
@@ -1809,12 +2492,12 @@ class Workspace extends SimpleScene {
                         if (currentItemType == 0 || objectsData[(i * 5) + 1] == itemTypes[currentItemType]) {
                             if (v >= currentPage * 2) {
                                 if (v % 2 == 0) {
-                                    obj = this.add.sprite(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`);
-                                    label = this.add.text(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.25, objectsData[i * 5], 0x000000);
+                                    obj = this.add.sprite(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                                    label = this.add.text(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
                                 }
                                 if (v % 2 == 1) {
-                                    obj = this.add.sprite(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`);
-                                    label = this.add.text(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.25, objectsData[i * 5], 0x000000);
+                                    obj = this.add.sprite(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                                    label = this.add.text(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
                                 }
                                 obj.scale *= (objectsData[(i * 5) + 2]);
                                 obj.width *= (objectsData[(i * 5) + 2]);
@@ -1832,9 +2515,25 @@ class Workspace extends SimpleScene {
                                     obj.height *= 0.9;
                                 }
                                 obj.enableClick();
+                                obj.setDepth(6);
                                 this.items[v - currentPage * 2] = obj;
                                 itemObjectID.push(objectID);
-                                label.setOrigin(0.5, 0);
+
+                                if (objectID == 2) {
+                                    this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
+                                    this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                                    this.itemResistorBars[0].setOrigin(0.5, 0.5);
+                                    this.itemResistorBars[1].setOrigin(0.5, 0.5);
+                                    this.itemResistorBars[0].setDepth(6);
+                                    this.itemResistorBars[1].setDepth(6);
+                                }
+                                if (label.text.length > 15) {
+                                    label.setFontSize(15 / label.text.length * deviceHeight * 0.025);
+                                } else {
+                                    label.setFontSize(deviceHeight * 0.025);
+                                }
+                                label.setOrigin(0.5, 0.5);
+                                label.setDepth(6);
                                 this.itemLabels[v - currentPage * 2] = label;
                                 t++;
                             }
@@ -1856,6 +2555,9 @@ class Workspace extends SimpleScene {
             clean(this.items);
             clean(this.itemLabels);
 
+            this.itemResistorBars[0].destroy();
+            this.itemResistorBars[1].destroy();
+
             objectID = 0;
             var v = 0;
             var t = 0;
@@ -1866,12 +2568,12 @@ class Workspace extends SimpleScene {
                     if (currentItemType == 0 || objectsData[(i * 5) + 1] == itemTypes[currentItemType]) {
                         if (v >= currentPage * 2) {
                             if (v % 2 == 0) {
-                                obj = this.add.sprite(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`);
-                                label = this.add.text(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.25, objectsData[i * 5], 0x000000);
+                                obj = this.add.sprite(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                                label = this.add.text(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
                             }
                             if (v % 2 == 1) {
-                                obj = this.add.sprite(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`);
-                                label = this.add.text(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.25, objectsData[i * 5], 0x000000);
+                                obj = this.add.sprite(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                                label = this.add.text(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
                             }
                             obj.scale *= (objectsData[(i * 5) + 2]);
                             obj.width *= (objectsData[(i * 5) + 2]);
@@ -1889,9 +2591,31 @@ class Workspace extends SimpleScene {
                                 obj.height *= 0.9;
                             }
                             obj.enableClick();
+                            obj.setDepth(6);
                             this.items[v - currentPage * 2] = obj;
                             itemObjectID.push(objectID);
-                            label.setOrigin(0.5, 0);
+
+                            if (objectID == 2) {
+                                this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
+                                this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                                this.itemResistorBars[0].setOrigin(0.5, 0.5);
+                                this.itemResistorBars[1].setOrigin(0.5, 0.5);
+                                this.itemResistorBars[0].setDepth(6);
+                                this.itemResistorBars[1].setDepth(6);
+                            }
+
+                            if (label.length > 10) {
+                                label.setFontSize(10 / label.length * deviceHeight * 0.025);
+                            } else {
+                                label.setFontSize(deviceHeight * 0.025);
+                            }
+                            if (label.text.length > 15) {
+                                label.setFontSize(15 / label.text.length * deviceHeight * 0.025);
+                            } else {
+                                label.setFontSize(deviceHeight * 0.025);
+                            }
+                            label.setOrigin(0.5, 0.5);
+                            label.setDepth(6);
                             this.itemLabels[v - currentPage * 2] = label;
                             t++;
                         }
@@ -1911,8 +2635,54 @@ class Workspace extends SimpleScene {
             }
         }
 
+        for (var i = 0; i < this.resistorBars.length / 2; i++) {
+            if (rotateAngle[resistorData[(i * 5)]] == 0) {
+                this.resistorBars[i * 2].width = this.objects[resistorData[(i * 5)]].width * 0.3;
+                this.resistorBars[(i * 2) + 1].width = this.objects[resistorData[(i * 5)]].width * 0.3;
+                this.resistorBars[i * 2].height = this.objects[resistorData[(i * 5)]].height * 0.055;
+                this.resistorBars[(i * 2) + 1].height = this.objects[resistorData[(i * 5)]].height * 0.055;
+                this.resistorBars[i * 2].x = this.objects[resistorData[(i * 5)]].x;
+                this.resistorBars[(i * 2) + 1].x = this.objects[resistorData[(i * 5)]].x;
+                this.resistorBars[i * 2].y = this.objects[resistorData[(i * 5)]].y + this.objects[resistorData[(i * 5)]].height * 0.052;
+                this.resistorBars[(i * 2) + 1].y = this.objects[resistorData[(i * 5)]].y - this.objects[resistorData[(i * 5)]].height * 0.057;
+            }
+            if (rotateAngle[resistorData[(i * 5)]] == 1) {
+                this.resistorBars[i * 2].width = this.objects[resistorData[(i * 5)]].width * 0.055;
+                this.resistorBars[(i * 2) + 1].width = this.objects[resistorData[(i * 5)]].width * 0.055;
+                this.resistorBars[i * 2].height = this.objects[resistorData[(i * 5)]].height * 0.3;
+                this.resistorBars[(i * 2) + 1].height = this.objects[resistorData[(i * 5)]].height * 0.3;
+                this.resistorBars[i * 2].x = this.objects[resistorData[(i * 5)]].x - this.objects[resistorData[(i * 5)]].width * 0.052;
+                this.resistorBars[(i * 2) + 1].x = this.objects[resistorData[(i * 5)]].x + this.objects[resistorData[(i * 5)]].width * 0.057;
+                this.resistorBars[i * 2].y = this.objects[resistorData[(i * 5)]].y;
+                this.resistorBars[(i * 2) + 1].y = this.objects[resistorData[(i * 5)]].y;
+            }
+            if (rotateAngle[resistorData[(i * 5)]] == 2) {
+                this.resistorBars[i * 2].width = this.objects[resistorData[(i * 5)]].width * 0.3;
+                this.resistorBars[(i * 2) + 1].width = this.objects[resistorData[(i * 5)]].width * 0.3;
+                this.resistorBars[i * 2].height = this.objects[resistorData[(i * 5)]].height * 0.055;
+                this.resistorBars[(i * 2) + 1].height = this.objects[resistorData[(i * 5)]].height * 0.055;
+                this.resistorBars[i * 2].x = this.objects[resistorData[(i * 5)]].x;
+                this.resistorBars[(i * 2) + 1].x = this.objects[resistorData[(i * 5)]].x;
+                this.resistorBars[i * 2].y = this.objects[resistorData[(i * 5)]].y - this.objects[resistorData[(i * 5)]].height * 0.053;
+                this.resistorBars[(i * 2) + 1].y = this.objects[resistorData[(i * 5)]].y + this.objects[resistorData[(i * 5)]].height * 0.056;
+            }
+            if (rotateAngle[resistorData[(i * 5)]] == 3) {
+                this.resistorBars[i * 2].width = this.objects[resistorData[(i * 5)]].width * 0.055;
+                this.resistorBars[(i * 2) + 1].width = this.objects[resistorData[(i * 5)]].width * 0.055;
+                this.resistorBars[i * 2].height = this.objects[resistorData[(i * 5)]].height * 0.3;
+                this.resistorBars[(i * 2) + 1].height = this.objects[resistorData[(i * 5)]].height * 0.3;
+                this.resistorBars[i * 2].x = this.objects[resistorData[(i * 5)]].x - this.objects[resistorData[(i * 5)]].width * 0.056;
+                this.resistorBars[(i * 2) + 1].x = this.objects[resistorData[(i * 5)]].x + this.objects[resistorData[(i * 5)]].width * 0.053;
+                this.resistorBars[i * 2].y = this.objects[resistorData[(i * 5)]].y;
+                this.resistorBars[(i * 2) + 1].y = this.objects[resistorData[(i * 5)]].y;
+            }
+            this.resistorBars[i * 2].setOrigin(0.5, 0.5);
+            this.resistorBars[(i * 2) + 1].setOrigin(0.5, 0.5);
+            this.resistorBars[i * 2].setDepth(this.objects[resistorData[(i * 5)]].depth);
+            this.resistorBars[(i * 2) + 1].setDepth(this.objects[resistorData[(i * 5)]].depth);
+        }
+
         for (var i = 0; i < this.objectLabels.length; i++) {
-            this.objectLabels[i].setDepth(3.2);
             if (defaultLabel[(this.objectIDs[i] * 12) + 3] == true) {
                 this.objectLabels[i].setAngle(rotateAngle[i] * 90);
             }
@@ -1927,383 +2697,422 @@ class Workspace extends SimpleScene {
 
         var wiringPointer = false;
         for (var i = 0; i < this.objects.length; i++) {
-            startingX[i] = this.objects[i].x;
-            startingY[i] = this.objects[i].y;
-            if (this.objects[i].wasClicked()) {
-                lastPosition[0] = -i - 1;
-                lastPosition[1] = this.objects[i].x;
-                lastPosition[2] = this.objects[i].y;
-                lastClicked = i;
+            if (this.objects[i].visible == 1) {
+                startingX[i] = this.objects[i].x;
+                startingY[i] = this.objects[i].y;
+                if (this.objects[i].wasClicked()) {
+                    lastPosition[0] = -i - 1;
+                    lastPosition[1] = this.objects[i].x;
+                    lastPosition[2] = this.objects[i].y;
+                    lastClicked = i;
 
-                this.clearPanel();
-                this.openPanel(i);
-                lastX = this.input.mousePointer.x;
-                lastY = this.input.mousePointer.y;
-
-                if (this.shift.isPressed()) {
-                    for (var v = 0; v < this.objects.length; v++) {
-                        this.objects[v].disableDrag();
-                    }
-                    if (shiftObjects[i] == false) {
-                        this.shiftSelect.push(this.objects[i]);
-                        shiftObjects[i] = true;
-                    }
-                }
-            }
-            if (lastPosition[0] == -i - 1 && !(this.objects[i].isClicked()) && (lastPosition[1] != this.objects[i].x || lastPosition[2] != this.objects[i].y) && !(this.panelUpArrow.isClicked()) && !(this.panelLeftArrow.isClicked()) && !(this.panelRightArrow.isClicked()) && !(this.panelDownArrow.isClicked()) && !(this.uparrow.isPressed()) && !(this.leftarrow.isPressed()) && !(this.rightarrow.isPressed()) && !(this.downarrow.isPressed())) {
-                undo.push("movedObject");
-                undo.push(-i - 1);
-                undo.push(lastPosition[1] - this.objects[i].x);
-                undo.push(lastPosition[2] - this.objects[i].y);
-                lastPosition[1] = this.objects[i].x;
-                lastPosition[2] = this.objects[i].y;
-                redo.splice(0, redo.length);
-            }
-            if (this.input.activePointer.isDown == false) {
-                lastX = -1;
-                lastY = -1;
-            }
-            if (this.shiftSelect.length > 0 && this.input.activePointer.isDown == true && lastX != -1 && lastY != -1) {
-                if (this.input.mousePointer.x != lastX || this.input.mousePointer.y != lastY) {
-                    moved = i;
-                    this.objects[i].x += this.input.mousePointer.x - lastX;
-                    this.objects[i].y += this.input.mousePointer.y - lastY;
+                    this.clearPanel();
+                    this.openPanel(i);
                     lastX = this.input.mousePointer.x;
                     lastY = this.input.mousePointer.y;
-                }
-            }
-            if (!(this.shift.isPressed())) {
-                this.objects[i].setAlpha(1);
-                if (this.popup.visible == 0) {
-                    for (var v = 0; v < this.objects.length; v++) {
-                        this.objects[v].enableDrag();
-                    }
-                }
-                for (var v = 0; v < this.shiftSelect.length; v++) {
-                    this.shiftSelect[v] = -1;
-                }
-                for (var v = 0; v < shiftObjects.length; v++) {
-                    shiftObjects[v] = false;
-                }
-                this.shiftSelect.splice(0, this.shiftSelect.length);
-            }
-            if (this.objects[i].isClicked()) {
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-            }
 
-            var noOther = true;
-            for (var v = 0; v < this.nodes.length; v++) {
-                if (nodeLinks[v * 4] == -2) {
-                    if (this.nodes[v].isClicked()) {
-                        noOther = false;
-                    }
-                }
-            }
-            if (this.objects[i].isOver() && noOther == true) {
-                this.objects[i].setAlpha(0.7);
-                if (element == null) {
-                    if (this.del.wasPressed()) {
-                        this.initiateDelete(i);
-                    }
-                    if (this.d.wasPressed()) {
-                        var obj = this.add.sprite(this.objects[i].x, this.objects[i].y, `${this.objectIDs[i]}`);
+                    if (this.shift.isPressed()) {
                         for (var v = 0; v < this.objects.length; v++) {
-                            if (this.objectIDs[v] == this.objectIDs[i] && this.objects[v].x == obj.x && this.objects[v].y == obj.y && this.objects[v].visible == 1) {
-                                obj.x += deviceWidth * 0.01;
-                                obj.y += deviceHeight * 0.02;
-                            }
+                            this.objects[v].disableDrag();
                         }
-                        obj.scale *= (objectsData[this.objectIDs[i] * 5 + 2]);
-                        obj.width *= (objectsData[this.objectIDs[i] * 5 + 2]);
-                        obj.height *= (objectsData[this.objectIDs[i] * 5 + 2]);
-
-                        obj.scale *= scaleCount;
-                        obj.width *= scaleCount;
-                        obj.height *= scaleCount;
-
-                        obj.setAngle(rotateAngle[i] * 90);
-
-                        if (settings[(lastClicked * 2)] != -1 || settings[(lastClicked * 2) + 1] != -1) {
-                            if (this.objectIDs[lastClicked] == 2) {
-                                //SETUP RESISTOR
-                            }
-                            if (this.objectIDs[lastClicked] == 3 || this.objectIDs[lastClicked] == 6) {
-                                obj.setTint(settings[lastClicked * 2]);
-                            }
-                        }
-
-                        obj.enableDrag();
-                        obj.enableClick();
-                        obj.setDepth(3);
-                        for (var v = 0; v < this.objects.length; v++) {
-                            this.objects[v].depth -= 0.01;
-                        }
-                        this.objects.push(obj);
-                        this.objectIDs.push(this.objectIDs[i]);
-                        var label = this.add.text(this.objects[this.objects.length - 1].x + scaleCount * deviceWidth * defaultLabel[(this.objectIDs[i] * 12) + 4], this.objects[this.objects.length - 1].y + scaleCount * deviceHeight * defaultLabel[(this.objectIDs[i] * 12) + 5], this.objectLabels[i].text, 0x000000);
-                        label.setOrigin(0.5, 0.5);
-                        label.setFontSize(scaleCount * deviceHeight * defaultLabel[(this.objectIDs[i] * 12) + 1]);
-                        this.objectLabels.push(label);
-                        rotateAngle.push(rotateAngle[i]);
-                        shiftObjects.push(false);
-                        settings.push(settings[i * 2]);
-                        settings.push(settings[(i * 2) + 1]);
-
-                        lastClicked = this.objects.length - 1
-                        this.clearPanel();
-                        this.openPanel(this.objects.length - 1);
-
-                        undo.push("createdObject");
-                        undo.push(this.objects.length - 1);
-                        undo.push(-1);
-                        undo.push(-1);
-                        redo.splice(0, redo.length);
-                    }
-                    if (!(this.shift.isPressed())) {
-                        if (this.rightarrow.isPressed()) {
-                            lastPosition[0] = -i - 1;
-                            lastPosition[1] = this.objects[i].x;
-                            lastPosition[2] = this.objects[i].y;
-                            this.objects[i].x += 0.5;
-                        }
-                        if (this.leftarrow.isPressed()) {
-                            lastPosition[0] = -i - 1;
-                            lastPosition[1] = this.objects[i].x;
-                            lastPosition[2] = this.objects[i].y;
-                            this.objects[i].x -= 0.5;
-                        }
-                        if (this.uparrow.isPressed()) {
-                            lastPosition[0] = -i - 1;
-                            lastPosition[1] = this.objects[i].x;
-                            lastPosition[2] = this.objects[i].y;
-                            this.objects[i].y -= 0.5;
-                        }
-                        if (this.downarrow.isPressed()) {
-                            lastPosition[0] = -i - 1;
-                            lastPosition[1] = this.objects[i].x;
-                            lastPosition[2] = this.objects[i].y;
-                            this.objects[i].y += 0.5;
-                        }
-                    } else {
-                        if (this.rightarrow.wasPressed()) {
-                            this.objects[i].angle += 90;
-                            rotateAngle[i]++;
-                            if (rotateAngle[i] == 4) {
-                                rotateAngle[i] = 0;
-                            }
-                            var widthHolder = this.objects[i].width;
-                            this.objects[i].width = this.objects[i].height;
-                            this.objects[i].height = widthHolder;
-                            undo.push("rotatedObject");
-                            undo.push(i);
-                            undo.push(-90);
-                            undo.push(widthHolder);
-                            redo.splice(0, redo.length);
-                        }
-                        if (this.leftarrow.wasPressed()) {
-                            this.objects[i].angle -= 90;
-                            rotateAngle[i]--;
-                            if (rotateAngle[i] == -1) {
-                                rotateAngle[i] = 3;
-                            }
-                            var widthHolder = this.objects[i].width;
-                            this.objects[i].width = this.objects[i].height;
-                            this.objects[i].height = widthHolder;
-                            undo.push("rotatedObject");
-                            undo.push(i);
-                            undo.push(90);
-                            undo.push(widthHolder);
-                            redo.splice(0, redo.length);
-                        }
-                        if (this.downarrow.wasPressed() && this.objects[i].depth != 2) {
-                            undo.push(i);
-                            undo.push(lastClicked);
-                            undo.push(this.objects[i].depth);
-                            undo.push(-0.01);
-                            redo.splice(0, redo.length);
-                            for (var v = 0; v < this.objects.length; v++) {
-                                if (this.objects[i].intersects(this.objects[v]) && v != i) {
-                                    this.objects[v].depth += 0.01;
-                                }
-                            }
-                            this.objects[i].setDepth(2);
-                        }
-                        if (this.uparrow.wasPressed() && this.objects[i].depth != 3) {
-                            undo.push("arrangedObject");
-                            undo.push(i);
-                            undo.push(this.objects[i].depth);
-                            undo.push(0.01);
-                            redo.splice(0, redo.length);
-                            for (var v = 0; v < this.objects.length; v++) {
-                                if (this.objects[i].intersects(this.objects[v]) && v != i) {
-                                    this.objects[v].depth -= 0.01;
-                                }
-                            }
-                            this.objects[i].setDepth(3);
+                        if (shiftObjects[i] == false) {
+                            this.shiftSelect.push(this.objects[i]);
+                            shiftObjects[i] = true;
                         }
                     }
                 }
-            } else {
-                if (shiftObjects[i] == false) {
+                if (lastPosition[0] == -i - 1 && !(this.objects[i].isClicked()) && (lastPosition[1] != this.objects[i].x || lastPosition[2] != this.objects[i].y) && !(this.panelUpArrow.isClicked()) && !(this.panelLeftArrow.isClicked()) && !(this.panelRightArrow.isClicked()) && !(this.panelDownArrow.isClicked()) && !(this.uparrow.isPressed()) && !(this.leftarrow.isPressed()) && !(this.rightarrow.isPressed()) && !(this.downarrow.isPressed())) {
+                    undo.push("movedObject");
+                    undo.push(-i - 1);
+                    undo.push(lastPosition[1] - this.objects[i].x);
+                    undo.push(lastPosition[2] - this.objects[i].y);
+                    lastPosition[1] = this.objects[i].x;
+                    lastPosition[2] = this.objects[i].y;
+                    redo.splice(0, redo.length);
+                }
+                if (this.input.activePointer.isDown == false) {
+                    lastX = -1;
+                    lastY = -1;
+                }
+                if (this.shiftSelect.length > 0 && this.input.activePointer.isDown == true && lastX != -1 && lastY != -1) {
+                    if (this.input.mousePointer.x != lastX || this.input.mousePointer.y != lastY) {
+                        moved = i;
+                        this.objects[i].x += this.input.mousePointer.x - lastX;
+                        this.objects[i].y += this.input.mousePointer.y - lastY;
+                        lastX = this.input.mousePointer.x;
+                        lastY = this.input.mousePointer.y;
+                    }
+                }
+                if (!(this.shift.isPressed())) {
                     this.objects[i].setAlpha(1);
-                }
-            }
-
-            for (var v = 0; v < this.nodes.length; v++) {
-                for (var t = 0; t < this.nodes.length; t++) {
-                    if (this.nodes[v].x == this.nodes[t].x && this.nodes[v].y == this.nodes[t].y && v != t && nodeLinks[v * 4] != -1 && nodeLinks[(t * 4)] != -1 && nodeLinks[(v * 4) + 3] == nodeLinks[(t * 4) + 3]) {
-                        if ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] <= -4) && nodeLinks[(t * 4)] != -3 && nodeLinks[(t * 4)] > -4) {
-                            this.nodes[v].disableClick();
-                            this.nodes[v].disableDrag();
-                            this.nodes[v].setVisible(0);
-                            this.nodes[v - 1].setVisible(0);
-                            nodeLinks[v * 4] = t - t - t - 4;
+                    if (this.popup.visible == 0) {
+                        for (var v = 0; v < this.objects.length; v++) {
+                            this.objects[v].enableDrag();
                         }
                     }
-                }
-                if (nodeLinks[v * 4] >= 0) {
-                    if (nodeLinks[(v * 4) + 1] == i) {
-                        this.nodes[v].setX(this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][nodeLinks[(v * 4) + 2] + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width));
-                        this.nodes[v].setY(this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][nodeLinks[(v * 4) + 2] + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height));
+                    for (var v = 0; v < this.shiftSelect.length; v++) {
+                        this.shiftSelect[v] = -1;
                     }
-                }
-                if (nodeLinks[v * 4] == -3) {
-                    this.nodes[v].setX(this.nodes[v + 1].x);
-                    this.nodes[v].setY(this.nodes[v + 1].y);
-                }
-                if (nodeLinks[v * 4] <= -4) {
-                    this.nodes[v].setX(this.nodes[0 - (nodeLinks[v * 4] + 4)].x);
-                    this.nodes[v].setY(this.nodes[0 - (nodeLinks[v * 4] + 4)].y);
-                }
-            }
-
-            for (var v = 0; v < this.nodes.length; v++) {
-                if (nodeLinks[v * 8] >= 0) {
-                    if (nodeLinks[(v * 8) + 1] == i) {
-                        this.wireLines[nodeLinks[v * 8]].setTo(this.nodes[v * 2].x, this.nodes[v * 2].y, this.wireLines[nodeLinks[v * 8]].geom.x2, this.wireLines[nodeLinks[v * 8]].geom.y2);
+                    for (var v = 0; v < shiftObjects.length; v++) {
+                        shiftObjects[v] = false;
                     }
+                    this.shiftSelect.splice(0, this.shiftSelect.length);
                 }
-                if (nodeLinks[(v * 8) + 4] >= 0) {
-                    if (nodeLinks[(v * 8) + 5] == i) {
-                        this.wireLines[nodeLinks[(v * 8) + 4]].setTo(this.wireLines[nodeLinks[(v * 8) + 4]].geom.x1, this.wireLines[nodeLinks[(v * 8) + 4]].geom.y1, this.nodes[(v * 2) + 1].x, this.nodes[(v * 2) + 1].y);
-                    }
-                }
-                if (nodeLinks[v * 4] == -3) {
-                    this.wireLines[nodeLinks[(v * 4) + 2]].setTo(this.wireLines[nodeLinks[(v * 4) + 1]].geom.x1, this.wireLines[nodeLinks[(v * 4) + 1]].geom.y1, this.nodes[v].x, this.nodes[v].y);
-                }
-                if (nodeLinks[v * 4] == -2 || nodeLinks[v * 4] <= -4) {
-                    this.wireLines[nodeLinks[(v * 4) + 2]].setTo(this.nodes[v].x, this.nodes[v].y, this.wireLines[nodeLinks[(v * 4) + 1]].geom.x2, this.wireLines[nodeLinks[(v * 4) + 1]].geom.y2);
-                }
-
-            }
-            for (var v = 0; v < this.wires.length; v++) {
-                this.wires[v].x = (this.wireLines[v].geom.x1 + this.wireLines[v].geom.x2) / 2;
-                this.wires[v].y = (this.wireLines[v].geom.y1 + this.wireLines[v].geom.y2) / 2;
-                this.wires[v].height = Math.sqrt(Math.pow(Math.abs(this.wireLines[v].geom.x1 - this.wireLines[v].geom.x2), 2) + Math.pow(Math.abs(this.wireLines[v].geom.y1 - this.wireLines[v].geom.y2), 2));
-
-                if ((this.wireLines[v].geom.x1 < this.wireLines[v].geom.x2 && this.wireLines[v].geom.y1 < this.wireLines[v].geom.y2) || (this.wireLines[v].geom.x1 > this.wireLines[v].geom.x2 && this.wireLines[v].geom.y1 > this.wireLines[v].geom.y2)) {
-                    this.wires[v].setAngle((-Math.atan(Math.abs(this.wireLines[v].geom.x1 - this.wireLines[v].geom.x2) / Math.abs(this.wireLines[v].geom.y1 - this.wireLines[v].geom.y2))) * (180 / Math.PI));
-                }
-                if ((this.wireLines[v].geom.x1 > this.wireLines[v].geom.x2) && (this.wireLines[v].geom.y1 < this.wireLines[v].geom.y2) || (this.wireLines[v].geom.x1 < this.wireLines[v].geom.x2 && this.wireLines[v].geom.y1 > this.wireLines[v].geom.y2)) {
-                    this.wires[v].setAngle((Math.atan(Math.abs(this.wireLines[v].geom.x1 - this.wireLines[v].geom.x2) / Math.abs(this.wireLines[v].geom.y1 - this.wireLines[v].geom.y2))) * (180 / Math.PI));
-                }
-                if (this.wireLines[v].geom.y1 == this.wireLines[v].geom.y2) {
-                    this.wires[v].setAngle(90);
-                }
-                if (this.wireLines[v].geom.x1 == this.wireLines[v].geom.x2) {
-                    this.wires[v].setAngle(0);
-                }
-                this.wires[v].setOrigin(0.5, 0.5);
-            }
-            for (var v = 0; v < wiringXPoints["x" + this.objectIDs[i]].length / 4; v++) {
-                if (activeWireXY[0] == i && activeWireXY[1] == v) {
-                    activeWireXY[2] = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width);
-                    activeWireXY[3] = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
-                }
-                if (activeWire == true) {
-                    this.activeWire.setTo(activeWireXY[2], activeWireXY[3], this.input.mousePointer.x, this.input.mousePointer.y);
-                    this.activeWire.setDepth(4);
-                    this.activeWire.strokeColor = wireColor;
-                    this.activeWire.setVisible(1);
-
-                    if (down == true) {
-                        if (this.input.mousePointer.x >= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) - deviceWidth * 0.01 && this.input.mousePointer.x <= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) + deviceWidth * 0.01 && this.input.mousePointer.y <= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) + deviceHeight * 0.015 && this.input.mousePointer.y >= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) - deviceHeight * 0.015) {
-                            activeWire = false;
-                            this.activeWire.setVisible(0);
-                            var node = this.add.circle(activeWireXY[2], activeWireXY[3], 8 * scaleCount, wireColor);
-                            this.nodes.push(node);
-                            var node2 = this.add.circle(this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width), this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height), 8 * scaleCount, wireColor);
-                            this.nodes.push(node2);
-                            wireGroup++;
-                            nodeLinks.push(this.wireLines.length);
-                            nodeLinks.push(activeWireXY[0]);
-                            nodeLinks.push(activeWireXY[1]);
-                            nodeLinks.push(wireGroup);
-                            nodeLinks.push(this.wireLines.length);
-                            nodeLinks.push(i);
-                            nodeLinks.push(v);
-                            nodeLinks.push(wireGroup);
-
-                            var obj = this.add.line(node.x, node.y, node2.x, node2.y, 0xffffff);
-                            obj.setLineWidth(3.8 * scaleCount);
-                            this.wireLines.push(obj);
-                            var obj2;
-                            obj2 = this.add.rectangle((obj.geom.x1 + obj.geom.x2) / 2, (obj.geom.y1 + obj.geom.y2) / 2, lineWidth, Math.sqrt(Math.pow(Math.abs(obj.geom.x1 - obj.geom.x2), 2) + Math.pow(Math.abs(obj.geom.y1 - obj.geom.y2), 2)), wireColor)
-
-                            obj2.setAngle(-Math.atan(Math.abs(obj.geom.x1 - obj.geom.x2) / Math.abs(obj.geom.y1 - obj.geom.y2)) * 180 / Math.PI);
-                            obj2.enableClick();
-                            this.wires.push(obj2);
-                            down = false;
-
-                            this.createPalette();
-                            lastWire = this.wires.length - 1;
-
-                            undo.push("createdWire");
-                            undo.push(this.wires.length - 1);
-                            undo.push(this.nodes.length - 2);
-                            undo.push(this.nodes.length - 1);
-                            redo.splice(0,redo.length);
-                        }
-                    }
-                }
-                if (this.input.mousePointer.x >= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) - deviceWidth * 0.01 && this.input.mousePointer.x <= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) + deviceWidth * 0.01 && this.input.mousePointer.y <= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) + deviceHeight * 0.015 && this.input.mousePointer.y >= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) - deviceHeight * 0.015) {
-                    wiringPointer = true;
-                    this.wiringPointer.x = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)
-                    this.wiringPointer.y = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
-                    this.wiringPointer.fillColor = wireColor;
-                    this.wiringPointer.radius = 8 * scaleCount;
-                    this.wiringPointer.setVisible(1);
-                    this.wiringPointer.setDepth(4);
+                if (this.objects[i].isClicked()) {
                     pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-                    if (down == true) {
-                        if (activeWire == false) {
-                            activeWire = true;
-                            this.clearPanel()
-                            activeWireXY[0] = i;
-                            activeWireXY[1] = v;
-                            activeWireXY[2] = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width);
-                            activeWireXY[3] = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
-                            down = false;
-                        }
+                }
 
+                var noOther = true;
+                for (var v = 0; v < this.nodes.length; v++) {
+                    if (nodeLinks[v * 4] == -2) {
+                        if (this.nodes[v].isClicked()) {
+                            noOther = false;
+                        }
                     }
                 }
-            }
-
-            if (this.objects[i].isClicked()) {
-                if (this.slash.visible == 0) {
-                    for (var v = -10000; v < 10000; v++) {
-                        if (Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - ((wiringXPoints["x" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width) + this.objects[i].x))) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - ((wiringXPoints["x" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width) + this.objects[i].x))) > 0) {
-                            this.objects[i].x = (v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - (wiringXPoints["x" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width);
+                if (this.objects[i].isOver() && noOther == true) {
+                    this.objects[i].setAlpha(0.7);
+                    if (this.objectIDs[i] == 2) {
+                        for (var v = 0; v < resistorData.length / 5; v++) {
+                            if (resistorData[v * 5] == i) {
+                                this.resistorBars[v * 2].setAlpha(0.7);
+                                this.resistorBars[(v * 2) + 1].setAlpha(0.7);
+                            }
                         }
                     }
-                    for (var v = -10000; v < 10000; v++) {
+                    if (element == null) {
+                        if (this.del.wasPressed()) {
+                            this.initiateDelete(i);
+                        }
+                        if (this.d.wasPressed()) {
+                            var obj = this.add.sprite(this.objects[i].x, this.objects[i].y, `${this.objectIDs[i]}`, 1);
+                            for (var v = 0; v < this.objects.length; v++) {
+                                if (this.objectIDs[v] == this.objectIDs[i] && this.objects[v].x == obj.x && this.objects[v].y == obj.y && this.objects[v].visible == 1) {
+                                    obj.x += deviceWidth * 0.02;
+                                    obj.y += deviceHeight * 0.04;
+                                }
+                            }
+                            obj.scale *= (objectsData[this.objectIDs[i] * 5 + 2]);
+                            obj.width *= (objectsData[this.objectIDs[i] * 5 + 2]);
+                            obj.height *= (objectsData[this.objectIDs[i] * 5 + 2]);
 
-                        if (Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - ((wiringYPoints["y" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height) + this.objects[i].y))) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - ((wiringYPoints["y" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height) + this.objects[i].y))) > 0) {
-                            this.objects[i].y = (v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - (wiringYPoints["y" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
+                            obj.scale *= scaleCount;
+                            obj.width *= scaleCount;
+                            obj.height *= scaleCount;
+
+                            if (rotateAngle[lastClicked] == 1 || rotateAngle[lastClicked] == 3) {
+                                var widthHolder = obj.width;
+                                obj.width = obj.height;
+                                obj.height = widthHolder;
+                            }
+
+                            obj.setAngle(rotateAngle[i] * 90);
+
+                            if (settings[(lastClicked * 2)] != -1 || settings[(lastClicked * 2) + 1] != -1) {
+                                if (this.objectIDs[lastClicked] == 3 || this.objectIDs[lastClicked] == 6) {
+                                    obj.setTint(settings[lastClicked * 2]);
+                                }
+                            }
+
+                            obj.enableDrag();
+                            obj.enableClick();
+                            obj.setDepth(3);
+                            for (var v = 0; v < this.objects.length; v++) {
+                                this.objects[v].depth -= 0.01;
+                            }
+                            this.objects.push(obj);
+                            this.objectIDs.push(this.objectIDs[i]);
+                            var label = this.add.text(this.objects[this.objects.length - 1].x + scaleCount * deviceWidth * defaultLabel[(this.objectIDs[i] * 12) + 4], this.objects[this.objects.length - 1].y + scaleCount * deviceHeight * defaultLabel[(this.objectIDs[i] * 12) + 5], this.objectLabels[i].text, labelColor);
+                            label.setOrigin(0.5, 0.5);
+                            label.setFontSize(scaleCount * deviceHeight * defaultLabel[(this.objectIDs[i] * 12) + 1]);
+                            label.setDepth(3.2);
+                            this.objectLabels.push(label);
+                            rotateAngle.push(rotateAngle[i]);
+                            shiftObjects.push(false);
+                            settings.push(settings[i * 2]);
+                            settings.push(settings[(i * 2) + 1]);
+
+                            if (this.objectIDs[i] == 2) {
+                                for (var v = 0; v < resistorData.length / 5; v++) {
+                                    if (resistorData[v * 5] == i) {
+                                        var widthHolder = obj.width;
+                                        var heightHolder = obj.height;
+                                        obj.setFrame(resistorData[(v * 5) + 4]);
+                                        var bar1 = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, resistorData[(v * 5) + 3]);
+                                        var bar2 = this.add.rectangle(obj.x, obj.y - obj.height * 0.057, obj.width * 0.3, obj.height * 0.055, resistorData[(v * 5) + 2]);
+                                        bar1.setOrigin(0.5, 0.5);
+                                        bar2.setOrigin(0.5, 0.5);
+                                        this.resistorBars.push(bar1);
+                                        this.resistorBars.push(bar2);
+                                        resistorData.push(this.objects.length - 1);
+                                        resistorData.push(resistorData[(v * 5) + 1]);
+                                        resistorData.push(resistorData[(v * 5) + 2]);
+                                        resistorData.push(resistorData[(v * 5) + 3]);
+                                        resistorData.push(resistorData[(v * 5) + 4]);
+                                        obj.width = widthHolder;
+                                        obj.height = heightHolder;
+                                    }
+                                }
+                            }
+
+                            lastClicked = this.objects.length - 1
+                            this.clearPanel();
+                            this.openPanel(this.objects.length - 1);
+
+                            undo.push("createdObject");
+                            undo.push(this.objects.length - 1);
+                            undo.push(-1);
+                            undo.push(-1);
+                            redo.splice(0, redo.length);
+                        }
+                        if (!(this.shift.isPressed())) {
+                            if (this.rightarrow.wasPressed() || this.leftarrow.wasPressed() || this.uparrow.wasPressed() || this.downarrow.wasPressed()) {
+                                lastPosition[0] = -i - 1;
+                                lastPosition[1] = this.objects[i].x;
+                                lastPosition[2] = this.objects[i].y;
+                            }
+                            if (this.rightarrow.isPressed()) {
+                                this.objects[i].x += 0.25;
+                            }
+                            if (this.leftarrow.isPressed()) {
+                                this.objects[i].x -= 0.25;
+                            }
+                            if (this.uparrow.isPressed()) {
+                                this.objects[i].y -= 0.25;
+                            }
+                            if (this.downarrow.isPressed()) {
+                                this.objects[i].y += 0.25;
+                            }
+                        } else {
+                            if (this.rightarrow.wasPressed()) {
+                                this.objects[i].angle += 90;
+                                rotateAngle[i]++;
+                                if (rotateAngle[i] == 4) {
+                                    rotateAngle[i] = 0;
+                                }
+                                var widthHolder = this.objects[i].width;
+                                this.objects[i].width = this.objects[i].height;
+                                this.objects[i].height = widthHolder;
+                                undo.push("rotatedObject");
+                                undo.push(i);
+                                undo.push(-90);
+                                undo.push(widthHolder);
+                                redo.splice(0, redo.length);
+                            }
+                            if (this.leftarrow.wasPressed()) {
+                                this.objects[i].angle -= 90;
+                                rotateAngle[i]--;
+                                if (rotateAngle[i] == -1) {
+                                    rotateAngle[i] = 3;
+                                }
+                                var widthHolder = this.objects[i].width;
+                                this.objects[i].width = this.objects[i].height;
+                                this.objects[i].height = widthHolder;
+                                undo.push("rotatedObject");
+                                undo.push(i);
+                                undo.push(90);
+                                undo.push(widthHolder);
+                                redo.splice(0, redo.length);
+                            }
+                            if (this.downarrow.wasPressed() && this.objects[i].depth != 2) {
+                                undo.push(i);
+                                undo.push(lastClicked);
+                                undo.push(this.objects[i].depth);
+                                undo.push(-0.01);
+                                redo.splice(0, redo.length);
+                                for (var v = 0; v < this.objects.length; v++) {
+                                    if (this.objects[i].intersects(this.objects[v]) && v != i) {
+                                        this.objects[v].depth += 0.01;
+                                    }
+                                }
+                                this.objects[i].setDepth(2);
+                            }
+                            if (this.uparrow.wasPressed() && this.objects[i].depth != 3) {
+                                undo.push("arrangedObject");
+                                undo.push(i);
+                                undo.push(this.objects[i].depth);
+                                undo.push(0.01);
+                                redo.splice(0, redo.length);
+                                for (var v = 0; v < this.objects.length; v++) {
+                                    if (this.objects[i].intersects(this.objects[v]) && v != i) {
+                                        this.objects[v].depth -= 0.01;
+                                    }
+                                }
+                                this.objects[i].setDepth(3);
+                            }
                         }
                     }
-                } /*else {
+                } else {
+                    if (shiftObjects[i] == false) {
+                        this.objects[i].setAlpha(1);
+                        if (this.objectIDs[i] == 2) {
+                            for (var v = 0; v < resistorData.length / 5; v++) {
+                                if (resistorData[v * 5] == i) {
+                                    this.resistorBars[v * 2].setAlpha(1);
+                                    this.resistorBars[(v * 2) + 1].setAlpha(1);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                for (var v = 0; v < this.nodes.length; v++) {
+                    for (var t = 0; t < this.nodes.length; t++) {
+                        if (this.nodes[v].x == this.nodes[t].x && this.nodes[v].y == this.nodes[t].y && v != t && nodeLinks[v * 4] != -1 && nodeLinks[(t * 4)] != -1 && nodeLinks[(v * 4) + 3] == nodeLinks[(t * 4) + 3]) {
+                            if ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] <= -4) && nodeLinks[(t * 4)] != -3 && nodeLinks[(t * 4)] > -4) {
+                                this.nodes[v].disableClick();
+                                this.nodes[v].disableDrag();
+                                this.nodes[v].setVisible(0);
+                                this.nodes[v - 1].setVisible(0);
+                                nodeLinks[v * 4] = t - t - t - 4;
+                            }
+                        }
+                    }
+                    if (nodeLinks[v * 4] >= 0) {
+                        if (nodeLinks[(v * 4) + 1] == i) {
+                            this.nodes[v].setX(this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][nodeLinks[(v * 4) + 2] + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width));
+                            this.nodes[v].setY(this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][nodeLinks[(v * 4) + 2] + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height));
+                        }
+                    }
+                    if (nodeLinks[v * 4] == -3) {
+                        this.nodes[v].setX(this.nodes[v + 1].x);
+                        this.nodes[v].setY(this.nodes[v + 1].y);
+                    }
+                    if (nodeLinks[v * 4] <= -4) {
+                        this.nodes[v].setX(this.nodes[0 - (nodeLinks[v * 4] + 4)].x);
+                        this.nodes[v].setY(this.nodes[0 - (nodeLinks[v * 4] + 4)].y);
+                    }
+                }
+
+                for (var v = 0; v < this.nodes.length; v++) {
+                    if (nodeLinks[v * 8] >= 0) {
+                        if (nodeLinks[(v * 8) + 1] == i) {
+                            this.wireLines[nodeLinks[v * 8]].setTo(this.nodes[v * 2].x, this.nodes[v * 2].y, this.wireLines[nodeLinks[v * 8]].geom.x2, this.wireLines[nodeLinks[v * 8]].geom.y2);
+                        }
+                    }
+                    if (nodeLinks[(v * 8) + 4] >= 0) {
+                        if (nodeLinks[(v * 8) + 5] == i) {
+                            this.wireLines[nodeLinks[(v * 8) + 4]].setTo(this.wireLines[nodeLinks[(v * 8) + 4]].geom.x1, this.wireLines[nodeLinks[(v * 8) + 4]].geom.y1, this.nodes[(v * 2) + 1].x, this.nodes[(v * 2) + 1].y);
+                        }
+                    }
+                    if (nodeLinks[v * 4] == -3) {
+                        this.wireLines[nodeLinks[(v * 4) + 2]].setTo(this.wireLines[nodeLinks[(v * 4) + 1]].geom.x1, this.wireLines[nodeLinks[(v * 4) + 1]].geom.y1, this.nodes[v].x, this.nodes[v].y);
+                    }
+                    if (nodeLinks[v * 4] == -2 || nodeLinks[v * 4] <= -4) {
+                        this.wireLines[nodeLinks[(v * 4) + 2]].setTo(this.nodes[v].x, this.nodes[v].y, this.wireLines[nodeLinks[(v * 4) + 1]].geom.x2, this.wireLines[nodeLinks[(v * 4) + 1]].geom.y2);
+                    }
+
+                }
+                for (var v = 0; v < this.wires.length; v++) {
+                    this.wires[v].x = (this.wireLines[v].geom.x1 + this.wireLines[v].geom.x2) / 2;
+                    this.wires[v].y = (this.wireLines[v].geom.y1 + this.wireLines[v].geom.y2) / 2;
+                    this.wires[v].height = Math.sqrt(Math.pow(Math.abs(this.wireLines[v].geom.x1 - this.wireLines[v].geom.x2), 2) + Math.pow(Math.abs(this.wireLines[v].geom.y1 - this.wireLines[v].geom.y2), 2));
+
+                    if ((this.wireLines[v].geom.x1 < this.wireLines[v].geom.x2 && this.wireLines[v].geom.y1 < this.wireLines[v].geom.y2) || (this.wireLines[v].geom.x1 > this.wireLines[v].geom.x2 && this.wireLines[v].geom.y1 > this.wireLines[v].geom.y2)) {
+                        this.wires[v].setAngle((-Math.atan(Math.abs(this.wireLines[v].geom.x1 - this.wireLines[v].geom.x2) / Math.abs(this.wireLines[v].geom.y1 - this.wireLines[v].geom.y2))) * (180 / Math.PI));
+                    }
+                    if ((this.wireLines[v].geom.x1 > this.wireLines[v].geom.x2) && (this.wireLines[v].geom.y1 < this.wireLines[v].geom.y2) || (this.wireLines[v].geom.x1 < this.wireLines[v].geom.x2 && this.wireLines[v].geom.y1 > this.wireLines[v].geom.y2)) {
+                        this.wires[v].setAngle((Math.atan(Math.abs(this.wireLines[v].geom.x1 - this.wireLines[v].geom.x2) / Math.abs(this.wireLines[v].geom.y1 - this.wireLines[v].geom.y2))) * (180 / Math.PI));
+                    }
+                    if (this.wireLines[v].geom.y1 == this.wireLines[v].geom.y2) {
+                        this.wires[v].setAngle(90);
+                    }
+                    if (this.wireLines[v].geom.x1 == this.wireLines[v].geom.x2) {
+                        this.wires[v].setAngle(0);
+                    }
+                    this.wires[v].setOrigin(0.5, 0.5);
+                }
+                for (var v = 0; v < wiringXPoints["x" + this.objectIDs[i]].length / 4; v++) {
+                    if (activeWireXY[0] == i && activeWireXY[1] == v) {
+                        activeWireXY[2] = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width);
+                        activeWireXY[3] = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
+                    }
+                    if (activeWire == true) {
+                        this.activeWire.setTo(activeWireXY[2], activeWireXY[3], this.input.mousePointer.x, this.input.mousePointer.y);
+                        this.activeWire.setDepth(4);
+                        this.activeWire.strokeColor = wireColor;
+                        this.activeWire.setVisible(1);
+
+                        if (down == true) {
+                            if (this.input.mousePointer.x >= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) - deviceWidth * 0.01 && this.input.mousePointer.x <= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) + deviceWidth * 0.01 && this.input.mousePointer.y <= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) + deviceHeight * 0.015 && this.input.mousePointer.y >= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) - deviceHeight * 0.015) {
+                                activeWire = false;
+                                this.activeWire.setVisible(0);
+                                var node = this.add.circle(activeWireXY[2], activeWireXY[3], 8 * scaleCount, wireColor);
+                                node.setDepth(4);
+                                this.nodes.push(node);
+                                var node2 = this.add.circle(this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width), this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height), 8 * scaleCount, wireColor);
+                                node2.setDepth(4);
+                                this.nodes.push(node2);
+                                wireGroup++;
+                                nodeLinks.push(this.wireLines.length);
+                                nodeLinks.push(activeWireXY[0]);
+                                nodeLinks.push(activeWireXY[1]);
+                                nodeLinks.push(wireGroup);
+                                nodeLinks.push(this.wireLines.length);
+                                nodeLinks.push(i);
+                                nodeLinks.push(v);
+                                nodeLinks.push(wireGroup);
+
+                                var obj = this.add.line(node.x, node.y, node2.x, node2.y, 0xffffff);
+                                obj.setLineWidth(3.8 * scaleCount);
+                                obj.setDepth(3.5);
+                                this.wireLines.push(obj);
+                                var obj2;
+                                obj2 = this.add.rectangle((obj.geom.x1 + obj.geom.x2) / 2, (obj.geom.y1 + obj.geom.y2) / 2, lineWidth, Math.sqrt(Math.pow(Math.abs(obj.geom.x1 - obj.geom.x2), 2) + Math.pow(Math.abs(obj.geom.y1 - obj.geom.y2), 2)), wireColor)
+                                obj2.setDepth(3.5);
+                                obj2.setAngle(-Math.atan(Math.abs(obj.geom.x1 - obj.geom.x2) / Math.abs(obj.geom.y1 - obj.geom.y2)) * 180 / Math.PI);
+                                obj2.enableClick();
+                                this.wires.push(obj2);
+                                down = false;
+
+                                lastWire = this.wires.length - 1;
+                                this.createPalette(lastWire);
+
+                                undo.push("createdWire");
+                                undo.push(this.wires.length - 1);
+                                undo.push(this.nodes.length - 2);
+                                undo.push(this.nodes.length - 1);
+                                redo.splice(0, redo.length);
+                            }
+                        }
+                    }
+                    if (this.input.mousePointer.x >= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) - deviceWidth * 0.01 && this.input.mousePointer.x <= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) + deviceWidth * 0.01 && this.input.mousePointer.y <= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) + deviceHeight * 0.015 && this.input.mousePointer.y >= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) - deviceHeight * 0.015) {
+                        wiringPointer = true;
+                        this.wiringPointer.x = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)
+                        this.wiringPointer.y = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
+                        this.wiringPointer.fillColor = wireColor;
+                        this.wiringPointer.radius = 8 * scaleCount;
+                        this.wiringPointer.setVisible(1);
+                        this.wiringPointer.setDepth(4);
+                        pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                        if (down == true) {
+                            if (activeWire == false) {
+                                activeWire = true;
+                                this.clearPanel()
+                                activeWireXY[0] = i;
+                                activeWireXY[1] = v;
+                                activeWireXY[2] = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width);
+                                activeWireXY[3] = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
+                                down = false;
+                            }
+                        }
+                    }
+                }
+
+                if (this.objects[i].isClicked()) {
+                    if (this.slash.visible == 0) {
+                        for (var v = -10000; v < 10000; v++) {
+                            if (Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - ((wiringXPoints["x" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width) + this.objects[i].x))) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - ((wiringXPoints["x" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width) + this.objects[i].x))) > 0) {
+                                this.objects[i].x = (v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - (wiringXPoints["x" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width);
+                            }
+                        }
+                        for (var v = -10000; v < 10000; v++) {
+
+                            if (Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - ((wiringYPoints["y" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height) + this.objects[i].y))) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - ((wiringYPoints["y" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height) + this.objects[i].y))) > 0) {
+                                this.objects[i].y = (v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - (wiringYPoints["y" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
+                            }
+                        }
+                    } /*else {
                     for (var v = 0; v < this.nodes.length; v++) {
                         for (var t = 0; t < objectsData[(this.objectIDs[i] * 5) + 3]; t++) {
                             if (Math.abs(((wiringXPoints["x" + this.objectIDs[i]][rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3] + t] * this.objects[i].width) + this.objects[i].x) - this.nodes[v].x) < 10) {
@@ -2327,9 +3136,10 @@ class Workspace extends SimpleScene {
                         }
                     }
                 }*/
+                }
+                endingX[i] = this.objects[i].x;
+                endingY[i] = this.objects[i].y;
             }
-            endingX[i] = this.objects[i].x;
-            endingY[i] = this.objects[i].y;
         }
 
         var moved = -1;
@@ -2351,8 +3161,6 @@ class Workspace extends SimpleScene {
             this.wiringPointer.setVisible(0);
         }
 
-        console.log(rotateAngle[0]);
-
         if (this.undo.wasClicked() || this.z.wasPressed()) {
             if (undo.length >= 4) {
                 redo.push(undo[undo.length - 4]);
@@ -2369,10 +3177,28 @@ class Workspace extends SimpleScene {
                     for (var v = 0; v < undo[undo.length - 1].length; v++) {
                         this.nodes[undo[undo.length - 1][v]].setVisible(1);
                     }
+                    if (this.objectIDs[undo[undo.length - 3]] == 2) {
+                        for (var v = 0; v < resistorData.length / 5; v++) {
+                            if (resistorData[v * 5] == [undo[undo.length - 3]]) {
+                                this.resistorBars[v * 2].setVisible(1);
+                                this.resistorBars[(v * 2) + 1].setVisible(1);
+                            }
+                        }
+                    }
+                    this.clearPanel();
+                    this.openPanel(undo[undo.length - 3]);
                 }
                 if (undo[undo.length - 4] == "createdObject") {
                     this.objects[undo[undo.length - 3]].setVisible(0);
                     this.objectLabels[undo[undo.length - 3]].setVisible(0);
+                    if (this.objectIDs[undo[undo.length - 3]] == 2) {
+                        for (var v = 0; v < resistorData.length / 5; v++) {
+                            if (resistorData[v * 5] == [undo[undo.length - 3]]) {
+                                this.resistorBars[v * 2].setVisible(0);
+                                this.resistorBars[(v * 2) + 1].setVisible(0);
+                            }
+                        }
+                    }
                     this.clearPanel();
                 }
                 if (undo[undo.length - 4] == "movedObject") {
@@ -2451,6 +3277,63 @@ class Workspace extends SimpleScene {
                         undo[undo.length - 2][v].fillColor = undo[undo.length - 3];
                     }
                 }
+                if (undo[undo.length - 4] == "customColor") {
+                    redo[redo.length - 3] = undo[undo.length - 2][0].fillColor;
+                    customColors.splice(customColors.length - 1, 1);
+                    for (var v = 0; v < undo[undo.length - 2].length; v++) {
+                        undo[undo.length - 2][v].fillColor = undo[undo.length - 3];
+                    }
+                    this.clearPanel();
+                    this.createPalette(undo[undo.length - 1]);
+                }
+                if (undo[undo.length - 4] == "deletedCustomColor") {
+                    customColors.splice(undo[undo.length - 2], 0, undo[undo.length - 3]);
+                    this.clearPanel();
+                    this.createPalette(undo[undo.length - 1]);
+                }
+                if (undo[undo.length - 4] == "customObjectColor") {
+                    redo[redo.length - 3] = settings[undo[undo.length - 2] * 2];
+                    customObjectColors.splice(undo[undo.length - 1], 1);
+                    this.objects[undo[undo.length - 2]].setTint(undo[undo.length - 3]);
+                    settings[undo[undo.length - 2] * 2] = undo[undo.length - 3];
+                    this.clearPanel();
+                    this.openPanel(undo[undo.length - 2]);
+                }
+                if (undo[undo.length - 4] == "deletedCustomObjectColor") {
+                    customObjectColors.splice(undo[undo.length - 2], 0, undo[undo.length - 3]);
+                    this.clearPanel();
+                    this.openPanel(undo[undo.length - 1]);
+                }
+                if (undo[undo.length - 4] == "objectLabel") {
+                    redo[redo.length - 3] = settings[undo[undo.length - 2] * 2 + 1];
+                    this.objectLabels[undo[undo.length - 2]].setText(undo[undo.length - 3]);
+                    settings[undo[undo.length - 2] * 2 + 1] = undo[undo.length - 3];
+                    if (panelType == 7 || panelType == 8 || panelType == 10) {
+                        this.panelObjectLabel.setText(undo[undo.length - 3]);
+                    }
+                }
+                if (undo[undo.length - 4] == "resistanceValue") {
+                    redo[redo.length - 2] = [resistorData[undo[undo.length - 3] * 5], resistorData[(undo[undo.length - 3] * 5) + 1], resistorData[(undo[undo.length - 3] * 5) + 2], resistorData[(undo[undo.length - 3] * 5) + 3], resistorData[(undo[undo.length - 3] * 5) + 4]];
+                    redo[redo.length - 1] = [settings[undo[undo.length - 3] * 2], settings[(undo[undo.length - 3] * 2) + 1]];
+                    for (var v = 0; v < 5; v++) {
+                        resistorData[(undo[undo.length - 3] * 5) + v] = undo[undo.length - 2][v];
+                    }
+
+                    var widthHolder = this.objects[undo[undo.length - 2][0]].width;
+                    var heightHolder = this.objects[undo[undo.length - 2][0]].height;
+                    this.resistorBars[undo[undo.length - 3] * 2].fillColor = undo[undo.length - 2][3];
+                    this.resistorBars[(undo[undo.length - 3] * 2) + 1].fillColor = undo[undo.length - 2][2];
+                    this.objects[undo[undo.length - 2][0]].setFrame(undo[undo.length - 2][4]);
+                    this.objects[undo[undo.length - 2][0]].width = widthHolder;
+                    this.objects[undo[undo.length - 2][0]].height = heightHolder;
+
+                    if (panelType == 4) {
+                        this.panelResistanceValue.setText(undo[undo.length - 1][0]);
+                        this.panelResistanceUnit.setText(undo[undo.length - 1][1]);
+                        settings[undo[undo.length - 2][0] * 2] = undo[undo.length - 1][0];
+                        settings[(undo[undo.length - 2][0] * 2) + 1] = undo[undo.length - 1][1];
+                    }
+                }
                 undo.splice(undo.length - 4, 4);
             }
         }
@@ -2471,11 +3354,29 @@ class Workspace extends SimpleScene {
                     for (var v = 0; v < redo[redo.length - 1].length; v++) {
                         this.nodes[redo[redo.length - 1][v]].setVisible(0);
                     }
+                    if (this.objectIDs[undo[undo.length - 3]] == 2) {
+                        for (var v = 0; v < resistorData.length / 5; v++) {
+                            if (resistorData[v * 5] == [undo[undo.length - 3]]) {
+                                this.resistorBars[v * 2].setVisible(0);
+                                this.resistorBars[(v * 2) + 1].setVisible(0);
+                            }
+                        }
+                    }
                     this.clearPanel();
                 }
                 if (redo[redo.length - 4] == "createdObject") {
                     this.objects[redo[redo.length - 3]].setVisible(1);
                     this.objectLabels[undo[undo.length - 3]].setVisible(1);
+                    if (this.objectIDs[undo[undo.length - 3]] == 2) {
+                        for (var v = 0; v < resistorData.length / 5; v++) {
+                            if (resistorData[v * 5] == [undo[undo.length - 3]]) {
+                                this.resistorBars[v * 2].setVisible(1);
+                                this.resistorBars[(v * 2) + 1].setVisible(1);
+                            }
+                        }
+                    }
+                    this.clearPanel();
+                    this.openPanel(undo[undo.length - 3]);
                 }
                 if (redo[redo.length - 4] == "movedObject") {
                     undo[undo.length - 2] = -redo[redo.length - 2];
@@ -2553,6 +3454,63 @@ class Workspace extends SimpleScene {
                         redo[redo.length - 2][v].fillColor = redo[redo.length - 3];
                     }
                 }
+                if (redo[redo.length - 4] == "customColor") {
+                    undo[undo.length - 3] = redo[redo.length - 2][0].fillColor;
+                    customColors.push(redo[redo.length - 3]);
+                    for (var v = 0; v < redo[redo.length - 2].length; v++) {
+                        redo[redo.length - 2][v].fillColor = redo[redo.length - 3];
+                    }
+                    this.clearPanel();
+                    this.createPalette(redo[redo.length - 1]);
+                }
+                if (redo[redo.length - 4] == "deletedCustomColor") {
+                    customColors.splice(redo[redo.length - 2], 1);
+                    this.clearPanel();
+                    this.createPalette(redo[redo.length - 1]);
+                }
+                if (redo[redo.length - 4] == "customObjectColor") {
+                    undo[undo.length - 3] = settings[redo[redo.length - 2] * 2];
+                    customObjectColors.splice(redo[redo.length - 1], 0, redo[redo.length - 3]);
+                    this.objects[redo[redo.length - 2]].setTint(redo[redo.length - 3]);
+                    settings[redo[redo.length - 2] * 2] = redo[redo.length - 3];
+                    this.clearPanel();
+                    this.openPanel(redo[redo.length - 2]);
+                }
+                if (redo[redo.length - 4] == "deletedCustomObjectColor") {
+                    customObjectColors.splice(redo[redo.length - 2], 1);
+                    this.clearPanel();
+                    this.openPanel(redo[redo.length - 1]);
+                }
+                if (redo[redo.length - 4] == "objectLabel") {
+                    undo[undo.length - 3] = settings[redo[redo.length - 2] * 2 + 1];
+                    this.objectLabels[redo[redo.length - 2]].setText(redo[redo.length - 3]);
+                    settings[redo[redo.length - 2] * 2 + 1] = redo[redo.length - 3];
+                    if (panelType == 7 || panelType == 8 || panelType == 10) {
+                        this.panelObjectLabel.setText(redo[redo.length - 3]);
+                    }
+                }
+                if (redo[redo.length - 4] == "resistanceValue") {
+                    undo[undo.length - 2] = [resistorData[redo[redo.length - 3] * 5], resistorData[(redo[redo.length - 3] * 5) + 1], resistorData[(redo[redo.length - 3] * 5) + 2], resistorData[(redo[redo.length - 3] * 5) + 3], resistorData[(redo[redo.length - 3] * 5) + 4]];
+                    undo[undo.length - 1] = [settings[redo[redo.length - 3] * 2], settings[(redo[redo.length - 3] * 2) + 1]];
+                    for (var v = 0; v < 5; v++) {
+                        resistorData[(redo[redo.length - 3] * 5) + v] = redo[redo.length - 2][v];
+                    }
+
+                    var widthHolder = this.objects[redo[redo.length - 2][0]].width;
+                    var heightHolder = this.objects[redo[redo.length - 2][0]].height;
+                    this.resistorBars[redo[redo.length - 3] * 2].fillColor = redo[redo.length - 2][3];
+                    this.resistorBars[(redo[redo.length - 3] * 2) + 1].fillColor = redo[redo.length - 2][2];
+                    this.objects[redo[redo.length - 2][0]].setFrame(redo[redo.length - 2][4]);
+                    this.objects[redo[redo.length - 2][0]].width = widthHolder;
+                    this.objects[redo[redo.length - 2][0]].height = heightHolder;
+
+                    if (panelType == 4) {
+                        this.panelResistanceValue.setText(redo[redo.length - 1][0]);
+                        this.panelResistanceUnit.setText(redo[redo.length - 1][1]);
+                        settings[redo[redo.length - 2][0] * 2] = redo[redo.length - 1][0];
+                        settings[(redo[redo.length - 2][0] * 2) + 1] = redo[redo.length - 1][1];
+                    }
+                }
                 redo.splice(redo.length - 4, 4);
             }
         }
@@ -2576,6 +3534,13 @@ class Workspace extends SimpleScene {
 
                 this.objects[del].setVisible(0);
                 this.objectLabels[del].setVisible(0);
+
+                for (var v = 0; v < resistorData.length / 5; v++) {
+                    if (resistorData[v * 5] == del) {
+                        this.resistorBars[v * 2].setVisible(0);
+                        this.resistorBars[(v * 2) + 1].setVisible(0);
+                    }
+                }
 
                 var allGroups = [];
                 var wiresPerGroup = [];
@@ -2651,12 +3616,14 @@ class Workspace extends SimpleScene {
             }
 
             if (this.items[i].wasClicked()) {
+                this.title.setVisible(0);
+                this.instructions.setVisible(0);
                 this.clearPanel();
-                var obj = this.add.sprite(deviceWidth / 2 + deviceWidth * 0.002, deviceHeight / 2, `${itemObjectID[i]}`);
+                var obj = this.add.sprite(deviceWidth / 2, deviceHeight / 2, `${itemObjectID[i]}`, 1);
                 for (var v = 0; v < this.objects.length; v++) {
                     if (this.objectIDs[v] == itemObjectID[i] && this.objects[v].x == obj.x && this.objects[v].y == obj.y && this.objects[v].visible == 1) {
-                        obj.x += deviceWidth * 0.01;
-                        obj.y += deviceHeight * 0.02;
+                        obj.x += deviceWidth * 0.02;
+                        obj.y += deviceHeight * 0.04;
                     }
                 }
 
@@ -2674,14 +3641,32 @@ class Workspace extends SimpleScene {
                 }
                 this.objects.push(obj);
                 this.objectIDs.push(itemObjectID[i]);
-                var label = this.add.text(this.objects[this.objects.length - 1].x + scaleCount * deviceWidth * defaultLabel[(itemObjectID[i] * 12) + 4], this.objects[this.objects.length - 1].y + scaleCount * deviceHeight * defaultLabel[(itemObjectID[i] * 12) + 5], defaultLabel[(itemObjectID[i] * 12)], 0x000000);
+                var label = this.add.text(this.objects[this.objects.length - 1].x + scaleCount * deviceWidth * defaultLabel[(itemObjectID[i] * 12) + 4], this.objects[this.objects.length - 1].y + scaleCount * deviceHeight * defaultLabel[(itemObjectID[i] * 12) + 5], defaultLabel[(itemObjectID[i] * 12)], labelColor);
                 label.setOrigin(0.5, 0.5);
                 label.setFontSize(scaleCount * deviceHeight * defaultLabel[(itemObjectID[i] * 12) + 1]);
+
+                label.setDepth(3.2);
                 this.objectLabels.push(label);
                 rotateAngle.push(0);
                 shiftObjects.push(false);
                 settings.push(-1);
                 settings.push(-1);
+
+                if (itemObjectID[i] == 2) {
+                    var bar1 = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, resistorColors[1]);
+                    var bar2 = this.add.rectangle(obj.x, obj.y - obj.height * 0.057, obj.width * 0.3, obj.height * 0.055, resistorColors[4]);
+                    bar1.setOrigin(0.5, 0.5);
+                    bar2.setOrigin(0.5, 0.5);
+                    this.resistorBars.push(bar1);
+                    this.resistorBars.push(bar2);
+                    resistorData.push(this.objects.length - 1);
+                    resistorData.push(10000);
+                    resistorData.push(resistorColors[4]);
+                    resistorData.push(resistorColors[1]);
+                    resistorData.push(1);
+                    settings[settings.length - 2] = 10;
+                    settings[settings.length - 1] = "KΩ";
+                }
 
                 this.openPanel(this.objects.length - 1);
                 lastClicked = this.objects.length - 1;
@@ -2694,8 +3679,10 @@ class Workspace extends SimpleScene {
             }
         }
 
-        if (this.grid.wasClicked() && (this.input.mousePointer.x < 1095 || this.input.mousePointer.y > 325)) {
+        if ((this.floor.wasClicked() || this.grid.wasClicked()) && (this.input.mousePointer.x < 1095 || this.input.mousePointer.y > 325)) {
             this.clearPanel();
+            this.title.setVisible(0);
+            this.instructions.setVisible(0);
             if (element != null) {
                 element.blur();
             }
@@ -2726,19 +3713,30 @@ class Workspace extends SimpleScene {
             itemBinOpen = false;
         }
 
-        if (this.binHandleArrow.x >= deviceWidth * 0.21) {
-            opening = false;
-            itemBinOpen = true;
-            this.binLabel.setAlpha(1);
-            this.binLabelDivider.setAlpha(1);
-            this.itemTypeButton.setVisible(1);
+        if (this.binHandleArrow.x > deviceWidth * 0.205 && this.binHandleArrow.x < deviceWidth * 0.21) {
             this.itemTypeArrow.setVisible(1);
             if (currentItemType == 0) {
                 this.addItem.setVisible(1);
+                this.search.setVisible(1);
             }
+            if (currentItemType == 5) {
+                this.exit.setVisible(1);
+                this.itemTypeArrow.setVisible(0);
+            }
+        }
+
+        if (this.binHandleArrow.x >= deviceWidth * 0.21) {
+            opening = false;
+            itemBinOpen = true;
+            this.binLabel.setVisible(1);
+            this.binLabelDivider.setVisible(1);
             for (var t = 0; t < this.itemLabels.length; t++) {
                 this.itemLabels[t].setVisible(1);
                 this.items[t].setVisible(1);
+                if (itemObjectID[t] == 2) {
+                    this.itemResistorBars[0].setVisible(1);
+                    this.itemResistorBars[1].setVisible(1);
+                }
             }
             this.lastPageButton.setVisible(1);
             this.lastPageArrow.setVisible(1);
@@ -2750,19 +3748,24 @@ class Workspace extends SimpleScene {
             this.itemBin.x -= 10;
             this.binHandle.x -= 10;
             this.binHandleArrow.x -= 10;
-            this.binLabel.setAlpha(0);
-            this.binLabelDivider.setAlpha(0);
-            this.itemTypeButton.setVisible(0);
-            this.itemTypeArrow.setVisible(0);
-            this.addItem.setVisible(0);
+            this.binLabel.setVisible(0);
+            this.binLabelDivider.setVisible(0);
             for (var t = 0; t < this.itemLabels.length; t++) {
                 this.itemLabels[t].setVisible(0);
                 this.items[t].setVisible(0);
+                if (itemObjectID[t] == 2) {
+                    this.itemResistorBars[0].setVisible(0);
+                    this.itemResistorBars[1].setVisible(0);
+                }
             }
             this.lastPageButton.setVisible(0);
             this.lastPageArrow.setVisible(0);
             this.nextPageButton.setVisible(0);
             this.nextPageArrow.setVisible(0);
+            this.addItem.setVisible(0);
+            this.itemTypeArrow.setVisible(0);
+            this.search.setVisible(0);
+            this.exit.setVisible(0);
         }
 
         if (opening == true) {
@@ -2771,7 +3774,7 @@ class Workspace extends SimpleScene {
             this.binHandleArrow.x += 10;
         }
 
-        if (element == null && ((this.s.wasPressed() && this.shift.isPressed()) || this.save.wasClicked() || this.saveButton.wasClicked())) {
+        if ((element == null && this.s.wasPressed()) || this.save.wasClicked() || this.saveButton.wasClicked()) {
             this.save.setVisible(0);
             this.saved.setVisible(1);
 
@@ -2804,16 +3807,28 @@ class Workspace extends SimpleScene {
             this.clearHTML();
             document.getElementById('downloads').innerHTML = "Downloads: ";
 
-            for (var v = 0; v < this.customColors.length; v++) {
-                nodeLinks.push(this.customColors[v].fillColor);
+            var wiresData = [];
+            wiresData.push(customColors.length);
+            wiresData.push(customColors);
+            wiresData.push(nodeLinks.length);
+            wiresData.push(nodeLinks);
+            for (var v = 0; v < this.wires.length; v++) {
+                wiresData.push(this.wires[v].visible);
+                wiresData.push(this.wireLines[v].geom.x1);
+                wiresData.push(this.wireLines[v].geom.y1);
+                wiresData.push(this.wireLines[v].geom.x2);
+                wiresData.push(this.wireLines[v].geom.y2);
             }
-            document.getElementById('download0').innerHTML = "Node Data";
-            document.getElementById('download0').download = "NodeData.txt";
-            document.getElementById('download0').href = generateTextFileUrl(nodeLinks);
+
+            document.getElementById('download0').innerHTML = "Wires Data";
+            document.getElementById('download0').download = "WiresData.txt";
+            document.getElementById('download0').href = generateTextFileUrl(wiresData);
 
             textFileUrl = null;
 
             var nodesData = [];
+            nodesData.push(this.grid.x);
+            nodesData.push(this.grid.y);
             for (var v = 0; v < this.nodes.length; v++) {
                 nodesData.push(this.nodes[v].visible);
                 nodesData.push(this.nodes[v].x);
@@ -2821,45 +3836,53 @@ class Workspace extends SimpleScene {
                 nodesData.push(this.nodes[v].fillColor);
             }
 
-            document.getElementById('download1').innerHTML = "Nodes";
-            document.getElementById('download1').download = "Nodes.txt";
+            document.getElementById('download1').innerHTML = "Nodes Data";
+            document.getElementById('download1').download = "NodesData.txt";
             document.getElementById('download1').href = generateTextFileUrl(nodesData);
 
             textFileUrl = null;
 
             var objectData = [];
+            objectData.push(scaleCount);
+            objectData.push(this.objects.length);
+            objectData.push(customObjectColors.length + 3);
+            objectData.push(customObjectColors);
             for (var v = 0; v < this.objects.length; v++) {
                 objectData.push(this.objects[v].visible);
                 objectData.push(this.objects[v].x);
                 objectData.push(this.objects[v].y);
                 objectData.push(this.objectIDs[v]);
                 objectData.push(rotateAngle[v]);
+                objectData.push(this.objects[v].depth);
                 objectData.push(settings[v * 2]);
-                objectData.push(settings[(v * 2) + 1]);
-                objectData.push(this.objectLabels[v].text);
+                objectData.push('"' + settings[(v * 2) + 1] + '"');
+                if (this.objectLabels[v].text != "") {
+                    objectData.push('"' + settings[(v * 2) + 1] + '"');
+                } else {
+                    objectData.push("");
+                }
             }
 
-            document.getElementById('download2').innerHTML = "ObjectData";
-            document.getElementById('download2').download = "ObjectData.txt";
+            document.getElementById('download2').innerHTML = "Objects Data";
+            document.getElementById('download2').download = "ObjectsData.txt";
             document.getElementById('download2').href = generateTextFileUrl(objectData);
         }
         if (this.increaseScale.isClicked() || this.increaseScaleButton.isClicked() || (element == null && this.space.isPressed() && !(this.shift.isPressed()))) {
             scaleCount *= 1.005;
             snapStartX = ((snapStartX - (deviceWidth / 2)) * 1.005) + (deviceWidth / 2);
             snapStartY = ((snapStartY - (deviceHeight / 2)) * 1.005) + (deviceHeight / 2);
-            for (var t = 0; t < this.objects.length; t++) {
-                this.objects[t].scale *= 1.005;
-                this.objects[t].width *= 1.005;
-                this.objects[t].height *= 1.005;
-                this.objects[t].x = ((this.objects[t].x - (deviceWidth / 2)) * 1.005) + (deviceWidth / 2);
-                this.objects[t].y = ((this.objects[t].y - (deviceHeight / 2)) * 1.005) + (deviceHeight / 2);
-                this.objects[t].setDepth(2);
+            for (var v = 0; v < this.objects.length; v++) {
+                this.objects[v].scale *= 1.005;
+                this.objects[v].width *= 1.005;
+                this.objects[v].height *= 1.005;
+                this.objects[v].x = ((this.objects[v].x - (deviceWidth / 2)) * 1.005) + (deviceWidth / 2);
+                this.objects[v].y = ((this.objects[v].y - (deviceHeight / 2)) * 1.005) + (deviceHeight / 2);
             }
             this.title.setDepth(1);
             this.instructions.setDepth(1);
             this.grid.destroy();
             this.grid = this.add.gridLayout(snapStartX, snapStartY, 100000, 100000, 28 * scaleCount, 28 * scaleCount);
-            this.grid.setOutlineStyle(0xdddddd, 0.5)
+            this.grid.setOutlineStyle(gridColor, 1)
             this.grid.setDepth(0);
             this.grid.enableClick();
             grid = this.grid;
@@ -2871,6 +3894,13 @@ class Workspace extends SimpleScene {
                 this.nodes[v].setRadius(this.nodes[v].radius *= 1.005);
                 this.nodes[v].x = ((this.nodes[v].x - (deviceWidth / 2)) * 1.005) + (deviceWidth / 2);
                 this.nodes[v].y = ((this.nodes[v].y - (deviceHeight / 2)) * 1.005) + (deviceHeight / 2);
+            }
+            for (var v = 0; v < this.resistorBars.length; v++) {
+                this.resistorBars[v].width *= 1.005;
+                this.resistorBars[v].height *= 1.005;
+                this.resistorBars[v].setOrigin(0.5, 0.5);
+                this.resistorBars[v].x = ((this.resistorBars[v].x - (deviceWidth / 2)) * 1.005) + (deviceWidth / 2);
+                this.resistorBars[v].y = ((this.resistorBars[v].y - (deviceHeight / 2)) * 1.005) + (deviceHeight / 2);
             }
             for (var v = 0; v < this.wireLines.length; v++) {
                 this.wireLines[v].setLineWidth(this.wireLines[v].lineWidth * 1.005);
@@ -2912,7 +3942,7 @@ class Workspace extends SimpleScene {
 
             this.grid.destroy();
             this.grid = this.add.gridLayout(snapStartX, snapStartY, 100000, 100000, 28 * scaleCount, 28 * scaleCount);
-            this.grid.setOutlineStyle(0xdddddd, 0.5)
+            this.grid.setOutlineStyle(gridColor, 1)
             this.grid.setDepth(0);
             this.grid.enableClick();
             grid = this.grid;
@@ -2924,6 +3954,13 @@ class Workspace extends SimpleScene {
                 this.nodes[v].setRadius(this.nodes[v].radius *= 0.995);
                 this.nodes[v].x = ((this.nodes[v].x - (deviceWidth / 2)) * 0.995) + (deviceWidth / 2);
                 this.nodes[v].y = ((this.nodes[v].y - (deviceHeight / 2)) * 0.995) + (deviceHeight / 2);
+            }
+            for (var v = 0; v < this.resistorBars.length; v++) {
+                this.resistorBars[v].width *= 0.995;
+                this.resistorBars[v].height *= 0.995;
+                this.resistorBars[v].setOrigin(0.5, 0.5);
+                this.resistorBars[v].x = ((this.resistorBars[v].x - (deviceWidth / 2)) * 0.995) + (deviceWidth / 2);
+                this.resistorBars[v].y = ((this.resistorBars[v].y - (deviceHeight / 2)) * 0.995) + (deviceHeight / 2);
             }
             for (var v = 0; v < this.wireLines.length; v++) {
                 this.wireLines[v].setLineWidth(this.wireLines[v].lineWidth * 0.995);
@@ -3101,11 +4138,16 @@ class Workspace extends SimpleScene {
         this.panelForward.setVisible(1);
 
         this.paneltext.setText(objectsData[this.objectIDs[i] * 5]);
+        if (this.paneltext.text.length > 16) {
+            this.paneltext.setFontSize(16 / this.paneltext.text.length * deviceHeight * 0.03);
+        } else {
+            this.paneltext.setFontSize(deviceHeight * 0.03);
+        }
         this.paneltext.setOrigin(0, 0.5)
         this.paneltext.setVisible(1);
         this.panelDivider.setVisible(1);
 
-        if (panelType == 2 || panelType == 3 || panelType == 6 || panelType == 9 || panelType == 11) {
+        if (panelType == 2 || panelType == 3 || panelType == 6 || panelType == 9 || panelType == 11 || panelType == 12 || panelType == 13 || panelType == 14) {
             this.panel.y = deviceHeight * 0.05;
         }
         if (panelType == 4) {
@@ -3120,7 +4162,11 @@ class Workspace extends SimpleScene {
             } else {
                 this.panelResistanceValue = this.add.text(deviceWidth * 0.905, deviceHeight * 0.45, settings[(i * 2)], 0x000000);
             }
-            this.panelResistanceValue.setFontSize(deviceHeight * 0.04);
+            if (settings[i * 2].length > 7) {
+                this.panelResistanceValue.setFontSize(7 / (settings[i * 2].length) * deviceHeight * 0.04);
+            } else {
+                this.panelResistanceValue.setFontSize(deviceHeight * 0.04);
+            }
             this.panelResistanceValue.setOrigin(0.5, 0.5);
             this.panelResistanceValue.enableClick();
             this.panelResistanceUnitBox = this.add.rectangle(deviceWidth * 0.975, deviceHeight * 0.45, deviceWidth * 0.035, deviceHeight * 0.05, 0x46B5C4);
@@ -3199,7 +4245,7 @@ class Workspace extends SimpleScene {
         }
     }
 
-    createPalette() {
+    createPalette(wire) {
         this.clearPanel();
         this.panel.y = deviceHeight * 0.22;
 
@@ -3209,7 +4255,7 @@ class Workspace extends SimpleScene {
         }
         var selectWireGroup;
         for (var v = 0; v < this.nodes.length; v++) {
-            if (nodeLinks[v * 4] == (this.wires.length - 1) || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == this.wires.length - 1)) {
+            if (nodeLinks[v * 4] == wire || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == wire)) {
                 selectWireGroup = nodeLinks[(v * 4) + 3];
             }
         }
