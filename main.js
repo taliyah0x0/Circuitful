@@ -11,7 +11,7 @@ let config = {
         createContainer: false
     },
     fontFamily: `Sans`,
-    scene: [PartEditor],
+    scene: [Workspace,PartEditor],
     physics: {
         default: 'arcade',
         arcade: {

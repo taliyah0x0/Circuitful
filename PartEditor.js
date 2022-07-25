@@ -1,14 +1,14 @@
 //// Import Saved Part ////
 
 var xLocationsImport = [
-    -0.2260912022563598, 0.22785329178666386, 0.34774731695634875, 0.4291533285853066, 0.4528765644996553, 0.4301329531555218, 0.3497065660967791, 0.22785329178666386, -0.3482877410958964, -0.42735288035982555, -0.4564786601501534, -0.42833250493004077, -0.34247006972580774, -0.22643942787727464
+    // -0.2260912022563598, 0.22785329178666386, 0.34774731695634875, 0.4291533285853066, 0.4528765644996553, 0.4301329531555218, 0.3497065660967791, 0.22785329178666386, -0.3482877410958964, -0.42735288035982555, -0.4564786601501534, -0.42833250493004077, -0.34247006972580774, -0.22643942787727464
 
 ];
 var yLocationsImport = [
-    -0.3951466325379341, 0.3936245944772217, 0.2911646730599088, 0.15440097163588754, -0.002193757186519534, -0.15679349730162326, -0.2934144796766195, -0.3951466325379341, -0.2924328919309129, -0.15679349730162326, -0.002193757186519534, 0.1560471704551244, 0.29480586058644664, 0.3926430067315151
+    // -0.3951466325379341, 0.3936245944772217, 0.2911646730599088, 0.15440097163588754, -0.002193757186519534, -0.15679349730162326, -0.2934144796766195, -0.3951466325379341, -0.2924328919309129, -0.15679349730162326, -0.002193757186519534, 0.1560471704551244, 0.29480586058644664, 0.3926430067315151
 ];
 var objectInfoImport = [
-    "Circuit Playground", "Microcontrollers", 0.7401785998271294, 14, 1418.4
+    //"Circuit Playground", "Microcontrollers", 0.7401785998271294, 14, 1418.4
 
 ];
 
@@ -18,10 +18,10 @@ var objectInfoImport = [
 ////  Warning: Crazy Code Below!!  ////
 
 var objectInfo;
+var workspaceObjectImport = -1;
 var wiringPoint;
 var object;
 var create = true;
-var workshopScale;
 
 var closing = false;
 var opening = false;
@@ -37,8 +37,6 @@ var matchxdist = false;
 var matchydist = false;
 var secureSpotX = false;
 var secureSpotY = false;
-var locX = [];
-var locY = [];
 
 var counter = 0;
 var element = document.querySelector(":focus");
@@ -49,8 +47,6 @@ var redo = [];
 var lastPosition = [];
 var lastScale = 1;
 var pointDistances = [];
-
-var gridColor = 0xdddddd;
 
 class PartEditor extends SimpleScene {
 
@@ -65,7 +61,6 @@ class PartEditor extends SimpleScene {
         this.load.imageset("binhandlearrow", "./assets/binhandlearrow.png", 560, 981);
         this.load.image("increasescale", "./assets/increasescale.png");
         this.load.image("decreasescale", "./assets/decreasescale.png");
-        this.load.image("home", "assets/home.png");
         this.load.image("magnet", "assets/magnet.png");
         this.load.image("slash", "assets/slash.png");
         this.load.image("grid", "assets/grid.jpeg");
@@ -74,6 +69,14 @@ class PartEditor extends SimpleScene {
         this.load.image("undo", "assets/undo.png");
         this.load.image("glue", "assets/glue.png");
         this.load.image("dark", "assets/dark.png");
+        this.load.image("import", "assets/import.png");
+        this.load.image("home", "assets/home.png");
+        this.load.image("shrink", "assets/shrink.png");
+        this.load.image("enlarge", "assets/enlarge.png");
+
+        if (workspaceObjectImport >= 0) {
+            this.load.image(`${workspaceObjectImport}`, `assets/${workspaceObjectImport}.png`);
+        }
     }
 
     create() {
@@ -100,17 +103,25 @@ class PartEditor extends SimpleScene {
         document.getElementById('option5').value = "Other";
         document.getElementById('option5').style.display = "block";
 
-        this.floor = this.add.rectangle(deviceWidth / 2, deviceHeight / 2, deviceWidth, deviceHeight, 0xffffff);
+        if (gridColor == 0xdddddd) {
+            this.floor = this.add.rectangle(deviceWidth / 2, deviceHeight / 2, deviceWidth, deviceHeight, 0xF4F5F6);
+        } else {
+            this.floor = this.add.rectangle(deviceWidth / 2, deviceHeight / 2, deviceWidth, deviceHeight, 0x040506);
+        }
         this.floor.setDepth(0);
         this.floor.enableClick();
-        
+
         this.grid = this.add.gridLayout(snapStartX, snapStartY, 100000, 100000, 28 * scaleCount, 28 * scaleCount);
         this.grid.setOutlineStyle(gridColor, 1)
         this.grid.setDepth(0);
         this.grid.enableClick();
         grid = this.grid;
 
-        this.object = this.add.sprite(deviceWidth / 2, deviceHeight * 0.57, "object");
+        if (workspaceObjectImport >= 0) {
+            this.object = this.add.sprite(deviceWidth / 2, deviceHeight * 0.57, `${workspaceObjectImport}`);
+        } else {
+            this.object = this.add.sprite(deviceWidth / 2, deviceHeight * 0.57, "object");
+        }
         if (objectInfoImport.length > 0) {
             document.getElementById('input').value = objectInfoImport[0];
             document.getElementById('dropdown').value = objectInfoImport[1];
@@ -165,10 +176,6 @@ class PartEditor extends SimpleScene {
         this.title.setOrigin(0.5, 0);
         this.title.setFontSize(deviceHeight * 0.075);
 
-        this.instructions = this.add.text(deviceWidth / 2, deviceHeight * 0.15, "Set up the object scale and wiring points.", 0x000000)
-        this.instructions.setOrigin(0.5, 0);
-        this.instructions.setFontSize(deviceHeight * 0.03);
-
         this.wiringPoint = [];
         let obj = this.add.circle(deviceWidth * 0.05, deviceHeight * 0.22, deviceWidth * 0.005, 0xff0000);
         obj.width = deviceWidth * 0.02;
@@ -186,18 +193,29 @@ class PartEditor extends SimpleScene {
         this.crossH.setLineWidth(1);
         this.crossH.setDepth(7);
 
-        this.binHandle = this.add.circle(deviceWidth * 0.21, deviceHeight / 2, deviceWidth * 0.02, 0xdddddd);
-        this.binHandle.enableClick();
-        this.binHandle.setDepth(5);
+        this.instructions = this.add.text(deviceWidth / 2, deviceHeight * 0.15, "Create a wiring diagram here.", labelColor);
+        this.instructions.setOrigin(0.5, 0);
+        this.instructions.setFontSize(deviceHeight * 0.03);
+        this.instructions.setDepth(1);
 
-        this.binHandleArrow = this.add.sprite(deviceWidth * 0.215, deviceHeight / 2, "binhandlearrow", 0);
+        if (gridColor == 0xdddddd) {
+            this.itemBin = this.add.rectangle(deviceWidth * 0.1, deviceHeight * 0.22, deviceWidth * 0.22, deviceHeight * 2, 0xdddddd);
+            this.binHandle = this.add.circle(deviceWidth * 0.21, deviceHeight / 2, deviceWidth * 0.02, 0xdddddd);
+            this.binHandleArrow = this.add.sprite(deviceWidth * 0.215, deviceHeight / 2, "binhandlearrow", 0);
+        } else {
+            this.itemBin = this.add.rectangle(deviceWidth * 0.1, deviceHeight * 0.22, deviceWidth * 0.22, deviceHeight * 2, 0x333333);
+            this.binHandle = this.add.circle(deviceWidth * 0.21, deviceHeight / 2, deviceWidth * 0.02, 0x333333);
+            this.binHandleArrow = this.add.sprite(deviceWidth * 0.215, deviceHeight / 2, "binhandlearrow", 1);
+        }
+        this.itemBin.setDepth(5);
+
         this.binHandleArrow.setScale(deviceWidth * 0.00002);
         this.binHandleArrow.setAngle(180);
         this.binHandleArrow.enableClick();
         this.binHandleArrow.setDepth(5);
 
-        this.itemBin = this.add.rectangle(deviceWidth * 0.1, deviceHeight * 0.22, deviceWidth * 0.22, deviceHeight * 2, 0xdddddd);
-        this.itemBin.setDepth(5);
+        this.binHandle.enableClick();
+        this.binHandle.setDepth(5);
 
         this.binLabel = this.add.text(deviceWidth * 0.02, deviceHeight * 0.03, "All", 0x999999);
         this.binLabel.enableClick();
@@ -208,7 +226,7 @@ class PartEditor extends SimpleScene {
         this.binLabelDivider.setDepth(5);
         this.binHandle.setDepth(5);
 
-        this.wiringPointLabel = this.add.text(deviceWidth * 0.05, deviceHeight * 0.3, "Wiring Point", 0x000000);
+        this.wiringPointLabel = this.add.text(deviceWidth * 0.05, deviceHeight * 0.3, "Wiring Point", labelColor);
         this.wiringPointLabel.setOrigin(0.5, 0);
         this.wiringPointLabel.setDepth(6);
 
@@ -261,17 +279,22 @@ class PartEditor extends SimpleScene {
         this.saved.setVisible(0);
         this.saved.setDepth(5);
 
-        this.home = this.add.sprite(deviceWidth * 0.965, deviceHeight * 0.94, "home");
-        this.home.setScale(deviceWidth * 0.00012)
-        this.home.enableClick();
-        this.home.setDepth(5);
+        this.import = this.add.sprite(deviceWidth * 0.965, deviceHeight * 0.94, "import");
+        this.import.setScale(deviceWidth * 0.00035)
+        this.import.enableClick();
+        this.import.setDepth(5);
 
         this.info = this.add.sprite(deviceWidth * 0.965, deviceHeight * 0.06, "info");
         this.info.setScale(deviceWidth * 0.0004);
         this.info.enableClick();
         this.info.setDepth(5);
 
-        this.dark = this.add.sprite(deviceWidth * 0.92, deviceHeight * 0.06, "dark");
+        this.home = this.add.sprite(deviceWidth * 0.92, deviceHeight * 0.06, "home");
+        this.home.setScale(deviceWidth * 0.00011);
+        this.home.enableClick();
+        this.home.setDepth(5);
+
+        this.dark = this.add.sprite(deviceWidth * 0.875, deviceHeight * 0.06, "dark");
         this.dark.setScale(deviceWidth * 0.00035);
         this.dark.enableClick();
         this.dark.setDepth(5);
@@ -287,16 +310,26 @@ class PartEditor extends SimpleScene {
         this.slash.setVisible(0);
         this.slash.setDepth(5);
 
-        this.glue = this.add.sprite(deviceWidth * 0.875, deviceHeight * 0.06, "glue");
+        this.glue = this.add.sprite(deviceWidth * 0.825, deviceHeight * 0.06, "glue");
         this.glue.setScale(deviceWidth * 0.0004);
         this.glue.enableClick();
         this.glue.flipY = true;
         this.glue.setDepth(5);
 
-        this.glueSlash = this.add.sprite(deviceWidth * 0.875, deviceHeight * 0.06, "slash");
+        this.glueSlash = this.add.sprite(deviceWidth * 0.825, deviceHeight * 0.06, "slash");
         this.glueSlash.setScale(deviceWidth * 0.0003);
         this.glueSlash.enableClick();
         this.glueSlash.setDepth(5);
+
+        this.shrink = this.add.sprite(deviceWidth * 0.73, deviceHeight * 0.06, "shrink");
+        this.shrink.setScale(deviceWidth * 0.0004);
+        this.shrink.enableClick();
+        this.shrink.setDepth(5);
+
+        this.enlarge = this.add.sprite(deviceWidth * 0.775, deviceHeight * 0.055, "enlarge");
+        this.enlarge.setScale(deviceWidth * 0.0004);
+        this.enlarge.enableClick();
+        this.enlarge.setDepth(5);
 
         this.redo = this.add.sprite(deviceWidth * 0.685, deviceHeight * 0.945, "undo");
         this.redo.setScale(deviceWidth * 0.0005);
@@ -345,12 +378,6 @@ class PartEditor extends SimpleScene {
         this.popup.setDepth(7);
         this.popup.setVisible(0);
 
-        this.popuptext = this.add.text(deviceWidth / 2, deviceHeight * 0.45, "Are you sure you want to leave? You will lose your work.", 0x000000);
-        this.popuptext.setOrigin(0.5, 0.5);
-        this.popuptext.setFontSize(deviceHeight * 0.04);
-        this.popuptext.setDepth(8);
-        this.popuptext.setVisible(0);
-
         this.popupcancel = this.add.rectangle(deviceWidth * 0.44, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xaaaaaa);
         this.popupcancel.enableClick();
         this.popupcancel.setDepth(8);
@@ -374,6 +401,12 @@ class PartEditor extends SimpleScene {
         this.popupyestext.enableClick();
         this.popupyestext.setDepth(9);
         this.popupyestext.setVisible(0);
+
+        this.popuptext = this.add.text(deviceWidth / 2, deviceHeight * 0.45, "", 0x000000);
+        this.popuptext.setOrigin(0.5, 0.5);
+        this.popuptext.setFontSize(deviceHeight * 0.04);
+        this.popuptext.setDepth(8);
+        this.popuptext.setVisible(0);
 
         this.popupdone = this.add.rectangle(deviceWidth * 0.44, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xaaaaaa);
         this.popupdone.width = deviceWidth * 0.1;
@@ -437,32 +470,9 @@ class PartEditor extends SimpleScene {
     }
 
     update() {
-
         element = document.querySelector(":focus");
         if (element == document.getElementById('input') || element == document.getElementById('dropdown')) {
-            if (this.return.wasPressed() || this.esc.wasPressed()) {
-                document.getElementById('input').blur();
-                document.getElementById('inputnum').blur();
-                document.getElementById('dropdown').blur();
-            }
-            if (this.space.wasPressed()) {
-                element.value += " ";
-            }
-            if (this.s.wasPressed() && !(this.shift.isPressed())) {
-                element.value += "s";
-            }
-            if (this.w.wasPressed() && !(this.shift.isPressed())) {
-                element.value += "w";
-            }
-            if (this.del.wasPressed()) {
-                element.value = element.value.slice(0, -1);
-            }
-            if (this.z.wasPressed() && !(this.shift.isPressed())) {
-                element.value += "z";
-            }
-            if (this.x.wasPressed() && !(this.shift.isPressed())) {
-                element.value += "x";
-            }
+            this.inputBox();
         } else {
             if (element != null) {
                 element.blur();
@@ -470,23 +480,30 @@ class PartEditor extends SimpleScene {
         }
 
         const pElement = document.getElementsByTagName("body")[0];
-        pElement.style.cursor = "url('https://i.ibb.co/hsnxb67/icons8-cursor-30.png'), auto";
-
-        if (this.home.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-            this.home.setAlpha(0.5);
+        if (labelColor == 0x000000) {
+            pElement.style.cursor = "url('assets/blackcursor.png'), auto";
         } else {
-            this.home.setAlpha(1);
+            pElement.style.cursor = "url('assets/whitecursor.png'), auto";
+        }
+
+        if (this.import.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.import.setAlpha(0.5);
+        } else {
+            this.import.setAlpha(1);
         }
 
         if (this.info.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.info.setAlpha(0.5);
         } else {
             this.info.setAlpha(1);
         }
 
-        if (!(this.input.activePointer.isDown == true)) {
+        if (this.input.activePointer.isDown == true) {
+            this.title.setVisible(0);
+            this.instructions.setVisible(0);
+        } else {
             this.crossV.setAlpha(0);
             this.crossH.setAlpha(0);
         }
@@ -506,28 +523,28 @@ class PartEditor extends SimpleScene {
         }
 
         if (this.save.isOver() || this.saveButton.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.saveButton.fillColor = 0x99ff99;
         } else {
             this.saveButton.fillColor = 0x3fce29;
         }
 
         if (this.increaseScale.isOver() || this.increaseScaleButton.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.increaseScale.setAlpha(0.5);
         } else {
             this.increaseScale.setAlpha(1);
         }
 
         if (this.decreaseScale.isOver() || this.decreaseScaleButton.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.decreaseScale.setAlpha(0.5);
         } else {
             this.decreaseScale.setAlpha(1);
         }
 
         if (this.magnet.isOver() || this.slash.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.magnet.setAlpha(0.5);
             this.slash.setAlpha(0.5);
         } else {
@@ -536,7 +553,7 @@ class PartEditor extends SimpleScene {
         }
 
         if (this.glue.isOver() || this.glueSlash.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.glue.setAlpha(0.5);
             this.glueSlash.setAlpha(0.5);
         } else {
@@ -544,8 +561,22 @@ class PartEditor extends SimpleScene {
             this.glueSlash.setAlpha(1);
         }
 
+        if (this.shrink.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.shrink.setAlpha(0.5);
+        } else {
+            this.shrink.setAlpha(1);
+        }
+
+        if (this.enlarge.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.enlarge.setAlpha(0.5);
+        } else {
+            this.enlarge.setAlpha(1);
+        }
+
         if (this.undo.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.undo.setAlpha(0.5);
         } else {
             if (undo.length > 0) {
@@ -556,7 +587,7 @@ class PartEditor extends SimpleScene {
         }
 
         if (this.redo.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.redo.setAlpha(0.5);
         } else {
             if (redo.length > 0) {
@@ -567,30 +598,119 @@ class PartEditor extends SimpleScene {
         }
 
         if (this.binHandle.isOver() || this.binHandleArrow.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
         }
 
         if (this.popupdone.visible == 1) {
             if (this.popupdone.isOver() || this.popupdonetext.isOver()) {
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
                 this.popupdone.fillColor = 0xeeeeee;
             } else {
                 this.popupdone.fillColor = 0xaaaaaa;
             }
             if (this.popupadd.isOver() || this.popupaddtext.isOver()) {
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
                 this.popupadd.fillColor = 0x99ff99;
             } else {
                 this.popupadd.fillColor = 0x4FBA52;
             }
             if (this.popupadd.wasClicked() || this.popupaddtext.wasClicked()) {
-                window.open('/Tutorial.html', '_blank');
+
+                var locX = [];
+                var locY = [];
+                for (var v = 0; v < this.wiringPoint.length; v++) {
+                    if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22 && this.wiringPoint[v].visible == 1) {
+                        locX[locX.length] = (this.wiringPoint[v].x - this.object.x) / (this.object.width);
+                        locY[locY.length] = (this.wiringPoint[v].y - this.object.y) / (this.object.height);
+                    }
+                }
+
+                var workspaceScale = this.object.scale / scaleCount;
+
+                var objectName = document.getElementById('input').value;
+                var objectType = document.getElementById('dropdown').value;
+                var objectInfo = [];
+                if (objectName != "") {
+                    objectInfo[0] = objectName;
+                } else {
+                    objectInfo[0] = "Object Name";
+                }
+                if (objectType != "") {
+                    objectInfo[1] = objectType;
+                } else {
+                    objectInfo[1] = "Object Type";
+                }
+                objectInfo[2] = workspaceScale;
+                objectInfo[3] = locX.length;
+                objectInfo[4] = deviceWidth;
+
+                if (workspaceObjectImport >= 0) {
+                    wiringXPoints["x" + workspaceObjectImport] = locX;
+                    wiringYPoints["y" + workspaceObjectImport] = locY;
+                    for (var v = 0; v < 5; v++) {
+                        objectsData[workspaceObjectImport * 5 + v] = objectInfo[v];
+                    }
+
+                    if (objectsDataImport.length == 0) {
+                        objectsDataImport.push(scaleCount);
+                        objectsDataImport.push(1);
+                        objectsDataImport.push(8);
+                        for (var v = 0; v < customObjectColors.length; v++) {
+                            objectsDataImport.push(customObjectColors[v]);
+                        }
+                    } else {
+                        objectsDataImport[1]++;
+                    }
+                    objectsDataImport.push(true);
+                    objectsDataImport.push(deviceWidth / 2);
+                    objectsDataImport.push(deviceHeight / 2);
+                    objectsDataImport.push(workspaceObjectImport);
+                    objectsDataImport.push(0);
+                    objectsDataImport.push(3);
+                    objectsDataImport.push(-1);
+                    objectsDataImport.push(defaultLabel[workspaceObjectImport * 12]);
+                    if (defaultLabel[workspaceObjectImport * 12] != "") {
+                        objectsDataImport.push(defaultLabel[workspaceObjectImport * 12]);
+                    } else {
+                        objectsDataImport.push(-1);
+                    }
+                } else {
+                    var newObjectID = objectsData.length / 5;
+                    wiringXPoints["x" + newObjectID] = locX;
+                    wiringYPoints["y" + newObjectID] = locY;
+                    for (var v = 0; v < 5; v++) {
+                        objectsData.push(objectInfo[v]);
+                    }
+                    var defaultLabelFiller = ["", -1, 0, true, 0, 0, 0, 0, 0, 0, 0, 0,];
+                    for (var v = 0; v < defaultLabelFiller.length; v++) {
+                        defaultLabel.push(defaultLabelFiller[v]);
+                    }
+
+                    if (objectsDataImport.length == 0) {
+                        objectsDataImport.push(scaleCount);
+                        objectsDataImport.push(1);
+                        objectsDataImport.push(8);
+                        for (var v = 0; v < customObjectColors.length; v++) {
+                            objectsDataImport.push(customObjectColors[v]);
+                        }
+                    } else {
+                        objectsDataImport[1]++;
+                    }
+                    objectsDataImport.push(true);
+                    objectsDataImport.push(deviceWidth / 2);
+                    objectsDataImport.push(deviceHeight / 2);
+                    objectsDataImport.push(newObjectID);
+                    objectsDataImport.push(0);
+                    objectsDataImport.push(3);
+                    objectsDataImport.push(-1);
+                    objectsDataImport.push("");
+                    objectsDataImport.push("");
+                }
+                this.scene.start("Workspace");
             }
         }
 
         if (this.object.wasClicked()) {
-            this.title.setVisible(0);
-            this.instructions.setVisible(0);
             for (var v = 0; v < this.wiringPoint.length; v++) {
                 this.wiringPoint[v].disableDrag();
                 this.wiringPoint[v].disableClick();
@@ -610,7 +730,7 @@ class PartEditor extends SimpleScene {
         }
 
         if (this.object.isClicked()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             if (element != null) {
                 element.blur();
             }
@@ -671,71 +791,70 @@ class PartEditor extends SimpleScene {
 
                 lastScale = this.object.scale;
             }
-            if (this.shift.isPressed()) {
-                if (this.uparrow.isPressed()) {
-                    scalingObject = true;
-                    this.object.scale *= 1.001;
-                    this.object.width *= 1.001;
-                    this.object.height *= 1.001;
-                    counter++;
+            if ((this.uparrow.isPressed() && this.shift.isPressed()) || this.enlarge.isClicked()) {
+                scalingObject = true;
+                this.object.scale *= 1.001;
+                this.object.width *= 1.001;
+                this.object.height *= 1.001;
+                counter++;
 
-                    if (this.glueSlash.visible == 0) {
-                        for (var v = 0; v < this.wiringPoint.length; v++) {
-                            if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
-                                this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 1.001) + this.object.x;
-                                this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 1.001) + this.object.y;
-                            }
-                        }
-                    }
-
-                    if (counter > 50) {
-                        this.object.scale *= 1.005;
-                        this.object.width *= 1.005;
-                        this.object.height *= 1.005;
-
-                        if (this.glueSlash.visible == 0) {
-                            for (var v = 0; v < this.wiringPoint.length; v++) {
-                                if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
-                                    this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 1.005) + this.object.x;
-                                    this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 1.005) + this.object.y;
-                                }
-                            }
+                if (this.glueSlash.visible == 0) {
+                    for (var v = 0; v < this.wiringPoint.length; v++) {
+                        if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                            this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 1.001) + this.object.x;
+                            this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 1.001) + this.object.y;
                         }
                     }
                 }
 
-                if (this.downarrow.isPressed()) {
-                    scalingObject = true;
-                    this.object.scale *= 0.999;
-                    this.object.width *= 0.999;
-                    this.object.height *= 0.999;
-                    counter++;
+                if (counter > 50) {
+                    this.object.scale *= 1.005;
+                    this.object.width *= 1.005;
+                    this.object.height *= 1.005;
 
                     if (this.glueSlash.visible == 0) {
                         for (var v = 0; v < this.wiringPoint.length; v++) {
                             if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
-                                this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 0.999) + this.object.x;
-                                this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 0.999) + this.object.y;
-                            }
-                        }
-                    }
-
-                    if (counter > 50) {
-                        this.object.scale *= 0.995;
-                        this.object.width *= 0.995;
-                        this.object.height *= 0.995;
-
-                        if (this.glueSlash.visible == 0) {
-                            for (var v = 0; v < this.wiringPoint.length; v++) {
-                                if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
-                                    this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 0.995) + this.object.x;
-                                    this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 0.995) + this.object.y;
-                                }
+                                this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 1.005) + this.object.x;
+                                this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 1.005) + this.object.y;
                             }
                         }
                     }
                 }
-            } else {
+            }
+
+            if ((this.downarrow.isPressed() && this.shift.isPressed()) || this.shrink.isClicked()) {
+                scalingObject = true;
+                this.object.scale *= 0.999;
+                this.object.width *= 0.999;
+                this.object.height *= 0.999;
+                counter++;
+
+                if (this.glueSlash.visible == 0) {
+                    for (var v = 0; v < this.wiringPoint.length; v++) {
+                        if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                            this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 0.999) + this.object.x;
+                            this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 0.999) + this.object.y;
+                        }
+                    }
+                }
+
+                if (counter > 50) {
+                    this.object.scale *= 0.995;
+                    this.object.width *= 0.995;
+                    this.object.height *= 0.995;
+
+                    if (this.glueSlash.visible == 0) {
+                        for (var v = 0; v < this.wiringPoint.length; v++) {
+                            if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22) {
+                                this.wiringPoint[v].x = ((this.wiringPoint[v].x - this.object.x) * 0.995) + this.object.x;
+                                this.wiringPoint[v].y = ((this.wiringPoint[v].y - this.object.y) * 0.995) + this.object.y;
+                            }
+                        }
+                    }
+                }
+            }
+            if (!(this.shift.isPressed())) {
                 var wiringPointHover = false;
                 for (var v = 0; v < this.wiringPoint.length; v++) {
                     if (this.wiringPoint[v].isOver()) {
@@ -796,7 +915,7 @@ class PartEditor extends SimpleScene {
             this.wiringPoint[i].width = deviceWidth * 0.02;
             this.wiringPoint[i].height = deviceWidth * 0.02;
             if (this.wiringPoint[i].isOver()) {
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
                 this.wiringPoint[i].fillColor = (0xf46464);
                 if (this.del.wasPressed()) {
                     this.wiringPoint[i].visible = 0;
@@ -825,11 +944,20 @@ class PartEditor extends SimpleScene {
             }
 
             if (this.wiringPoint[i].wasClicked()) {
-                this.title.setVisible(0);
-                this.instructions.setVisible(0);
                 lastPosition[0] = i;
                 lastPosition[1] = this.wiringPoint[i].x;
                 lastPosition[2] = this.wiringPoint[i].y;
+                for (var v = 0; v < this.wiringPoint.length; v++) {
+                    this.wiringPoint[v].disableClick();
+                    this.wiringPoint[v].disableDrag();
+                }
+            }
+
+            if (this.wiringPoint[i].wasDropped()) {
+                for (var v = 0; v < this.wiringPoint.length; v++) {
+                    this.wiringPoint[v].enableClick();
+                    this.wiringPoint[v].enableDrag();
+                }
             }
 
             if (i == lastPosition[0] && !(this.wiringPoint[i].isClicked()) && (lastPosition[1] != this.wiringPoint[i].x || lastPosition[2] != this.wiringPoint[i].y) && !(this.uparrow.isPressed()) && !(this.leftarrow.isPressed()) && !(this.rightarrow.isPressed()) && !(this.downarrow.isPressed())) {
@@ -1068,8 +1196,6 @@ class PartEditor extends SimpleScene {
         }
 
         if (this.grid.wasClicked() || this.floor.wasClicked()) {
-            this.title.setVisible(0);
-            this.instructions.setVisible(0);
             if (element != null) {
                 element.blur();
             }
@@ -1237,7 +1363,7 @@ class PartEditor extends SimpleScene {
             }
         }
 
-        if (this.decreaseScale.isClicked() || this.decreaseScaleButton.isClicked() || (this.space.isPressed() && this.shift.isPressed())) {
+        if (this.decreaseScale.isClicked() || this.decreaseScaleButton.isClicked() || (element == null && this.space.isPressed() && this.shift.isPressed())) {
             scaleCount *= 0.995;
             snapStartX = ((snapStartX - (deviceWidth / 2)) * 0.995) + (deviceWidth / 2);
             snapStartY = ((snapStartY - (deviceHeight / 2)) * 0.995) + (deviceHeight / 2);
@@ -1349,8 +1475,8 @@ class PartEditor extends SimpleScene {
             this.popupadd.setVisible(1);
             this.popupaddtext.setVisible(1);
 
-            locX.splice(0, locX.length);
-            locY.splice(0, locY.length);
+            var locX = [];
+            var locY = [];
 
             for (var v = 0; v < this.wiringPoint.length; v++) {
                 if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22 && this.wiringPoint[v].visible == 1) {
@@ -1359,7 +1485,7 @@ class PartEditor extends SimpleScene {
                 }
             }
 
-            workshopScale = this.object.scale / scaleCount;
+            var workspaceScale = this.object.scale / scaleCount;
 
             var objectName = document.getElementById('input').value;
             var objectType = document.getElementById('dropdown').value;
@@ -1374,7 +1500,7 @@ class PartEditor extends SimpleScene {
             } else {
                 objectInfo[1] = "Object Type";
             }
-            objectInfo[2] = workshopScale;
+            objectInfo[2] = workspaceScale;
             objectInfo[3] = locX.length;
             objectInfo[4] = deviceWidth;
 
@@ -1400,18 +1526,76 @@ class PartEditor extends SimpleScene {
             document.getElementById('download0').innerHTML = "X Locations";
             document.getElementById('download0').download = "XLocations.txt";
             document.getElementById('download0').href = generateTextFileUrl(locX);
+            document.getElementById('download0').click();
 
             textFileUrl = null;
 
             document.getElementById('download1').innerHTML = "Y Locations";
             document.getElementById('download1').download = "YLocations.txt";
             document.getElementById('download1').href = generateTextFileUrl(locY);
+            document.getElementById('download1').click();
 
             textFileUrl = null;
 
             document.getElementById('download2').innerHTML = "Object Info";
             document.getElementById('download2').download = "ObjectInfo.txt";
             document.getElementById('download2').href = generateTextFileUrl(objectInfo);
+            document.getElementById('download2').click();
+        }
+
+        if (this.info.wasClicked() || this.import.wasClicked()) {
+            //window.open('https://youtube.com', '_blank');
+            window.open('/Tutorial.html', '_blank');
+        }
+
+        if (this.home.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.home.setAlpha(0.5);
+        } else {
+            this.home.setAlpha(1);
+        }
+
+        if (this.dark.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.dark.setAlpha(0.5);
+        } else {
+            this.dark.setAlpha(1);
+        }
+
+        if (this.dark.wasClicked()) {
+            if (this.floor.fillColor == 0xF4F5F6) {
+                this.floor.fillColor = 0x040506;
+                gridColor = 0x444444;
+                this.grid.setOutlineStyle(gridColor, 1);
+                this.instructions.setFontColor(0xffffff);
+                this.itemBin.fillColor = 0x333333;
+                this.binHandle.fillColor = 0x333333;
+                this.binHandleArrow.setFrame(1);
+                labelColor = 0xffffff;
+                this.wiringPointLabel.setFontColor(labelColor);
+                document.getElementById('fullpage').style.backgroundColor = "#040506";
+                document.getElementById('spacer').style.color = "black";
+                document.getElementById('label').style.color = "white";
+                document.getElementById('label2').style.color = "white";
+                document.getElementById('label3').style.color = "white";
+                document.getElementById('downloads').style.color = "white";
+            } else {
+                this.floor.fillColor = 0xF4F5F6;
+                gridColor = 0xdddddd;
+                this.grid.setOutlineStyle(gridColor, 1);
+                this.instructions.setFontColor(0x000000);
+                this.itemBin.fillColor = 0xdddddd;
+                this.binHandle.fillColor = 0xdddddd;
+                this.binHandleArrow.setFrame(0);
+                labelColor = 0x000000;
+                this.wiringPointLabel.setFontColor(labelColor);
+                document.getElementById('fullpage').style.backgroundColor = "#F4F5F6";
+                document.getElementById('spacer').style.color = "white";
+                document.getElementById('label').style.color = "black";
+                document.getElementById('label2').style.color = "black";
+                document.getElementById('label3').style.color = "black";
+                document.getElementById('downloads').style.color = "black";
+            }
         }
 
         if (this.home.wasClicked()) {
@@ -1426,40 +1610,6 @@ class PartEditor extends SimpleScene {
             this.popupyestext.setVisible(1);
 
             this.disabling();
-        }
-
-        if (this.info.wasClicked()) {
-            //window.open('https://youtube.com', '_blank');
-            window.open('/Tutorial.html', '_blank');
-        }
-
-        if (this.dark.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-            this.dark.setAlpha(0.5);
-        } else {
-            this.dark.setAlpha(1);
-        }
-
-        if (this.dark.wasClicked()) {
-            if (this.floor.fillColor == 0xffffff) {
-                this.floor.fillColor = 0x000000;
-                gridColor = 0x444444;
-                this.grid.setOutlineStyle(gridColor, 1);
-                this.instructions.setFontColor(0xffffff);
-                this.itemBin.fillColor = 0x333333;
-                this.binHandle.fillColor = 0x333333;
-                this.binHandleArrow.setFrame(1);
-                this.wiringPointLabel.setFontColor(0xffffff)
-            } else {
-                this.floor.fillColor = 0xffffff;
-                gridColor = 0xdddddd;
-                this.grid.setOutlineStyle(gridColor, 1);
-                this.instructions.setFontColor(0x000000);
-                this.itemBin.fillColor = 0xdddddd;
-                this.binHandle.fillColor = 0xdddddd;
-                this.binHandleArrow.setFrame(0);
-                this.wiringPointLabel.setFontColor(0x000000)
-            }
         }
 
         if (this.popupcancel.wasClicked() || this.popupcanceltext.wasClicked() || this.popupdone.wasClicked() || this.popupdonetext.wasClicked() || (element == null && this.esc.wasPressed())) {
@@ -1480,11 +1630,11 @@ class PartEditor extends SimpleScene {
             document.getElementById('option5').style.display = "block";
             this.popupover.setVisible(0);
             this.popup.setVisible(0);
-            this.popuptext.setVisible(0);
             this.popupcancel.setVisible(0);
             this.popupyes.setVisible(0);
             this.popupcanceltext.setVisible(0);
             this.popupyestext.setVisible(0);
+            this.popuptext.setVisible(0);
             this.popupdone.setVisible(0);
             this.popupdonetext.setVisible(0);
             this.popupadd.setVisible(0);
@@ -1495,7 +1645,7 @@ class PartEditor extends SimpleScene {
         }
 
         if (this.popupyes.wasClicked() || this.popupyestext.wasClicked() || (this.popupyes.visible == 1 && this.return.wasPressed())) {
-            this.scene.start("Menu");
+            this.scene.start("Workspace");
         }
     }
 
@@ -1503,7 +1653,8 @@ class PartEditor extends SimpleScene {
         this.object.disableClick();
         this.object.disableDrag();
         this.info.disableClick();
-        this.home.disableClick();
+        this.floor.disableClick();
+        this.dark.disableClick();
         this.increaseScale.disableClick();
         this.increaseScaleButton.disableClick();
         this.decreaseScale.disableClick();
@@ -1525,7 +1676,8 @@ class PartEditor extends SimpleScene {
         this.object.enableClick();
         this.object.enableDrag();
         this.info.enableClick();
-        this.home.enableClick();
+        this.floor.enableClick();
+        this.dark.enableClick();
         this.increaseScale.enableClick();
         this.increaseScaleButton.enableClick();
         this.decreaseScale.enableClick();
@@ -1567,5 +1719,33 @@ class PartEditor extends SimpleScene {
         document.getElementById('download1').href = "#";
         document.getElementById('download2').innerHTML = "";
         document.getElementById('download2').href = "#";
+    }
+
+    inputBox() {
+        if (element == document.getElementById('input') || element == document.getElementById('inputnum') || element == document.getElementById('dropdown')) {
+            if (this.del.wasPressed() && !(this.shift.isPressed())) {
+                element.value = element.value.slice(0, -1);
+            }
+            if (!(this.shift.isPressed())) {
+                if (this.s.wasPressed()) {
+                    element.value += "s";
+                }
+                if (this.w.wasPressed()) {
+                    element.value += "w";
+                }
+                if (this.z.wasPressed()) {
+                    element.value += "z";
+                }
+                if (this.x.wasPressed()) {
+                    element.value += "x";
+                }
+            }
+            if (this.space.wasPressed()) {
+                element.value += " ";
+            }
+            if (this.esc.wasPressed()) {
+                element.blur();
+            }
+        }
     }
 }

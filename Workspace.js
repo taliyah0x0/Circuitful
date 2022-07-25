@@ -2,14 +2,11 @@
 
 var wiresDataImport = [
 
-
 ];
 var nodesDataImport = [
 
-
 ];
 var objectsDataImport = [
-
 
 ];
 
@@ -31,9 +28,8 @@ let wiringXPoints = {
     x9: [-0.10879654267293674, 0.04112476371797642],
     x10: [-0.3812102027544783, -0.33082420792379524, 0.2738077300444212, -0.381210202754469, -0.28043821309310124, -0.23005221826241715, -0.33082420792378514, -0.28043821309310124, -0.17966622343173333, -0.23005221826241715, -0.17966622343173333, -0.12928022860104948, -0.12928022860104948, -0.07889423377036565, -0.02850823893968182, 0.021877755891002017, 0.07226375072168585, 0.12264974555236968, 0.17303574038305353, 0.22342173521373734, -0.07889423377036565, -0.02850823893968182, 0.021877755891002017, 0.07226375072168585, 0.12264974555236968, 0.17303574038305353, 0.22342173521373734, 0.2738077300444212, 0.32419372487510545, 0.37457971970578885, 0.4249657145364728, 0.37457971970578885, 0.32419372487510545, 0.4249657145364728],
     x11: [-0.3353424203600527, 0.3906588098742318, 0.4632589328976631, -0.2627422973366244, -0.19014217431319694, -0.1175420512897685, -0.3353424203600527, -0.2627422973366244, -0.19014217431319694, -0.04494192826634062, 0.027658194757087057, 0.10025831778051532, 0.1728584408039432, 0.24545856382737125, 0.3180586868507995, -0.1175420512897685, -0.04494192826634062, 0.027658194757087057, 0.10025831778051532, 0.1728584408039432, 0.24545856382737125, 0.3180586868507995, 0.3906588098742274, 0.46325893289765546],
-    //x12: [-0.22663602536670144, 0.22486695453911468, 0.349521758654434, 0.4279442534242563, 0.4559195188791594, 0.4279442534242563, 0.349521758654434, 0.22486695453911468, -0.35094603213593956, -0.4289822989311955, -0.4554851819937353, -0.4289822989311955, -0.3450581634603299, -0.22663602536670144]
-    x12: [-0.2260912022563598, 0.22785329178666386, 0.34774731695634875, 0.4291533285853066, 0.4528765644996553, 0.4301329531555218, 0.3497065660967791, 0.22785329178666386, -0.3482877410958964, -0.42735288035982555, -0.4564786601501534, -0.42833250493004077, -0.34247006972580774, -0.22643942787727464]
-
+    x12: [-0.2260912022563598, 0.22785329178666386, 0.34774731695634875, 0.4291533285853066, 0.4528765644996553, 0.4301329531555218, 0.3497065660967791, 0.22785329178666386, -0.3482877410958964, -0.42735288035982555, -0.4564786601501534, -0.42833250493004077, -0.34247006972580774, -0.22643942787727464],
+    x13: [-0.003282747751095225],
 };
 
 let wiringYPoints = {
@@ -49,8 +45,9 @@ let wiringYPoints = {
     y9: [-0.3671230196989501, -0.3671230196989505],
     y10: [-0.4288992177715712, -0.4288992177715712, -0.42889921777155554, 0.4315385401062758, -0.42889921777155554, -0.42889921777155554, 0.4315385401062758, 0.4315385401062758, -0.42889921777155554, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, 0.4315385401062758, -0.42889921777155554, -0.42889921777155554, -0.42889921777155554],
     y11: [-0.42830637797406274, -0.4283063779740646, -0.42830637797405235, -0.42830637797406274, -0.42830637797406274, -0.42830637797406274, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, -0.42830637797406274, -0.42830637797406274, -0.42830637797406274, -0.42830637797406274, -0.42830637797406274, -0.42830637797406274, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674, 0.42564358392526674],
-    //y12: [-0.3958511900478606, 0.3953966064207497, 0.2926938127995159, 0.15328645859840928, -0.00023061775103546623, -0.15669579241896067, -0.29397184189176306, -0.3958511900478606, -0.29397184189176306, -0.15669579241896067, -0.00023061775103546623, 0.15991967981499072, 0.2963789356976167, 0.3953966064207497],
-    y12: [-0.3951466325379341, 0.3936245944772217, 0.2911646730599088, 0.15440097163588754, -0.002193757186519534, -0.15679349730162326, -0.2934144796766195, -0.3951466325379341, -0.2924328919309129, -0.15679349730162326, -0.002193757186519534, 0.1560471704551244, 0.29480586058644664, 0.3926430067315151]
+    y12: [-0.3951466325379341, 0.3936245944772217, 0.2911646730599088, 0.15440097163588754, -0.002193757186519534, -0.15679349730162326, -0.2934144796766195, -0.3951466325379341, -0.2924328919309129, -0.15679349730162326, -0.002193757186519534, 0.1560471704551244, 0.29480586058644664, 0.3926430067315151],
+    y13: [0.0017178177834557525],
+
 };
 
 let objectsData = [
@@ -66,8 +63,8 @@ let objectsData = [
     "Servo Motor", "Modules", 1.8310259597511946, 2, 1414.46,
     "Arduino Micro", "Microcontrollers", 1.155322196330012, 34, 1418.4,
     "Arduino Pro Micro", "Microcontrollers", 0.9739249434088939, 24, 1418.4,
-    //"Adafruit Circuit Playground", "Microcontrollers", 0.35036776596353536, 14, 1418.4,
-    "Adafruit Circuit Playground", "Microcontrollers", 0.7401785998271294, 14, 1418.4
+    "Adafruit Circuit Playground", "Microcontrollers", 0.7401785998271294, 14, 1418.4,
+    "Single Point", "Other", 0.021911382461563773, 1, 1418.4,
 ];
 
 ////    ////
@@ -126,6 +123,9 @@ var lastX = 0;
 var lastY = 0;
 var pass = false;
 
+var dragPositionWires = [];
+var dragPositionNodes = [];
+
 var panelType = 0;
 var paletteColors = [0xED4040, 0xED9B40, 0xEDDD2D, 0x4FBA52, 0x45B5C4, 0x406EED, 0x9067B6, 0xE0607E, 0xAE7636, 0x3B3B3B];
 var lastClicked = -1;
@@ -144,10 +144,9 @@ class Workspace extends SimpleScene {
     init() { }
 
     preload() {
-        this.load.imageset("binhandlearrow", "assets/binhandlearrow.png",560,981);
+        this.load.imageset("binhandlearrow", "assets/binhandlearrow.png", 560, 981);
         this.load.image("increasescale", "assets/increasescale.png");
         this.load.image("decreasescale", "assets/decreasescale.png");
-        this.load.image("home", "assets/home.png");
         this.load.image("grid", "assets/grid.jpeg");
         this.load.image("magnet", "assets/magnet.png");
         this.load.image("slash", "assets/slash.png");
@@ -169,6 +168,9 @@ class Workspace extends SimpleScene {
         this.load.image("search", "assets/search.png");
         this.load.image("exit", "assets/exit.png");
         this.load.image("dark", "assets/dark.png");
+        this.load.image("import", "assets/import.png");
+        this.load.image("pen", "assets/pen.png");
+        this.load.image("select", "assets/select.png");
 
         objectID = 0;
         for (var i = 0; i < objectsData.length / 5; i++) {
@@ -184,6 +186,11 @@ class Workspace extends SimpleScene {
     create() {
         undo.splice(0, undo.length);
         redo.splice(0, redo.length);
+        rotateAngle.splice(0, rotateAngle.length);
+        settings.splice(0, settings.length);
+        itemObjectID.splice(0, itemObjectID.length);
+        objectID = 0;
+
         closing = false;
         opening = false;
         lastPosition = [];
@@ -215,23 +222,30 @@ class Workspace extends SimpleScene {
         this.title.setFontSize(deviceHeight * 0.075);
         this.title.setDepth(1);
 
-        this.instructions = this.add.text(deviceWidth / 2, deviceHeight * 0.15, "Create a wiring diagram here.", 0x000000)
+        this.instructions = this.add.text(deviceWidth / 2, deviceHeight * 0.15, "Create a wiring diagram here.", labelColor);
         this.instructions.setOrigin(0.5, 0);
         this.instructions.setFontSize(deviceHeight * 0.03);
         this.instructions.setDepth(1);
 
-        this.binHandle = this.add.circle(deviceWidth * 0.21, deviceHeight / 2, deviceWidth * 0.02, 0xdddddd);
-        this.binHandle.enableClick();
-        this.binHandle.setDepth(5);
+        if (gridColor == 0xdddddd) {
+            this.itemBin = this.add.rectangle(deviceWidth * 0.1, deviceHeight * 0.22, deviceWidth * 0.22, deviceHeight * 2, 0xdddddd);
+            this.binHandle = this.add.circle(deviceWidth * 0.21, deviceHeight / 2, deviceWidth * 0.02, 0xdddddd);
+            this.binHandleArrow = this.add.sprite(deviceWidth * 0.215, deviceHeight / 2, "binhandlearrow", 0);
+        } else {
+            this.itemBin = this.add.rectangle(deviceWidth * 0.1, deviceHeight * 0.22, deviceWidth * 0.22, deviceHeight * 2, 0x333333);
+            this.binHandle = this.add.circle(deviceWidth * 0.21, deviceHeight / 2, deviceWidth * 0.02, 0x333333);
+            this.binHandleArrow = this.add.sprite(deviceWidth * 0.215, deviceHeight / 2, "binhandlearrow", 1);
+        }
+        this.itemBin.setDepth(5);
+        this.itemBin.enableClick();
 
-        this.binHandleArrow = this.add.sprite(deviceWidth * 0.215, deviceHeight / 2, "binhandlearrow",0);
         this.binHandleArrow.setScale(deviceWidth * 0.00002);
         this.binHandleArrow.setAngle(180);
         this.binHandleArrow.enableClick();
         this.binHandleArrow.setDepth(5);
 
-        this.itemBin = this.add.rectangle(deviceWidth * 0.1, deviceHeight * 0.22, deviceWidth * 0.22, deviceHeight * 2, 0xdddddd);
-        this.itemBin.setDepth(5);
+        this.binHandle.enableClick();
+        this.binHandle.setDepth(5);
 
         this.binLabel = this.add.text(deviceWidth * 0.02, deviceHeight * 0.03, "All", 0x999999);
         this.binLabel.setFontSize(deviceHeight * 0.045);
@@ -239,21 +253,30 @@ class Workspace extends SimpleScene {
         this.binLabelDivider = this.add.line(deviceWidth * 0.015, deviceHeight * 0.09, deviceWidth * 0.2, deviceHeight * 0.09, 5, 0xdddddd);
         this.binLabelDivider.setDepth(5);
 
-        this.lastPageButton = this.add.rectangle(deviceWidth * 0.053, deviceHeight * 0.97, deviceWidth * 0.105, deviceWidth * 0.03, 0xffffff);
+        if (gridColor == 0xdddddd) {
+            this.lastPageButton = this.add.rectangle(deviceWidth * 0.053, deviceHeight * 0.97, deviceWidth * 0.105, deviceWidth * 0.03, 0xffffff);
+            this.nextPageButton = this.add.rectangle(deviceWidth * 0.157, deviceHeight * 0.97, deviceWidth * 0.105, deviceWidth * 0.03, 0xffffff);
+            this.lastPageArrow = this.add.sprite(deviceWidth * 0.053, deviceHeight * 0.97, "binhandlearrow", 0);
+            this.nextPageArrow = this.add.sprite(deviceWidth * 0.157, deviceHeight * 0.97, "binhandlearrow", 0);
+        } else {
+            this.lastPageButton = this.add.rectangle(deviceWidth * 0.053, deviceHeight * 0.97, deviceWidth * 0.105, deviceWidth * 0.03, 0x000000);
+            this.nextPageButton = this.add.rectangle(deviceWidth * 0.157, deviceHeight * 0.97, deviceWidth * 0.105, deviceWidth * 0.03, 0x000000);
+            this.lastPageArrow = this.add.sprite(deviceWidth * 0.053, deviceHeight * 0.97, "binhandlearrow", 1);
+            this.nextPageArrow = this.add.sprite(deviceWidth * 0.157, deviceHeight * 0.97, "binhandlearrow", 1);
+        }
         this.lastPageButton.setAlpha(0.3);
         this.lastPageButton.enableClick();
         this.lastPageButton.setDepth(5);
-        this.lastPageArrow = this.add.sprite(deviceWidth * 0.053, deviceHeight * 0.97, "binhandlearrow",0);
+
         this.lastPageArrow.setScale(deviceWidth * 0.00003);
         this.lastPageArrow.setAngle(-90);
         this.lastPageArrow.enableClick();
         this.lastPageArrow.setDepth(5);
 
-        this.nextPageButton = this.add.rectangle(deviceWidth * 0.157, deviceHeight * 0.97, deviceWidth * 0.105, deviceWidth * 0.03, 0xffffff);
         this.nextPageButton.setAlpha(0.3);
         this.nextPageButton.enableClick();
         this.nextPageButton.setDepth(5);
-        this.nextPageArrow = this.add.sprite(deviceWidth * 0.157, deviceHeight * 0.97, "binhandlearrow",0);
+
         this.nextPageArrow.setScale(deviceWidth * 0.00003);
         this.nextPageArrow.setAngle(90);
         this.nextPageArrow.enableClick();
@@ -275,7 +298,7 @@ class Workspace extends SimpleScene {
         this.search.setDepth(5);
 
         this.exit = this.add.sprite(deviceWidth * 0.18, deviceHeight * 0.05, "exit");
-        this.exit.setScale(deviceWidth * 0.00025);
+        this.exit.setScale(deviceWidth * 0.0003);
         this.exit.enableClick();
         this.exit.setDepth(5);
         this.exit.setVisible(0);
@@ -284,42 +307,48 @@ class Workspace extends SimpleScene {
         this.items = [];
         this.itemLabels = [];
         this.itemResistorBars = [];
+        this.itemButtons = [];
         var v = 0;
         for (var i = 0; i < objectsData.length / 5; i++) {
             if (v < 8) {
                 var obj;
                 var label;
+                var button;
                 if (i % 2 == 0) {
                     obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
                     label = this.add.text(deviceWidth * 0.05, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                    button = this.add.rectangle(deviceWidth * 0.05, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                 }
                 if (i % 2 == 1) {
                     obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
                     label = this.add.text(deviceWidth * 0.15, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                    button = this.add.rectangle(deviceWidth * 0.15, (Math.floor(i / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                 }
                 obj.scale *= (objectsData[(i * 5) + 2]);
                 obj.width *= (objectsData[(i * 5) + 2]);
                 obj.height *= (objectsData[(i * 5) + 2])
-                obj.width *= 10;
-                obj.height *= 10;
-                while (obj.width < deviceWidth * 0.5 && obj.height < deviceHeight * 0.6) {
+                while (obj.width < deviceWidth * 0.03 && obj.height < deviceHeight * 0.08) {
                     obj.width *= 1.1;
                     obj.scale *= 1.1;
                     obj.height *= 1.1;
                 }
-                while (obj.width > deviceWidth * 0.6 || obj.height > deviceHeight) {
+                while (obj.width > deviceWidth * 0.08 || obj.height > deviceHeight * 0.12) {
                     obj.width *= 0.9;
                     obj.scale *= 0.9;
                     obj.height *= 0.9;
                 }
-                obj.enableClick();
                 obj.setDepth(6);
                 this.items.push(obj);
                 itemObjectID.push(objectID);
 
+                button.setAlpha(0.01);
+                button.setDepth(7);
+                button.enableClick();
+                this.itemButtons.push(button);
+
                 if (objectID == 2) {
-                    this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
-                    this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                    this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, 0x3b3b3b);
+                    this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height * 0.057, obj.width * 0.3, obj.height * 0.055, 0xed9c40);
                     this.itemResistorBars[0].setOrigin(0.5, 0.5);
                     this.itemResistorBars[1].setOrigin(0.5, 0.5);
                     this.itemResistorBars[0].setDepth(6);
@@ -414,10 +443,10 @@ class Workspace extends SimpleScene {
         this.saved.setVisible(0);
         this.saved.setDepth(5);
 
-        this.home = this.add.sprite(deviceWidth * 0.965, deviceHeight * 0.94, "home");
-        this.home.setScale(deviceWidth * 0.00012)
-        this.home.enableClick();
-        this.home.setDepth(5);
+        this.import = this.add.sprite(deviceWidth * 0.965, deviceHeight * 0.94, "import");
+        this.import.setScale(deviceWidth * 0.00035)
+        this.import.enableClick();
+        this.import.setDepth(5);
 
         this.info = this.add.sprite(deviceWidth * 0.965, deviceHeight * 0.06, "info");
         this.info.setScale(deviceWidth * 0.0004);
@@ -428,6 +457,22 @@ class Workspace extends SimpleScene {
         this.dark.setScale(deviceWidth * 0.00035);
         this.dark.enableClick();
         this.dark.setDepth(5);
+
+        this.pen = this.add.sprite(deviceWidth * 0.83, deviceHeight * 0.06, "pen");
+        this.pen.setScale(deviceWidth * 0.0004);
+        this.pen.enableClick();
+        this.pen.setDepth(5);
+
+        this.penSlash = this.add.sprite(deviceWidth * 0.83, deviceHeight * 0.06, "slash");
+        this.penSlash.flipX = true;
+        this.penSlash.setScale(deviceWidth * 0.0003);
+        this.penSlash.enableClick();
+        this.penSlash.setDepth(5);
+
+        this.select = this.add.sprite(deviceWidth * 0.875, deviceHeight * 0.06, "select");
+        this.select.setScale(deviceWidth * 0.0004);
+        this.select.enableClick();
+        this.select.setDepth(5);
 
         this.magnet = this.add.sprite(deviceWidth * 0.735, deviceHeight * 0.945, "magnet");
         this.magnet.setScale(deviceWidth * 0.0005);
@@ -440,7 +485,11 @@ class Workspace extends SimpleScene {
         this.slash.setVisible(0);
         this.slash.setDepth(5);
 
-        this.floor = this.add.rectangle(deviceWidth / 2, deviceHeight / 2, deviceWidth, deviceHeight, 0xffffff);
+        if (gridColor == 0xdddddd) {
+            this.floor = this.add.rectangle(deviceWidth / 2, deviceHeight / 2, deviceWidth, deviceHeight, 0xF4F5F6);
+        } else {
+            this.floor = this.add.rectangle(deviceWidth / 2, deviceHeight / 2, deviceWidth, deviceHeight, 0x040506);
+        }
         this.floor.setDepth(0);
         this.floor.enableClick();
 
@@ -461,7 +510,8 @@ class Workspace extends SimpleScene {
         this.undo.setDepth(5);
         this.undo.enableClick();
 
-        this.wiringPointer = this.add.circle(0, 0, 8 * scaleCount, 0xED4040);
+        this.wiringPointer = this.add.circle(0, 0, 8 * scaleCount, 0xbbbbbb);
+        this.wiringPointer.setDepth(5);
 
         var pointer = this.input.activePointer;
 
@@ -495,39 +545,11 @@ class Workspace extends SimpleScene {
         this.popup.setDepth(9);
         this.popup.setVisible(0);
 
-        this.popuptext = this.add.text(deviceWidth / 2, deviceHeight * 0.45, "Are you sure you want to leave? You will lose your work.", 0x000000);
+        this.popuptext = this.add.text(deviceWidth / 2, deviceHeight * 0.45, "", 0x000000);
         this.popuptext.setOrigin(0.5, 0.5);
         this.popuptext.setFontSize(deviceHeight * 0.04);
         this.popuptext.setDepth(9);
         this.popuptext.setVisible(0);
-
-        this.popupcancel = this.add.rectangle(deviceWidth * 0.44, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xaaaaaa);
-        this.popupcancel.width = deviceWidth * 0.1;
-        this.popupcancel.height = deviceHeight * 0.05;
-        this.popupcancel.enableClick();
-        this.popupcancel.setDepth(9);
-        this.popupcancel.setVisible(0);
-
-        this.popupyes = this.add.rectangle(deviceWidth * 0.56, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xed4040);
-        this.popupyes.width = deviceWidth * 0.1;
-        this.popupyes.height = deviceHeight * 0.05;
-        this.popupyes.setDepth(9);
-        this.popupyes.enableClick();
-        this.popupyes.setVisible(0);
-
-        this.popupcanceltext = this.add.text(deviceWidth * 0.44, deviceHeight * 0.55, "Cancel", 0x000000);
-        this.popupcanceltext.setOrigin(0.5, 0.5);
-        this.popupcanceltext.setFontSize(deviceHeight * 0.03);
-        this.popupcanceltext.enableClick();
-        this.popupcanceltext.setDepth(10);
-        this.popupcanceltext.setVisible(0);
-
-        this.popupyestext = this.add.text(deviceWidth * 0.56, deviceHeight * 0.55, "Yes", 0x000000);
-        this.popupyestext.setOrigin(0.5, 0.5);
-        this.popupyestext.setFontSize(deviceHeight * 0.03);
-        this.popupyestext.enableClick();
-        this.popupyestext.setDepth(10);
-        this.popupyestext.setVisible(0);
 
         this.popupdone = this.add.rectangle(deviceWidth * 0.44, deviceHeight * 0.55, deviceWidth * 0.1, deviceHeight * 0.05, 0xaaaaaa);
         this.popupdone.width = deviceWidth * 0.1;
@@ -585,7 +607,7 @@ class Workspace extends SimpleScene {
         this.popupdeltext.setDepth(10);
         this.popupdeltext.setVisible(0);
 
-        this.panel = this.add.rectangle(deviceWidth * 0.95, deviceHeight * 0.2, deviceWidth * 0.2, deviceHeight * 0.7, 0xDDDDDD);
+        this.panel = this.add.rectangle(deviceWidth * 0.95, deviceHeight * 0.05, deviceWidth * 0.2, deviceHeight * 0.7, 0xDDDDDD);
         this.panel.setDepth(5);
         this.panel.setVisible(0);
 
@@ -751,6 +773,7 @@ class Workspace extends SimpleScene {
 
         if (wiresDataImport.length > 0) {
             customColors.splice(0, customColors.length);
+            nodeLinks.splice(0, nodeLinks.length);
             for (var i = 0; i < wiresDataImport[0]; i++) {
                 customColors.push(wiresDataImport[i + 1]);
             }
@@ -764,7 +787,7 @@ class Workspace extends SimpleScene {
                 var wireColor;
 
                 for (var v = 0; v < nodeLinks.length / 4; v++) {
-                    if (this.wires.length == nodeLinks[v * 4] || (nodeLinks[v * 4] == -2 && this.wires.length == nodeLinks[(v * 4) + 2])) {
+                    if (this.wires.length == nodeLinks[v * 4] || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -1) && this.wires.length == nodeLinks[(v * 4) + 2])) {
                         wireColor = nodesDataImport[(v * 4 + 3) + 2];
                     }
                 }
@@ -794,7 +817,7 @@ class Workspace extends SimpleScene {
                 node.scale *= scaleCount;
                 node.setVisible(nodesDataImport[(i * 4 + 0) + 2]);
                 node.setDepth(4);
-                if (nodeLinks[this.nodes.length * 4] == -2) {
+                if (nodeLinks[this.nodes.length * 4] == -2 || nodeLinks[this.nodes.length * 4] == -1) {
                     node.enableClick();
                     node.enableDrag();
                 }
@@ -917,38 +940,44 @@ class Workspace extends SimpleScene {
         if (this.input.activePointer.isDown == true && up == true) {
             down = true;
             up = false;
+            this.title.setVisible(0);
+            this.instructions.setVisible(0);
         }
         if (this.input.activePointer.isDown == false) {
             up = true;
         }
 
         const pElement = document.getElementsByTagName("body")[0];
-        pElement.style.cursor = "url('https://i.ibb.co/hsnxb67/icons8-cursor-30.png'), auto";
-
-        if (this.home.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-            this.home.setAlpha(0.5);
+        if (labelColor == 0x000000) {
+            pElement.style.cursor = "url('assets/blackcursor.png'), auto";
         } else {
-            this.home.setAlpha(1);
+            pElement.style.cursor = "url('assets/whitecursor.png'), auto";
+        }
+
+        if (this.import.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.import.setAlpha(0.5);
+        } else {
+            this.import.setAlpha(1);
         }
 
         if (this.info.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.info.setAlpha(0.5);
         } else {
             this.info.setAlpha(1);
         }
 
         if (this.dark.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.dark.setAlpha(0.5);
         } else {
             this.dark.setAlpha(1);
         }
 
         if (this.dark.wasClicked()) {
-            if (this.floor.fillColor == 0xffffff) {
-                this.floor.fillColor = 0x000000;
+            if (this.floor.fillColor == 0xF4F5F6) {
+                this.floor.fillColor = 0x040506;
                 gridColor = 0x444444;
                 this.grid.setOutlineStyle(gridColor, 1);
                 this.instructions.setFontColor(0xffffff);
@@ -957,12 +986,23 @@ class Workspace extends SimpleScene {
                 this.binHandleArrow.setFrame(1);
                 this.nextPageArrow.setFrame(1);
                 this.lastPageArrow.setFrame(1);
+                this.lastPageButton.fillColor = 0x000000;
+                this.nextPageButton.fillColor = 0x000000;
                 labelColor = 0xffffff;
-                for(var v = 0; v < this.itemLabels.length; v++){
+                for (var v = 0; v < this.itemLabels.length; v++) {
                     this.itemLabels[v].setFontColor(labelColor);
                 }
+                for (var v = 0; v < this.objectLabels.length; v++) {
+                    this.objectLabels[v].setFontColor(labelColor);
+                }
+                document.getElementById('fullpage').style.backgroundColor = "#040506";
+                document.getElementById('spacer').style.color = "black";
+                document.getElementById('label').style.color = "white";
+                document.getElementById('label2').style.color = "white";
+                document.getElementById('label3').style.color = "white";
+                document.getElementById('downloads').style.color = "white";
             } else {
-                this.floor.fillColor = 0xffffff;
+                this.floor.fillColor = 0xF4F5F6;
                 gridColor = 0xdddddd;
                 this.grid.setOutlineStyle(gridColor, 1);
                 this.instructions.setFontColor(0x000000);
@@ -971,78 +1011,102 @@ class Workspace extends SimpleScene {
                 this.binHandleArrow.setFrame(0);
                 this.nextPageArrow.setFrame(0);
                 this.lastPageArrow.setFrame(0);
+                this.lastPageButton.fillColor = 0xffffff;
+                this.nextPageButton.fillColor = 0xffffff;
                 labelColor = 0x000000;
-                for(var v = 0; v < this.itemLabels.length; v++){
+                for (var v = 0; v < this.itemLabels.length; v++) {
                     this.itemLabels[v].setFontColor(labelColor);
                 }
+                for (var v = 0; v < this.objectLabels.length; v++) {
+                    this.objectLabels[v].setFontColor(labelColor);
+                }
+                document.getElementById('fullpage').style.backgroundColor = "#F4F5F6";
+                document.getElementById('spacer').style.color = "white";
+                document.getElementById('label').style.color = "black";
+                document.getElementById('label2').style.color = "black";
+                document.getElementById('label3').style.color = "black";
+                document.getElementById('downloads').style.color = "black";
             }
         }
 
-        if (this.popupcancel.isOver() || this.popupcanceltext.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-            this.popupcancel.fillColor = 0xeeeeee;
+        if (this.pen.isOver() || this.penSlash.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.pen.setAlpha(0.5);
+            this.penSlash.setAlpha(0.5);
         } else {
-            this.popupcancel.fillColor = 0xaaaaaa;
+            this.pen.setAlpha(1);
+            this.penSlash.setAlpha(1);
         }
 
-        if (this.popupyes.isOver() || this.popupyestext.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-            this.popupyes.fillColor = 0xff9999;
+        if (this.pen.wasClicked() || this.penSlash.wasClicked()) {
+            activeWire = false;
+            this.activeWire.setVisible(0);
+            wiringPointer = false;
+            if (this.penSlash.visible == 1) {
+                this.penSlash.setVisible(0);
+            } else {
+                this.penSlash.setVisible(1);
+            }
+        }
+
+        if (this.select.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.select.setAlpha(0.5);
         } else {
-            this.popupyes.fillColor = 0xed4040;
+            this.select.setAlpha(1);
         }
 
         if (this.popupdel.isOver() || this.popupdeltext.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.popupdel.fillColor = 0xff9999;
         } else {
             this.popupdel.fillColor = 0xed4040;
         }
 
         if (this.popupcandel.isOver() || this.popupcandeltext.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.popupcandel.fillColor = 0xeeeeee;
         } else {
             this.popupcandel.fillColor = 0xaaaaaa;
         }
 
         if (this.popupdone.isOver() || this.popupdonetext.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.popupdone.fillColor = 0xeeeeee;
         } else {
             this.popupdone.fillColor = 0xaaaaaa;
         }
 
         if (this.popupcreate.isOver() || this.popupcreatetext.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.popupcreate.fillColor = 0x99ff99;
         } else {
             this.popupcreate.fillColor = 0x4FBA52;
         }
 
         if (this.save.isOver() || this.saveButton.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.saveButton.fillColor = 0x99ff99;
         } else {
             this.saveButton.fillColor = 0x3fce29;
         }
 
         if (this.increaseScale.isOver() || this.increaseScaleButton.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.increaseScale.setAlpha(0.5);
         } else {
             this.increaseScale.setAlpha(1);
         }
 
         if (this.decreaseScale.isOver() || this.decreaseScaleButton.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.decreaseScale.setAlpha(0.5);
         } else {
             this.decreaseScale.setAlpha(1);
         }
 
         if (this.magnet.isOver() || this.slash.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.magnet.setAlpha(0.5);
             this.slash.setAlpha(0.5);
         } else {
@@ -1050,8 +1114,36 @@ class Workspace extends SimpleScene {
             this.slash.setAlpha(1);
         }
 
-        if (this.binHandle.isOver() || this.binHandleArrow.isOver() || this.itemTypeArrow.isOver() || this.addItem.isOver() || this.search.isOver() || this.exit.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+        if (this.search.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.search.setAlpha(0.5);
+        } else {
+            this.search.setAlpha(1);
+        }
+
+        if (this.addItem.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.addItem.setAlpha(0.5);
+        } else {
+            this.addItem.setAlpha(1);
+        }
+
+        if (this.itemTypeArrow.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.itemTypeArrow.setAlpha(0.5);
+        } else {
+            this.itemTypeArrow.setAlpha(1);
+        }
+
+        if (this.exit.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.exit.setAlpha(0.5);
+        } else {
+            this.exit.setAlpha(1);
+        }
+
+        if (this.binHandle.isOver() || this.binHandleArrow.isOver()) {
+            pElement.style.cursor = "url('assets/hand.png'), auto";
         }
 
         if (this.search.wasClicked()) {
@@ -1060,12 +1152,118 @@ class Workspace extends SimpleScene {
             document.getElementById('input').focus();
         }
 
-        if (this.exit.wasClicked()) {
-            this.exit.setVisible(0);
-            this.itemTypeArrow.setVisible(1);
-            this.addItem.setVisible(1);
-            this.search.setVisible(1);
+        if (document.getElementById('label').innerHTML == "Enter search phrase:") {
+            this.inputBox();
+            if (this.binLabel.text != document.getElementById('input').value) {
+                this.search.setVisible(0);
+                this.addItem.setVisible(0);
+                this.itemTypeArrow.setVisible(0);
+                this.nextPageArrow.setVisible(0);
+                this.nextPageButton.setVisible(0);
+                this.lastPageArrow.setVisible(0);
+                this.lastPageButton.setVisible(0);
+                this.exit.setVisible(1);
+                currentPage = 0;
+                currentItemType = 5;
+                itemObjectID.splice(0, itemObjectID.length);
+                for (var i = 0; i < this.items.length; i++) {
+                    this.items[i].destroy();
+                    this.itemLabels[i].destroy();
+                    this.itemButtons[i].destroy();
+                }
+                clean(this.items);
+                clean(this.itemLabels);
+                clean(this.itemButtons);
+
+                this.itemResistorBars[0].destroy();
+                this.itemResistorBars[1].destroy();
+
+                this.binLabel.setText(document.getElementById('input').value);
+                if (this.binLabel.text.length > 13) {
+                    this.binLabel.setFontSize(13 / this.binLabel.text.length * deviceHeight * 0.045);
+                } else {
+                    this.binLabel.setFontSize(deviceHeight * 0.045);
+                }
+
+                objectID = 0;
+                var v = 0;
+                for (var i = 0; i < objectsData.length / 5; i++) {
+                    if (v < 8) {
+                        var obj;
+                        var label;
+                        var button;
+                        if (objectsData[i * 5].includes(document.getElementById('input').value) == true || (objectsData[i * 5].toLowerCase()).includes(document.getElementById('input').value) == true || objectsData[(i * 5) + 1].includes(document.getElementById('input').value) == true || ((objectsData[(i * 5) + 1]).toLowerCase()).includes(document.getElementById('input').value) == true) {
+                            if (v % 2 == 0) {
+                                obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                                label = this.add.text(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                                button = this.add.rectangle(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
+                            }
+                            if (v % 2 == 1) {
+                                obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                                label = this.add.text(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                                button = this.add.rectangle(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
+                            }
+                            obj.scale *= (objectsData[(i * 5) + 2]);
+                            obj.width *= (objectsData[(i * 5) + 2]);
+                            obj.height *= (objectsData[(i * 5) + 2]);
+                            while (obj.width < deviceWidth * 0.03 && obj.height < deviceHeight * 0.08) {
+                                obj.width *= 1.1;
+                                obj.scale *= 1.1;
+                                obj.height *= 1.1;
+                            }
+                            while (obj.width > deviceWidth * 0.08 || obj.height > deviceHeight * 0.12) {
+                                obj.width *= 0.9;
+                                obj.scale *= 0.9;
+                                obj.height *= 0.9;
+                            }
+                            obj.enableClick();
+                            obj.setDepth(6);
+                            this.items[v] = obj;
+                            itemObjectID.push(objectID);
+
+                            button.setAlpha(0.01);
+                            button.setDepth(7);
+                            button.enableClick();
+                            this.itemButtons.push(button);
+
+                            if (objectID == 2) {
+                                this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, 0x3b3b3b);
+                                this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height * 0.057, obj.width * 0.3, obj.height * 0.055, 0xed9c40);
+                                this.itemResistorBars[0].setOrigin(0.5, 0.5);
+                                this.itemResistorBars[1].setOrigin(0.5, 0.5);
+                                this.itemResistorBars[0].setDepth(6);
+                                this.itemResistorBars[1].setDepth(6);
+                            }
+                            if (label.text.length > 15) {
+                                label.setFontSize(15 / label.text.length * deviceHeight * 0.025);
+                            } else {
+                                label.setFontSize(deviceHeight * 0.025);
+                            }
+                            label.setOrigin(0.5, 0.5);
+                            label.setDepth(6);
+                            this.itemLabels[v] = label;
+                            v++;
+                        }
+                        objectID++;
+                    }
+                }
+            }
+            if (this.return.wasPressed()) {
+                this.clearHTML();
+            }
+        }
+
+        if (this.exit.visible == 1 && document.getElementById('input').style.display == 'none' && this.binLabel.text == "") {
             this.binLabel.setText("All");
+            this.nextPageArrow.setVisible(1);
+            this.nextPageButton.setVisible(1);
+            this.lastPageArrow.setVisible(1);
+            this.lastPageButton.setVisible(1);
+            this.search.setVisible(1);
+            this.addItem.setVisible(1);
+            this.itemTypeArrow.setVisible(1);
+            this.exit.setVisible(0);
+
             currentPage = 0;
             currentItemType = 0;
 
@@ -1073,9 +1271,11 @@ class Workspace extends SimpleScene {
             for (var i = 0; i < this.items.length; i++) {
                 this.items[i].destroy();
                 this.itemLabels[i].destroy();
+                this.itemButtons[i].destroy();
             }
             clean(this.items);
             clean(this.itemLabels);
+            clean(this.itemButtons);
 
             this.itemResistorBars[0].destroy();
             this.itemResistorBars[1].destroy();
@@ -1086,25 +1286,26 @@ class Workspace extends SimpleScene {
                 if (v < 8) {
                     var obj;
                     var label;
+                    var button;
                     if (v % 2 == 0) {
                         obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
                         label = this.add.text(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                        button = this.add.rectangle(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                     }
                     if (v % 2 == 1) {
                         obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
                         label = this.add.text(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                        button = this.add.rectangle(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                     }
                     obj.scale *= (objectsData[(i * 5) + 2]);
                     obj.width *= (objectsData[(i * 5) + 2]);
                     obj.height *= (objectsData[(i * 5) + 2]);
-                    obj.width *= 10;
-                    obj.height *= 10;
-                    while (obj.width < deviceWidth * 0.5 && obj.height < deviceHeight * 0.6) {
+                    while (obj.width < deviceWidth * 0.03 && obj.height < deviceHeight * 0.08) {
                         obj.width *= 1.1;
                         obj.scale *= 1.1;
                         obj.height *= 1.1;
                     }
-                    while (obj.width > deviceWidth * 0.6 || obj.height > deviceHeight) {
+                    while (obj.width > deviceWidth * 0.08 || obj.height > deviceHeight * 0.12) {
                         obj.width *= 0.9;
                         obj.scale *= 0.9;
                         obj.height *= 0.9;
@@ -1113,9 +1314,15 @@ class Workspace extends SimpleScene {
                     obj.setDepth(6);
                     this.items[v] = obj;
                     itemObjectID.push(objectID);
+
+                    button.setAlpha(0.01);
+                    button.setDepth(7);
+                    button.enableClick();
+                    this.itemButtons.push(button);
+
                     if (objectID == 2) {
-                        this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
-                        this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                        this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, 0x3b3b3b);
+                        this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height * 0.057, obj.width * 0.3, obj.height * 0.055, 0xed9c40);
                         this.itemResistorBars[0].setOrigin(0.5, 0.5);
                         this.itemResistorBars[1].setOrigin(0.5, 0.5);
                         this.itemResistorBars[0].setDepth(6);
@@ -1135,90 +1342,97 @@ class Workspace extends SimpleScene {
             }
         }
 
-        if (document.getElementById('label').innerHTML == "Enter search phrase:") {
-            this.inputBox();
-            if (this.return.wasPressed()) {
-                this.search.setVisible(0);
-                this.addItem.setVisible(0);
-                this.itemTypeArrow.setVisible(0);
-                this.exit.setVisible(1);
-                currentPage = 0;
-                currentItemType = 5;
-                itemObjectID.splice(0, itemObjectID.length);
-                for (var i = 0; i < this.items.length; i++) {
-                    this.items[i].destroy();
-                    this.itemLabels[i].destroy();
-                }
-                clean(this.items);
-                clean(this.itemLabels);
+        if (this.exit.wasClicked()) {
+            this.clearHTML();
+            this.exit.setVisible(0);
+            this.itemTypeArrow.setVisible(1);
+            this.addItem.setVisible(1);
+            this.search.setVisible(1);
+            this.lastPageButton.setVisible(1);
+            this.lastPageArrow.setVisible(1);
+            this.nextPageButton.setVisible(1);
+            this.nextPageArrow.setVisible(1);
+            this.binLabel.setText("All");
+            currentPage = 0;
+            currentItemType = 0;
 
-                this.itemResistorBars[0].destroy();
-                this.itemResistorBars[1].destroy();
+            itemObjectID.splice(0, itemObjectID.length);
+            for (var i = 0; i < this.items.length; i++) {
+                this.items[i].destroy();
+                this.itemLabels[i].destroy();
+                this.itemButtons[i].destroy();
+            }
+            clean(this.items);
+            clean(this.itemLabels);
+            clean(this.itemButtons);
 
-                this.binLabel.setText(document.getElementById('input').value);
+            this.itemResistorBars[0].destroy();
+            this.itemResistorBars[1].destroy();
 
-                objectID = 0;
-                var v = 0;
-                for (var i = 0; i < objectsData.length / 5; i++) {
-                    if (v < 8) {
-                        var obj;
-                        var label;
-                        if (objectsData[i * 5].includes(document.getElementById('input').value) == true || (objectsData[i * 5].toLowerCase()).includes(document.getElementById('input').value) == true || objectsData[(i * 5) + 1].includes(document.getElementById('input').value) == true || ((objectsData[(i * 5) + 1]).toLowerCase()).includes(document.getElementById('input').value) == true) {
-                            if (v % 2 == 0) {
-                                obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
-                                label = this.add.text(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
-                            }
-                            if (v % 2 == 1) {
-                                obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
-                                label = this.add.text(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
-                            }
-                            obj.scale *= (objectsData[(i * 5) + 2]);
-                            obj.width *= (objectsData[(i * 5) + 2]);
-                            obj.height *= (objectsData[(i * 5) + 2]);
-                            obj.width *= 10;
-                            obj.height *= 10;
-                            while (obj.width < deviceWidth * 0.5 && obj.height < deviceHeight * 0.6) {
-                                obj.width *= 1.1;
-                                obj.scale *= 1.1;
-                                obj.height *= 1.1;
-                            }
-                            while (obj.width > deviceWidth * 0.6 || obj.height > deviceHeight) {
-                                obj.width *= 0.9;
-                                obj.scale *= 0.9;
-                                obj.height *= 0.9;
-                            }
-                            obj.enableClick();
-                            obj.setDepth(6);
-                            this.items[v] = obj;
-                            itemObjectID.push(objectID);
-                            if (objectID == 2) {
-                                this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
-                                this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
-                                this.itemResistorBars[0].setOrigin(0.5, 0.5);
-                                this.itemResistorBars[1].setOrigin(0.5, 0.5);
-                                this.itemResistorBars[0].setDepth(6);
-                                this.itemResistorBars[1].setDepth(6);
-                            }
-                            if (label.text.length > 15) {
-                                label.setFontSize(15 / label.text.length * deviceHeight * 0.025);
-                            } else {
-                                label.setFontSize(deviceHeight * 0.025);
-                            }
-                            label.setOrigin(0.5, 0.5);
-                            label.setDepth(6);
-                            this.itemLabels[v] = label;
-                            v++;
-                        }
-                        objectID++;
+            objectID = 0;
+            var v = 0;
+            for (var i = 0; i < objectsData.length / 5; i++) {
+                if (v < 8) {
+                    var obj;
+                    var label;
+                    var button;
+                    if (v % 2 == 0) {
+                        obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                        label = this.add.text(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                        button = this.add.rectangle(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                     }
-                }
+                    if (v % 2 == 1) {
+                        obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
+                        label = this.add.text(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                        button = this.add.rectangle(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
+                    }
+                    obj.scale *= (objectsData[(i * 5) + 2]);
+                    obj.width *= (objectsData[(i * 5) + 2]);
+                    obj.height *= (objectsData[(i * 5) + 2]);
+                    while (obj.width < deviceWidth * 0.03 && obj.height < deviceHeight * 0.08) {
+                        obj.width *= 1.1;
+                        obj.scale *= 1.1;
+                        obj.height *= 1.1;
+                    }
+                    while (obj.width > deviceWidth * 0.08 || obj.height > deviceHeight * 0.12) {
+                        obj.width *= 0.9;
+                        obj.scale *= 0.9;
+                        obj.height *= 0.9;
+                    }
+                    obj.enableClick();
+                    obj.setDepth(6);
+                    this.items[v] = obj;
+                    itemObjectID.push(objectID);
 
-                this.clearHTML();
+                    button.setAlpha(0.01);
+                    button.setDepth(7);
+                    button.enableClick();
+                    this.itemButtons.push(button);
+
+                    if (objectID == 2) {
+                        this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, 0x3b3b3b);
+                        this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height * 0.057, obj.width * 0.3, obj.height * 0.055, 0xed9c40);
+                        this.itemResistorBars[0].setOrigin(0.5, 0.5);
+                        this.itemResistorBars[1].setOrigin(0.5, 0.5);
+                        this.itemResistorBars[0].setDepth(6);
+                        this.itemResistorBars[1].setDepth(6);
+                    }
+                    if (label.text.length > 15) {
+                        label.setFontSize(15 / label.text.length * deviceHeight * 0.025);
+                    } else {
+                        label.setFontSize(deviceHeight * 0.025);
+                    }
+                    label.setOrigin(0.5, 0.5);
+                    label.setDepth(6);
+                    this.itemLabels[v] = label;
+                    v++;
+                    objectID++;
+                }
             }
         }
 
         if (this.undo.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.undo.setAlpha(0.5);
         } else {
             if (undo.length > 0) {
@@ -1229,7 +1443,7 @@ class Workspace extends SimpleScene {
         }
 
         if (this.redo.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
             this.redo.setAlpha(0.5);
         } else {
             if (redo.length > 0) {
@@ -1240,21 +1454,21 @@ class Workspace extends SimpleScene {
         }
 
         if (this.lastPageButton.isOver() || this.lastPageArrow.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-            this.lastPageButton.setAlpha(1);
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.lastPageButton.setAlpha(0.8);
         } else {
             this.lastPageButton.setAlpha(0.3);
         }
 
         if (this.nextPageButton.isOver() || this.nextPageArrow.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-            this.nextPageButton.setAlpha(1);
+            pElement.style.cursor = "url('assets/hand.png'), auto";
+            this.nextPageButton.setAlpha(0.8);
         } else {
             this.nextPageButton.setAlpha(0.3);
         }
 
         if (this.closex.isOver()) {
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
         }
 
         if ((this.panel.visible == true || activeWire == true)) {
@@ -1262,15 +1476,15 @@ class Workspace extends SimpleScene {
                 activeWire = false;
                 this.activeWire.setVisible(0);
                 this.clearPanel();
+                this.penSlash.setVisible(1);
             }
         }
 
         for (var i = 0; i < this.wires.length; i++) {
             if (this.wires[i].visible == 1) {
                 if (this.wires[i].isOver()) {
-                    pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                    pElement.style.cursor = "url('assets/hand.png'), auto";
                     this.wires[i].alpha = 0.5;
-
                     for (var v = 0; v < this.selected.length; v++) {
                         this.selected[v] = -1;
                     }
@@ -1293,7 +1507,7 @@ class Workspace extends SimpleScene {
                         this.nodes.push(node2);
                         var selectWireGroup;
                         for (var v = 0; v < this.nodes.length; v++) {
-                            if (nodeLinks[v * 4] == i || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == i)) {
+                            if (nodeLinks[v * 4] == i || (nodeLinks[v * 4] <= -1 && nodeLinks[(v * 4) + 2] == i)) {
                                 selectWireGroup = nodeLinks[(v * 4) + 3]
                             }
                         }
@@ -1364,7 +1578,7 @@ class Workspace extends SimpleScene {
                         this.nodes.push(node2);
                         var selectWireGroup;
                         for (var v = 0; v < this.nodes.length; v++) {
-                            if (nodeLinks[v * 4] == i || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == i)) {
+                            if (nodeLinks[v * 4] == i || (nodeLinks[v * 4] <= -1 && nodeLinks[(v * 4) + 2] == i)) {
                                 selectWireGroup = nodeLinks[(v * 4) + 3]
                             }
                         }
@@ -1409,12 +1623,18 @@ class Workspace extends SimpleScene {
 
         for (var i = 0; i < this.nodes.length; i++) {
             if (this.nodes[i].visible == 1) {
-                if (nodeLinks[i * 4] == -2) {
+                if (nodeLinks[i * 4] == -2 || (nodeLinks[i * 4] >= 0 && this.objectIDs[nodeLinks[i * 4 + 1]] == 13)) {
                     if (this.nodes[i].isOver()) {
+                        if (this.objectIDs[nodeLinks[(i * 4) + 1]] == 13 && this.nodes[i].depth != 0) {
+                            this.objects[nodeLinks[(i * 4) + 1]].setAlpha(1);
+                        }
                         this.nodes[i].alpha = 0.5;
-                        pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                        pElement.style.cursor = "url('assets/hand.png'), auto";
                     } else {
                         this.nodes[i].alpha = 1;
+                        if (this.objectIDs[nodeLinks[(i * 4) + 1]] == 13 && this.nodes[i].depth != 0) {
+                            this.objects[nodeLinks[(i * 4) + 1]].setAlpha(0);
+                        }
                     }
                     if (this.nodes[i].wasClicked()) {
                         lastPosition[0] = i;
@@ -1463,7 +1683,7 @@ class Workspace extends SimpleScene {
                 for (var i = 0; i < 10; i++) {
                     this.palette[i].setDepth(6);
                     if (this.palette[i].isOver()) {
-                        pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                        pElement.style.cursor = "url('assets/hand.png'), auto";
                         this.palette[i].setAlpha(0.8);
                     } else {
                         this.palette[i].setAlpha(1);
@@ -1505,7 +1725,7 @@ class Workspace extends SimpleScene {
                         }
                     }
                     if (this.customColors[i].isOver()) {
-                        pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                        pElement.style.cursor = "url('assets/hand.png'), auto";
                         this.customColors[i].setAlpha(0.8);
                         if (this.del.wasPressed()) {
                             undo.push("deletedCustomColor");
@@ -1527,7 +1747,7 @@ class Workspace extends SimpleScene {
             this.customColorBox.setDepth(6);
             this.customColorAdd.setDepth(6);
             if (this.customColorBox.isOver() || this.customColorAdd.isOver()) {
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
                 this.customColorBox.setAlpha(0.8);
             } else {
                 this.customColorBox.setAlpha(1);
@@ -1583,10 +1803,10 @@ class Workspace extends SimpleScene {
                         }
                         return true;
                     }
-                    undo.push("customColor");
-                    undo.push(this.selected[0].fillColor);
-                    var selected = [];
                     if (isHexValid(inputValue) == true) {
+                        undo.push("customColor");
+                        undo.push(this.selected[0].fillColor);
+                        var selected = [];
                         if (customColors.length > 8) {
                             customColors.splice(0, 1);
                         }
@@ -1598,12 +1818,14 @@ class Workspace extends SimpleScene {
                             selected.push(this.selected[v]);
                             wireColor = customColors[customColors.length - 1];
                         }
-                    }
-                    document.getElementById('input').value = "";
+                        document.getElementById('input').value = "";
 
-                    undo.push(selected);
-                    undo.push(lastWire);
-                    redo.splice(0, redo.length);
+                        undo.push(selected);
+                        undo.push(lastWire);
+                        redo.splice(0, redo.length);
+                    } else {
+                        document.getElementById('input').value = "";
+                    }
                 }
             }
 
@@ -1611,7 +1833,7 @@ class Workspace extends SimpleScene {
                 this.panelWireDeleteButton.setAlpha(0.8);
                 this.panelWireDeleteIcon.setAlpha(0.8);
                 this.panelWireDeleteText.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelWireDeleteButton.setAlpha(1);
                 this.panelWireDeleteIcon.setAlpha(1);
@@ -1622,7 +1844,7 @@ class Workspace extends SimpleScene {
                 this.panelWireAddNodeButton.setAlpha(0.8);
                 this.panelWireAddNodeIcon.setAlpha(0.8);
                 this.panelWireAddNodeText.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelWireAddNodeButton.setAlpha(1);
                 this.panelWireAddNodeIcon.setAlpha(1);
@@ -1632,13 +1854,14 @@ class Workspace extends SimpleScene {
             if (this.panelWireDeleteButton.wasClicked() || this.panelWireDeleteIcon.wasClicked() || this.panelWireDeleteText.wasClicked() || (element == null && this.del.wasPressed())) {
                 var selectWireGroup;
                 for (var v = 0; v < this.nodes.length; v++) {
-                    if (nodeLinks[v * 4] == lastWire || (nodeLinks[v * 4] < -1 && (nodeLinks[(v * 4) + 1] == lastWire || nodeLinks[(v * 4) + 2] == lastWire))) {
+                    if (nodeLinks[v * 4] == lastWire || (nodeLinks[v * 4] <= -1 && (nodeLinks[(v * 4) + 1] == lastWire || nodeLinks[(v * 4) + 2] == lastWire))) {
                         selectWireGroup = nodeLinks[(v * 4) + 3];
                     }
                 }
 
                 var wires = [];
                 var nodes = [];
+                var points = [];
                 for (var v = 0; v < this.nodes.length; v++) {
                     if (nodeLinks[v * 4] >= 0 && nodeLinks[(v * 4) + 3] == selectWireGroup) {
                         if (this.wires[nodeLinks[v * 4]].visible == 1) {
@@ -1664,12 +1887,19 @@ class Workspace extends SimpleScene {
                             this.nodes[v].setVisible(0);
                             nodes.push(v);
                         }
+
+                        if (this.objectIDs[nodeLinks[v * 4 + 1]] == 13) {
+                            if (this.objects[nodeLinks[v * 4 + 1]].visible == 1) {
+                                this.objects[nodeLinks[v * 4 + 1]].setVisible(0);
+                                points.push(nodeLinks[v * 4 + 1]);
+                            }
+                        }
                     }
                 }
                 undo.push("deletedWire");
                 undo.push(wires);
                 undo.push(nodes);
-                undo.push(-1);
+                undo.push(points);
                 redo.splice(0, redo.length);
                 this.clearPanel();
             }
@@ -1685,7 +1915,7 @@ class Workspace extends SimpleScene {
 
                 var selectWireGroup;
                 for (var v = 0; v < this.nodes.length; v++) {
-                    if (nodeLinks[v * 4] == lastWire || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == lastWire)) {
+                    if (nodeLinks[v * 4] == lastWire || (nodeLinks[v * 4] <= -1 && nodeLinks[(v * 4) + 2] == lastWire)) {
                         selectWireGroup = nodeLinks[(v * 4) + 3]
                     }
                 }
@@ -1749,7 +1979,7 @@ class Workspace extends SimpleScene {
             if (this.panelDuplicateButton.isOver() || this.panelDuplicate.isOver()) {
                 this.panelDuplicateButton.setAlpha(0.8);
                 this.panelDuplicate.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelDuplicateButton.setAlpha(1);
                 this.panelDuplicate.setAlpha(1);
@@ -1757,7 +1987,7 @@ class Workspace extends SimpleScene {
             if (this.panelDeleteButton.isOver() || this.panelDelete.isOver()) {
                 this.panelDeleteButton.setAlpha(0.8);
                 this.panelDelete.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelDuplicateButton.setAlpha(1);
                 this.panelDelete.setAlpha(1);
@@ -1766,7 +1996,7 @@ class Workspace extends SimpleScene {
                 this.panelEditButton.setAlpha(0.8);
                 this.panelEditIcon.setAlpha(0.8);
                 this.panelEditText.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelEditButton.setAlpha(1);
                 this.panelEditIcon.setAlpha(1);
@@ -1775,50 +2005,50 @@ class Workspace extends SimpleScene {
 
             if (this.panelUpArrow.isOver()) {
                 this.panelUpArrow.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelUpArrow.setAlpha(1);
             }
             if (this.panelLeftArrow.isOver()) {
                 this.panelLeftArrow.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelLeftArrow.setAlpha(1);
             }
             if (this.panelRightArrow.isOver()) {
                 this.panelRightArrow.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelRightArrow.setAlpha(1);
             }
             if (this.panelDownArrow.isOver()) {
                 this.panelDownArrow.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelDownArrow.setAlpha(1);
             }
             if (this.panelRotateLeft.isOver()) {
                 this.panelRotateLeft.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelRotateLeft.setAlpha(1);
             }
             if (this.panelRotateRight.isOver()) {
                 this.panelRotateRight.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelRotateRight.setAlpha(1);
             }
 
             if (this.panelBackward.isOver()) {
                 this.panelBackward.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelBackward.setAlpha(1);
             }
             if (this.panelForward.isOver()) {
                 this.panelForward.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelForward.setAlpha(1);
             }
@@ -1909,6 +2139,27 @@ class Workspace extends SimpleScene {
                 this.initiateDelete(lastClicked);
             }
 
+            if (this.panelEditButton.wasClicked() || this.panelEditIcon.wasClicked() || this.panelEditText.wasClicked()) {
+                xLocationsImport.splice(0, xLocationsImport.length);
+                xLocationsImport = wiringXPoints["x" + this.objectIDs[lastClicked]];
+                xLocationsImport.splice(objectsData[(this.objectIDs[lastClicked] * 5) + 3], wiringXPoints["x" + this.objectIDs[lastClicked]].length - objectsData[(this.objectIDs[lastClicked] * 5) + 3]);
+
+                yLocationsImport.splice(0, yLocationsImport.length);
+                yLocationsImport = wiringYPoints["y" + this.objectIDs[lastClicked]];
+                yLocationsImport.splice(objectsData[(this.objectIDs[lastClicked] * 5) + 3], wiringYPoints["y" + this.objectIDs[lastClicked]].length - objectsData[(this.objectIDs[lastClicked] * 5) + 3]);
+
+                objectInfoImport.splice(0, objectInfoImport.length);
+                objectInfoImport.push(objectsData[this.objectIDs[lastClicked] * 5 + 0]);
+                objectInfoImport.push(objectsData[this.objectIDs[lastClicked] * 5 + 1]);
+                objectInfoImport.push(objectsData[this.objectIDs[lastClicked] * 5 + 2]);
+                objectInfoImport.push(objectsData[this.objectIDs[lastClicked] * 5 + 3]);
+                objectInfoImport.push(objectsData[this.objectIDs[lastClicked] * 5 + 4]);
+
+                workspaceObjectImport = this.objectIDs[lastClicked];
+
+                this.scene.start("PartEditor");
+            }
+
             if (this.panelUpArrow.wasClicked() || this.panelLeftArrow.wasClicked() || this.panelRightArrow.wasClicked() || this.panelDownArrow.wasClicked() || (!(this.shift.isPressed()) && (this.uparrow.wasPressed() || this.leftarrow.wasPressed() || this.rightarrow.wasPressed() || this.downarrow.wasPressed()))) {
                 lastPosition[0] = -lastClicked - 1;
                 lastPosition[1] = this.objects[lastClicked].x;
@@ -1994,13 +2245,13 @@ class Workspace extends SimpleScene {
 
             if (this.panelResistanceValueBox.isOver() || this.panelResistanceValue.isOver()) {
                 this.panelResistanceValueBox.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelResistanceValueBox.setAlpha(1);
             }
             if (this.panelResistanceUnitBox.isOver() || this.panelResistanceUnit.isOver()) {
                 this.panelResistanceUnitBox.setAlpha(0.8);
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
             } else {
                 this.panelResistanceUnitBox.setAlpha(1);
             }
@@ -2033,13 +2284,13 @@ class Workspace extends SimpleScene {
             this.inputBox();
 
             if (document.getElementById('input').style.display == 'block') {
+                ``
                 if (this.return.wasPressed()) {
 
                     function isResistanceValid(input) {
                         input = input.replace(/\s/g, '');
                         let result = /^\d+$/.test(input);
                         if (input == "" || input == 0) {
-                            document.getElementById('input').value = "";
                             return false;
                         }
                         if (result == true) {
@@ -2047,7 +2298,6 @@ class Workspace extends SimpleScene {
                         } else {
                             let inputValue = input.slice(0, -1);
                             if (inputValue == "" || input == 0) {
-                                document.getElementById('input').value = "";
                                 return false;
                             }
                             result = /^\d+$/.test(inputValue);
@@ -2058,8 +2308,6 @@ class Workspace extends SimpleScene {
                                 } else {
                                     return [inputValue, "o"];
                                 }
-                            } else {
-                                document.getElementById('input').value = "";
                             }
                         }
                     }
@@ -2160,6 +2408,8 @@ class Workspace extends SimpleScene {
                         } else {
                             document.getElementById('input').value = "";
                         }
+                    } else {
+                        document.getElementById('input').value = "";
                     }
                 }
             }
@@ -2228,7 +2478,7 @@ class Workspace extends SimpleScene {
                         redo.splice(0, redo.length);
                     }
                     if (this.customObjectColors[i].isOver()) {
-                        pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                        pElement.style.cursor = "url('assets/hand.png'), auto";
                         this.customObjectColors[i].setAlpha(0.8);
                         if (this.del.wasPressed()) {
                             undo.push("deletedCustomObjectColor");
@@ -2250,7 +2500,7 @@ class Workspace extends SimpleScene {
             this.customObjectColorBox.setDepth(6);
             this.customObjectColorAdd.setDepth(6);
             if (this.customObjectColorBox.isOver() || this.customObjectColorAdd.isOver()) {
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
                 this.customObjectColorBox.setAlpha(0.8);
             } else {
                 this.customObjectColorBox.setAlpha(1);
@@ -2306,9 +2556,9 @@ class Workspace extends SimpleScene {
                         }
                         return true;
                     }
-                    undo.push("customObjectColor");
-                    undo.push(settings[lastClicked * 2]);
                     if (isHexValid(inputValue) == true) {
+                        undo.push("customObjectColor");
+                        undo.push(settings[lastClicked * 2]);
                         if (customObjectColors.length > 8) {
                             customObjectColors.splice(0, 1);
                         }
@@ -2317,12 +2567,14 @@ class Workspace extends SimpleScene {
                         this.openPanel(lastClicked);
                         this.objects[lastClicked].setTint(customObjectColors[customObjectColors.length - 1]);
                         settings[lastClicked * 2] = customObjectColors[customObjectColors.length - 1];
-                    }
-                    this.clearHTML();
+                        this.clearHTML();
 
-                    undo.push(lastClicked);
-                    undo.push(customObjectColors.length - 1);
-                    redo.splice(0, redo.length);
+                        undo.push(lastClicked);
+                        undo.push(customObjectColors.length - 1);
+                        redo.splice(0, redo.length);
+                    } else {
+                        document.getElementById('input').value = "";
+                    }
                 }
             }
         }
@@ -2333,7 +2585,7 @@ class Workspace extends SimpleScene {
             this.inputBox();
 
             if (this.panelObjectLabelBox.isOver() || this.panelObjectLabel.isOver()) {
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                pElement.style.cursor = "url('assets/hand.png'), auto";
                 this.panelObjectLabelBox.setAlpha(0.8);
             } else {
                 this.panelObjectLabelBox.setAlpha(1);
@@ -2385,9 +2637,11 @@ class Workspace extends SimpleScene {
             for (var i = 0; i < this.items.length; i++) {
                 this.items[i].destroy();
                 this.itemLabels[i].destroy();
+                this.itemButtons[i].destroy();
             }
             clean(this.items);
             clean(this.itemLabels);
+            clean(this.itemButtons);
 
             this.itemResistorBars[0].destroy();
             this.itemResistorBars[1].destroy();
@@ -2416,26 +2670,27 @@ class Workspace extends SimpleScene {
                 if (v < 8) {
                     var obj;
                     var label;
+                    var button;
                     if (currentItemType == 0 || objectsData[(i * 5) + 1] == itemTypes[currentItemType]) {
                         if (v % 2 == 0) {
                             obj = this.add.sprite(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
                             label = this.add.text(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                            button = this.add.rectangle(deviceWidth * 0.05, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                         }
                         if (v % 2 == 1) {
                             obj = this.add.sprite(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
                             label = this.add.text(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                            button = this.add.rectangle(deviceWidth * 0.15, (Math.floor(v / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                         }
                         obj.scale *= (objectsData[(i * 5) + 2]);
                         obj.width *= (objectsData[(i * 5) + 2]);
                         obj.height *= (objectsData[(i * 5) + 2]);
-                        obj.width *= 10;
-                        obj.height *= 10;
-                        while (obj.width < deviceWidth * 0.5 && obj.height < deviceHeight * 0.6) {
+                        while (obj.width < deviceWidth * 0.03 && obj.height < deviceHeight * 0.08) {
                             obj.width *= 1.1;
                             obj.scale *= 1.1;
                             obj.height *= 1.1;
                         }
-                        while (obj.width > deviceWidth * 0.6 || obj.height > deviceHeight) {
+                        while (obj.width > deviceWidth * 0.08 || obj.height > deviceHeight * 0.12) {
                             obj.width *= 0.9;
                             obj.scale *= 0.9;
                             obj.height *= 0.9;
@@ -2444,9 +2699,15 @@ class Workspace extends SimpleScene {
                         obj.setDepth(6);
                         this.items[v] = obj;
                         itemObjectID.push(objectID);
+
+                        button.setAlpha(0.01);
+                        button.setDepth(7);
+                        button.enableClick();
+                        this.itemButtons.push(button);
+
                         if (objectID == 2) {
-                            this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
-                            this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                            this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, 0x3b3b3b);
+                            this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height * 0.057, obj.width * 0.3, obj.height * 0.055, 0xed9c40);
                             this.itemResistorBars[0].setOrigin(0.5, 0.5);
                             this.itemResistorBars[1].setOrigin(0.5, 0.5);
                             this.itemResistorBars[0].setDepth(6);
@@ -2475,9 +2736,11 @@ class Workspace extends SimpleScene {
                 for (var i = 0; i < this.items.length; i++) {
                     this.items[i].destroy();
                     this.itemLabels[i].destroy();
+                    this.itemButtons[i].destroy();
                 }
                 clean(this.items);
                 clean(this.itemLabels);
+                clean(this.itemButtons);
 
                 this.itemResistorBars[0].destroy();
                 this.itemResistorBars[1].destroy();
@@ -2489,27 +2752,28 @@ class Workspace extends SimpleScene {
                     if (t < 8) {
                         var obj;
                         var label;
+                        var button;
                         if (currentItemType == 0 || objectsData[(i * 5) + 1] == itemTypes[currentItemType]) {
                             if (v >= currentPage * 2) {
                                 if (v % 2 == 0) {
                                     obj = this.add.sprite(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
                                     label = this.add.text(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                                    button = this.add.rectangle(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                                 }
                                 if (v % 2 == 1) {
                                     obj = this.add.sprite(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
                                     label = this.add.text(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                                    button = this.add.rectangle(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                                 }
                                 obj.scale *= (objectsData[(i * 5) + 2]);
                                 obj.width *= (objectsData[(i * 5) + 2]);
                                 obj.height *= (objectsData[(i * 5) + 2]);
-                                obj.width *= 10;
-                                obj.height *= 10;
-                                while (obj.width < deviceWidth * 0.5 && obj.height < deviceHeight * 0.6) {
+                                while (obj.width < deviceWidth * 0.03 && obj.height < deviceHeight * 0.08) {
                                     obj.width *= 1.1;
                                     obj.scale *= 1.1;
                                     obj.height *= 1.1;
                                 }
-                                while (obj.width > deviceWidth * 0.6 || obj.height > deviceHeight) {
+                                while (obj.width > deviceWidth * 0.08 || obj.height > deviceHeight * 0.12) {
                                     obj.width *= 0.9;
                                     obj.scale *= 0.9;
                                     obj.height *= 0.9;
@@ -2519,9 +2783,14 @@ class Workspace extends SimpleScene {
                                 this.items[v - currentPage * 2] = obj;
                                 itemObjectID.push(objectID);
 
+                                button.setAlpha(0.01);
+                                button.setDepth(7);
+                                button.enableClick();
+                                this.itemButtons.push(button);
+
                                 if (objectID == 2) {
-                                    this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
-                                    this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                                    this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, 0x3b3b3b);
+                                    this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height * 0.057, obj.width * 0.3, obj.height * 0.055, 0xed9c40);
                                     this.itemResistorBars[0].setOrigin(0.5, 0.5);
                                     this.itemResistorBars[1].setOrigin(0.5, 0.5);
                                     this.itemResistorBars[0].setDepth(6);
@@ -2551,9 +2820,11 @@ class Workspace extends SimpleScene {
             for (var i = 0; i < this.items.length; i++) {
                 this.items[i].destroy();
                 this.itemLabels[i].destroy();
+                this.itemButtons[i].destroy();
             }
             clean(this.items);
             clean(this.itemLabels);
+            clean(this.itemButtons);
 
             this.itemResistorBars[0].destroy();
             this.itemResistorBars[1].destroy();
@@ -2565,27 +2836,28 @@ class Workspace extends SimpleScene {
                 if (t < 8) {
                     var obj;
                     var label;
+                    var button;
                     if (currentItemType == 0 || objectsData[(i * 5) + 1] == itemTypes[currentItemType]) {
                         if (v >= currentPage * 2) {
                             if (v % 2 == 0) {
                                 obj = this.add.sprite(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
                                 label = this.add.text(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                                button = this.add.rectangle(deviceWidth * 0.05, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                             }
                             if (v % 2 == 1) {
                                 obj = this.add.sprite(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.17, `${objectID}`, 1);
                                 label = this.add.text(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.26, objectsData[i * 5], labelColor);
+                                button = this.add.rectangle(deviceWidth * 0.15, (Math.floor((v - currentPage * 2) / 2) * deviceHeight * 0.2) + deviceHeight * 0.2, deviceWidth * 0.08, deviceHeight * 0.17, 0xffffff);
                             }
                             obj.scale *= (objectsData[(i * 5) + 2]);
                             obj.width *= (objectsData[(i * 5) + 2]);
                             obj.height *= (objectsData[(i * 5) + 2]);
-                            obj.width *= 10;
-                            obj.height *= 10;
-                            while (obj.width < deviceWidth * 0.5 && obj.height < deviceHeight * 0.6) {
+                            while (obj.width < deviceWidth * 0.03 && obj.height < deviceHeight * 0.08) {
                                 obj.width *= 1.1;
                                 obj.scale *= 1.1;
                                 obj.height *= 1.1;
                             }
-                            while (obj.width > deviceWidth * 0.6 || obj.height > deviceHeight) {
+                            while (obj.width > deviceWidth * 0.08 || obj.height > deviceHeight * 0.12) {
                                 obj.width *= 0.9;
                                 obj.scale *= 0.9;
                                 obj.height *= 0.9;
@@ -2595,9 +2867,14 @@ class Workspace extends SimpleScene {
                             this.items[v - currentPage * 2] = obj;
                             itemObjectID.push(objectID);
 
+                            button.setAlpha(0.01);
+                            button.setDepth(7);
+                            button.enableClick();
+                            this.itemButtons.push(button);
+
                             if (objectID == 2) {
-                                this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height / 10 * 0.052, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0x3b3b3b);
-                                this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height / 10 * 0.057, obj.width / 10 * 0.3, obj.height / 10 * 0.055, 0xed9c40);
+                                this.itemResistorBars[0] = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, 0x3b3b3b);
+                                this.itemResistorBars[1] = this.add.rectangle(obj.x, obj.y - obj.height * 0.057, obj.width * 0.3, obj.height * 0.055, 0xed9c40);
                                 this.itemResistorBars[0].setOrigin(0.5, 0.5);
                                 this.itemResistorBars[1].setOrigin(0.5, 0.5);
                                 this.itemResistorBars[0].setDepth(6);
@@ -2720,6 +2997,66 @@ class Workspace extends SimpleScene {
                             shiftObjects[i] = true;
                         }
                     }
+
+                    var allGroups = [];
+                    var wiresPerGroup = [];
+                    var selectWireGroup;
+
+                    for (var v = 0; v < this.nodes.length; v++) {
+                        if (nodeLinks[v * 4] >= 0 && nodeLinks[(v * 4) + 1] == i) {
+                            selectWireGroup = nodeLinks[(v * 4) + 3];
+                            allGroups.push(selectWireGroup);
+                        }
+                    }
+
+                    for (var v = 0; v < allGroups.length; v++) {
+                        wiresPerGroup.push(0);
+                    }
+
+                    for (var v = 0; v < allGroups.length; v++) {
+                        for (var t = 0; t < this.nodes.length; t++) {
+                            if (nodeLinks[(t * 4) + 3] == allGroups[v]) {
+                                wiresPerGroup[v]++;
+                            }
+                        }
+                    }
+
+                    dragPositionWires.splice(0, dragPositionWires.length);
+                    dragPositionNodes.splice(0, dragPositionNodes.length);
+                    for (var t = 0; t < allGroups.length; t++) {
+                        for (var v = 0; v < this.nodes.length; v++) {
+                            if (nodeLinks[(v * 4) + 3] == allGroups[t]) {
+                                if (nodeLinks[v * 4] == i) {
+                                    dragPositionWires.push(this.wires[nodeLinks[v * 4]].x - this.objects[i].x);
+                                    dragPositionWires.push(this.wires[nodeLinks[v * 4]].y - this.objects[i].y);
+                                    dragPositionWires.push(this.wireLines[nodeLinks[v * 4]].geom.x1 - this.objects[i].x);
+                                    dragPositionWires.push(this.wireLines[nodeLinks[v * 4]].geom.y1 - this.objects[i].y);
+                                    dragPositionWires.push(this.wireLines[nodeLinks[v * 4]].geom.x2 - this.objects[i].x);
+                                    dragPositionWires.push(this.wireLines[nodeLinks[v * 4]].geom.y2 - this.objects[i].y);
+                                    dragPositionWires.push(nodeLinks[v * 4]);
+                                }
+                                if (nodeLinks[v * 4] <= -1) {
+                                    dragPositionWires.push(this.wires[nodeLinks[(v * 4) + 2]].x - this.objects[i].x);
+                                    dragPositionWires.push(this.wires[nodeLinks[(v * 4) + 2]].y - this.objects[i].y);
+                                    dragPositionWires.push(this.wireLines[nodeLinks[(v * 4) + 2]].geom.x1 - this.objects[i].x);
+                                    dragPositionWires.push(this.wireLines[nodeLinks[(v * 4) + 2]].geom.y1 - this.objects[i].y);
+                                    dragPositionWires.push(this.wireLines[nodeLinks[(v * 4) + 2]].geom.x2 - this.objects[i].x);
+                                    dragPositionWires.push(this.wireLines[nodeLinks[(v * 4) + 2]].geom.y2 - this.objects[i].y);
+                                    dragPositionWires.push(nodeLinks[(v * 4) + 2]);
+                                }
+                            }
+                        }
+
+                        for (var v = 0; v < this.nodes.length; v++) {
+                            if (nodeLinks[(v * 4) + 3] == allGroups[t]) {
+                                if (nodeLinks[v * 4] < -1 || this.objectIDs[nodeLinks[(v * 4) + 1]] == 13) {
+                                    dragPositionNodes.push(this.nodes[v].x - this.objects[i].x);
+                                    dragPositionNodes.push(this.nodes[v].y - this.objects[i].y);
+                                    dragPositionNodes.push(v);
+                                }
+                            }
+                        }
+                    }
                 }
                 if (lastPosition[0] == -i - 1 && !(this.objects[i].isClicked()) && (lastPosition[1] != this.objects[i].x || lastPosition[2] != this.objects[i].y) && !(this.panelUpArrow.isClicked()) && !(this.panelLeftArrow.isClicked()) && !(this.panelRightArrow.isClicked()) && !(this.panelDownArrow.isClicked()) && !(this.uparrow.isPressed()) && !(this.leftarrow.isPressed()) && !(this.rightarrow.isPressed()) && !(this.downarrow.isPressed())) {
                     undo.push("movedObject");
@@ -2759,12 +3096,21 @@ class Workspace extends SimpleScene {
                     this.shiftSelect.splice(0, this.shiftSelect.length);
                 }
                 if (this.objects[i].isClicked()) {
-                    pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+                    pElement.style.cursor = "url('assets/hand.png'), auto";
+                    for (var v = 0; v < dragPositionWires.length / 7; v++) {
+                        this.wires[dragPositionWires[(v * 7) + 6]].x = this.objects[i].x + dragPositionWires[v * 7];
+                        this.wires[dragPositionWires[(v * 7) + 6]].y = this.objects[i].y + dragPositionWires[(v * 7) + 1];
+                        this.wireLines[dragPositionWires[(v * 7) + 6]].setTo(this.objects[i].x + dragPositionWires[(v * 7) + 2], this.objects[i].y + dragPositionWires[(v * 7) + 3], this.objects[i].x + dragPositionWires[(v * 7) + 4], this.objects[i].y + dragPositionWires[(v * 7) + 5]);
+                    }
+                    for (var v = 0; v < dragPositionNodes.length / 3; v++) {
+                        this.nodes[dragPositionNodes[(v * 3) + 2]].x = this.objects[i].x + dragPositionNodes[v * 3];
+                        this.nodes[dragPositionNodes[(v * 3) + 2]].y = this.objects[i].y + dragPositionNodes[(v * 3) + 1];
+                    }
                 }
 
                 var noOther = true;
                 for (var v = 0; v < this.nodes.length; v++) {
-                    if (nodeLinks[v * 4] == -2) {
+                    if (nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -1) {
                         if (this.nodes[v].isClicked()) {
                             noOther = false;
                         }
@@ -2968,7 +3314,7 @@ class Workspace extends SimpleScene {
                             }
                         }
                     }
-                    if (nodeLinks[v * 4] >= 0) {
+                    if (nodeLinks[v * 4] >= 0 && this.objectIDs[nodeLinks[(v * 4) + 1]] != 13) {
                         if (nodeLinks[(v * 4) + 1] == i) {
                             this.nodes[v].setX(this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][nodeLinks[(v * 4) + 2] + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width));
                             this.nodes[v].setY(this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][nodeLinks[(v * 4) + 2] + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height));
@@ -2981,6 +3327,10 @@ class Workspace extends SimpleScene {
                     if (nodeLinks[v * 4] <= -4) {
                         this.nodes[v].setX(this.nodes[0 - (nodeLinks[v * 4] + 4)].x);
                         this.nodes[v].setY(this.nodes[0 - (nodeLinks[v * 4] + 4)].y);
+                    }
+                    if (this.nodes[v].depth == 0 && this.objectIDs[nodeLinks[(v * 4) + 1]] == 13) {
+                        this.nodes[v].setX(this.nodes[v - 1].x);
+                        this.nodes[v].setY(this.nodes[v - 1].y);
                     }
                 }
 
@@ -3001,7 +3351,6 @@ class Workspace extends SimpleScene {
                     if (nodeLinks[v * 4] == -2 || nodeLinks[v * 4] <= -4) {
                         this.wireLines[nodeLinks[(v * 4) + 2]].setTo(this.nodes[v].x, this.nodes[v].y, this.wireLines[nodeLinks[(v * 4) + 1]].geom.x2, this.wireLines[nodeLinks[(v * 4) + 1]].geom.y2);
                     }
-
                 }
                 for (var v = 0; v < this.wires.length; v++) {
                     this.wires[v].x = (this.wireLines[v].geom.x1 + this.wireLines[v].geom.x2) / 2;
@@ -3022,35 +3371,193 @@ class Workspace extends SimpleScene {
                     }
                     this.wires[v].setOrigin(0.5, 0.5);
                 }
+
+                var noHover = true;
+                if (this.search.isOver() || this.addItem.isOver() || this.itemTypeArrow.isOver() || this.exit.isOver() || this.nextPageArrow.isOver() || this.nextPageButton.isOver() || this.lastPageArrow.isOver() || this.lastPageButton.isOver() || this.binHandle.isOver() || this.binHandleArrow.isOver()) {
+                    noHover = false;
+                }
+                for (var t = 0; t < this.itemButtons.length; t++) {
+                    if (this.itemButtons[t].isOver()) {
+                        noHover = false;
+                    }
+                }
+                if (this.undo.isOver() || this.redo.isOver() || this.magnet.isOver() || this.slash.isOver() || this.increaseScale.isOver() || this.increaseScaleButton.isOver() || this.decreaseScale.isOver() || this.decreaseScaleButton.isOver() || this.save.isOver() || this.saveButton.isOver() || this.import.isOver()) {
+                    noHover = false;
+                }
+                if (this.pen.isOver() || this.penSlash.isOver() || this.select.isOver() || this.dark.isOver() || this.info.isOver()) {
+                    noHover = false;
+                }
+                if (this.panelType > 0) {
+                    if (this.closex.isOver()) {
+                        noHover = false;
+                    }
+                    if (panelType == 1) {
+                        if (this.panelWireDeleteButton.isOver() || this.panelWireDeleteText.isOver() || this.panelWireDeleteIcon.isOver() || this.panelWireAddNodeButton.isOver() || this.panelWireAddNodeIcon.isOver() || this.panelWireAddNodeText.isOver()) {
+                            noHover = false;
+                        }
+                        for (var t = 0; t < this.palette.length; t++) {
+                            if (this.palette[t].isOver()) {
+                                noHover = false;
+                            }
+                        }
+                        for (var t = 0; t < this.customColors.length; t++) {
+                            if (this.customColors[t].isOver()) {
+                                noHover = false;
+                            }
+                        }
+                        if (this.customColorAdd.isOver() || this.customColorBox.isOver()) {
+                            noHover = false;
+                        }
+                    }
+                    if (panelType >= 2) {
+                        if (this.panelDeleteButton.isOver() || this.panelDelete.isOver() || this.panelDuplicateButton.isOver() || this.panelDuplicate.isOver() || this.panelEditButton.isOver() || this.panelEditIcon.isOver() || this.panelEditText.isOver()) {
+                            noHover = false;
+                        }
+                        if (this.panelRightArrow.isOver() || this.panelLeftArrow.isOver() || this.panelUpArrow.isOver() || this.panelDownArrow.isOver() || this.panelRotateRight.isOver() || this.panelRotateLeft.isOver() || this.panelForward.isOver() || this.panelBackward.isOver()) {
+                            noHover = false;
+                        }
+                    }
+                    if (panelType == 4) {
+                        if (this.panelResistanceValue.isOver() || this.panelResistanceValueBox.isOver() || this.panelResistanceUnit.isOver() || this.panelResistanceUnitBox.isOver()) {
+                            noHover = false;
+                        }
+                    }
+                    if (panelType == 5 || panelType == 8) {
+                        for (var t = 0; t < this.customObjectColors.length; t++) {
+                            if (this.customObjectColors[v].isOver()) {
+                                noHover = false;
+                            }
+                        }
+                        if (this.customObjectColorAdd.isOver() || this.customObjectColorBox.isOver()) {
+                            noHover = false;
+                        }
+                    }
+                    if (panelType == 7 || panelType == 8 || panelType == 10) {
+                        if (this.panelObjectLabel.isOver() || this.panelObjectLabelBox.isOver()) {
+                            noHover = false;
+                        }
+                    }
+                }
+
                 for (var v = 0; v < wiringXPoints["x" + this.objectIDs[i]].length / 4; v++) {
                     if (activeWireXY[0] == i && activeWireXY[1] == v) {
                         activeWireXY[2] = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width);
                         activeWireXY[3] = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
                     }
                     if (activeWire == true) {
-                        this.activeWire.setTo(activeWireXY[2], activeWireXY[3], this.input.mousePointer.x, this.input.mousePointer.y);
-                        this.activeWire.setDepth(4);
-                        this.activeWire.strokeColor = wireColor;
-                        this.activeWire.setVisible(1);
+                        if (this.penSlash.visible == 1) {
+                            this.activeWire.setTo(activeWireXY[2], activeWireXY[3], this.input.mousePointer.x, this.input.mousePointer.y);
+                            this.activeWire.setVisible(1);
+                            if (down == true && noHover == true) {
+                                if (this.input.mousePointer.x >= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) - deviceWidth * 0.01 && this.input.mousePointer.x <= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) + deviceWidth * 0.01 && this.input.mousePointer.y <= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) + deviceHeight * 0.015 && this.input.mousePointer.y >= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) - deviceHeight * 0.015) {
+                                    activeWire = false;
+                                    this.activeWire.setVisible(0);
+                                    var node = this.add.circle(activeWireXY[2], activeWireXY[3], 8 * scaleCount, wireColor);
+                                    node.setDepth(4);
+                                    this.nodes.push(node);
+                                    var node2 = this.add.circle(this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width), this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height), 8 * scaleCount, wireColor);
+                                    node2.setDepth(4);
+                                    this.nodes.push(node2);
+                                    wireGroup++;
+                                    nodeLinks.push(this.wireLines.length);
+                                    nodeLinks.push(activeWireXY[0]);
+                                    nodeLinks.push(activeWireXY[1]);
+                                    nodeLinks.push(wireGroup);
+                                    nodeLinks.push(this.wireLines.length);
+                                    nodeLinks.push(i);
+                                    nodeLinks.push(v);
+                                    nodeLinks.push(wireGroup);
 
-                        if (down == true) {
-                            if (this.input.mousePointer.x >= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) - deviceWidth * 0.01 && this.input.mousePointer.x <= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) + deviceWidth * 0.01 && this.input.mousePointer.y <= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) + deviceHeight * 0.015 && this.input.mousePointer.y >= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) - deviceHeight * 0.015) {
-                                activeWire = false;
-                                this.activeWire.setVisible(0);
+                                    var obj = this.add.line(node.x, node.y, node2.x, node2.y, 0xffffff);
+                                    obj.setLineWidth(3.8 * scaleCount);
+                                    obj.setDepth(3.5);
+                                    this.wireLines.push(obj);
+                                    var obj2;
+                                    obj2 = this.add.rectangle((obj.geom.x1 + obj.geom.x2) / 2, (obj.geom.y1 + obj.geom.y2) / 2, lineWidth, Math.sqrt(Math.pow(Math.abs(obj.geom.x1 - obj.geom.x2), 2) + Math.pow(Math.abs(obj.geom.y1 - obj.geom.y2), 2)), wireColor)
+                                    obj2.setDepth(3.5);
+                                    obj2.setAngle(-Math.atan(Math.abs(obj.geom.x1 - obj.geom.x2) / Math.abs(obj.geom.y1 - obj.geom.y2)) * 180 / Math.PI);
+                                    obj2.enableClick();
+                                    this.wires.push(obj2);
+                                    down = false;
+
+                                    lastWire = this.wires.length - 1;
+                                    this.createPalette(lastWire);
+
+                                    undo.push("createdWire");
+                                    undo.push(this.wires.length - 1);
+                                    undo.push(this.nodes.length - 2);
+                                    undo.push(this.nodes.length - 1);
+                                    redo.splice(0, redo.length);
+                                }
+                            }
+                        } else {
+                            wiringPointer = true;
+                            activeWire = true;
+                            this.activeWire.setVisible(1);
+                            for (var v = -10000; v < 10000; v++) {
+                                if (Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.input.mousePointer.x)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.input.mousePointer.x)) > 0) {
+                                    this.wiringPointer.x = (v * 28 * scaleCount + (snapStartX % (28 * scaleCount)));
+                                }
+                            }
+                            for (var v = -10000; v < 10000; v++) {
+                                if (Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - this.input.mousePointer.y)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - this.input.mousePointer.y)) > 0) {
+                                    this.wiringPointer.y = (v * 28 * scaleCount + (snapStartY % (28 * scaleCount)));
+                                }
+                            }
+                            this.wiringPointer.setVisible(1);
+                            this.activeWire.setTo(activeWireXY[2], activeWireXY[3], this.wiringPointer.x, this.wiringPointer.y);
+
+                            if (down == true && noHover == true) {
+                                var point = this.add.sprite(deviceWidth / 2, deviceHeight / 2, "13");
+                                point.setScale(objectsData[(13 * 5) + 2]);
+                                point.width = 500 * scaleCount;
+                                point.height = 500 * scaleCount;
+                                for (var v = -10000; v < 10000; v++) {
+                                    if (Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.input.mousePointer.x)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartX % (28 * scaleCount))) - this.input.mousePointer.x)) > 0) {
+                                        point.x = (v * 28 * scaleCount + (snapStartX % (28 * scaleCount)));
+                                    }
+                                }
+                                for (var v = -10000; v < 10000; v++) {
+                                    if (Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - this.input.mousePointer.y)) < (28 * scaleCount) / 2 && Math.abs(((v * 28 * scaleCount + (snapStartY % (28 * scaleCount))) - this.input.mousePointer.y)) > 0) {
+                                        point.y = (v * 28 * scaleCount + (snapStartY % (28 * scaleCount)));
+                                    }
+                                }
+                                point.enableClick();
+                                point.setDepth(4);
+                                this.objects.push(point);
+                                this.objectIDs.push(13);
+                                settings.push(-1);
+                                settings.push(-1);
+                                rotateAngle.push(0);
+                                shiftObjects.push(false);
+
+                                var label = this.add.text(point.x + scaleCount * deviceWidth * defaultLabel[(13 * 12) + 4], point.y + scaleCount * deviceHeight * defaultLabel[(13 * 12) + 5], defaultLabel[(13 * 12)], labelColor);
+                                label.setOrigin(0.5, 0.5);
+                                label.setFontSize(scaleCount * deviceHeight * defaultLabel[(13 * 12) + 1]);
+                                label.setDepth(3.2);
+                                this.objectLabels.push(label);
+
                                 var node = this.add.circle(activeWireXY[2], activeWireXY[3], 8 * scaleCount, wireColor);
-                                node.setDepth(4);
+                                node.setDepth(0);
+                                node.enableClick();
+                                node.enableDrag();
+                                if (activeWireXY[0] != this.objects.length - 2 || this.objectIDs[activeWireXY[0]] != 13) {
+                                    wireGroup++;
+                                    node.setDepth(4);
+                                }
                                 this.nodes.push(node);
-                                var node2 = this.add.circle(this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width), this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height), 8 * scaleCount, wireColor);
+                                var node2 = this.add.circle(point.x, point.y, 8 * scaleCount, wireColor);
                                 node2.setDepth(4);
+                                node2.enableClick();
+                                node2.enableDrag();
                                 this.nodes.push(node2);
-                                wireGroup++;
                                 nodeLinks.push(this.wireLines.length);
                                 nodeLinks.push(activeWireXY[0]);
                                 nodeLinks.push(activeWireXY[1]);
                                 nodeLinks.push(wireGroup);
                                 nodeLinks.push(this.wireLines.length);
-                                nodeLinks.push(i);
-                                nodeLinks.push(v);
+                                nodeLinks.push(this.objects.length - 1);
+                                nodeLinks.push(0);
                                 nodeLinks.push(wireGroup);
 
                                 var obj = this.add.line(node.x, node.y, node2.x, node2.y, 0xffffff);
@@ -3068,6 +3575,11 @@ class Workspace extends SimpleScene {
                                 lastWire = this.wires.length - 1;
                                 this.createPalette(lastWire);
 
+                                activeWireXY[0] = this.objects.length - 1;
+                                activeWireXY[1] = 0;
+                                activeWireXY[2] = point.x + (wiringXPoints["x13"][0] * point.width);
+                                activeWireXY[3] = point.y + (wiringYPoints["y13"][0] * point.height);
+
                                 undo.push("createdWire");
                                 undo.push(this.wires.length - 1);
                                 undo.push(this.nodes.length - 2);
@@ -3075,25 +3587,27 @@ class Workspace extends SimpleScene {
                                 redo.splice(0, redo.length);
                             }
                         }
+                        this.activeWire.setDepth(4);
+                        this.activeWire.strokeColor = wireColor;
                     }
                     if (this.input.mousePointer.x >= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) - deviceWidth * 0.01 && this.input.mousePointer.x <= (this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)) + deviceWidth * 0.01 && this.input.mousePointer.y <= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) + deviceHeight * 0.015 && this.input.mousePointer.y >= (this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height)) - deviceHeight * 0.015) {
-                        wiringPointer = true;
-                        this.wiringPointer.x = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)
-                        this.wiringPointer.y = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
-                        this.wiringPointer.fillColor = wireColor;
-                        this.wiringPointer.radius = 8 * scaleCount;
-                        this.wiringPointer.setVisible(1);
-                        this.wiringPointer.setDepth(4);
-                        pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
-                        if (down == true) {
-                            if (activeWire == false) {
-                                activeWire = true;
-                                this.clearPanel()
-                                activeWireXY[0] = i;
-                                activeWireXY[1] = v;
-                                activeWireXY[2] = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width);
-                                activeWireXY[3] = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
-                                down = false;
+                        if (this.objectIDs[i] != 13 || this.penSlash.visible == 0) {
+                            wiringPointer = true;
+                            this.wiringPointer.x = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width)
+                            this.wiringPointer.y = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
+                            this.wiringPointer.radius = 8 * scaleCount;
+                            this.wiringPointer.setVisible(1);
+                            pElement.style.cursor = "url('assets/hand.png'), auto";
+                            if (down == true) {
+                                if (activeWire == false) {
+                                    activeWire = true;
+                                    this.clearPanel()
+                                    activeWireXY[0] = i;
+                                    activeWireXY[1] = v;
+                                    activeWireXY[2] = this.objects[i].x + (wiringXPoints["x" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].width);
+                                    activeWireXY[3] = this.objects[i].y + (wiringYPoints["y" + this.objectIDs[i]][v + rotateAngle[i] * objectsData[(this.objectIDs[i] * 5) + 3]] * this.objects[i].height);
+                                    down = false;
+                                }
                             }
                         }
                     }
@@ -3139,6 +3653,15 @@ class Workspace extends SimpleScene {
                 }
                 endingX[i] = this.objects[i].x;
                 endingY[i] = this.objects[i].y;
+            }
+
+            if (this.objectIDs[i] == 13) {
+                for (var v = 0; v < this.nodes.length; v++) {
+                    if (nodeLinks[(v * 4) + 1] == i) {
+                        this.objects[i].x = this.nodes[v].x;
+                        this.objects[i].y = this.nodes[v].y;
+                    }
+                }
             }
         }
 
@@ -3215,6 +3738,12 @@ class Workspace extends SimpleScene {
                     this.wireLines[undo[undo.length - 3]].setVisible(0);
                     this.nodes[undo[undo.length - 2]].setVisible(0);
                     this.nodes[undo[undo.length - 1]].setVisible(0);
+                    activeWire = false;
+                    wiringPointer = false;
+                    this.activeWire.setVisible(0);
+                    if (this.objectIDs[nodeLinks[undo[undo.length - 1] * 4 + 1]] == 13) {
+                        this.objects[nodeLinks[undo[undo.length - 1] * 4 + 1]].setVisible(0);
+                    }
                 }
                 if (undo[undo.length - 4] == "subdividedWire") {
                     this.nodes[undo[undo.length - 3]].setVisible(0);
@@ -3233,6 +3762,9 @@ class Workspace extends SimpleScene {
                     }
                     for (var v = 0; v < undo[undo.length - 2].length; v++) {
                         this.nodes[undo[undo.length - 2][v]].setVisible(1);
+                    }
+                    for (var v = 0; v < undo[undo.length - 1].length; v++) {
+                        this.objects[undo[undo.length - 1][v]].setVisible(1);
                     }
                 }
                 if (undo[undo.length - 4] == "movedNode") {
@@ -3392,6 +3924,9 @@ class Workspace extends SimpleScene {
                     this.wireLines[redo[redo.length - 3]].setVisible(1);
                     this.nodes[redo[redo.length - 2]].setVisible(1);
                     this.nodes[redo[redo.length - 1]].setVisible(1);
+                    if (this.objectIDs[nodeLinks[undo[undo.length - 1] * 4 + 1]] == 13) {
+                        this.objects[nodeLinks[undo[undo.length - 1] * 4 + 1]].setVisible(1);
+                    }
                 }
                 if (redo[redo.length - 4] == "subdividedWire") {
                     this.nodes[redo[redo.length - 3]].setVisible(1);
@@ -3410,6 +3945,9 @@ class Workspace extends SimpleScene {
                     }
                     for (var v = 0; v < redo[redo.length - 2].length; v++) {
                         this.nodes[redo[redo.length - 2][v]].setVisible(0);
+                    }
+                    for (var v = 0; v < redo[redo.length - 1].length; v++) {
+                        this.objects[redo[redo.length - 1][v]].setVisible(0);
                     }
                 }
                 if (redo[redo.length - 4] == "movedNode") {
@@ -3583,6 +4121,10 @@ class Workspace extends SimpleScene {
                                     wires.push(nodeLinks[(v * 4) + 2]);
                                 }
                             }
+
+                            if (this.objectIDs[nodeLinks[v * 4 + 1]] == 13) {
+                                this.objects[nodeLinks[v * 4 + 1]].setVisible(0);
+                            }
                         }
                     }
 
@@ -3608,16 +4150,14 @@ class Workspace extends SimpleScene {
         }
 
         for (var i = 0; i < this.items.length; i++) {
-            if (this.items[i].isOver()) {
-                pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            if (this.itemButtons[i].isOver()) {
+                pElement.style.cursor = "url('assets/hand.png'), auto";
                 this.items[i].setTint(0xffbfbf)
             } else {
                 this.items[i].setTint(0xffffff)
             }
 
-            if (this.items[i].wasClicked()) {
-                this.title.setVisible(0);
-                this.instructions.setVisible(0);
+            if (this.itemButtons[i].wasClicked()) {
                 this.clearPanel();
                 var obj = this.add.sprite(deviceWidth / 2, deviceHeight / 2, `${itemObjectID[i]}`, 1);
                 for (var v = 0; v < this.objects.length; v++) {
@@ -3650,7 +4190,11 @@ class Workspace extends SimpleScene {
                 rotateAngle.push(0);
                 shiftObjects.push(false);
                 settings.push(-1);
-                settings.push(-1);
+                if (label.text != "") {
+                    settings.push("" + defaultLabel[(itemObjectID[i] * 12)] + "");
+                } else {
+                    settings.push(-1);
+                }
 
                 if (itemObjectID[i] == 2) {
                     var bar1 = this.add.rectangle(obj.x, obj.y + obj.height * 0.052, obj.width * 0.3, obj.height * 0.055, resistorColors[1]);
@@ -3681,8 +4225,6 @@ class Workspace extends SimpleScene {
 
         if ((this.floor.wasClicked() || this.grid.wasClicked()) && (this.input.mousePointer.x < 1095 || this.input.mousePointer.y > 325)) {
             this.clearPanel();
-            this.title.setVisible(0);
-            this.instructions.setVisible(0);
             if (element != null) {
                 element.blur();
             }
@@ -3696,6 +4238,7 @@ class Workspace extends SimpleScene {
 
         if (this.binHandleArrow.wasClicked() || this.binHandle.wasClicked()) {
             if (itemBinOpen == true) {
+                this.clearHTML();
                 if (closing == false) {
                     closing = true;
                     this.binHandleArrow.setAngle(0);
@@ -3715,6 +4258,10 @@ class Workspace extends SimpleScene {
 
         if (this.binHandleArrow.x > deviceWidth * 0.205 && this.binHandleArrow.x < deviceWidth * 0.21) {
             this.itemTypeArrow.setVisible(1);
+            this.lastPageButton.setVisible(1);
+            this.lastPageArrow.setVisible(1);
+            this.nextPageButton.setVisible(1);
+            this.nextPageArrow.setVisible(1);
             if (currentItemType == 0) {
                 this.addItem.setVisible(1);
                 this.search.setVisible(1);
@@ -3733,15 +4280,12 @@ class Workspace extends SimpleScene {
             for (var t = 0; t < this.itemLabels.length; t++) {
                 this.itemLabels[t].setVisible(1);
                 this.items[t].setVisible(1);
+                this.itemButtons[t].setVisible(1);
                 if (itemObjectID[t] == 2) {
                     this.itemResistorBars[0].setVisible(1);
                     this.itemResistorBars[1].setVisible(1);
                 }
             }
-            this.lastPageButton.setVisible(1);
-            this.lastPageArrow.setVisible(1);
-            this.nextPageButton.setVisible(1);
-            this.nextPageArrow.setVisible(1);
         }
 
         if (closing == true) {
@@ -3753,6 +4297,7 @@ class Workspace extends SimpleScene {
             for (var t = 0; t < this.itemLabels.length; t++) {
                 this.itemLabels[t].setVisible(0);
                 this.items[t].setVisible(0);
+                this.itemButtons[t].setVisible(0);
                 if (itemObjectID[t] == 2) {
                     this.itemResistorBars[0].setVisible(0);
                     this.itemResistorBars[1].setVisible(0);
@@ -3823,6 +4368,7 @@ class Workspace extends SimpleScene {
             document.getElementById('download0').innerHTML = "Wires Data";
             document.getElementById('download0').download = "WiresData.txt";
             document.getElementById('download0').href = generateTextFileUrl(wiresData);
+            document.getElementById('download0').click();
 
             textFileUrl = null;
 
@@ -3839,6 +4385,7 @@ class Workspace extends SimpleScene {
             document.getElementById('download1').innerHTML = "Nodes Data";
             document.getElementById('download1').download = "NodesData.txt";
             document.getElementById('download1').href = generateTextFileUrl(nodesData);
+            document.getElementById('download1').click();
 
             textFileUrl = null;
 
@@ -3866,6 +4413,7 @@ class Workspace extends SimpleScene {
             document.getElementById('download2').innerHTML = "Objects Data";
             document.getElementById('download2').download = "ObjectsData.txt";
             document.getElementById('download2').href = generateTextFileUrl(objectData);
+            document.getElementById('download2').click();
         }
         if (this.increaseScale.isClicked() || this.increaseScaleButton.isClicked() || (element == null && this.space.isPressed() && !(this.shift.isPressed()))) {
             scaleCount *= 1.005;
@@ -3985,34 +4533,75 @@ class Workspace extends SimpleScene {
             }
         }
 
-        if (this.home.wasClicked()) {
-            this.clearHTML();
-            this.popupover.setVisible(1);
-            this.popup.setVisible(1);
-            this.popuptext.setText("Are you sure you want to leave? You will lose your work.");
-            this.popuptext.setVisible(1);
-            this.popupcancel.setVisible(1);
-            this.popupyes.setVisible(1);
-            this.popupcanceltext.setVisible(1);
-            this.popupyestext.setVisible(1);
-
-            this.disabling();
-        }
-
-        if (this.info.wasClicked() || this.addItem.wasClicked()) {
+        if (this.info.wasClicked() || this.import.wasClicked()) {
             //window.open('https://youtube.com', '_blank');
             window.open('/Tutorial.html', '_blank');
         }
 
-        if (this.popupcancel.visible == 1) {
-            if (this.popupcancel.wasClicked() || this.popupcanceltext.wasClicked() || this.esc.wasPressed()) {
-                this.popupcancel.setVisible(0);
-                this.popupyes.setVisible(0);
-                this.popupcanceltext.setVisible(0);
-                this.popupyestext.setVisible(0);
+        if (this.addItem.wasClicked()) {
+            workspaceObjectImport = -1;
+            wiresDataImport.splice(0, wiresDataImport.length);
+            nodesDataImport.splice(0, nodesDataImport.length);
+            objectsDataImport.splice(0, objectsDataImport.length);
 
-                this.enabling();
+            wiresDataImport.push(customColors.length);
+            for (var v = 0; v < customColors.length; v++) {
+                wiresDataImport.push(customColors[v]);
             }
+            if (customColors.length == 0) {
+                wiresDataImport.push("");
+            }
+            wiresDataImport.push(nodeLinks.length);
+            for (var v = 0; v < nodeLinks.length; v++) {
+                wiresDataImport.push(nodeLinks[v]);
+            }
+            if (nodeLinks.length == 0) {
+                wiresDataImport.push("");
+            }
+            for (var v = 0; v < this.wires.length; v++) {
+                wiresDataImport.push(this.wires[v].visible);
+                wiresDataImport.push(this.wireLines[v].geom.x1);
+                wiresDataImport.push(this.wireLines[v].geom.y1);
+                wiresDataImport.push(this.wireLines[v].geom.x2);
+                wiresDataImport.push(this.wireLines[v].geom.y2);
+            }
+
+            nodesDataImport.push(this.grid.x);
+            nodesDataImport.push(this.grid.y);
+            for (var v = 0; v < this.nodes.length; v++) {
+                nodesDataImport.push(this.nodes[v].visible);
+                nodesDataImport.push(this.nodes[v].x);
+                nodesDataImport.push(this.nodes[v].y);
+                nodesDataImport.push(this.nodes[v].fillColor);
+            }
+
+            objectsDataImport.push(scaleCount);
+            objectsDataImport.push(this.objects.length);
+            objectsDataImport.push(customObjectColors.length + 3);
+            for (var v = 0; v < customObjectColors.length; v++) {
+                objectsDataImport.push(customObjectColors[v]);
+            }
+            for (var v = 0; v < this.objects.length; v++) {
+                objectsDataImport.push(this.objects[v].visible);
+                objectsDataImport.push(this.objects[v].x);
+                objectsDataImport.push(this.objects[v].y);
+                objectsDataImport.push(this.objectIDs[v]);
+                objectsDataImport.push(rotateAngle[v]);
+                objectsDataImport.push(this.objects[v].depth);
+                objectsDataImport.push(settings[v * 2]);
+                objectsDataImport.push(settings[(v * 2) + 1]);
+                if (this.objectLabels[v].text != "") {
+                    objectsDataImport.push(settings[(v * 2) + 1]);
+                } else {
+                    objectsDataImport.push("");
+                }
+            }
+
+            for (var i = 0; i < objectsData.length / 5; i++) {
+                wiringXPoints["x" + i].splice(objectsData[(i * 5) + 3], wiringXPoints["x" + i].length - objectsData[(i * 5) + 3]);
+                wiringYPoints["y" + i].splice(objectsData[(i * 5) + 3], wiringYPoints["y" + i].length - objectsData[(i * 5) + 3]);
+            }
+            this.scene.start("PartEditor");
         }
 
         if (this.popupdone.visible == 1) {
@@ -4028,12 +4617,6 @@ class Workspace extends SimpleScene {
                 this.clearHTML();
 
                 this.enabling();
-            }
-        }
-
-        if (this.popupyes.visible == 1) {
-            if (this.popupyes.wasClicked() || this.popupyestext.wasClicked() || this.return.wasPressed()) {
-                this.scene.start("Menu");
             }
         }
 
@@ -4080,6 +4663,8 @@ class Workspace extends SimpleScene {
 
         panelType = 0;
         this.info.enableClick();
+        this.dark.enableClick();
+        this.select.enableClick();
         this.panel.setVisible(0);
         this.paneltext.setVisible(0);
         this.panelDivider.setVisible(0);
@@ -4117,6 +4702,8 @@ class Workspace extends SimpleScene {
         panelType = this.objectIDs[i] + 2;
 
         this.info.disableClick();
+        this.dark.disableClick();
+        this.select.disableClick();
         this.panel.setVisible(1);
         this.closex.setVisible(1);
         this.panelDuplicateButton.setVisible(1);
@@ -4147,9 +4734,7 @@ class Workspace extends SimpleScene {
         this.paneltext.setVisible(1);
         this.panelDivider.setVisible(1);
 
-        if (panelType == 2 || panelType == 3 || panelType == 6 || panelType == 9 || panelType == 11 || panelType == 12 || panelType == 13 || panelType == 14) {
-            this.panel.y = deviceHeight * 0.05;
-        }
+        this.panel.y = deviceHeight * 0.05;
         if (panelType == 4) {
             this.panel.y = deviceHeight * 0.14;
             this.panelSelectLabel.setY(deviceHeight * 0.4);
@@ -4255,7 +4840,7 @@ class Workspace extends SimpleScene {
         }
         var selectWireGroup;
         for (var v = 0; v < this.nodes.length; v++) {
-            if (nodeLinks[v * 4] == wire || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == wire)) {
+            if (nodeLinks[v * 4] == wire || (nodeLinks[v * 4] <= -1 && nodeLinks[(v * 4) + 2] == wire)) {
                 selectWireGroup = nodeLinks[(v * 4) + 3];
             }
         }
@@ -4268,7 +4853,7 @@ class Workspace extends SimpleScene {
         }
         for (var v = 0; v < this.nodes.length; v++) {
             if (nodeLinks[(v * 4) + 3] == selectWireGroup) {
-                if (nodeLinks[v * 4] == -3 || nodeLinks[v * 4] == -2 || nodeLinks[v * 4] <= -4) {
+                if (nodeLinks[v * 4] <= -1) {
                     this.selected[selectSlot] = this.wires[nodeLinks[(v * 4) + 2]];
                 } else {
                     this.selected[selectSlot] = this.wires[nodeLinks[v * 4]];
@@ -4343,7 +4928,7 @@ class Workspace extends SimpleScene {
 
     inputBox() {
         if (element == document.getElementById('input') || element == document.getElementById('inputnum') || element == document.getElementById('dropdown')) {
-            if (this.del.wasPressed()) {
+            if (this.del.wasPressed() && !(this.shift.isPressed())) {
                 element.value = element.value.slice(0, -1);
             }
             if (!(this.shift.isPressed())) {
@@ -4435,16 +5020,19 @@ class Workspace extends SimpleScene {
         this.addItem.enableClick();
         this.magnet.enableClick();
         this.closex.enableClick();
-        this.home.enableClick();
         this.info.enableClick();
+        this.floor.enableClick(0);
+        this.dark.enableClick();
+        this.select.enableClick();
+        this.pen.enableClick();
         this.undo.enableClick();
         this.redo.enableClick();
         for (var v = 0; v < this.objects.length; v++) {
             this.objects[v].enableClick();
             this.objects[v].enableDrag();
         }
-        for (var v = 0; v < this.items.length; v++) {
-            this.items[v].enableClick();
+        for (var v = 0; v < this.itemButtons.length; v++) {
+            this.itemButtons[v].enableClick();
         }
     }
 
@@ -4467,16 +5055,19 @@ class Workspace extends SimpleScene {
         this.addItem.disableClick();
         this.magnet.disableClick();
         this.closex.disableClick();
-        this.home.disableClick();
         this.info.disableClick();
+        this.floor.disableClick();
+        this.dark.disableClick();
+        this.select.disableClick();
+        this.pen.disableClick();
         this.undo.disableClick();
         this.redo.disableClick();
         for (var v = 0; v < this.objects.length; v++) {
             this.objects[v].disableClick();
             this.objects[v].disableDrag();
         }
-        for (var v = 0; v < this.items.length; v++) {
-            this.items[v].disableClick();
+        for (var v = 0; v < this.itemButtons.length; v++) {
+            this.itemButtons[v].disableClick();
         }
     }
 
@@ -4511,7 +5102,7 @@ class Workspace extends SimpleScene {
     wireShortcutKeys(wire) {
         var selectWireGroup;
         for (var v = 0; v < this.nodes.length; v++) {
-            if (nodeLinks[v * 4] == wire || ((nodeLinks[v * 4] == -2 || nodeLinks[v * 4] == -3 || nodeLinks[v * 4] <= -4) && nodeLinks[(v * 4) + 2] == wire)) {
+            if (nodeLinks[v * 4] == wire || (nodeLinks[v * 4] <= -1 && nodeLinks[(v * 4) + 2] == wire)) {
                 selectWireGroup = nodeLinks[(v * 4) + 3];
             }
         }
@@ -4524,7 +5115,7 @@ class Workspace extends SimpleScene {
         }
         for (var v = 0; v < this.nodes.length; v++) {
             if (nodeLinks[(v * 4) + 3] == selectWireGroup) {
-                if (nodeLinks[v * 4] == -3 || nodeLinks[v * 4] == -2 || nodeLinks[v * 4] <= -4) {
+                if (nodeLinks[v * 4] <= -1) {
                     this.selected[selectSlot] = this.wires[nodeLinks[(v * 4) + 2]];
                 } else {
                     this.selected[selectSlot] = this.wires[nodeLinks[v * 4]];
@@ -4839,6 +5430,7 @@ class Workspace extends SimpleScene {
                 if (this.del.wasPressed()) {
                     var wires = [];
                     var nodes = [];
+                    var points = [];
                     for (var v = 0; v < this.nodes.length; v++) {
                         if (nodeLinks[v * 4] >= 0 && nodeLinks[(v * 4) + 3] == selectWireGroup) {
                             if (this.wires[nodeLinks[v * 4]].visible == 1) {
@@ -4847,7 +5439,7 @@ class Workspace extends SimpleScene {
                                 wires.push(nodeLinks[v * 4]);
                             }
                         }
-                        if (nodeLinks[v * 4] < -1 && nodeLinks[(v * 4) + 3] == selectWireGroup) {
+                        if (nodeLinks[v * 4] <= -1 && nodeLinks[(v * 4) + 3] == selectWireGroup) {
                             if (this.wires[nodeLinks[(v * 4) + 1]].visible == 1) {
                                 this.wires[nodeLinks[(v * 4) + 1]].setVisible(0);
                                 this.wireLines[nodeLinks[(v * 4) + 1]].setVisible(0);
@@ -4864,12 +5456,19 @@ class Workspace extends SimpleScene {
                                 this.nodes[v].setVisible(0);
                                 nodes.push(v);
                             }
+
+                            if (this.objectIDs[nodeLinks[v * 4 + 1]] == 13) {
+                                if (this.objects[nodeLinks[v * 4 + 1]].visible == 1) {
+                                    this.objects[nodeLinks[v * 4 + 1]].setVisible(0);
+                                    points.push(nodeLinks[v * 4 + 1]);
+                                }
+                            }
                         }
                     }
                     undo.push("deletedWire");
                     undo.push(wires);
                     undo.push(nodes);
-                    undo.push(-1);
+                    undo.push(points);
                     redo.splice(0, redo.length);
                     this.clearPanel();
                 }
