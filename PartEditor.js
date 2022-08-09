@@ -58,6 +58,7 @@ class PartEditor extends SimpleScene {
 
     preload() {
         this.load.image("object", 'object/object.png');
+        //this.load.imageset("object","object/object.png",663,259);
         this.load.imageset("binhandlearrow", "./assets/binhandlearrow.png", 560, 981);
         this.load.image("increasescale", "./assets/increasescale.png");
         this.load.image("decreasescale", "./assets/decreasescale.png");
@@ -80,6 +81,7 @@ class PartEditor extends SimpleScene {
     }
 
     create() {
+
         closing = false;
         opening = false;
         itemBinOpen = true;
@@ -193,7 +195,7 @@ class PartEditor extends SimpleScene {
         this.crossH.setLineWidth(1);
         this.crossH.setDepth(7);
 
-        this.instructions = this.add.text(deviceWidth / 2, deviceHeight * 0.15, "Create a wiring diagram here.", labelColor);
+        this.instructions = this.add.text(deviceWidth / 2, deviceHeight * 0.15, "Set up the wiring points and object scale.", labelColor);
         this.instructions.setOrigin(0.5, 0);
         this.instructions.setFontSize(deviceHeight * 0.03);
         this.instructions.setDepth(1);
@@ -239,10 +241,24 @@ class PartEditor extends SimpleScene {
         this.del = this.add.key("BACKSPACE");
         this.esc = this.add.key("ESC");
         this.return = this.add.key("ENTER");
+
         this.s = this.add.key("S");
         this.w = this.add.key("W");
         this.z = this.add.key("Z");
         this.x = this.add.key("X");
+        this.d = this.add.key("d");
+        this.c = this.add.key("c");
+
+        this.key0 = this.add.key("ZERO");
+        this.key1 = this.add.key("ONE");
+        this.key2 = this.add.key("TWO");
+        this.key3 = this.add.key("THREE");
+        this.key4 = this.add.key("FOUR");
+        this.key5 = this.add.key("FIVE");
+        this.key6 = this.add.key("SIX");
+        this.key7 = this.add.key("SEVEN");
+        this.key8 = this.add.key("EIGHT");
+        this.key9 = this.add.key("NINE");
 
         this.increaseScaleButton = this.add.circle(deviceWidth * 0.83, deviceHeight * 0.94, deviceWidth * 0.02, 0xF4F5F6);
         this.increaseScaleButton.enableClick();
@@ -429,7 +445,7 @@ class PartEditor extends SimpleScene {
         this.popupdonetext.setDepth(9);
         this.popupdonetext.setVisible(0);
 
-        this.popupaddtext = this.add.text(deviceWidth * 0.56, deviceHeight * 0.55, "Add to Workspace", 0x000000);
+        this.popupaddtext = this.add.text(deviceWidth * 0.56, deviceHeight * 0.55, "Add to Community", 0x000000);
         this.popupaddtext.setOrigin(0.5, 0.5);
         this.popupaddtext.setFontSize(deviceHeight * 0.02);
         this.popupaddtext.enableClick();
@@ -615,8 +631,8 @@ class PartEditor extends SimpleScene {
                 this.popupadd.fillColor = 0x4FBA52;
             }
             if (this.popupadd.wasClicked() || this.popupaddtext.wasClicked()) {
-
-                var locX = [];
+                window.open('https://docs.google.com/forms/d/e/1FAIpQLSdBlu6oiTDHbPxNsVXbajZWBfGOwHKz_FqiqWWbsYLKHTNY4w/viewform?usp=sf_link', '_blank');
+                /*var locX = [];
                 var locY = [];
                 for (var v = 0; v < this.wiringPoint.length; v++) {
                     if (this.wiringPoint[v].x != deviceWidth * 0.05 && this.wiringPoint[v].y != deviceHeight * 0.22 && this.wiringPoint[v].visible == 1) {
@@ -707,6 +723,7 @@ class PartEditor extends SimpleScene {
                     objectsDataImport.push("");
                 }
                 this.scene.start("Workspace");
+                */
             }
         }
 
@@ -751,12 +768,13 @@ class PartEditor extends SimpleScene {
             }
         }
 
-        if (this.object.scale != lastScale && !(this.shift.isPressed()) && !(this.uparrow.isPressed()) && !(this.downarrow.isPressed())) {
+        if (this.object.scale != lastScale && !(this.shift.isPressed()) && !(this.uparrow.isPressed()) && !(this.downarrow.isPressed()) && !(this.enlarge.isClicked()) && !(this.shrink.isClicked())) {
             undo.push("scaledObject");
             undo.push(this.glueSlash.visible);
             undo.push(lastScale / this.object.scale);
             undo.push(-1);
             redo.splice(0, redo.length);
+            lastScale = this.object.scale;
         }
 
         if (lastPosition[0] == -1 && !(this.object.isClicked()) && (lastPosition[1] != this.object.x || lastPosition[2] != this.object.y) && !(this.uparrow.isPressed()) && !(this.leftarrow.isPressed()) && !(this.rightarrow.isPressed()) && !(this.downarrow.isPressed())) {
@@ -1318,6 +1336,7 @@ class PartEditor extends SimpleScene {
             snapStartX = ((snapStartX - (deviceWidth / 2)) * 1.005) + (deviceWidth / 2);
             snapStartY = ((snapStartY - (deviceHeight / 2)) * 1.005) + (deviceHeight / 2);
             this.object.scale *= 1.005;
+            lastScale = this.object.scale;
             this.object.width *= 1.005;
             this.object.height *= 1.005;
             this.object.x = ((this.object.x - (deviceWidth / 2)) * 1.005) + (deviceWidth / 2);
@@ -1368,6 +1387,7 @@ class PartEditor extends SimpleScene {
             snapStartX = ((snapStartX - (deviceWidth / 2)) * 0.995) + (deviceWidth / 2);
             snapStartY = ((snapStartY - (deviceHeight / 2)) * 0.995) + (deviceHeight / 2);
             this.object.scale *= 0.995;
+            lastScale = this.object.scale;
             this.object.width *= 0.995;
             this.object.height *= 0.995;
             this.object.x = ((this.object.x - (deviceWidth / 2)) * 0.995) + (deviceWidth / 2);
@@ -1493,12 +1513,12 @@ class PartEditor extends SimpleScene {
             if (objectName != "") {
                 objectInfo[0] = '"' + objectName + '"';
             } else {
-                objectInfo[0] = "Object Name";
+                objectInfo[0] = '"' + "Object Name" + '"';
             }
-            if (objectType != "") {
-                objectInfo[1] = "\"" + objectType + "\"";
+            if (objectType != "" && objectType != "Choose") {
+                objectInfo[1] = '"' + objectType + '"';
             } else {
-                objectInfo[1] = "Object Type";
+                objectInfo[1] = '"' + "Object Type" + '"';
             }
             objectInfo[2] = workspaceScale;
             objectInfo[3] = locX.length;
@@ -1526,25 +1546,24 @@ class PartEditor extends SimpleScene {
             document.getElementById('download0').innerHTML = "X Locations";
             document.getElementById('download0').download = "XLocations.txt";
             document.getElementById('download0').href = generateTextFileUrl(locX);
-            document.getElementById('download0').click();
+            //document.getElementById('download0').click();
 
             textFileUrl = null;
 
             document.getElementById('download1').innerHTML = "Y Locations";
             document.getElementById('download1').download = "YLocations.txt";
             document.getElementById('download1').href = generateTextFileUrl(locY);
-            document.getElementById('download1').click();
+            //document.getElementById('download1').click();
 
             textFileUrl = null;
 
             document.getElementById('download2').innerHTML = "Object Info";
             document.getElementById('download2').download = "ObjectInfo.txt";
             document.getElementById('download2').href = generateTextFileUrl(objectInfo);
-            document.getElementById('download2').click();
+            //document.getElementById('download2').click();
         }
 
         if (this.info.wasClicked() || this.import.wasClicked()) {
-            //window.open('https://youtube.com', '_blank');
             window.open('/Tutorial.html', '_blank');
         }
 
@@ -1723,21 +1742,68 @@ class PartEditor extends SimpleScene {
 
     inputBox() {
         if (element == document.getElementById('input') || element == document.getElementById('inputnum') || element == document.getElementById('dropdown')) {
+            if (this.del.isPressed() && !(this.shift.isPressed())) {
+                if (delCount == 8) {
+                    element.value = element.value.slice(0, -1);
+                    delCount = 0;
+                }
+                delCount++;
+            }
             if (this.del.wasPressed() && !(this.shift.isPressed())) {
                 element.value = element.value.slice(0, -1);
+                delCount = 0;
             }
             if (!(this.shift.isPressed())) {
+                if (this.key0.wasPressed()) {
+                    element.value += "0";
+                }
+                if (this.key1.wasPressed()) {
+                    element.value += "1";
+                }
+                if (this.key2.wasPressed()) {
+                    element.value += "2";
+                }
+                if (this.key3.wasPressed()) {
+                    element.value += "3";
+                }
+                if (this.key4.wasPressed()) {
+                    element.value += "4";
+                }
+                if (this.key5.wasPressed()) {
+                    element.value += "5";
+                }
+                if (this.key6.wasPressed()) {
+                    element.value += "6";
+                }
+                if (this.key7.wasPressed()) {
+                    element.value += "7";
+                }
+                if (this.key8.wasPressed()) {
+                    element.value += "8";
+                }
+                if (this.key9.wasPressed()) {
+                    element.value += "9";
+                }
                 if (this.s.wasPressed()) {
                     element.value += "s";
                 }
                 if (this.w.wasPressed()) {
                     element.value += "w";
                 }
+                if (this.d.wasPressed()) {
+                    element.value += "d";
+                }
                 if (this.z.wasPressed()) {
                     element.value += "z";
                 }
                 if (this.x.wasPressed()) {
                     element.value += "x";
+                }
+                if (this.c.wasPressed()) {
+                    element.value += "c";
+                }
+                if (this.a.wasPressed()) {
+                    element.value += "a";
                 }
             }
             if (this.space.wasPressed()) {

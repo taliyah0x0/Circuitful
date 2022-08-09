@@ -1,193 +1,297 @@
 <!DOCTYPE html>
-<html>
-<h2>Tutorial Coming Soon!</h2>
-<div style="display: flex; flex-direction: column; align-items: center">
-    <h3>
-        -- -- -- -- -- -- -- -- -- --
-        -- --KEYBOARD SHORTCUTS-- --
-        -- -- -- -- -- -- -- -- -- --
-    </h3>
-</div>
+<html style="font-family: Sans">
 
-<div style="display: flex; flex-direction: row; margin-left: 40px; margin-right: 40px;">
-    <div style="display: flex; flex: 1; flex-direction: column;">
-        <h3>
-            In the Part Editor
-        </h3>
+<head>
+    <style>
+        @font-face {
+            font-family: Sans;
+            src: url("assets/sans.ttf");
+        }
 
-        <h4>
-            -- General --
-        </h4>
-        <p>
-            s: Save
-            <br>
-            w: Create wiring point at cursor
-            <br>
-            z: Undo
-            <br>
-            x: Redo
-            <br>
-            SPACE: Zoom in
-            <br>
-            SHIFT + SPACE: Zoom out
-            <br>
-            RIGHT ARROW: Nudge object right
-            <br>
-            LEFT ARROW: Nudge object left
-            <br>
-            UP ARROW: Nudge object up
-            <br>
-            DOWN ARROW: Nudge object down
-            <br>
-            SHIFT + UP ARROW: Increase object scale
-            <br>
-            SHIFT + DOWN ARROW: Decrease object scale
-        </p>
+        .button {
+            text-decoration: none;
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            background-color: #bbbbbb;
+            border-radius: 10px;
+            padding: 5px;
+        }
 
-        <h4>
-            -- While Hovering Over a Wiring Point --
-        </h4>
+        .button:hover {
+            background-color: #dddddd;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+</head>
 
-        <p>
-            BACKSPACE: Remove wiring point
-            <br>
-            RIGHT ARROW: Nudge wiring point right
-            <br>
-            LEFT ARROW: Nudge wiring point left
-            <br>
-            UP ARROW: Nudge wiring point up
-            <br>
-            DOWN ARROW: Nudge wiring point down
-        </p>
-
-        <h4>
-            -- While Pop-Up Window is Open --
-        </h4>
-
-        <p>
-            ESCAPE: Clicks on the left button (Exit pop-up)
-            <br>
-            ENTER: Clicks on the right button (Confirms action)
-        </p>
+<body>
+    <div style="display: flex; flex-direction: row; height: 50px; gap: 5px;">
+        <h2 style="flex: 5; margin-left: 40px;">Circuitful Tutorial Coming Soon!</h2>
+        <a class="button" target="_blank"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdBlu6oiTDHbPxNsVXbajZWBfGOwHKz_FqiqWWbsYLKHTNY4w/viewform?usp=sf_link">
+            <img style="width: 50px; height: 50px; flex: 1;" src="assets/cloud.png">
+            <h3 style="flex: 4; color: black;">Submit a Part</h3>
+        </a>
+        <a class="button" target="_blank"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfRBAfY_xMJGDFmxAw3m_ZpHod6yiOpRPdnGpJgR3UgsTV5Zw/viewform?usp=sf_link">
+            <img style="width: 50px; height: 50px; flex: 1;" src="assets/bug.png">
+            <h3 style="flex: 4; color: black;">Report a Bug</h3>
+        </a>
     </div>
-    <div style="display: flex; flex: 1; flex-direction: column;">
+    <a style="margin-left: 40px;" href="https://replit.com/@TaliyahHuang/Circuitful#Workspace.js" target="_blank">Open
+        Repl.it Editor</a>
+    <div style="display: flex; flex-direction: column; align-items: center">
         <h3>
-            In the Workspace
+            -- -- -- -- -- -- -- -- -- --
+            -- -- KEYBOARD SHORTCUTS -- --
+            -- -- -- -- -- -- -- -- -- --
         </h3>
-
-        <h4>
-            -- General --
-        </h4>
-        <p>
-            s: Save
-            <br>
-            z: Undo
-            <br>
-            x: Redo
-            <br>
-            SPACE: Zoom in
-            <br>
-            SHIFT + SPACE: Zoom out
-            <br>
-            SHIFT + UP ARROW: Increase object scale
-            <br>
-            SHIFT + DOWN ARROW: Decrease object scale
-        </p>
-
-        <h4>
-            -- While Hovering Over an Object or While Object Panel is Open --
-        </h4>
-
-        <p>
-            BACKSPACE: Delete object
-            <br>
-            ESCAPE: Close panel
-            <br>
-            RIGHT ARROW: Nudge object right
-            <br>
-            LEFT ARROW: Nudge object left
-            <br>
-            UP ARROW: Nudge object up
-            <br>
-            DOWN ARROW: Nudge object down
-            <br>
-            SHIFT + RIGHT ARROW: Rotate 90 degrees clockwise
-            <br>
-            SHIFT + LEFT ARROW: Rotate 90 degrees counterclockwise
-            <br>
-            SHIFT + UP ARROW: Bring to front
-            <br>
-            SHIFT + DOWN ARROW: Send to back
-            <br>
-        </p>
-
-        <h4>
-            -- While Hovering Over a Wire or While Wire Panel is Open --
-        </h4>
-
-        <p>
-            BACKSPACE: Delete wire
-            <br>
-            ESCAPE: Close panel
-            <br>
-            w: Create node on wire
-            <br>
-            1: Change wire color to red
-            <br>
-            2: Change wire color to orange
-            <br>
-            3: Change wire color to yellow
-            <br>
-            4: Change wire color to green
-            <br>
-            5: Change wire color to teal
-            <br>
-            6: Chane wire color to blue
-            <br>
-            7: Change wire color to purple
-            <br>
-            8: Change wire color to pink
-            <br>
-            9: Change wire color to brown
-            <br>
-            0: Change wire color to black
-            <br>
-            SHIFT + 1: Change wire color to custom color slot 1
-            <br>
-            SHIFT + 2: Change wire color to custom color slot 2
-            <br>
-            SHIFT + 3: Change wire color to custom color slot 3
-            <br>
-            SHIFT + 4: Change wire color to custom color slot 4
-            <br>
-            SHIFT + 5: Change wire color to custom color slot 5
-            <br>
-            SHIFT + 6: Change wire color to custom color slot 6
-            <br>
-            SHIFT + 7: Change wire color to custom color slot 7
-            <br>
-            SHIFT + 8: Change wire color to custom color slot 8
-            <br>
-            SHIFT + 9: Change wire color to custom color slot 9
-        </p>
-
-        <h4>
-            -- While Hovering Over a Custom Color --
-        </h4>
-
-        <p>
-            BACKSPACE: Remove custom color
-        </p>
-
-        <h4>
-            -- While Pop-Up Window is Open --
-        </h4>
-
-        <p>
-            ESCAPE: Clicks on the left button (Exit pop-up)
-            <br>
-            ENTER: Clicks on the right button (Confirms action)
-        </p>
     </div>
-</div>
+
+    <div style="display: flex; flex-direction: row; margin-left: 40px; margin-right: 40px;">
+        <div style="display: flex; flex: 1; flex-direction:column;">
+            <div style="display: flex; flex: 1; flex-direction: column; padding: 10px;">
+                <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white;">
+                    In the Part Editor
+                </h3>
+
+                <div style="background-color: #dddddd; padding: 10px;">
+                    <h4 style="text-align: center;">
+                        -- GENERAL --
+                    </h4>
+                    <p>
+                        s: Save
+                        <br>
+                        w: Create wiring point at cursor
+                        <br>
+                        z: Undo
+                        <br>
+                        x: Redo
+                        <br>
+                        SPACE: Zoom in
+                        <br>
+                        SHIFT + SPACE: Zoom out
+                        <br>
+                        RIGHT ARROW: Nudge object right
+                        <br>
+                        LEFT ARROW: Nudge object left
+                        <br>
+                        UP ARROW: Nudge object up
+                        <br>
+                        DOWN ARROW: Nudge object down
+                        <br>
+                        SHIFT + UP ARROW: Increase object scale
+                        <br>
+                        SHIFT + DOWN ARROW: Decrease object scale
+                    </p>
+                </div>
+
+                <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+                    <h4 style="text-align: center;">
+                        -- WHILE HOVERING OVER A WIRING POINT --
+                    </h4>
+
+                    <p>
+                        BACKSPACE: Remove wiring point
+                        <br>
+                        RIGHT ARROW: Nudge wiring point right
+                        <br>
+                        LEFT ARROW: Nudge wiring point left
+                        <br>
+                        UP ARROW: Nudge wiring point up
+                        <br>
+                        DOWN ARROW: Nudge wiring point down
+                    </p>
+                </div>
+
+                <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+                    <h4 style="text-align: center;">
+                        -- WHILE POP-UP WINDOW IS OPEN --
+                    </h4>
+
+                    <p>
+                        ESCAPE: Clicks on the left button (Exit pop-up)
+                        <br>
+                        ENTER: Clicks on the right button (Confirms action)
+                    </p>
+                </div>
+
+            </div>
+            <div style="display: flex; flex: 1; flex-direction: column; padding: 10px;">
+                <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white;">
+                    In the Created Image Viewer
+                </h3>
+
+                <div style="background-color: #dddddd; padding: 10px;">
+                    <h4 style="text-align: center;">
+                        -- GENERAL --
+                    </h4>
+                    <p>
+                        ESC: Return to Workspace
+                        <br>
+                        SPACE: Zoom in
+                        <br>
+                        SHIFT + SPACE: Zoom out
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; flex: 1; flex-direction: column; padding: 10px">
+            <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white;">
+                In the Workspace
+            </h3>
+
+            <div style="background-color: #dddddd; padding: 10px;">
+                <h4 style="text-align: center;">
+                    -- GENERAL --
+                </h4>
+                <p>
+                    s: Save
+                    <br>
+                    z: Undo
+                    <br>
+                    x: Redo
+                    <br>
+                    c: Toggle pen mode
+                    <br>
+                    a: Box select
+                    <br>
+                    SPACE: Zoom in
+                    <br>
+                    SHIFT + SPACE: Zoom out
+                    <br>
+                    SHIFT: Hold to select multiple objects
+                    <br>
+                    SHIFT + UP ARROW: Increase object scale
+                    <br>
+                    SHIFT + DOWN ARROW: Decrease object scale
+                </p>
+            </div>
+
+            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+                <h4 style="text-align: center;">
+                    -- WHILE HOVERING OVER AN OBJECT OR WHILE OBJECT PANEL IS OPEN --
+                </h4>
+
+                <p>
+                    BACKSPACE: Delete object
+                    <br>
+                    ESCAPE: Close panel
+                    <br>
+                    RIGHT ARROW: Nudge object right
+                    <br>
+                    LEFT ARROW: Nudge object left
+                    <br>
+                    UP ARROW: Nudge object up
+                    <br>
+                    DOWN ARROW: Nudge object down
+                    <br>
+                    SHIFT + RIGHT ARROW: Rotate 90 degrees clockwise
+                    <br>
+                    SHIFT + LEFT ARROW: Rotate 90 degrees counterclockwise
+                    <br>
+                    SHIFT + UP ARROW: Bring to front
+                    <br>
+                    SHIFT + DOWN ARROW: Send to back
+                    <br>
+                </p>
+            </div>
+
+            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+                <h4 style="text-align: center;">
+                    -- WHILE HOVERING OVER A WIRE OR WHILE WIRE PANEL IS OPEN --
+                </h4>
+
+                <p>
+                    BACKSPACE: Delete wire
+                    </mark>
+                    <br>
+                    ESCAPE: Close panel
+                    <br>
+                    w: Create node on wire
+                    <br>
+                    1: Change wire color to red
+                    <br>
+                    2: Change wire color to orange
+                    <br>
+                    3: Change wire color to yellow
+                    <br>
+                    4: Change wire color to green
+                    <br>
+                    5: Change wire color to teal
+                    <br>
+                    6: Chane wire color to blue
+                    <br>
+                    7: Change wire color to purple
+                    <br>
+                    8: Change wire color to pink
+                    <br>
+                    9: Change wire color to brown
+                    <br>
+                    0: Change wire color to black
+                    <br>
+                    SHIFT + 1: Change wire color to custom color slot 1
+                    <br>
+                    SHIFT + 2: Change wire color to custom color slot 2
+                    <br>
+                    SHIFT + 3: Change wire color to custom color slot 3
+                    <br>
+                    SHIFT + 4: Change wire color to custom color slot 4
+                    <br>
+                    SHIFT + 5: Change wire color to custom color slot 5
+                    <br>
+                    SHIFT + 6: Change wire color to custom color slot 6
+                    <br>
+                    SHIFT + 7: Change wire color to custom color slot 7
+                    <br>
+                    SHIFT + 8: Change wire color to custom color slot 8
+                    <br>
+                    SHIFT + 9: Change wire color to custom color slot 9
+                </p>
+            </div>
+
+            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+                <h4 style="text-align: center;">
+                    -- WHILE HOVERING OVER A NODE --
+                </h4>
+
+                <p>
+                    RIGHT ARROW: Nudge node right
+                    <br>
+                    LEFT ARROW: Nudge node left
+                    <br>
+                    UP ARROW: Nudge node up
+                    <br>
+                    DOWN ARROW: Nudge node down
+                </p>
+            </div>
+
+            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+                <h4 style="text-align: center;">
+                    -- WHILE HOVERING OVER A CUSTOM COLOR --
+                </h4>
+
+                <p>
+                    BACKSPACE: Remove custom color
+                </p>
+            </div>
+
+            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+                <h4 style="text-align: center;">
+                    -- WHILE POP-UP WINDOW IS OPEN --
+                </h4>
+
+                <p>
+                    ESCAPE: Clicks on the left button (Exit pop-up)
+                    <br>
+                    ENTER: Clicks on the right button (Confirms action)
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
