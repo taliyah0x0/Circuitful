@@ -65,7 +65,7 @@ class Menu extends SimpleScene {
         this.importLabel = this.add.text(deviceWidth * 0.71, deviceHeight * 0.65, "IMPORT", 0xffffff);
         this.importLabel.setFontSize(deviceHeight*0.08);
         this.importLabel2 = this.add.text(deviceWidth * 0.71, deviceHeight * 0.75, "SAVED WORKSPACE", 0xffffff);
-        this.importLabel2.setFontSize(deviceHeight * 0.05);
+        this.importLabel2.setFontSize(deviceHeight * 0.04);
         this.import.enableClick();
         this.importLabel.enableClick();
         this.importLabel2.enableClick();
@@ -95,24 +95,24 @@ class Menu extends SimpleScene {
 
         if (this.prepareObject.isOver() || this.prepareObjectLabel.isOver() || this.prepareObjectLabel2.isOver()) {
             this.prepareObject.fillColor = 0xED4040;
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
         } else {
-            pElement.style.cursor = "url('https://i.ibb.co/hsnxb67/icons8-cursor-30.png'), auto";
+            pElement.style.cursor = "url('assets/blackcursor.png'), auto";
         }
 
         if (this.goWorkspace.isOver() || this.goWorkspaceLabel.isOver() || this.goWorkspaceLabel2.isOver()) {
             this.goWorkspace.fillColor = 0xEDDD2D;
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
         }
 
         if(this.importPart.isOver() || this.importPartLabel.isOver() || this.importPartLabel2.isOver()){
             this.importPart.fillColor = 0x4FBA52;
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
         }
 
         if (this.import.isOver() || this.importLabel.isOver() || this.importLabel2.isOver()) {
             this.import.fillColor = 0x406EED;
-            pElement.style.cursor = "url('https://i.ibb.co/RD5jn4v/icons8-hand-cursor-24-1-1.png'), auto";
+            pElement.style.cursor = "url('assets/hand.png'), auto";
         }
 
     }

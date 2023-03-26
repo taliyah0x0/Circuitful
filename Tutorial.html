@@ -11,6 +11,24 @@
         .button {
             text-decoration: none;
             display: flex;
+            flex: 1.2;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            background-color: #ffffff;
+            border: 3px solid #bbbbbb;
+            border-radius: 10px;
+            padding: 5px;
+            height: 40px;
+        }
+
+        .button:hover {
+            background-color: #dddddd;
+        }
+
+        .button-2 {
+            text-decoration: none;
+            display: flex;
             flex: 1;
             flex-direction: row;
             align-items: center;
@@ -18,47 +36,76 @@
             background-color: #bbbbbb;
             border-radius: 10px;
             padding: 5px;
+            height: 40px;
         }
 
-        .button:hover {
+        .button-2:hover {
             background-color: #dddddd;
+        }
+
+        .part {
+            width: 17.8%;
+            background-color: #dddddd;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: black;
+            transition: 0.3s ease-in-out;
+        }
+
+        .part:hover {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(1deg) scale3d(1.015, 1.015, 1.015);
         }
     </style>
     <link rel="icon" type="image/x-icon" href="assets/favicon.png">
 </head>
 
 <body>
-    <div style="display: flex; flex-direction: row; height: 50px; gap: 5px;">
-        <h2 style="flex: 5; margin-left: 40px;">Circuitful Tutorial Coming Soon!</h2>
-        <a class="button" target="_blank"
+    <div style="display: flex; flex-direction: row; height: 80px; gap: 5px;">
+        <a href="/index.html" target="_blank"
+            style="display: flex; flex: 0.8; padding: 15px; align-items: center; justify-content: center; margin-left:
+            20px; gap: 15px; background-color: #F4F5F6; border-radius: 10px; text-decoration: none; color: black; margin-right: 100px;">
+            <img style="width: auto; height: 100%;" src="/assets/favicon.png">
+            <div style="display: flex; flex: 2; align-items: center; font-size: 25px;">
+                <h1>Circuitful</h1>
+            </div>
+        </a>
+        <a class="button" target="_blank" href="https://replit.com/@TaliyahHuang/Circuitful#Workspace.js">
+            <img style="width: 50px; height: 50px; flex: 1;" src="assets/replit.png">
+            <h3 style="flex: 4; color: black;">Open Repl.it Editor</h3>
+        </a>
+        <a class="button" style="flex: 1; margin-right: 100px;" target="_blank"
+            href="https://github.com/taliyahhh/Circuitful">
+            <img style="width: 50px; height: 50px; flex: 1;" src="assets/github.png">
+            <h3 style="flex: 4; color: black;">Open Github</h3>
+        </a>
+        <a class="button-2" target="_blank"
             href="https://docs.google.com/forms/d/e/1FAIpQLSdBlu6oiTDHbPxNsVXbajZWBfGOwHKz_FqiqWWbsYLKHTNY4w/viewform?usp=sf_link">
             <img style="width: 50px; height: 50px; flex: 1;" src="assets/cloud.png">
             <h3 style="flex: 4; color: black;">Submit a Part</h3>
         </a>
-        <a class="button" target="_blank"
+        <a class="button-2" target="_blank"
             href="https://docs.google.com/forms/d/e/1FAIpQLSfRBAfY_xMJGDFmxAw3m_ZpHod6yiOpRPdnGpJgR3UgsTV5Zw/viewform?usp=sf_link">
             <img style="width: 50px; height: 50px; flex: 1;" src="assets/bug.png">
             <h3 style="flex: 4; color: black;">Report a Bug</h3>
         </a>
     </div>
-    <a style="margin-left: 40px;" href="https://replit.com/@TaliyahHuang/Circuitful#Workspace.js" target="_blank">Open
-        Repl.it Editor</a>
-    <div style="display: flex; flex-direction: column; align-items: center">
-        <h3>
-            -- -- -- -- -- -- -- -- -- --
-            -- -- KEYBOARD SHORTCUTS -- --
-            -- -- -- -- -- -- -- -- -- --
-        </h3>
+    <div style="display: flex; flex-direction: column; align-items: center; height: 40px; margin-top: 20px;">
+        <h2>
+            KEYBOARD SHORTCUTS
+        </h2>
     </div>
-
     <div style="display: flex; flex-direction: row; margin-left: 40px; margin-right: 40px;">
-        <div style="display: flex; flex: 1; flex-direction:column;">
+        <div style="display: flex; flex: 1; flex-direction: column;">
             <div style="display: flex; flex: 1; flex-direction: column; padding: 10px;">
-                <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white;">
+                <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white; border-radius: 10px;">
                     In the Part Editor
                 </h3>
 
-                <div style="background-color: #dddddd; padding: 10px;">
+                <div style="background-color: #dddddd; padding: 10px; border-radius: 10px;">
                     <h4 style="text-align: center;">
                         -- GENERAL --
                     </h4>
@@ -89,7 +136,7 @@
                     </p>
                 </div>
 
-                <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+                <div style="background-color: #dddddd; padding: 10px; margin-top: 10px; border-radius: 10px;">
                     <h4 style="text-align: center;">
                         -- WHILE HOVERING OVER A WIRING POINT --
                     </h4>
@@ -107,7 +154,7 @@
                     </p>
                 </div>
 
-                <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+                <div style="background-color: #dddddd; padding: 10px; margin-top: 10px; border-radius: 10px;">
                     <h4 style="text-align: center;">
                         -- WHILE POP-UP WINDOW IS OPEN --
                     </h4>
@@ -121,11 +168,11 @@
 
             </div>
             <div style="display: flex; flex: 1; flex-direction: column; padding: 10px;">
-                <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white;">
+                <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white; border-radius: 10px;">
                     In the Created Image Viewer
                 </h3>
 
-                <div style="background-color: #dddddd; padding: 10px;">
+                <div style="background-color: #dddddd; padding: 10px; border-radius: 10px;">
                     <h4 style="text-align: center;">
                         -- GENERAL --
                     </h4>
@@ -140,11 +187,11 @@
             </div>
         </div>
         <div style="display: flex; flex: 1; flex-direction: column; padding: 10px">
-            <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white;">
+            <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white; border-radius: 10px;">
                 In the Workspace
             </h3>
 
-            <div style="background-color: #dddddd; padding: 10px;">
+            <div style="background-color: #dddddd; padding: 10px; border-radius: 10px;">
                 <h4 style="text-align: center;">
                     -- GENERAL --
                 </h4>
@@ -171,7 +218,7 @@
                 </p>
             </div>
 
-            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px; border-radius: 10px;">
                 <h4 style="text-align: center;">
                     -- WHILE HOVERING OVER AN OBJECT OR WHILE OBJECT PANEL IS OPEN --
                 </h4>
@@ -200,7 +247,7 @@
                 </p>
             </div>
 
-            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px; border-radius: 10px;">
                 <h4 style="text-align: center;">
                     -- WHILE HOVERING OVER A WIRE OR WHILE WIRE PANEL IS OPEN --
                 </h4>
@@ -253,7 +300,7 @@
                 </p>
             </div>
 
-            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px; border-radius: 10px;">
                 <h4 style="text-align: center;">
                     -- WHILE HOVERING OVER A NODE --
                 </h4>
@@ -269,7 +316,7 @@
                 </p>
             </div>
 
-            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px; border-radius: 10px;">
                 <h4 style="text-align: center;">
                     -- WHILE HOVERING OVER A CUSTOM COLOR --
                 </h4>
@@ -279,7 +326,7 @@
                 </p>
             </div>
 
-            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px;">
+            <div style="background-color: #dddddd; padding: 10px; margin-top: 10px; border-radius: 10px;">
                 <h4 style="text-align: center;">
                     -- WHILE POP-UP WINDOW IS OPEN --
                 </h4>
@@ -292,6 +339,89 @@
             </div>
         </div>
     </div>
+    <div
+    style="display: flex; flex-direction: column; align-items: center; height: 40px; margin-bottom: 28px; margin-top: 20px;">
+    <h2>
+        DOWNLOADABLE PARTS
+    </h2>
+</div>
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px; margin-left: 40px; margin-right: 40px;">
+    <a href="downloadable-parts/7_Segment_Display.zip" download="7_Segment_Display.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/7_Segment_Display/object.png"></div>
+        <h3>7 Segment Display<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/12_Neopixel_Circle.zip" download="12_Neopixel_Circle.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/12_Neopixel_Circle/object.png"></div>
+        <h3>12 Neopixel Circle<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/16_Neopixel_Circle.zip" download="16_Neopixel_Circle.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/16_Neopixel_Circle/object.png"></div>
+        <h3>16 Neopixel Circle<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/Arduino_Due.zip" download="Arduino_Due.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/Arduino_Due/object.png"></div>
+        <h3>Arduino Due<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/Capacitor.zip" download="Capacitor.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/Capacitor/object.png"></div>
+        <h3>Capacitor<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/Clock_Display.zip" download="Clock_Display.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/Clock_Display/object.png"></div>
+        <h3>Clock Display<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/DC_Motor.zip" download="DC_Motor.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/DC_Motor/object.png"></div>
+        <h3>DC Motor<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/DC_Motor_2.zip" download="DC_Motor_2.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/DC_Motor_2/object.png"></div>
+        <h3>DC Motor<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/Lightbulb.zip" download="Lightbulb.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/Lightbulb/object.png"></div>
+        <h3>Lightbulb<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/Mini_Breadboard.zip" download="Mini_Breadboard.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/Mini_Breadboard/object.png"></div>
+        <h3>Mini Breadboard<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/Motor.zip" download="Motor.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/Motor/object.png"></div>
+        <h3>Motor<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/MQ135_Gas.zip" download="MQ135_Gas.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/MQ135_Gas/object.png"></div>
+        <h3>MQ135 Gas<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/Slideswitch.zip" download="Slideswitch.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/Slideswitch/object.png"></div>
+        <h3>Slideswitch<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/Soil_Moisture.zip" download="Soil_Moisture.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/Soil_Moisture/object.png"></div>
+        <h3>Soil Moisture<br>By Taliyah</h3>
+    </a>
+    <a href="downloadable-parts/Tilt.zip" download="Tilt.zip" class="part">
+        <div style="flex: 1; align-items: center;"><img style="max-width: 100%; max-height: 200px; flex: 2"
+                src="/downloadable-parts/Tilt/object.png"></div>
+        <h3>Tilt<br>By Taliyah</h3>
+    </a>
+</div>
 </body>
 
 </html>

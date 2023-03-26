@@ -1,14 +1,12 @@
 //// Import Saved Part ////
 
 var xLocationsImport = [
-    // -0.2260912022563598, 0.22785329178666386, 0.34774731695634875, 0.4291533285853066, 0.4528765644996553, 0.4301329531555218, 0.3497065660967791, 0.22785329178666386, -0.3482877410958964, -0.42735288035982555, -0.4564786601501534, -0.42833250493004077, -0.34247006972580774, -0.22643942787727464
 
 ];
 var yLocationsImport = [
-    // -0.3951466325379341, 0.3936245944772217, 0.2911646730599088, 0.15440097163588754, -0.002193757186519534, -0.15679349730162326, -0.2934144796766195, -0.3951466325379341, -0.2924328919309129, -0.15679349730162326, -0.002193757186519534, 0.1560471704551244, 0.29480586058644664, 0.3926430067315151
+
 ];
 var objectInfoImport = [
-    //"Circuit Playground", "Microcontrollers", 0.7401785998271294, 14, 1418.4
 
 ];
 
@@ -58,7 +56,7 @@ class PartEditor extends SimpleScene {
 
     preload() {
         this.load.image("object", 'object/object.png');
-        //this.load.imageset("object","object/object.png",663,259);
+        //this.load.imageset("object", "object/object.png", 2713, 68);
         this.load.imageset("binhandlearrow", "./assets/binhandlearrow.png", 560, 981);
         this.load.image("increasescale", "./assets/increasescale.png");
         this.load.image("decreasescale", "./assets/decreasescale.png");
@@ -66,7 +64,7 @@ class PartEditor extends SimpleScene {
         this.load.image("slash", "assets/slash.png");
         this.load.image("grid", "assets/grid.jpeg");
         this.load.image("saved", "assets/saved.png");
-        this.load.image("info", "assets/info.png");
+        this.load.image("help", "assets/help.png");
         this.load.image("undo", "assets/undo.png");
         this.load.image("glue", "assets/glue.png");
         this.load.image("dark", "assets/dark.png");
@@ -248,6 +246,7 @@ class PartEditor extends SimpleScene {
         this.x = this.add.key("X");
         this.d = this.add.key("d");
         this.c = this.add.key("c");
+        this.a = this.add.key("a");
 
         this.key0 = this.add.key("ZERO");
         this.key1 = this.add.key("ONE");
@@ -300,10 +299,10 @@ class PartEditor extends SimpleScene {
         this.import.enableClick();
         this.import.setDepth(5);
 
-        this.info = this.add.sprite(deviceWidth * 0.965, deviceHeight * 0.06, "info");
-        this.info.setScale(deviceWidth * 0.0004);
-        this.info.enableClick();
-        this.info.setDepth(5);
+        this.help = this.add.sprite(deviceWidth * 0.965, deviceHeight * 0.06, "help");
+        this.help.setScale(deviceWidth * 0.0004);
+        this.help.enableClick();
+        this.help.setDepth(5);
 
         this.home = this.add.sprite(deviceWidth * 0.92, deviceHeight * 0.06, "home");
         this.home.setScale(deviceWidth * 0.00011);
@@ -509,11 +508,11 @@ class PartEditor extends SimpleScene {
             this.import.setAlpha(1);
         }
 
-        if (this.info.isOver()) {
+        if (this.help.isOver()) {
             pElement.style.cursor = "url('assets/hand.png'), auto";
-            this.info.setAlpha(0.5);
+            this.help.setAlpha(0.5);
         } else {
-            this.info.setAlpha(1);
+            this.help.setAlpha(1);
         }
 
         if (this.input.activePointer.isDown == true) {
@@ -1546,24 +1545,24 @@ class PartEditor extends SimpleScene {
             document.getElementById('download0').innerHTML = "X Locations";
             document.getElementById('download0').download = "XLocations.txt";
             document.getElementById('download0').href = generateTextFileUrl(locX);
-            //document.getElementById('download0').click();
+            document.getElementById('download0').click();
 
             textFileUrl = null;
 
             document.getElementById('download1').innerHTML = "Y Locations";
             document.getElementById('download1').download = "YLocations.txt";
             document.getElementById('download1').href = generateTextFileUrl(locY);
-            //document.getElementById('download1').click();
+            document.getElementById('download1').click();
 
             textFileUrl = null;
 
             document.getElementById('download2').innerHTML = "Object Info";
             document.getElementById('download2').download = "ObjectInfo.txt";
             document.getElementById('download2').href = generateTextFileUrl(objectInfo);
-            //document.getElementById('download2').click();
+            document.getElementById('download2').click();
         }
 
-        if (this.info.wasClicked() || this.import.wasClicked()) {
+        if (this.help.wasClicked() || this.import.wasClicked()) {
             window.open('/Tutorial.html', '_blank');
         }
 
@@ -1671,7 +1670,7 @@ class PartEditor extends SimpleScene {
     disabling() {
         this.object.disableClick();
         this.object.disableDrag();
-        this.info.disableClick();
+        this.help.disableClick();
         this.floor.disableClick();
         this.dark.disableClick();
         this.increaseScale.disableClick();
@@ -1694,7 +1693,7 @@ class PartEditor extends SimpleScene {
     enabling() {
         this.object.enableClick();
         this.object.enableDrag();
-        this.info.enableClick();
+        this.help.enableClick();
         this.floor.enableClick();
         this.dark.enableClick();
         this.increaseScale.enableClick();
@@ -1719,9 +1718,9 @@ class PartEditor extends SimpleScene {
         document.getElementById('label').innerHTML = "";
         document.getElementById('input').blur();
         document.getElementById('input').style.display = 'none';
-        document.getElementById('inputnum').value = "";
-        document.getElementById('inputnum').blur();
-        document.getElementById('inputnum').style.display = 'none';
+        document.getElementById('input2').value = "";
+        document.getElementById('input2').blur();
+        document.getElementById('input2').style.display = 'none';
         document.getElementById('label2').innerHTML = "";
         document.getElementById('dropdown').blur();
         document.getElementById('dropdown').style.display = 'none';
@@ -1741,7 +1740,7 @@ class PartEditor extends SimpleScene {
     }
 
     inputBox() {
-        if (element == document.getElementById('input') || element == document.getElementById('inputnum') || element == document.getElementById('dropdown')) {
+        if (element == document.getElementById('input') || element == document.getElementById('input2') || element == document.getElementById('dropdown')) {
             if (this.del.isPressed() && !(this.shift.isPressed())) {
                 if (delCount == 8) {
                     element.value = element.value.slice(0, -1);
