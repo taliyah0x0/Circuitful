@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html style="font-family: Sans">
+
+<head>
+    <style>
+        @font-face {
+            font-family: Sans;
+            src: url("/assets/sans.ttf");
+        }
+
+        .button {
+            text-decoration: none;
+            display: flex;
+            flex: 0.8;
+            margin-right: 20px;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            background-color: #ffffff;
+            border: 3px solid #bbbbbb;
+            border-radius: 10px;
+            padding: 5px;
+            height: 40px;
+        }
+
+        .button:hover {
+            background-color: #dddddd;
+        }
+
+        .button-2 {
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            background-color: #bbbbbb;
+            border-radius: 10px;
+            padding: 10px;
+            width: 150px;
+            color: black;
+        }
+
+        .button-2:hover {
+            background-color: #dddddd;
+        }
+
+        .table {
+            border: 1px solid black;
+        }
+
+        .type1 {
+            background-color: #dddddd;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .type2 {
+            background-color: #eeeeee;
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+</head>
+
+<body>
+    <div style="display: flex; flex-direction: row; height: 80px;">
+        <a href="/index.html" target="_blank" style="display: flex; flex: 0.8; padding: 15px; align-items: center; justify-content: center; margin-left:
+            20px; gap: 15px; background-color: #F4F5F6; border-radius: 10px; text-decoration: none; color: black;">
+            <img style="width: auto; height: 100%;" src="/assets/favicon.png">
+            <div style="display: flex; flex: 2; align-items: center; font-size: 25px;">
+                <h1>Circuitful</h1>
+            </div>
+        </a>
+        <div style="display: flex; flex: 3; align-items: center; justify-content: center;">
+            <h1>SERVO MOTOR</h1>
+        </div>
+        <a class="button" target="_blank"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdU3pJncIm_mqhsPIOUCC8hfWFfVhc7zcmyK5hrxaJevgK8qA/viewform?usp=sf_link">
+            <img style="width: 50px; height: 50px; flex: 1;" src="/assets/report.png">
+            <h3 style="flex: 4; color: black;">Report a Mistake</h3>
+        </a>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+        <div
+            style="display: flex; flex-direction: column; flex: 1.2; padding-left: 50px; padding-right: 50px; gap: 5px;">
+            <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white;">
+                Object Information
+            </h3>
+            <p>
+                Type: Module
+                <br>
+                <br>
+                A servomotor (or servo motor) is a rotary actuator or linear actuator that allows for precise control of angular or linear position, velocity and acceleration. It consists of a suitable motor coupled to a sensor for position feedback. <a href="https://en.wikipedia.org/wiki/Servomotor" target="_blank">[Wikipedia]</a>
+                <br>
+                <br>
+                <br>
+                Where to buy:
+            </p>
+            <a href="https://www.amazon.com/dp/B07L2SF3R4/?tag=emeraldheart"
+                target="_blank" class="button-2" style="height: 20px;">
+                <h4 style="display: flex; flex: 3;">Amazon</h4>
+            </a>
+            <br>
+        </div>
+        <div style="display: flex; flex-direction: column; flex: 1; padding-left: 50px; padding-right: 50px;">
+            <h3 style="text-align: center; background-color: #ED4040; padding: 10px; color: white;">
+                Diagrams
+            </h3>
+            <a href="0.png" target="_blank"><img src="0.png" style="width: 100%; height: auto"></a>
+        </div>
+    </div>
+</body>
+
+</html>
