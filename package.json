@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "kursor": "^0.1.6"
+    "kursor": "^0.1.6",
+    "puppeteer": "^20.1.1"
   }
 }
