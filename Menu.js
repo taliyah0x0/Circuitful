@@ -7,7 +7,7 @@ class Menu extends SimpleScene {
     init() {}
 
     preload() {
-
+        this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
     }
 
     create() {
@@ -27,49 +27,56 @@ class Menu extends SimpleScene {
         document.getElementById('dropdown').value = "Choose Type";
         document.getElementById('dropdown').style.display = 'none';
 
-        this.title = this.add.text(deviceWidth / 2, deviceHeight * 0.045, "CIRCUITFUL", 0x999999);
-        this.title.setOrigin(0.5, 0);
-        this.title.setFontSize(deviceHeight * 0.075);
-        this.instructions = this.add.text(deviceWidth / 2, deviceHeight * 0.15, "Welcome. Circuitful is a tool for drawing colorful circuit diagrams.", 0x000000)
-        this.instructions.setOrigin(0.5, 0);
-        this.instructions.setFontSize(deviceHeight * 0.03);
+        WebFont.load({
+            custom: {
+                families: ['Sans'],
+                urls: ['assets/sans.ttf']  // Ensure the path to your font is correct
+            },
+            active: () => {
+                this.title = this.add.text(deviceWidth / 2, deviceHeight * 0.045, "CIRCUITFUL", 0x999999);
+                this.title.setOrigin(0.5, 0);
+                this.title.setFontSize(deviceHeight * 0.075);
+                this.instructions = this.add.text(deviceWidth / 2, deviceHeight * 0.15, "Welcome. Circuitful is a tool for drawing colorful circuit diagrams.", 0x000000)
+                this.instructions.setOrigin(0.5, 0);
+                this.instructions.setFontSize(deviceHeight * 0.03);
 
-        this.prepareObject = this.add.rectangle(deviceWidth * 0.18, deviceHeight * 0.6, deviceWidth * 0.25, deviceHeight * 0.75, 0xbbbbbb);
-        this.prepareObjectLabel = this.add.text(deviceWidth * 0.07, deviceHeight * 0.25, "PREPARE", 0xffffff);
-        this.prepareObjectLabel.setFontSize(deviceHeight*0.08);
-        this.prepareObjectLabel2 = this.add.text(deviceWidth * 0.07, deviceHeight * 0.35, "A NEW OBJECT", 0xffffff);
-        this.prepareObjectLabel2.setFontSize(deviceHeight*0.05);
-        this.prepareObject.enableClick();
-        this.prepareObjectLabel.enableClick();
-        this.prepareObjectLabel2.enableClick();
+                this.prepareObject = this.add.rectangle(deviceWidth * 0.18, deviceHeight * 0.6, deviceWidth * 0.25, deviceHeight * 0.75, 0xbbbbbb);
+                this.prepareObjectLabel = this.add.text(deviceWidth * 0.07, deviceHeight * 0.25, "PREPARE", 0xffffff);
+                this.prepareObjectLabel.setFontSize(deviceHeight*0.08);
+                this.prepareObjectLabel2 = this.add.text(deviceWidth * 0.07, deviceHeight * 0.35, "A NEW OBJECT", 0xffffff);
+                this.prepareObjectLabel2.setFontSize(deviceHeight*0.05);
+                this.prepareObject.enableClick();
+                this.prepareObjectLabel.enableClick();
+                this.prepareObjectLabel2.enableClick();
 
-        this.goWorkspace = this.add.rectangle(deviceWidth / 2, deviceHeight * 0.6, deviceWidth * 0.35, deviceHeight * 0.75, 0xbbbbbb);
-        this.goWorkspaceLabel = this.add.text(deviceWidth * 0.34, deviceHeight * 0.25, "GO TO", 0xffffff);
-        this.goWorkspaceLabel.setFontSize(deviceHeight*0.1);
-        this.goWorkspaceLabel2 = this.add.text(deviceWidth * 0.34, deviceHeight * 0.37, "WORKSPACE", 0xffffff);
-        this.goWorkspaceLabel2.setFontSize(deviceHeight*0.08);
-        this.goWorkspace.enableClick();
-        this.goWorkspaceLabel.enableClick();
-        this.goWorkspaceLabel2.enableClick();
+                this.goWorkspace = this.add.rectangle(deviceWidth / 2, deviceHeight * 0.6, deviceWidth * 0.35, deviceHeight * 0.75, 0xbbbbbb);
+                this.goWorkspaceLabel = this.add.text(deviceWidth * 0.34, deviceHeight * 0.25, "GO TO", 0xffffff);
+                this.goWorkspaceLabel.setFontSize(deviceHeight*0.1);
+                this.goWorkspaceLabel2 = this.add.text(deviceWidth * 0.34, deviceHeight * 0.37, "WORKSPACE", 0xffffff);
+                this.goWorkspaceLabel2.setFontSize(deviceHeight*0.08);
+                this.goWorkspace.enableClick();
+                this.goWorkspaceLabel.enableClick();
+                this.goWorkspaceLabel2.enableClick();
 
-        this.importPart = this.add.rectangle(deviceWidth*0.82,deviceHeight*0.4,deviceWidth*0.25,deviceHeight*0.35,0xbbbbbb);
-        this.importPartLabel = this.add.text(deviceWidth*0.71,deviceHeight*0.25,"IMPORT",0xffffff);
-        this.importPartLabel.setFontSize(deviceHeight*0.08);
-        this.importPartLabel2 = this.add.text(deviceWidth*0.71,deviceHeight*0.35,"SAVED PART",0xffffff);
-        this.importPartLabel2.setFontSize(deviceHeight * 0.05);
-        this.importPart.enableClick();
-        this.importPartLabel.enableClick();
-        this.importPartLabel2.enableClick();
+                this.importPart = this.add.rectangle(deviceWidth*0.82,deviceHeight*0.4,deviceWidth*0.25,deviceHeight*0.35,0xbbbbbb);
+                this.importPartLabel = this.add.text(deviceWidth*0.71,deviceHeight*0.25,"IMPORT",0xffffff);
+                this.importPartLabel.setFontSize(deviceHeight*0.08);
+                this.importPartLabel2 = this.add.text(deviceWidth*0.71,deviceHeight*0.35,"SAVED PART",0xffffff);
+                this.importPartLabel2.setFontSize(deviceHeight * 0.05);
+                this.importPart.enableClick();
+                this.importPartLabel.enableClick();
+                this.importPartLabel2.enableClick();
 
-        this.import = this.add.rectangle(deviceWidth * 0.82, deviceHeight * 0.8, deviceWidth * 0.25, deviceHeight * 0.35, 0xbbbbbb);
-        this.importLabel = this.add.text(deviceWidth * 0.71, deviceHeight * 0.65, "IMPORT", 0xffffff);
-        this.importLabel.setFontSize(deviceHeight*0.08);
-        this.importLabel2 = this.add.text(deviceWidth * 0.71, deviceHeight * 0.75, "SAVED WORKSPACE", 0xffffff);
-        this.importLabel2.setFontSize(deviceHeight * 0.04);
-        this.import.enableClick();
-        this.importLabel.enableClick();
-        this.importLabel2.enableClick();
-
+                this.import = this.add.rectangle(deviceWidth * 0.82, deviceHeight * 0.8, deviceWidth * 0.25, deviceHeight * 0.35, 0xbbbbbb);
+                this.importLabel = this.add.text(deviceWidth * 0.71, deviceHeight * 0.65, "IMPORT", 0xffffff);
+                this.importLabel.setFontSize(deviceHeight*0.08);
+                this.importLabel2 = this.add.text(deviceWidth * 0.71, deviceHeight * 0.75, "SAVED WORKSPACE", 0xffffff);
+                this.importLabel2.setFontSize(deviceHeight * 0.04);
+                this.import.enableClick();
+                this.importLabel.enableClick();
+                this.importLabel2.enableClick();
+            }
+        });
     }
 
     update() {
