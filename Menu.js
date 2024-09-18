@@ -80,6 +80,7 @@ class Menu extends SimpleScene {
     }
 
     update() {
+        setTimeout(() => {
         const pElement = document.getElementsByTagName("body")[0];
 
         if (this.prepareObject.wasClicked() || this.prepareObjectLabel.wasClicked() || this.prepareObjectLabel2.wasClicked()) {
@@ -121,6 +122,6 @@ class Menu extends SimpleScene {
             this.import.fillColor = 0x406EED;
             pElement.style.cursor = "url('assets/hand.png'), auto";
         }
-
+        }, 20);
     }
 }
