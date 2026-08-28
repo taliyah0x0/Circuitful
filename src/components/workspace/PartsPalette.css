@@ -156,10 +156,17 @@
   position: absolute;
   top: 4px;
   right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
   background: var(--accent-green);
   color: #fff;
-  font-size: 9px;
-  padding: 1px 5px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
   border-radius: 999px;
 }
 .palette-item-delete {

@@ -96,7 +96,9 @@ export default function PartsPalette({ onPlacePart }) {
             <span>{part.name}</span>
             {part.isCustom && (
               <>
-                <span className="palette-item-badge">mine</span>
+                <span className="palette-item-badge" title="Your custom part" aria-label="Your custom part">
+                  *
+                </span>
                 <span
                   className="palette-item-delete"
                   role="button"
