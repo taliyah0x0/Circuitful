@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toggle Switch – Circuitful</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/info/info.css">
+  <script>
+    try {
+      var t = localStorage.getItem("circuitful.theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="info-header">
+    <a class="info-brand" href="/">
+      <img src="/favicon.png" alt="">
+      <span>Circuitful</span>
+    </a>
+    <h1 class="info-title">Toggle Switch</h1>
+    <a class="info-report" target="_blank" rel="noopener"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdU3pJncIm_mqhsPIOUCC8hfWFfVhc7zcmyK5hrxaJevgK8qA/viewform?usp=sf_link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      Report a mistake
+    </a>
+  </header>
+  <main class="info-body">
+    <section class="info-card">
+      <span class="info-eyebrow">Object Information</span>
+      <span class="info-type">Type: Electrical</span>
+      <p class="info-desc">
+        In electrical engineering, a switch is an electrical component that can disconnect or connect the conducting
+        path in an electrical circuit, interrupting the electric current or diverting it from one conductor to
+        another.
+        <a href="https://en.wikipedia.org/wiki/Switch" target="_blank" rel="noopener">Wikipedia ↗</a>
+      </p>
+      <p class="info-buy-label">Where to buy</p>
+      <div class="info-buy-list">
+        <a class="info-buy-btn" target="_blank" rel="noopener" href="https://www.amazon.com/dp/B07S1MV462/?tag=emeraldheart">
+          Amazon
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </section>
+    <section class="info-card">
+      <span class="info-eyebrow">Diagrams</span>
+      <a class="info-image-link" href="0.png" target="_blank" rel="noopener"><img class="info-image" src="0.png" alt="Toggle switch diagram 1"></a>
+      <a class="info-image-link" href="1.png" target="_blank" rel="noopener"><img class="info-image" src="1.png" alt="Toggle switch diagram 2"></a>
+      <a class="info-image-link" href="2.png" target="_blank" rel="noopener"><img class="info-image" src="2.png" alt="Toggle switch diagram 3"></a>
+    </section>
+  </main>
+</body>
+</html>

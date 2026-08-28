@@ -1,0 +1,194 @@
+.part-editor-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.part-editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  height: 52px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.part-editor-title {
+  font-weight: 650;
+  font-size: 14px;
+}
+.part-editor-toolbar-spacer {
+  flex: 1;
+}
+.part-editor-scale {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--text-dim);
+  min-width: 38px;
+  text-align: center;
+}
+
+.part-editor-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  border-left: 1px solid var(--border);
+}
+.part-editor-toolbar-group-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-faint);
+  margin-right: 4px;
+}
+
+.part-editor-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.part-editor-canvas-area {
+  flex: 1;
+  display: flex;
+  background: var(--bg-canvas);
+  overflow: hidden;
+}
+
+.part-editor-canvas-area:has(.part-editor-dropzone) {
+  align-items: center;
+  justify-content: center;
+}
+
+.part-editor-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 360px;
+  height: 240px;
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 14px;
+}
+.part-editor-dropzone:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.part-editor-sidebar {
+  width: 300px;
+  min-width: 300px;
+  background: var(--bg-panel);
+  border-left: 1px solid var(--border);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.part-editor-pins-header {
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+.part-editor-pins-header label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.part-editor-pin-list {
+  flex: 1;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.part-editor-pin-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.part-editor-pin-row:hover {
+  background: var(--bg);
+}
+.part-editor-pin-row--active {
+  background: var(--primary-dim);
+  border-color: var(--primary);
+}
+
+.part-editor-pin-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.part-editor-pin-dot--none {
+  background: #406eed;
+}
+.part-editor-pin-dot--power {
+  background: #ed4040;
+}
+.part-editor-pin-dot--ground {
+  background: #3b3b3b;
+}
+
+.part-editor-pin-index {
+  font-size: 12px;
+  color: var(--text-dim);
+  width: 44px;
+  flex-shrink: 0;
+}
+
+.part-editor-pin-role {
+  flex: 1;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.part-editor-pin-delete {
+  border: none;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  display: flex;
+  padding: 2px;
+}
+.part-editor-pin-delete:hover {
+  color: var(--danger);
+}
+
+.part-editor-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.part-editor-save {
+  justify-content: center;
+}

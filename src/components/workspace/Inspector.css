@@ -1,0 +1,150 @@
+.inspector {
+  width: 260px;
+  min-width: 260px;
+  height: 100%;
+  background: var(--bg-panel);
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.inspector-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.inspector-header img,
+.inspector-header .part-thumb-frame,
+.inspector-header .part-thumb-text {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  box-sizing: border-box;
+}
+.inspector-header img {
+  /* Plain <img> (non-spritesheet parts) still benefits from object-fit —
+     it's only the spritesheet-cropping SVG (.part-thumb-frame) where
+     object-fit fights the crop; see PartsPalette.css for why. */
+  object-fit: contain;
+}
+.inspector-header .part-thumb-text {
+  font-size: 8px;
+}
+.inspector-header h3 {
+  margin: 0;
+  font-size: 14px;
+}
+.inspector-header span {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.inspector-section {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.inspector-section h4 {
+  margin: 0 0 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-faint);
+}
+
+.inspector-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.inspector-row:last-child {
+  margin-bottom: 0;
+}
+
+.inspector-btn {
+  flex: 1;
+  /* Buttons (unlike <a>) stay content-sized even under display:flex — this
+     width keeps a standalone .inspector-btn full-width outside a flex row,
+     while flex:1 above still governs it correctly inside one. */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 12.5px;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.inspector-btn:hover {
+  border-color: var(--border-strong);
+}
+.inspector-btn--danger {
+  color: var(--danger);
+  border-color: var(--danger-dim);
+}
+.inspector-btn--danger:hover {
+  background: var(--danger-dim);
+}
+
+.inspector-input {
+  width: 100%;
+  padding: 7px 9px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.inspector-color-well {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  cursor: pointer;
+}
+.inspector-color-well::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.inspector-color-well::-webkit-color-swatch {
+  border: none;
+  border-radius: 3px;
+}
+
+.inspector-hint {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.inspector-swatches {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+.inspector-swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.inspector-swatch--none {
+  background:
+    linear-gradient(to top right, transparent calc(50% - 1px), var(--danger) calc(50% - 1px), var(--danger) calc(50% + 1px), transparent calc(50% + 1px)),
+    var(--bg);
+}

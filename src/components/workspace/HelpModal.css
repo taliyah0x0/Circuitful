@@ -1,0 +1,36 @@
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 640px;
+  max-width: 100%;
+}
+.help-group h4 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-faint);
+}
+.help-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.help-row kbd {
+  flex-shrink: 0;
+  min-width: 28px;
+  text-align: center;
+  padding: 3px 6px;
+  border-radius: 5px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  font-family: var(--mono, monospace);
+  font-size: 11px;
+  color: var(--text);
+}
+.help-row span {
+  color: var(--text-dim);
+}

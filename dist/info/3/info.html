@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LED – Circuitful</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/info/info.css">
+  <script>
+    try {
+      var t = localStorage.getItem("circuitful.theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="info-header">
+    <a class="info-brand" href="/">
+      <img src="/favicon.png" alt="">
+      <span>Circuitful</span>
+    </a>
+    <h1 class="info-title">LED</h1>
+    <a class="info-report" target="_blank" rel="noopener"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdU3pJncIm_mqhsPIOUCC8hfWFfVhc7zcmyK5hrxaJevgK8qA/viewform?usp=sf_link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      Report a mistake
+    </a>
+  </header>
+  <main class="info-body">
+    <section class="info-card">
+      <span class="info-eyebrow">Object Information</span>
+      <span class="info-type">Type: Modules</span>
+      <p class="info-desc">
+        A light-emitting diode (LED) is a semiconductor device that emits light when current flows through it.
+        <a href="https://en.wikipedia.org/wiki/Light-emitting_diode" target="_blank" rel="noopener">Wikipedia ↗</a>
+      </p>
+      <p class="info-buy-label">Where to buy</p>
+      <div class="info-buy-list">
+        <a class="info-buy-btn" target="_blank" rel="noopener" href="https://www.amazon.com/dp/B09XDMJ6KY/?tag=emeraldheart">
+          Amazon
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <table class="info-table">
+        <tr><th>Tech</th><th>Specs</th></tr>
+        <tr><td>Diameter</td><td>5mm</td></tr>
+        <tr><td>Forward voltage</td><td>R/Y 2.0-2.2V; B/G/W 3.0-3.2V</td></tr>
+        <tr><td>Max current</td><td>20mA</td></tr>
+        <tr><td>Polarity</td><td>Anode (longer leg) / Cathode (shorter leg)</td></tr>
+      </table>
+    </section>
+    <section class="info-card">
+      <span class="info-eyebrow">Diagrams</span>
+      <a class="info-image-link" href="0.png" target="_blank" rel="noopener"><img class="info-image" src="0.png" alt="LED diagram"></a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resistor – Circuitful</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/info/info.css">
+  <script>
+    try {
+      var t = localStorage.getItem("circuitful.theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="info-header">
+    <a class="info-brand" href="/">
+      <img src="/favicon.png" alt="">
+      <span>Circuitful</span>
+    </a>
+    <h1 class="info-title">Resistor</h1>
+    <a class="info-report" target="_blank" rel="noopener"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdU3pJncIm_mqhsPIOUCC8hfWFfVhc7zcmyK5hrxaJevgK8qA/viewform?usp=sf_link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      Report a mistake
+    </a>
+  </header>
+  <main class="info-body">
+    <section class="info-card">
+      <span class="info-eyebrow">Object Information</span>
+      <span class="info-type">Type: Electrical</span>
+      <p class="info-desc">
+        A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit
+        element.
+        <a href="https://en.wikipedia.org/wiki/Resistor" target="_blank" rel="noopener">Wikipedia ↗</a>
+      </p>
+      <p class="info-buy-label">Where to buy</p>
+      <div class="info-buy-list">
+        <a class="info-buy-btn" target="_blank" rel="noopener" href="https://www.amazon.com/dp/B08FD1XVL6/?tag=emeraldheart">
+          Amazon
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <p class="info-buy-label">Commonly used resistors</p>
+      <div class="info-image-row">
+        <div>
+          <p>220Ω used for LED</p>
+          <img class="info-image" src="220.png" alt="220 ohm resistor">
+        </div>
+        <div>
+          <p>10kΩ used for sensors</p>
+          <img class="info-image" src="10000.png" alt="10k ohm resistor">
+        </div>
+      </div>
+    </section>
+    <section class="info-card">
+      <span class="info-eyebrow">Diagrams</span>
+      <iframe class="info-iframe" src="https://resistorcolorcodecalc.com/"></iframe>
+    </section>
+  </main>
+</body>
+</html>

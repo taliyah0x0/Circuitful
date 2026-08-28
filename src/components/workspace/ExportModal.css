@@ -1,0 +1,48 @@
+.export-form {
+  width: 340px;
+  max-width: 100%;
+}
+
+.export-scale-row {
+  display: flex;
+  gap: 6px;
+}
+.export-scale-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+}
+.export-scale-btn--active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.export-bg-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.export-bg-row input[type="color"] {
+  width: 40px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: none;
+  padding: 2px;
+}
+.export-transparent-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-dim);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
