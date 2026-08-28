@@ -134,9 +134,6 @@ export default function Landing() {
         <a href="https://github.com/taliyahhh/Circuitful" target="_blank" rel="noreferrer">
           <ExternalLink size={16} /> GitHub
         </a>
-        <a href="#" onClick={(e) => { e.preventDefault(); navigate("/workspace"); }}>
-          <Keyboard size={16} /> Keyboard shortcuts live in the Workspace toolbar
-        </a>
       </div>
 
       {toast && <div className="landing-toast">{toast}</div>}

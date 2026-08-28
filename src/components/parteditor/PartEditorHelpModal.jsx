@@ -5,8 +5,7 @@ const GROUPS = [
   {
     title: "Canvas",
     rows: [
-      ["Click background", "Add pin"],
-      ["Click part", "Add pin"],
+      ["Click part/background", "Add pin"],
       ["Drag background", "Pan"],
       ["Drag part", "Move part (pins stay put)"],
       ["⌘/Ctrl + Scroll", "Zoom in / out"],
