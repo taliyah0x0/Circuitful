@@ -2,13 +2,6 @@
 
 This used to be my 2022 project that I spent 80+ hours writing 10,000 lines of code, but I recently refreshed the user interface using AI. Now, MUCH better than before, here is [Circuitful](https://circuitful.netlify.app) — a tool for drawing colorful circuit diagrams — in React + SVG (used to be Phaser JS).
 
-## Run it
-
-```bash
-npm install
-npm run dev
-```
-
 ## What's here
 
 - **Workspace** (`/#/workspace`) — place parts, wire them together, pan/zoom, undo/redo, save/load
