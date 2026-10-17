@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
+import { GRID_SIZE } from "../../lib/parts.js";
 import "./PinCanvas.css";
 
+// GRID_SIZE is shared with the Workspace so a part scaled to line up with
+// the dots here lines up with the same dots once it's placed there.
 const ROLE_COLORS = { power: "#ed4040", ground: "#3b3b3b", null: "#406eed" };
-const GRID_SIZE = 20; // world units
 const DRAG_THRESHOLD = 4; // px of movement before a press counts as a drag, not a click
 
 function snap(v, grid = GRID_SIZE) {
