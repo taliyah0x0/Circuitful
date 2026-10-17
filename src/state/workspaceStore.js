@@ -154,9 +154,20 @@ export const useWorkspace = create((set, get) => ({
   deleteObjects(ids) {
     get()._commit();
     set((s) => {
-      const remainingNodes = s.doc.nodes.filter((n) => !(n.attach && ids.includes(n.attach.objectId)));
       const removedNodeIds = new Set(s.doc.nodes.filter((n) => n.attach && ids.includes(n.attach.objectId)).map((n) => n.id));
-      const remainingWires = s.doc.wires.filter((w) => !removedNodeIds.has(w.nodeA) && !removedNodeIds.has(w.nodeB));
+      // Drop every strand that touches a deleted pin, not just the segment
+      // ending at it — otherwise the strand's bend points and the segments
+      // between them are left floating where the part used to be.
+      const removedStrands = new Set(
+        s.doc.wires
+          .filter((w) => removedNodeIds.has(w.nodeA) || removedNodeIds.has(w.nodeB))
+          .map((w) => w.strandId || w.id)
+      );
+      const remainingWires = s.doc.wires.filter((w) => !removedStrands.has(w.strandId || w.id));
+      const usedNodeIds = new Set(remainingWires.flatMap((w) => [w.nodeA, w.nodeB]));
+      const remainingNodes = s.doc.nodes.filter(
+        (n) => !removedNodeIds.has(n.id) && (usedNodeIds.has(n.id) || n.attach)
+      );
       return {
         doc: {
           ...s.doc,
